@@ -17,13 +17,15 @@ final class Auth
     private $username;
     private $password;
     private $baseUrl;
+    private $authToken;
     public function __construct($username, $pwd)
     {
         $this -> username = $username;
         $this -> password = $pwd;
         $this -> baseUrl = Config::baseUrl . 'auth/';
+        $this -> authToken = $this -> getToken();
     }
-    public function token()
+    private function getToken()
     {
         $headers = array('Content-Type' => 'application/json', 'Accept' => 'application/json');
         $url = $this -> baseUrl . 'token';
@@ -41,6 +43,9 @@ final class Auth
             $token = '';
         }
         return $token;
+    }
+    public function token() {
+        return $this -> authToken;
     }
 
     /**
