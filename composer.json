@@ -1,0 +1,25 @@
+{
+    "name": "i2up/php-sdk",
+    "type": "library",
+    "description": "i2up SDK for PHP",
+    "keywords": ["i2up", "storage", "sdk"],
+    "homepage": "http://www.info2soft.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "I2up",
+            "email": "lis@info2soft.com",
+            "homepage": "http://www.info2soft.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "squizlabs/php_codesniffer": "~2.3"
+    },
+    "autoload": {
+        "psr-4": {"i2up\\": "src/i2up"}
+    }
+}
