@@ -33,17 +33,29 @@ final class Client
     }
     public static function delete($url, $body, array $headers = array())
     {
+        if ($body !== null) {
+            $headers['Content-Type'] = 'application/json';
+            $body = json_encode($body);
+        }
         $request = new Request('DELETE', $url, $headers, $body);
         return self::sendRequest($request);
     }
 
     public static function post($url, $body, array $headers = array())
     {
+        if ($body !== null) {
+            $headers['Content-Type'] = 'application/json';
+            $body = json_encode($body);
+        }
         $request = new Request('POST', $url, $headers, $body);
         return self::sendRequest($request);
     }
     public static function put($url, $body, array $headers = array())
     {
+        if ($body !== null) {
+            $headers['Content-Type'] = 'application/json';
+            $body = json_encode($body);
+        }
         $request = new Request('PUT', $url, $headers, $body);
         return self::sendRequest($request);
     }
@@ -79,6 +91,7 @@ final class Client
 
         if ($request->method === 'POST' || $request->method === 'PUT' || $request->method === 'DELETE') {
             if (!empty($request->body)) {
+                var_dump($request -> body);
                 $options[CURLOPT_POSTFIELDS] = $request->body;
             }
         } else if ($request->method === 'GET') {

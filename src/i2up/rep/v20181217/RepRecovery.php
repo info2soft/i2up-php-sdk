@@ -1,26 +1,26 @@
 <?php
 
-namespace i2up\nas\v20181217;
+namespace i2up\rep\v20181217;
 
 use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Nas {
+class RepRecovery {
     private $url;
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'nas/sync';
+        $this -> url = Config::baseUrl . 'rep/recovery';
         $this -> token = $auth -> token();
     }
     /**
-     *  组 新建
+     * 1 新建任务
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function createNAS(array $body = array())
+    public function createRepRecovery(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('post', $url, $body);
@@ -28,101 +28,122 @@ class Nas {
     }
 
     /**
-     *  组 获取单个
+     * 1 获取单个任务
+     *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function describeNAS(array $body = array())
+    public function describeRepRecovery(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
+        $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     *  组 编辑
-     * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
-     * @return array
-     */
-    public function modifyNAS(array $body = array())
-    {
-        if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
-        unset($body['uuid']);
-        $res = $this -> httpRequest('put', $url, $body);
-        return $res;
-    }
-
-    /**
-     *  获取 列表
-     *
-     * @param array $body 参数详见 API 手册
-     * @return array
-     */
-    public function listNAS(array $body = array())
-    {
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     *  获取 状态
+     * 2 删除任务
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNASStatus(array $body = array())
+    public function deleteRepRecovery(array $body = array())
     {
-
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     *  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNAS(array $body = array())
-    {
-
         $url = $this -> url;
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
 
     /**
-     *  操作：启动
+     * 2 获取任务列表（基本信息）
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function startNAS(array $body = array())
+    public function listRepRecovery(array $body = array())
     {
+        $url = $this -> url;
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
 
+    /**
+     * 任务操作  开始
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function startRepRecovery(array $body = array())
+    {
         $url = $this -> url . '/operate';
         $body['operate'] = 'start';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
     /**
-     *  操作：停止
+     * 任务操作  停止
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function stopNAS(array $body = array())
+    public function stopRepRecovery(array $body = array())
     {
-
         $url = $this -> url . '/operate';
         $body['operate'] = 'stop';
         $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+    /**
+     * 任务操作  清除已完成
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function clearFinishRepRecovery(array $body = array())
+    {
+        $url = $this -> url . '/operate';
+        $body['operate'] = 'clear_finish';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 2 任务状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listRepRecoveryStatus(array $body = array())
+    {
+        $url = $this -> url . '/status';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 1 获取CDP时间范围
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listRepRecoveryCdpRange(array $body = array())
+    {
+        $url = $this -> url . '/cdp_range';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 1 获取CDP日志列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listRepRecoveryCdpLog(array $body = array())
+    {
+        $url = $this -> url . '/cdp_log';
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
     private function httpRequest($method, $url, $body = null)
@@ -149,5 +170,4 @@ class Nas {
         $r = ($ret->body === null) ? array() : $ret->json();
         return array($r, null);
     }
-
 }

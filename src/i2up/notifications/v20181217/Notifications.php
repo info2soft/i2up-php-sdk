@@ -1,128 +1,133 @@
 <?php
 
-namespace i2up\nas\v20181217;
+namespace i2up\notifications;
 
 use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Nas {
+class Notifications {
     private $url;
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'nas/sync';
+        $this -> url = Config::baseUrl . 'notifications';
         $this -> token = $auth -> token();
     }
     /**
-     *  组 新建
+     * 消息 列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function createNAS(array $body = array())
+    public function listNotifications(array $body = array())
     {
         $url = $this -> url;
-        $res = $this -> httpRequest('post', $url, $body);
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     *  组 获取单个
-     * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * 消息 单个
+     *
+     * @param array $body
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function describeNAS(array $body = array())
+    public function describeNotifications(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
+        $url = $this -> url;
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     *  组 编辑
-     * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * 消息 数量
+     *
      * @return array
      */
-    public function modifyNAS(array $body = array())
+    public function describeNotificationsCount()
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
-        unset($body['uuid']);
+        $url = $this -> url . '/count';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 消息 操作  删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteNotifications(array $body = array())
+    {
+        $url = $this -> url . '/operate';
+        $body['operate'] = 'delete';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+    /**
+     * 消息 操作  标记已读
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function readNotifications(array $body = array())
+    {
+        $url = $this -> url . '/operate';
+        $body['operate'] = 'read';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 配置 获取
+     *
+     * @return array
+     */
+    public function describeNotificationsConfig()
+    {
+        $url = $this -> url . '/config';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 配置 更新
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function updateNotificationsConfig(array $body = array())
+    {
+        $url = $this -> url . '/config';
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 
     /**
-     *  获取 列表
+     * 邮件测试
      *
-     * @param array $body 参数详见 API 手册
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNAS(array $body = array())
+    public function testNotificationsEmail(array $body = array())
     {
-        $url = $this -> url;
+        $url = $this -> url . '/email_test';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     *  获取 状态
+     * 重置通知次数
      *
-     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNASStatus(array $body = array())
+    public function resetNotificationsTimes()
     {
-
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     *  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNAS(array $body = array())
-    {
-
-        $url = $this -> url;
-        $res = $this -> httpRequest('delete', $url, $body);
-        return $res;
-    }
-
-    /**
-     *  操作：启动
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function startNAS(array $body = array())
-    {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'start';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     *  操作：停止
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function stopNAS(array $body = array())
-    {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'stop';
-        $res = $this -> httpRequest('post', $url, $body);
+        $url = $this -> url . '/reset_notify_times';
+        $res = $this -> httpRequest('get', $url);
         return $res;
     }
     private function httpRequest($method, $url, $body = null)
@@ -149,5 +154,4 @@ class Nas {
         $r = ($ret->body === null) ? array() : $ret->json();
         return array($r, null);
     }
-
 }

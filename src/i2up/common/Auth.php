@@ -27,9 +27,9 @@ final class Auth
     }
     private function getToken()
     {
-        $headers = array('Content-Type' => 'application/json', 'Accept' => 'application/json');
+        $headers = array('Accept' => 'application/json');
         $url = $this -> baseUrl . 'token';
-        $body = json_encode(array('username' => $this -> username, 'pwd' => $this -> password));
+        $body = array('username' => $this -> username, 'pwd' => $this -> password);
 
         $ret = Client::post($url, $body, $headers);
         if (!$ret->ok()) {

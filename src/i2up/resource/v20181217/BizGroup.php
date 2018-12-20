@@ -1,26 +1,26 @@
 <?php
 
-namespace i2up\nas\v20181217;
+namespace i2up\resource\v20181217;
 
 use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Nas {
+class BizGroup {
     private $url;
     private $token;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = Config::baseUrl . 'nas/sync';
+        $this -> url = Config::baseUrl . 'biz_grp';
         $this -> token = $auth -> token();
     }
     /**
-     *  组 新建
+     * 1 添加
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function createNAS(array $body = array())
+    public function createBizGroup(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('post', $url, $body);
@@ -28,101 +28,103 @@ class Nas {
     }
 
     /**
-     *  组 获取单个
+     * 2 更新
+     *
      * @param array $body  参数详见 API 手册
      * $body['uuid'] String  必填 uuid
      * @return array
      */
-    public function describeNAS(array $body = array())
+    public function modifyBizGroup(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     *  组 编辑
-     * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
-     * @return array
-     */
-    public function modifyNAS(array $body = array())
-    {
-        if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
+        $url = $this -> url . '/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 
     /**
-     *  获取 列表
+     * 3 获取单个
      *
-     * @param array $body 参数详见 API 手册
+     * @param array $body  参数详见 API 手册
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
-    public function listNAS(array $body = array())
+    public function describeBizGroup(array $body = array())
     {
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url, $body);
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'];
+        $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     *  获取 状态
+     * 5 删除
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNASStatus(array $body = array())
+    public function deleteBizGroup(array $body = array())
     {
-
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     *  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNAS(array $body = array())
-    {
-
         $url = $this -> url;
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
 
     /**
-     *  操作：启动
+     * 4 获取列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function startNAS(array $body = array())
+    public function listBizGroup(array $body = array())
     {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'start';
-        $res = $this -> httpRequest('post', $url, $body);
+        $url = $this -> url;
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
+
     /**
-     *  操作：停止
+     * 1 更新绑定
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['uuid'] String  必填 uuid
+     * @return array
+     */
+    public function updateBizGroupBind(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'] . '/bind';
+        unset($body['uuid']);
+        $res = $this -> httpRequest('put', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 2 获取绑定情况
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['uuid'] String  必填 节点uuid
+     * @return array
+     */
+    public function listBizGroupBind(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'] . '/bind';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 1 获取 Res 列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function stopNAS(array $body = array())
+    public function listBizGroupResource(array $body = array())
     {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'stop';
-        $res = $this -> httpRequest('post', $url, $body);
+        $url = $this -> url . '/res';
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
     private function httpRequest($method, $url, $body = null)

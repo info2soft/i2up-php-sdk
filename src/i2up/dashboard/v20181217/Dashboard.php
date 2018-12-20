@@ -69,6 +69,36 @@ class Dashboard {
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
+    /**
+     *  获取规则列表
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['limit'] Number  可选，默认30
+     * $body['page'] Number  可选，默认1
+     * $body['type'] Number  0：default； 1：cluster； 2：block； 10：template
+     * @return array
+     */
+    public function repBackup(array $body = array())
+    {
+        $url = $this -> url . '/rep';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+    /**
+     *  获取节点列表
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['limit'] Number  可选，默认30
+     * $body['page'] Number 可选，默认1
+     * $body['type'] Number 可选，默认0
+     * @return array
+     */
+    public function node(array $body = array())
+    {
+        $url = $this -> url . '/node';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

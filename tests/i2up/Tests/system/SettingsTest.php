@@ -26,9 +26,9 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
         $user = $this -> user;
         $this->assertNotNull($user -> updateSetting());
     }
-    public function testUpdateCCip()
+    public function testDescribeCCip()
     {
         $hostIp = $this -> user;
-        $this->assertNotNull($hostIp -> updateCCip());
+        $this->assertNotNull($hostIp -> describeCCip());
     }
 }

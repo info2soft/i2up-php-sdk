@@ -9,7 +9,7 @@ use i2up\Http\Error;
 class Diagnose {
     private $url;
     private $token;
-    public function __constructor($auth)
+    public function __construct($auth)
     {
         $this -> url = Config::baseUrl . 'diagnose';
         $this -> token = $auth -> token();

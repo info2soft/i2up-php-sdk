@@ -1,26 +1,52 @@
 <?php
 
-namespace i2up\nas\v20181217;
+namespace i2up\resource\v20181217;
 
 use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Nas {
+class Cluster {
     private $url;
     private $token;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = Config::baseUrl . 'nas/sync';
+        $this -> url = Config::baseUrl . 'cls';
         $this -> token = $auth -> token();
     }
     /**
-     *  组 新建
+     * 1 集群认证
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function createNAS(array $body = array())
+    public function authCls(array $body = array())
+    {
+        $url = $this -> url . '/auth';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 2 集群节点验证
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function verifyClsNode(array $body = array())
+    {
+        $url = $this -> url . '/node_verify';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 1 新建集群
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createCls(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('post', $url, $body);
@@ -28,41 +54,43 @@ class Nas {
     }
 
     /**
-     *  组 获取单个
+     * 2 获取单个集群
+     *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function describeNAS(array $body = array())
+    public function describeCls(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
+        $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     *  组 编辑
+     * 3 修改集群
+     *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function modifyNAS(array $body = array())
+    public function modifyCls(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
+        $url = $this -> url . '/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 
     /**
-     *  获取 列表
+     * 1 获取集群列表（基本信息）
      *
-     * @param array $body 参数详见 API 手册
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNAS(array $body = array())
+    public function listCls(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('get', $url, $body);
@@ -70,58 +98,40 @@ class Nas {
     }
 
     /**
-     *  获取 状态
+     * 2 集群状态
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNASStatus(array $body = array())
+    public function listClsStatus(array $body = array())
     {
-
-        $url = $this -> url;
+        $url = $this -> url . '/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     *  删除
+     * 3 删除集群
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function deleteNAS(array $body = array())
+    public function deleteCls(array $body = array())
     {
-
         $url = $this -> url;
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
 
     /**
-     *  操作：启动
+     * 4 集群操作
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function startNAS(array $body = array())
+    public function clsDetail(array $body = array())
     {
-
         $url = $this -> url . '/operate';
-        $body['operate'] = 'start';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     *  操作：停止
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function stopNAS(array $body = array())
-    {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'stop';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }

@@ -1,26 +1,28 @@
 <?php
 
-namespace i2up\nas\v20181217;
+namespace i2up\tools\v20181217;
 
 use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Nas {
+class Compare {
     private $url;
+    private $logUrl;
     private $token;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = Config::baseUrl . 'nas/sync';
+        $this -> url = Config::baseUrl . 'compare';
+        $this -> logUrl = Config::baseUrl . 'logs';
         $this -> token = $auth -> token();
     }
     /**
-     *  组 新建
+     * 1 新建
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function createNAS(array $body = array())
+    public function createCompare(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('post', $url, $body);
@@ -28,41 +30,39 @@ class Nas {
     }
 
     /**
-     *  组 获取单个
+     * 2 获取单个(包括比较结果)
+     *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function describeNAS(array $body = array())
+    public function describeCompare(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
+        $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     *  组 编辑
-     * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * 2 获取比较结果详情
+     *
      * @return array
      */
-    public function modifyNAS(array $body = array())
+    public function describeCompareResults()
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/group';
-        unset($body['uuid']);
-        $res = $this -> httpRequest('put', $url, $body);
+        $url = $this -> logUrl;
+        $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     *  获取 列表
+     * 1 获取列表
      *
-     * @param array $body 参数详见 API 手册
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNAS(array $body = array())
+    public function listCompare(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('get', $url, $body);
@@ -70,59 +70,58 @@ class Nas {
     }
 
     /**
-     *  获取 状态
+     * 2 状态
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNASStatus(array $body = array())
+    public function listCompareStatus(array $body = array())
     {
-
-        $url = $this -> url;
+        $url = $this -> url . '/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     *  删除
+     * 4 操作  下载
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function deleteNAS(array $body = array())
+    public function downloadCompare(array $body = array())
     {
+        $url = $this -> url . '/operate';
+        $body['operate'] = 'download';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
 
+    /**
+     * 3 删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteCompare(array $body = array())
+    {
         $url = $this -> url;
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
 
     /**
-     *  操作：启动
+     * 1.1 获取结果列表（周期）
      *
      * @param array $body  参数详见 API 手册
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function startNAS(array $body = array())
+    public function listCircleCompareResult(array $body = array())
     {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'start';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     *  操作：停止
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function stopNAS(array $body = array())
-    {
-
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'stop';
-        $res = $this -> httpRequest('post', $url, $body);
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'] . '/result_list';
+        unset($body['uuid']);
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
     private function httpRequest($method, $url, $body = null)
@@ -149,5 +148,4 @@ class Nas {
         $r = ($ret->body === null) ? array() : $ret->json();
         return array($r, null);
     }
-
 }

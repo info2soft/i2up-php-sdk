@@ -8,10 +8,12 @@ use i2up\Http\Error;
 
 class Logs {
     private $logsUrl;
+    private $opLogs;
     private $token;
     public function __construct($auth)
     {
         $this -> logsUrl = Config::baseUrl . 'logs';
+        $this -> opLogs = Config::baseUrl . '/op_log';
         $this -> token = $auth -> token();
     }
     /**
@@ -28,7 +30,7 @@ class Logs {
     public function listTaskLog(array $body = array())
     {
         $url = $this -> logsUrl;
-        $log = $this -> get($url, $body);
+        $log = $this -> httpRequest(',get', $url, $body);
         return $log;
     }
 
@@ -47,7 +49,7 @@ class Logs {
     public function listHALog(array $body = array())
     {
         $url = $this -> logsUrl . '/ha';
-        $log = $this -> get($url, $body);
+        $log = $this -> httpRequest('get', $url, $body);
         return $log;
     }
 
@@ -65,7 +67,7 @@ class Logs {
     public function listNodeLog(array $body = array())
     {
         $url = $this -> logsUrl . '/node';
-        $log = $this -> get($url, $body);
+        $log = $this -> httpRequest('get', $url, $body);
         return $log;
     }
 
@@ -77,7 +79,7 @@ class Logs {
     public function listNpsvrLog()
     {
         $url =  $this -> logsUrl . '/npsvr';
-        return $this -> get($url);
+        return $this -> httpRequest('get', $url);
     }
 
     /**
@@ -90,21 +92,74 @@ class Logs {
     public function listTrafficLog(array $body = array())
     {
         $url = $this->logsUrl . '/traffic';
-        $log = $this -> get($url, $body);
+        $log = $this -> httpRequest('get', $url, $body);
         return $log;
     }
-    private function get($url, $body = null)
+    /**
+     * 操作日志 - 获取操作日志列表
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['page'] Number  可选，不传就是全部
+     * $body['end_time'] Number  unix时间戳 可选，不传就是全部
+     * $body['limit'] Number  可选，不传就是全部
+     * $body['start_time'] Number  unix时间戳 可选，不传就是全部
+     * @return array
+     */
+    public function listOpLog(array $body = array())
+    {
+        $url = $this -> opLogs;
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 操作日志 - 删除操作日志
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['end_time'] Number  unix时间戳，非必填
+     * $body['start_time'] Number  unix时间戳，非必填
+     * @return array
+     */
+    public function deleteOpLog(array $body = array())
+    {
+        $url = $this -> opLogs;
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 操作日志 - 日志下载
+     *
+     * @param array $body  参数详见 API 手册
+     * $body['end_time'] Number  unix时间戳，非必填
+     * $body['start_time'] Number  unix时间戳，非必填
+     * @return array
+     */
+    public function tempFuncName(array $body = array())
+    {
+
+        $url = $this -> opLogs . '/download';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+    private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {
             $header = array('Authorization' => $this -> token);
         } else {
             $header = array();
         }
-        $ret = Client::get($url, $body, $header);
+        $ret = null;
+        if ($method === 'get') {
+            $ret = Client::get($url, $body, $header);
+        } else if ($method === 'delete') {
+            $ret = Client::delete($url, $body, $header);
+        }
         if (!$ret->ok()) {
             return array(null, new Error($url, $ret));
         }
         $r = ($ret->body === null) ? array() : $ret->json();
         return array($r, null);
+
     }
 }
