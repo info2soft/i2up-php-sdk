@@ -404,15 +404,28 @@ class FspBackup {
         return $res;
     }
     /**
-     * 全服恢复 3 规则操作 - 结束整机手工备份
+     * 全服恢复 3 规则操作 - 迁移
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function finishFspRecovery(array $body = array())
+    public function moveFspRecovery(array $body = array())
     {
         $url = $this -> url . '/recovery/operate';
-        $body['operate'] = 'finish';
+        $body['operate'] = 'move';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+    /**
+     * 全服恢复 3 规则操作 - 重启
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function rebootFspRecovery(array $body = array())
+    {
+        $url = $this -> url . '/recovery/operate';
+        $body['operate'] = 'reboot';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
