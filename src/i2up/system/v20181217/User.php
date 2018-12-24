@@ -37,6 +37,8 @@ class User {
     {
         if (empty($body) || !isset($body['id'])) return $body;
         $url = $this -> userUrl . '/' . $body['id'];
+        $RSA = new RSA();
+        $body['password'] = $RSA -> encrypt_with_public_key($body['password']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -76,6 +78,9 @@ class User {
     public function modifyUserPwd(array $body = array())
     {
         $url = $this -> userUrl . '/password';
+        $RSA = new RSA();
+        $body['password'] = $RSA -> encrypt_with_public_key($body['password']);
+        $body['old_password'] = $RSA -> encrypt_with_public_key($body['old_password']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }

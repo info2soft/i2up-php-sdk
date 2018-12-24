@@ -39,12 +39,13 @@ class GeneralInterface {
 
     /**
      * 统计报表list
+     * @param array $body
      * @return array
      */
-    public function listStatistics()
+    public function listStatistics(array $body = array())
     {
         $url = $this -> url . '/statistics';
-        $res = $this -> httpRequest('get', $url);
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
