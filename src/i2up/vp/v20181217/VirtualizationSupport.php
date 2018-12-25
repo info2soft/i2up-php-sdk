@@ -319,7 +319,7 @@ class VirtualizationSupport {
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function tempFuncName(array $body = array())
+    public function listVpBackupGroup(array $body = array())
     {
 
         $url = $this -> url . '/backup/group';

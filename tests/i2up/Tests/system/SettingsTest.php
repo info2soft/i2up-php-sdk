@@ -79,10 +79,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListSysSetting()
     {
         $user = $this -> user;
-        $arr = array(
-            ''=>'',
-        );
-        $res = $user -> listSysSetting($arr);
+        $res = $user -> listSysSetting();
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -91,9 +88,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testDescribeCCip()
     {
         $user = $this -> user;
-        $arr = array(
-        );
-        $res = $user -> describeCCip($arr);
+        $res = $user -> describeCCip();
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

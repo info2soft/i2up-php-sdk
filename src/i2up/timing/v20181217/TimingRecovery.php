@@ -1,194 +1,182 @@
 <?php
 
-namespace i2up\resource\v20181217;
+namespace i2up\timing\v20181217;
 
 use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Node {
-    private $url;
+class TimingRecovery
+{
+    private $recoveryUrl;
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'node';
+        $this -> recoveryUrl = Config::baseUrl . 'timing/recovery';
         $this -> token = $auth -> token();
     }
+
     /**
-     * 获取节点容量
+     * 1 恢复 准备-2 恢复 获取还原时间点 - Mssql
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function checkCapacity(array $body = array())
+    public function listTimingRecoveryMssqlTime(array $body = array())
     {
-        $url = $this -> url . '/check_capacity';
+        $url = $this -> recoveryUrl . '/rc_mssql_time';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 获取节点卷组列表
+     * 1 恢复 准备-3 恢复 获取Mssql初始信息
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listVg(array $body = array())
+    public function describeTimingRecoveryMssqlInitInfo(array $body = array())
     {
-        $url = $this -> url . '/vg';
+        $url = $this -> recoveryUrl . '/rc_mssql_init_info';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 节点认证
+     * 1 恢复 准备-1 恢复 获取还原时间点 - 文件
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function authNode(array $body = array())
+    public function listTimingRecoveryPathList(array $body = array())
     {
-        $url = $this -> url . '/auth';
+        $url = $this -> recoveryUrl . '/rc_path_list';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 1 恢复 准备-4 恢复 认证MsSql数据库
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function verifyTimingRecoveryMssqlInfo(array $body = array())
+    {
+
+        $url = $this -> recoveryUrl . '/rc_verify_mssql_info';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
 
     /**
-     * 检查节点在线
+     * 2 恢复 新建/编辑-1 恢复 新建
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function checkNodeOnline(array $body = array())
+    public function createTimingRecovery(array $body = array())
     {
-
-        $url = $this -> url . '/hello';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 新建节点
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function createNode(array $body = array())
-    {
-        $url = $this -> url;
+        $url = $this -> recoveryUrl;
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
 
     /**
-     * 修改节点
+     * 2 恢复 新建/编辑-3 恢复 修改
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
+     * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function modifyNode(array $body = array())
+    public function modifyTimingRecovery(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'];
+        $url = $this -> recoveryUrl . '/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 
     /**
-     * 获取单个节点
+     * 2 恢复 新建/编辑-2 恢复 获取单个
      *
      * @param array $body  参数详见 API 手册
      * $body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function describeNode(array $body = array())
+    public function describeTimingRecovery(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'];
+        $url = $this -> recoveryUrl . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     * 新建节点 - 批量
+     * 3 恢复 列表-1 恢复 获取列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function createBatchNode(array $body = array())
+    public function listTimingRecovery(array $body = array())
     {
-        $url = $this -> url . '/batch';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 获取节点存储信息
-     *
-     * @param array $body  参数详见 API 手册
-     * @body['uuid'] String  必填 节点uuid
-     * @return array
-     */
-    public function describeDeviceInfo(array $body = array())
-    {
-        if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'] . '/device_info';
-        unset($body['uuid']);
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 获取节点列表
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function listNode(array $body = array())
-    {
-        $url = $this -> url;
+        $url = $this -> recoveryUrl;
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 节点操作
+     * 3 恢复 列表-2 恢复 状态
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function upgradeNode(array $body = array())
+    public function listTimingRecoveryStatus(array $body = array())
     {
-        $url = $this -> url . '/operate';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 节点状态
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function listNodeStatus(array $body = array())
-    {
-        $url = $this -> url . '/status';
+        $url = $this -> recoveryUrl . '/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 删除节点
+     * 3 恢复 列表-3 恢复 删除
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function deleteNode(array $body = array())
+    public function deleteTimingRecovery(array $body = array())
     {
-        $url = $this -> url;
+        $url = $this -> recoveryUrl;
         $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 3 恢复 列表-4 恢复 启动
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function startTimingRecovery(array $body = array())
+    {
+        $url = $this -> recoveryUrl . '/operate';
+        $body['operate'] = 'start';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 3 恢复 列表-4 恢复 停止
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function stopTimingRecovery(array $body = array())
+    {
+        $url = $this -> recoveryUrl . '/operate';
+        $body['operate'] = 'stop';
+        $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
     private function httpRequest($method, $url, $body = null)

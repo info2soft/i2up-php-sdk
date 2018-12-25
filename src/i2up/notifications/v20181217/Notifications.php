@@ -1,6 +1,6 @@
 <?php
 
-namespace i2up\notifications;
+namespace i2up\notifications\v20181217;
 
 use i2up\Config;
 use i2up\Http\Client;

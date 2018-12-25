@@ -9,7 +9,7 @@ use i2up\Http\Error;
 class BizGroup {
     private $url;
     private $token;
-    public function __constructor($auth)
+    public function __construct($auth)
     {
         $this -> url = Config::baseUrl . 'biz_grp';
         $this -> token = $auth -> token();

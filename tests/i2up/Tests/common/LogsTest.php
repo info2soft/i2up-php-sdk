@@ -89,4 +89,45 @@ class LogsTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testListOpLog()
+    {
+        $logs = $this -> logs;
+        $arr = array(
+            'page'=>1,
+            'end_time'=>1508833953,
+            'limit'=>10,
+            'start_time'=>1508833766,
+        );
+        $res = $logs -> listOpLog($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDeleteOpLog()
+    {
+        $logs = $this -> logs;
+        $arr = array(
+            'start_time'=>1508833766,
+            'end_time'=>1508833953,
+        );
+        $res = $logs -> deleteOpLog($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDownloadOpLog()
+    {
+        $logs = $this -> logs;
+        $arr = array(
+            'end_time'=>1508833766,
+            'start_time'=>1508833953,
+        );
+        $res = $logs -> downloadOpLog($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

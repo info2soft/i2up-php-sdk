@@ -19,6 +19,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     {
         $monitor = $this -> monitor;
         $arr = array(
+            'uuid' => ''
         );
         $res = $monitor -> listDriversInfo($arr);
         $this->assertNotNull($res[0]);
@@ -30,6 +31,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     {
         $monitor = $this -> monitor;
         $arr = array(
+            'uuid' => ''
         );
         $res = $monitor -> listPhyInfo($arr);
         $this->assertNotNull($res[0]);
@@ -41,6 +43,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     {
         $monitor = $this -> monitor;
         $arr = array(
+            'uuid' => ''
         );
         $res = $monitor -> listChartConfig($arr);
         $this->assertNotNull($res[0]);
@@ -52,12 +55,13 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     {
         $monitor = $this -> monitor;
         $arr = array(
+            'uuid' => '',
             'storage_io'=>1,
             'nic_io'=>0,
             'per_core'=>1,
             'per_disk'=>0,
             'net_in'=>0,
-            'net_out'=>0,
+            'net_out'=>0
         );
         $res = $monitor -> setChartConfig($arr);
         $this->assertNotNull($res[0]);
@@ -69,6 +73,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     {
         $monitor = $this -> monitor;
         $arr = array(
+            'uuid' => '',
             'start_time'=>154172680,
             'last_time'=>154172980,
         );

@@ -11,7 +11,7 @@ namespace i2up;
 
 final class Config
 {
-    const baseUrl = 'http://192.168.88.70:58080/api/';
+    const baseUrl = 'http://192.168.72.70:58080/api/';
     public function __construct()
     {
     }

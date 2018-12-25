@@ -17,9 +17,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     public function testDescribePhoneCode()
     {
         $auth = $this -> auth;
-        $arr = array(
-        );
-        $res = $auth -> describePhoneCode($arr);
+        $res = $auth -> describePhoneCode();
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -28,9 +26,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     public function testRegAccount()
     {
         $auth = $this -> auth;
-        $arr = array(
-        );
-        $res = $auth -> regAccount($arr);
+        $res = $auth -> regAccount();
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -39,22 +35,15 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     public function testToken()
     {
         $auth = $this -> auth;
-        $arr = array(
-            'pwd'=>'Info1234',
-            'username'=>'admin',
-        );
-        $res = $auth -> token($arr);
-        $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
+        $res = $auth -> token();
+        $this->assertNotNull($res);
+        $this->assertEquals(true, is_string($res));
     }
 
     public function testResetPwd()
     {
         $auth = $this -> auth;
-        $arr = array(
-        );
-        $res = $auth -> resetPwd($arr);
+        $res = $auth -> resetPwd();
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

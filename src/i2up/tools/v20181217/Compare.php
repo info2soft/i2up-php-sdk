@@ -10,7 +10,7 @@ class Compare {
     private $url;
     private $logUrl;
     private $token;
-    public function __constructor($auth)
+    public function __construct($auth)
     {
         $this -> url = Config::baseUrl . 'compare';
         $this -> logUrl = Config::baseUrl . 'logs';

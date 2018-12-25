@@ -96,7 +96,7 @@ class Lic {
      * 2 更新 lic
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function updateLic(array $body = array())
@@ -125,7 +125,7 @@ class Lic {
      * 5 获取单个 lic
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeLic(array $body = array())

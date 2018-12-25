@@ -9,7 +9,7 @@ use i2up\Http\Error;
 class Cluster {
     private $url;
     private $token;
-    public function __constructor($auth)
+    public function __construct($auth)
     {
         $this -> url = Config::baseUrl . 'cls';
         $this -> token = $auth -> token();

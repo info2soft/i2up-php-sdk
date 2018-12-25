@@ -53,6 +53,9 @@ final class Auth
      */
     public function describePhoneCode()
     {
+        $url = $this -> baseUrl . 'getPhoneCode';
+        $res = $this -> httpRequest('post', $url);
+        return $res;
     }
 
     /**
@@ -60,6 +63,9 @@ final class Auth
      */
     public function regAccount()
     {
+        $url = $this -> baseUrl . 'register';
+        $res = $this -> httpRequest('post', $url);
+        return $res;
     }
 
     /**
@@ -67,13 +73,46 @@ final class Auth
      */
     public function resetPwd()
     {
-
+        $url = $this -> baseUrl . 'reset/password';
+        $res = $this -> httpRequest('post', $url);
+        return $res;
     }
 
     /**
      * check用户登录状态
+     * @param array $body
+     * $body['access_token'] String  POST auth/token 返回的sso_token
+     * @return array
      */
-    public function checkLoginStatus()
+    public function checkLoginStatus(array $body = array())
     {
+        $url = $this -> baseUrl . 'token';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    private function httpRequest($method, $url, $body = null)
+    {
+        if (isset($this -> token)) {
+            $header = array('Authorization' => $this -> token);
+        } else {
+            $header = array();
+        }
+        $ret = null;
+        if ($method === 'get') {
+            $ret = Client::get($url, $body, $header);
+        } else if ($method === 'put') {
+            $ret = Client::put($url, $body, $header);
+        } else if ($method === 'post') {
+            $ret = Client::post($url, $body, $header);
+        } else if ($method === 'delete') {
+            $ret = Client::delete($url, $body, $header);
+        }
+
+        if (!$ret->ok()) {
+            return array(null, new Error($url, $ret));
+        }
+        $r = ($ret->body === null) ? array() : $ret->json();
+        return array($r, null);
     }
 }

@@ -30,7 +30,7 @@ class GeneralInterface {
      * 初始化（升级）DB-migrate
      * @return array
      */
-    public function updateDB()
+    public function updateDatabase()
     {
         $url = $this -> url . '/migrate';
         $res = $this -> httpRequest('get', $url);

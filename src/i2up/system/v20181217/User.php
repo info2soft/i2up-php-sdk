@@ -48,7 +48,7 @@ class User {
      * @param array $body
      * @return array
      */
-    public function createAccount(array $body = array())
+    public function createUser(array $body = array())
     {
         if (empty($body) || !isset($body['password'])) return $body;
         $RSA = new RSA();

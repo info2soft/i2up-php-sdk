@@ -35,10 +35,35 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
             'ha_uuid'=>array(),
-            'node_uuid'=>'',
-            'type'=>'',
+            'node_uuid'=>''
         );
         $res = $appHighAvailability -> startHA($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testStopHA()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'ha_uuid'=>array(),
+            'node_uuid'=>''
+        );
+        $res = $appHighAvailability -> stopHA($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testForceSwitchHA()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'ha_uuid'=>array(),
+            'node_uuid'=>''
+        );
+        $res = $appHighAvailability -> forceSwitchHA($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -48,7 +73,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
+            'ha_uuid'=>array()
         );
         $res = $appHighAvailability -> deleteHA($arr);
         $this->assertNotNull($res[0]);
@@ -60,7 +85,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
+            'ha_uuid'=>array()
         );
         $res = $appHighAvailability -> listHAStatus($arr);
         $this->assertNotNull($res[0]);
@@ -201,6 +226,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
+            'uuid' => ''
         );
         $res = $appHighAvailability -> describeHA($arr);
         $this->assertNotNull($res[0]);

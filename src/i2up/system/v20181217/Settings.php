@@ -17,12 +17,13 @@ class Settings {
 
     /**
      * 更新配置
+     * @param array $body
      * @return array
      */
-    public function updateSetting()
+    public function updateSetting(array $body = array())
     {
         $url = $this -> sysSettingUrl . '/settings';
-        $config = $this -> httpRequest('get', $url);
+        $config = $this -> httpRequest('post', $url, $body);
         return $config;
     }
 

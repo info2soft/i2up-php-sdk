@@ -38,12 +38,10 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
         $generalInterface = $this -> generalInterface;
         $arr = array(
             'page'=>1,
-            'end'=>1,
-            'name'=>'',
+            'end'=>1545645192,
             'limit'=>10,
-            'start'=>1,
-            'status'=>'',
-            'type'=>'',
+            'start'=>1545645100,
+            'type'=>'1',
             'result'=>1,
             'group_uuid'=>'',
             'uuid'=>'',
@@ -58,6 +56,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         $generalInterface = $this -> generalInterface;
         $arr = array(
+            'id' => ''
         );
         $res = $generalInterface -> describeStatistics($arr);
         $this->assertNotNull($res[0]);

@@ -30,7 +30,7 @@ class Logs {
     public function listTaskLog(array $body = array())
     {
         $url = $this -> logsUrl;
-        $log = $this -> httpRequest(',get', $url, $body);
+        $log = $this -> httpRequest('get', $url, $body);
         return $log;
     }
 
@@ -135,9 +135,8 @@ class Logs {
      * $body['start_time'] Number  unix时间戳，非必填
      * @return array
      */
-    public function tempFuncName(array $body = array())
+    public function downloadOpLog(array $body = array())
     {
-
         $url = $this -> opLogs . '/download';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;

@@ -33,7 +33,7 @@ class Nas {
      * $body['uuid'] String  必填 uuid
      * @return array
      */
-    public function describeNAS(array $body = array())
+    public function describeNASGroup(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/group';

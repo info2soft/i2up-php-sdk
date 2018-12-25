@@ -34,4 +34,59 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+    public function testDescribeVpRuleRate()
+    {
+        $dashboard = $this -> dashboard;
+        $arr = array(
+            'uuid'=>'',
+            'wk_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'mode'=>'month',
+            'type'=>'I2VP_BK',
+            'group_uuid'=>'',
+        );
+        $res = $dashboard -> describeVpRuleRate($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDescribeVmProtectRate()
+    {
+        $dashboard = $this -> dashboard;
+        $arr = array(
+            'vp_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+        );
+        $res = $dashboard -> describeVmProtectRate($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testNode()
+    {
+        $dashboard = $this -> dashboard;
+        $arr = array(
+            'limit'=>30,
+            'page'=>1,
+            'type'=>0,
+        );
+        $res = $dashboard -> node($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testRepBackup()
+    {
+        $dashboard = $this -> dashboard;
+        $arr = array(
+            'limit'=>30,
+            'type'=>0,
+            'page'=>1,
+        );
+        $res = $dashboard -> repBackup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

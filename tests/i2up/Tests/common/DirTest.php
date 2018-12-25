@@ -37,7 +37,7 @@ class DirTest extends \PHPUnit_Framework_TestCase
         $dir = $this -> dir;
         $arr = array(
             'node_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-            'path'=>'E:\test2\'',
+            'path'=>'E:\test2\\',
         );
         $res = $dir -> createDir($arr);
         $this->assertNotNull($res[0]);
@@ -50,7 +50,7 @@ class DirTest extends \PHPUnit_Framework_TestCase
         $dir = $this -> dir;
         $arr = array(
             'node_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-            'path'=>'E:\test2\'',
+            'path'=>'E:\test2\\',
         );
         $res = $dir -> checkDir($arr);
         $this->assertNotNull($res[0]);
