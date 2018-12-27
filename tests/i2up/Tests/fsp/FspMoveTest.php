@@ -3,6 +3,7 @@ namespace i2up\Test\fsp;
 
 use i2up\fsp\v20181217\FspMove;
 use i2up\common\Auth;
+use i2up\Config;
 
 class FspMoveTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> fspMove = new FspMove($auth);
     }
 

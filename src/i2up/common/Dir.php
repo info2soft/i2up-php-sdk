@@ -4,14 +4,13 @@ namespace i2up\common;
 
 use i2up\Http\Client;
 use i2up\Http\Error;
-use i2up\Config;
 
 class Dir {
     private $dirUrl;
     private $token;
     public function __construct($auth)
     {
-        $this -> dirUrl = Config::baseUrl . 'dir';
+        $this -> dirUrl = $auth -> ip . 'dir';
         $this -> token = $auth -> token();
     }
     /**

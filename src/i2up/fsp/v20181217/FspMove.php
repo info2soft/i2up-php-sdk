@@ -2,7 +2,6 @@
 
 namespace i2up\fsp\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class FspMove {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'fsp/move';
+        $this -> url = $auth -> ip . 'fsp/move';
         $this -> token = $auth -> token();
     }
     /**

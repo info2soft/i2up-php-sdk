@@ -3,6 +3,7 @@ namespace i2up\Test\rep;
 
 use i2up\rep\v20181217\RepRecovery;
 use i2up\common\Auth;
+use i2up\Config;
 
 class RepRecoveryTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> repRecovery = new RepRecovery($auth);
     }
 

@@ -2,16 +2,16 @@
 
 namespace i2up\resource\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
+use i2up\util\RSA;
 
 class Cluster {
     private $url;
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'cls';
+        $this -> url = $auth -> ip . 'cls';
         $this -> token = $auth -> token();
     }
     /**
@@ -22,6 +22,10 @@ class Cluster {
      */
     public function authCls(array $body = array())
     {
+        if (isset($body['os_pwd'])) {
+            $RSA = new RSA();
+            $body['os_pwd'] = $RSA -> encrypt_with_public_key($body['os_pwd']);
+        }
         $url = $this -> url . '/auth';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
@@ -57,7 +61,7 @@ class Cluster {
      * 2 获取单个集群
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeCls(array $body = array())
@@ -72,7 +76,7 @@ class Cluster {
      * 3 修改集群
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function modifyCls(array $body = array())

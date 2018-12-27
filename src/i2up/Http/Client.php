@@ -15,10 +15,10 @@ final class Client
                 foreach ($body as $key => $value){
                     if (is_array($value)) {
                         foreach ($value as $k => $v) {
-                            $bodyStr .= $key . '[]=' . $v . '&';
+                            $bodyStr .= urlencode($key) . '[]=' . urlencode($v) . '&';
                         }
                     } else {
-                        $bodyStr .= $key . '=' . $value . '&';
+                        $bodyStr .= urlencode($key) . '=' . urlencode($value) . '&';
                     }
                 }
                 $body = $bodyStr;
@@ -97,6 +97,7 @@ final class Client
         } else if ($request->method === 'GET') {
             if (!empty($request->body)) {
                 $options[CURLOPT_URL] = $request->url . '?' . $request->body . '_=' . lcg_value();
+                var_dump($options[CURLOPT_URL]);
             }
         }
         curl_setopt_array($ch, $options);

@@ -2,7 +2,6 @@
 
 namespace i2up\ha\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class AppHighAvailability {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . '/ha';
+        $this -> url = $auth -> ip . 'ha';
         $this -> token = $auth -> token();
     }
 

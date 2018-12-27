@@ -3,6 +3,7 @@ namespace i2up\Test\resource;
 
 use i2up\resource\v20181217\BizGroup;
 use i2up\common\Auth;
+use i2up\Config;
 
 class BizGroupTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> bizGroup = new BizGroup($auth);
     }
 

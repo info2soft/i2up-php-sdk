@@ -3,6 +3,7 @@ namespace i2up\Test\tools;
 
 use i2up\tools\v20181217\Diagnose;
 use i2up\common\Auth;
+use i2up\Config;
 
 class DiagnoseTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> diagnose = new Diagnose($auth);
     }
 
@@ -21,11 +22,12 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'task_uuid'=>'',
             'check_type'=>1,
-            'wk_uuid'=>'',
-            'bk_uuid'=>'',
+            'wk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+            'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
             'rep_uuid'=>'',
         );
         $res = $diagnose -> createDiagnose($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -36,7 +38,7 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
         $diagnose = $this -> diagnose;
         $arr = array(
             'check_uuids'=>array(
-                '0'=>'fCC05A14-5DD4-BFED-79B4-aA8CFAdAE372'
+                '0'=>'68AC211A-5158-F17C-E08C-98C95F02AC60'
             )
         );
         $res = $diagnose -> deleteDiagnose($arr);
@@ -63,10 +65,11 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
         $diagnose = $this -> diagnose;
         $arr = array(
             'check_uuids'=>array(
-                '0'=>'9bfCa36e-3A9E-8A3A-CBC7-ebc14AafB4C3'
+                '0'=>'68AC211A-5158-F17C-E08C-98C95F02AC60'
             )
         );
         $res = $diagnose -> downloadDiagnoseResult($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

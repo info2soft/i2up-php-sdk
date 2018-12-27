@@ -2,7 +2,6 @@
 
 namespace i2up\tools\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class Diagnose {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'diagnose';
+        $this -> url = $auth -> ip . 'diagnose';
         $this -> token = $auth -> token();
     }
     /**

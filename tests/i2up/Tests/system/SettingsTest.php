@@ -4,6 +4,7 @@ namespace i2up\Tests\system;
 
 use i2up\system\v20181217\Settings;
 use i2up\common\Auth;
+use i2up\Config;
 
 class SettingsTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin','Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin','Info1234', __DIR__ . '/../');
         $this -> user = new Settings($auth);
     }
 
@@ -44,19 +45,24 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
             'sms_topic_urn'=>'',
             'notify_contact_biz'=>array(
                 'phone'=>'11111111111',
-                'email'=>'test@info2sost.com',),
+                'email'=>'test@info2sost.com'
+            ),
             'notify_contact_chk'=>array(
                 'phone'=>'11111111111',
                 'email'=>'test@info2sost.com',
                 'policy'=>array(
                     'every'=>'1',
-                    'days'=>'5',),),
+                    'days'=>'5'
+                )
+            ),
             'notify_contact_status'=>array(
                 'phone'=>'11111111111',
                 'email'=>'test@info2sost.com',
                 'policy'=>array(
                     'every'=>'3',
-                    'gap'=>'4',),),
+                    'gap'=>'4'
+                )
+            ),
             'node_latest_ver'=>'',
             'node_upgrade_server'=>'',
             'node_upgrade_path'=>'',

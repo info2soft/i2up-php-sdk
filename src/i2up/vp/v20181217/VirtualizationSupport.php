@@ -184,7 +184,7 @@ class VirtualizationSupport {
     /**
      *  查询 数据中心列表（MOVE/REP）
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function listDatacenter(array $body = array())
@@ -198,7 +198,7 @@ class VirtualizationSupport {
     /**
      *  查询 数据中心主机列表 （MOVE/REP）2
      *
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @param array $body  参数详见 API 手册
      * @return array
      */
@@ -214,7 +214,7 @@ class VirtualizationSupport {
     /**
      *  查询 存储列表 （MOVE/REP）3
      *
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @param array $body  参数详见 API 手册
      * @return array
      */
@@ -230,7 +230,7 @@ class VirtualizationSupport {
     /**
      *  查询 存储信息 （MOVE/REP）4
      *
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @param array $body  参数详见 API 手册
      * @return array
      */
@@ -260,7 +260,7 @@ class VirtualizationSupport {
      *  修改（仅模板）
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function modifyVpBackup(array $body = array())
@@ -275,7 +275,7 @@ class VirtualizationSupport {
     /**
      *  获取单个
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeVpBackup(array $body = array())
@@ -289,7 +289,7 @@ class VirtualizationSupport {
     /**
      *  获取单个（组）
      * @param $body array
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeVpBackupGroup(array $body = array())
@@ -395,13 +395,13 @@ class VirtualizationSupport {
      * 虚机恢复（vp_recovery）-  获取单个（组）
      *
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeVpRecoveryGroup(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/recovery' . $body['uuid'] . '/group';
+        $url = $this -> url . '/recovery/' . $body['uuid'] . '/group';
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -443,7 +443,7 @@ class VirtualizationSupport {
     public function startVpRecovery(array $body = array())
     {
         $url = $this -> url . '/recovery/operate';
-        $body['start'] = 'start';
+        $body['operate'] = 'start';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -456,14 +456,20 @@ class VirtualizationSupport {
     public function stopVpRecovery(array $body = array())
     {
         $url = $this -> url . '/recovery/operate';
-        $body['start'] = 'stop';
+        $body['operate'] = 'stop';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
+
+    /**
+     * 虚机恢复（vp_recovery）-  操作 清除已完成
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
     public function clearFinishVpRecovery(array $body = array())
     {
         $url = $this -> url . '/recovery/operate';
-        $body['start'] = 'clear_finish';
+        $body['operate'] = 'clear_finish';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -489,7 +495,6 @@ class VirtualizationSupport {
      */
     public function createVpMove(array $body = array())
     {
-
         $url = $this -> url . '/move';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
@@ -512,7 +517,7 @@ class VirtualizationSupport {
      * 虚机迁移（vp_move）-  获取单个
      *
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeVpMove(array $body = array())
@@ -526,7 +531,7 @@ class VirtualizationSupport {
      * 虚机复制（vp_rep）-  获取单个
      *
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeVpRep(array $body = array())
@@ -742,7 +747,7 @@ class VirtualizationSupport {
      * 虚机复制（vp_rep）- 获取快照列表信息
      *
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function listVpRepPointList(array $body = array())
@@ -761,6 +766,7 @@ class VirtualizationSupport {
             $header = array();
         }
         $ret = null;
+        var_dump($url);
         if ($method === 'get') {
             $ret = Client::get($url, $body, $header);
         } else if ($method === 'put') {

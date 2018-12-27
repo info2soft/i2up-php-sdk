@@ -2,7 +2,6 @@
 
 namespace i2up\timing\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -12,7 +11,7 @@ class TimingRecovery
     private $token;
     public function __construct($auth)
     {
-        $this -> recoveryUrl = Config::baseUrl . 'timing/recovery';
+        $this -> recoveryUrl = $auth -> ip . 'timing/recovery';
         $this -> token = $auth -> token();
     }
 
@@ -86,7 +85,7 @@ class TimingRecovery
      * 2 恢复 新建/编辑-3 恢复 修改
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function modifyTimingRecovery(array $body = array())
@@ -102,7 +101,7 @@ class TimingRecovery
      * 2 恢复 新建/编辑-2 恢复 获取单个
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeTimingRecovery(array $body = array())

@@ -4,14 +4,13 @@ namespace i2up\common;
 
 use i2up\Http\Client;
 use i2up\Http\Error;
-use i2up\Config;
 
 class GeneralInterface {
     private $url;
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config:: baseUrl;
+        $this -> url = $auth -> ip;
         $this -> token = $auth -> token();
     }
 
@@ -21,7 +20,7 @@ class GeneralInterface {
      */
     public function describeVersion()
     {
-        $url = $this -> url . '/version';
+        $url = $this -> url . 'version';
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -32,7 +31,7 @@ class GeneralInterface {
      */
     public function updateDatabase()
     {
-        $url = $this -> url . '/migrate';
+        $url = $this -> url . 'migrate';
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -44,7 +43,7 @@ class GeneralInterface {
      */
     public function listStatistics(array $body = array())
     {
-        $url = $this -> url . '/statistics';
+        $url = $this -> url . 'statistics';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -58,7 +57,7 @@ class GeneralInterface {
     public function describeStatistics(array $body = array())
     {
         if (empty($body) || !isset($body['id'])) return $body;
-        $url = $this -> url . '/statistics/' . $body['id'];
+        $url = $this -> url . 'statistics/' . $body['id'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -70,7 +69,7 @@ class GeneralInterface {
      */
     public function readStatistics(array $body = array())
     {
-        $url = $this -> url . '/statistics';
+        $url = $this -> url . 'statistics';
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

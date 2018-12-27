@@ -2,16 +2,15 @@
 
 namespace i2up\system\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
 class Lic {
     private $url;
     private $token;
-    public function __constructor($auth)
+    public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'lic';
+        $this -> url = $auth -> ip . 'lic';
         $this -> token = $auth -> token();
     }
     /**
@@ -31,7 +30,7 @@ class Lic {
      * 2 下载lic绑定信息、mac变更记录
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function downloadLicInfo(array $body = array())

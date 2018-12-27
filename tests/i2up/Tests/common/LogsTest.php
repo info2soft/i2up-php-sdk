@@ -3,6 +3,7 @@ namespace i2up\Test\common;
 
 use i2up\common\Logs;
 use i2up\common\Auth;
+use i2up\Config;
                 
 class LogsTest extends \PHPUnit_Framework_TestCase
  {
@@ -11,7 +12,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> logs = new Logs($auth);
     }
 
@@ -27,6 +28,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'limit'=>10,
         );
         $res = $logs -> listTaskLog($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -36,7 +38,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
     {
         $logs = $this -> logs;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'F1E9FEAE-F249-FF9E-4A90-866DCBD5DB1E',
             'end'=>1,
             'level'=>1,
             'start'=>1,
@@ -46,6 +48,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
         );
         $res = $logs -> listHALog($arr);
         $this->assertNotNull($res[0]);
+        var_dump($res);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
@@ -62,6 +65,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'end'=>1,
         );
         $res = $logs -> listNodeLog($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

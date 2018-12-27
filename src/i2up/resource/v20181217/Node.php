@@ -2,16 +2,16 @@
 
 namespace i2up\resource\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
+use i2up\util\RSA;
 
 class Node {
     private $url;
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'node';
+        $this -> url = $auth -> ip . 'node';
         $this -> token = $auth -> token();
     }
     /**
@@ -48,6 +48,10 @@ class Node {
      */
     public function authNode(array $body = array())
     {
+        if (isset($body['os_pwd'])) {
+            $RSA = new RSA();
+            $body['os_pwd'] = $RSA ->encrypt_with_public_key($body['os_pwd']);
+        }
         $url = $this -> url . '/auth';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
@@ -92,6 +96,10 @@ class Node {
         if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
         unset($body['uuid']);
+        if (isset($body['os_pwd'])) {
+            $RSA = new RSA();
+            $body['os_pwd'] = $RSA ->encrypt_with_public_key($body['os_pwd']);
+        }
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -100,7 +108,7 @@ class Node {
      * 获取单个节点
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeNode(array $body = array())
@@ -119,6 +127,10 @@ class Node {
      */
     public function createBatchNode(array $body = array())
     {
+        if (isset($body['os_pwd'])) {
+            $RSA = new RSA();
+            $body['os_pwd'] = $RSA ->encrypt_with_public_key($body['os_pwd']);
+        }
         $url = $this -> url . '/batch';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
@@ -128,7 +140,7 @@ class Node {
      * 获取节点存储信息
      *
      * @param array $body  参数详见 API 手册
-     * @body['uuid'] String  必填 节点uuid
+     * @body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeDeviceInfo(array $body = array())

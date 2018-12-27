@@ -2,7 +2,6 @@
 
 namespace i2up\system\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 use i2up\util\RSA;
@@ -12,7 +11,7 @@ class User {
     private $token;
     public function __construct($auth)
     {
-        $this -> userUrl = Config::baseUrl . 'user';
+        $this -> userUrl = $auth -> ip . 'user';
         $this -> token = $auth -> token();
     }
 
@@ -121,7 +120,7 @@ class User {
      */
     public function describeUser(array $body = array())
     {
-        if (isEmpty($body) || !isset($body['id'])) return $body;
+        if (empty($body) || !isset($body['id'])) return $body;
         $url = $this -> userUrl . '/' . $body['id'];
         $res = $this -> httpRequest('get', $url);
         return $res;

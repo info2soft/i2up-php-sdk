@@ -3,6 +3,7 @@ namespace i2up\Test\common;
 
 use i2up\common\Qr;
 use i2up\common\Auth;
+use i2up\Config;
                 
 class QrTest extends \PHPUnit_Framework_TestCase
  {
@@ -11,7 +12,7 @@ class QrTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> qr = new Qr($auth);
     }
 

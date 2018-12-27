@@ -2,7 +2,6 @@
 
 namespace i2up\notifications\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class Notifications {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'notifications';
+        $this -> url = $auth -> ip . 'notifications';
         $this -> token = $auth -> token();
     }
     /**
@@ -31,7 +30,7 @@ class Notifications {
      * 消息 单个
      *
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeNotifications(array $body = array())

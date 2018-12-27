@@ -3,6 +3,7 @@ namespace i2up\Test\nas;
 
 use i2up\nas\v20181217\NAS;
 use i2up\common\Auth;
+use i2up\Config;
 
 class NASTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,45 +12,36 @@ class NASTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> NAS = new NAS($auth);
     }
 
     public function testCreateNAS()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
             'compress'=>'',
             'secret_key'=>'',
-            'wk_path'=>array(
+            'wk_list'=>array(
                 '0'=>array(
-                    'uuid'=>'',
-                    'path'=>''
+                    'wk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+                    'wk_path'=>'E:\nas\\'
                 )
             ),
-            'nas_type'=>'',
+            'nas_type'=>0,
             'sync_path'=>'',
-            'encrypt_switch'=>'',
+            'encrypt_switch'=>'0',
             'band_width'=>'',
-            'bk_uuid'=>'',
-            'bk_path'=>'',
+            'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+            'bk_path'=>'E:\nas\\',
             'sync_uuid'=>'',
-            'nas_name'=>'',
-            'cmp_schedule'=>array(
-                '0'=>array(
-                    'sched_every'=>1,
-                    'sched_time'=>array(
-                        '0'=>'09:15'
-                    ),
-                    'sched_day'=>array(
-                        '0'=>26
-                    )
-                )
-            ),
-            'cmp_file_check'=>1,
-            'cmp_switch'=>1,
+            'nas_name'=>'test',
+            'cmp_schedule'=>array(),
+            'cmp_file_check'=>0,
+            'cmp_switch'=>0,
         );
-        $res = $nAS -> createNAS($arr);
+        $res = $NAS -> createNAS($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -57,11 +49,12 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testDescribeNASGroup()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
-            'uuid' => ''
+            'uuid' => 'CA9CD377-5680-C080-69E5-F13A16CB20DB'
         );
-        $res = $nAS -> describeNASGroup($arr);
+        $res = $NAS -> describeNASGroup($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -69,12 +62,32 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testModifyNAS()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
-            'uuid'=>'',
-            'random_str'=>'',
+            'uuid'=>'CA9CD377-5680-C080-69E5-F13A16CB20DB',
+            'random_str'=>'5747E468-A86C-CE3F-5EA3-B2132055624D',
+            'compress'=>'',
+            'secret_key'=>'',
+            'wk_list'=>array(
+                '0'=>array(
+                    'wk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+                    'wk_path'=>'E:\nas\\'
+                )
+            ),
+            'nas_type'=>0,
+            'sync_path'=>'',
+            'encrypt_switch'=>'0',
+            'band_width'=>'',
+            'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+            'bk_path'=>'E:\nas\\',
+            'sync_uuid'=>'',
+            'nas_name'=>'test',
+            'cmp_schedule'=>array(),
+            'cmp_file_check'=>0,
+            'cmp_switch'=>0
         );
-        $res = $nAS -> modifyNAS($arr);
+        $res = $NAS -> modifyNAS($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -82,12 +95,12 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testListNAS()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
             'limit'=>'10',
             'page'=>'1'
         );
-        $res = $nAS -> listNAS($arr);
+        $res = $NAS -> listNAS($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -95,13 +108,14 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testListNASStatus()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
             'nas_uuids'=>array(
-                '0'=>'4E73b66F-DbC3-94F5-e9CE-AB039F5F1D91'
+                '0'=>'B7361BB1-E4BD-3E88-ADE7-53024DCFA710'
             )
         );
-        $res = $nAS -> listNASStatus($arr);
+        $res = $NAS -> listNASStatus($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -109,13 +123,13 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testDeleteNAS()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
             'nas_uuids'=>array(
-                '0'=>'Aae9D89A-69be-a8CD-Af69-542d4CDd71Bb'
+                '0'=>'B7361BB1-E4BD-3E88-ADE7-53024DCFA710'
             )
         );
-        $res = $nAS -> deleteNAS($arr);
+        $res = $NAS -> deleteNAS($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -123,13 +137,14 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testStartNAS()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
             'nas_uuids'=>array(
-                '0'=>'f7fE7D22-4279-C8f5-bEFe-2F12fBDAb33a'
+                '0'=>'B7361BB1-E4BD-3E88-ADE7-53024DCFA710'
             )
         );
-        $res = $nAS -> startNAS($arr);
+        $res = $NAS -> startNAS($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -137,13 +152,13 @@ class NASTest extends \PHPUnit_Framework_TestCase
 
     public function testStopNAS()
     {
-        $nAS = $this -> NAS;
+        $NAS = $this -> NAS;
         $arr = array(
             'nas_uuids'=>array(
-                '0'=>'f7fE7D22-4279-C8f5-bEFe-2F12fBDAb33a'
+                '0'=>'B7361BB1-E4BD-3E88-ADE7-53024DCFA710'
             )
         );
-        $res = $nAS -> stopNAS($arr);
+        $res = $NAS -> stopNAS($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

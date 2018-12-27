@@ -2,7 +2,6 @@
 
 namespace i2up\common;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class Permission {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'permission/category';
+        $this -> url = $auth -> ip . 'permission/category';
         $this -> token = $auth -> token();
     }
 

@@ -11,7 +11,7 @@ class Dashboard {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . '/dashboard';
+        $this -> url = $auth -> ip . 'dashboard';
         $this -> token = $auth -> token();
     }
 

@@ -2,7 +2,6 @@
 
 namespace i2up\tools\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -12,8 +11,8 @@ class Compare {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'compare';
-        $this -> logUrl = Config::baseUrl . 'logs';
+        $this -> url = $auth -> ip . 'compare';
+        $this -> logUrl = $auth -> ip . 'logs';
         $this -> token = $auth -> token();
     }
     /**
@@ -33,7 +32,7 @@ class Compare {
      * 2 获取单个(包括比较结果)
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeCompare(array $body = array())
@@ -113,7 +112,7 @@ class Compare {
      * 1.1 获取结果列表（周期）
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function listCircleCompareResult(array $body = array())

@@ -2,7 +2,6 @@
 
 namespace i2up\nas\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class Nas {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'nas/sync';
+        $this -> url = $auth -> ip . 'nas/sync';
         $this -> token = $auth -> token();
     }
     /**

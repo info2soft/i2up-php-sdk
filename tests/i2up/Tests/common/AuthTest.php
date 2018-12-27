@@ -2,6 +2,7 @@
 namespace i2up\Test\common;
 
 use i2up\common\Auth;
+use i2up\Config;
                 
 class AuthTest extends \PHPUnit_Framework_TestCase
  {
@@ -10,7 +11,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234',__DIR__ . '/../');
         $this -> auth = $auth;
     }
 
@@ -53,7 +54,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     {
         $auth = $this -> auth;
         $arr = array(
-            'access_token'=>'a10b45cd8b94ad53UEsc8H-gxjMU-jX76eFd2z4eoDh0vlVkPPDWaJyBWssjwWdYAtk4SdFaL8dQH48QQv29c3TRNX3FQo4Ub_V1qwehbRQ28KBEtYqTG6wy8sbAEWPVcBoE2uWXnmP_J5R9hXl8yHbeyaMwMjLpWe0onA',
+            'access_token'=>'e94c0d9e51f1a785SN_BQFnp-TqdAuVvLvIvsiUa4r2yluaS4IL9P3EJTCHOg1ou5KaEY1V-Q0KjhMCtLGhP1TL6nNDf52HOCWJGfGqamoFZRfcvtygZonHp0WTnTcl588WBMmsfxHt0rmez_sIx73EAXhzpVmHE3TVuwQ',
         );
         $res = $auth -> checkLoginStatus($arr);
         $this->assertNotNull($res[0]);

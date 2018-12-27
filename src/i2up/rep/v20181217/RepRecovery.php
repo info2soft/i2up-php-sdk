@@ -2,7 +2,6 @@
 
 namespace i2up\rep\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class RepRecovery {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'rep/recovery';
+        $this -> url = $auth -> ip . 'rep/recovery';
         $this -> token = $auth -> token();
     }
     /**
@@ -31,7 +30,7 @@ class RepRecovery {
      * 1 获取单个任务
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeRepRecovery(array $body = array())

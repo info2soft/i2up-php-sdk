@@ -2,7 +2,6 @@
 
 namespace i2up\resource\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class BizGroup {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'biz_grp';
+        $this -> url = $auth -> ip . 'biz_grp';
         $this -> token = $auth -> token();
     }
     /**
@@ -104,7 +103,7 @@ class BizGroup {
      * 2 获取绑定情况
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function listBizGroupBind(array $body = array())

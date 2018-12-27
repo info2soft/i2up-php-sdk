@@ -2,7 +2,6 @@
 
 namespace i2up\rep\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class RepBackup {
     private $token;
     public function __construct($auth)
     {
-        $this -> url = Config::baseUrl . 'rep/backup';
+        $this -> url = $auth -> ip . 'rep/backup';
         $this -> token = $auth -> token();
     }
     /**
@@ -31,7 +30,7 @@ class RepBackup {
      * 获取单个规则
      *
      * @param array $body
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function describeRepBackup(array $body = array())
@@ -46,7 +45,7 @@ class RepBackup {
      * 修改规则
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function modifyRepBackup(array $body = array())
@@ -128,7 +127,7 @@ class RepBackup {
     /**
      * cdp baseline 列表 获取
      *
-     * @body['uuid'] String  必填 节点uuid
+     * @body['uuid'] String  必填 uuid
      * @param array $body  参数详见 API 手册
      * @return array
      */
@@ -176,7 +175,7 @@ class RepBackup {
     /**
      * 孤儿文件 列表 删除
      *
-     * @body['uuid'] String  必填 节点uuid
+     * @body['uuid'] String  必填 uuid
      * @param array $body  参数详见 API 手册
      * @return array
      */
@@ -240,7 +239,7 @@ class RepBackup {
      * 快照 列表 删除
      *
      * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 节点uuid
+     * $body['uuid'] String  必填 uuid
      * @return array
      */
     public function deleteRepBackupSnapshot(array $body = array())

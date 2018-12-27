@@ -2,7 +2,6 @@
 
 namespace i2up\timing\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -11,7 +10,7 @@ class TimingBackup {
     private $token;
     public function __construct($auth)
     {
-        $this -> backupUrl = Config::baseUrl . 'timing/backup';
+        $this -> backupUrl = $auth -> ip . 'timing/backup';
         $this -> token = $auth -> token();
     }
     /**

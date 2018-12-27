@@ -3,6 +3,7 @@ namespace i2up\Test\resource;
 
 use i2up\resource\v20181217\Node;
 use i2up\common\Auth;
+use i2up\Config;
 
 class NodeTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> node = new Node($auth);
     }
 
@@ -20,10 +21,11 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $node = $this -> node;
         $arr = array(
             'config_port'=>'26821',
-            'cache_path'=>'',
-            'config_addr'=>'192.168.71.252',
+            'cache_path'=>'C:\Program Files (x86)\info2soft\node\cache\\',
+            'config_addr'=>'192.168.72.75',
         );
         $res = $node -> checkCapacity($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -34,9 +36,10 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $node = $this -> node;
         $arr = array(
             'config_port'=>'26821',
-            'config_addr'=>'192.168.6.15',
+            'config_addr'=>'192.168.72.76',
         );
         $res = $node -> listVg($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -46,15 +49,16 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'auth_type'=>1,
-            'config_addr'=>'',
-            'config_port'=>1,
+            'auth_type'=>0,
+            'config_addr'=>'192.168.72.75',
+            'config_port'=>26821,
             'node_uuid'=>'',
-            'os_user'=>'',
-            'os_pwd'=>'',
+            'os_user'=>'Chenky',
+            'os_pwd'=>'123qwe',
             'i2id'=>'',
         );
         $res = $node -> authNode($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -64,10 +68,11 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'port'=>'',
-            'ip'=>'',
+            'port'=>'26821',
+            'ip'=>'192.168.72.75',
         );
         $res = $node -> checkNodeOnline($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -83,7 +88,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
                 'bak_root'=>'',
                 'monitor_switch'=>0,
                 'node_role'=>'3',
-                'mem_limit'=>'13041',
+                'mem_limit'=>'819',
                 'config_port'=>'26821',
                 'mon_save_day'=>'5',
                 'vg'=>'',
@@ -97,22 +102,24 @@ class NodeTest extends \PHPUnit_Framework_TestCase
                 'cache_path'=>'C:\Program Files (x86)\info2soft-i2node\cache\\',
                 'db_save_day'=>'3',
                 'proxy_switch'=>0,
-                'data_addr'=>'192.168.74.25',
-                'node_name'=>'aaaa',
-                'config_addr'=>'192.168.74.25',
+                'data_addr'=>'192.168.72.76',
+                'node_name'=>'N4_72.76',
+                'config_addr'=>'192.168.72.76',
                 'mon_send_interval'=>'10',
-                'disk_limit'=>'40960',
+                'disk_limit'=>'10240',
                 'reboot_sys'=>'0',
-                'bind_lic_list'=>'93AF0C9F-14C8-41A2-31CB-AAA0F65193FA',
-                'security_check'=>1,
+                'bind_lic_list'=>array(),
+                'security_check'=>0,
                 'os_user'=>'Kyran',
                 'bak_service_type'=>'',
                 'en_snap_switch'=>0,
                 'rep_excl_path'=>array(),
                 'biz_grp_list'=>array(),
-                'i2id'=>'',),
+                'i2id'=>''
+            )
         );
         $res = $node -> createNode($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -169,7 +176,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'3ADCB6B6-4F66-ECC3-93AB-D3EC4792CF19'
         );
         $res = $node -> describeNode($arr);
         $this->assertNotNull($res[0]);
@@ -183,28 +190,28 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'base_info_list'=>array(
                 '0'=>array(
-                    'os_pwd'=>'',
-                    'os_user'=>'',
+                    'os_pwd'=>'123qwe',
+                    'os_user'=>'chenky',
                     'config_port'=>'26821',
-                    'config_addr'=>'192.168.81.145',
-                    'node_name'=>'cluster-node1'
+                    'config_addr'=>'192.168.72.76',
+                    'node_name'=>'N4_72.76'
                 )
             ),
             'node'=>array(
-                'mem_limit'=>'13041',
-                'bind_lic_list'=>'93AF0C9F-14C8-41A2-31CB-AAA0F65193FA',
-                'disk_limit'=>'40960',
+                'mem_limit'=>'819',
+                'bind_lic_list'=>array(),
+                'disk_limit'=>'10240',
                 'monitor_interval'=>'10',
                 'node_role'=>'3',
                 'monitor_switch'=>0,
-                'license_ids'=>'93AF0C9F-14C8-41A2-31CB-AAA0F65193FA',
                 'moni_log_keep_node'=>'5',
                 'moni_log_keep_server'=>'3',
-                'security_check'=>1,
+                'security_check'=>0,
                 'biz_grp_list'=>array()
-            ),
+            )
         );
         $res = $node -> createBatchNode($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -214,7 +221,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'3ADCB6B6-4F66-ECC3-93AB-D3EC4792CF19'
         );
         $res = $node -> describeDeviceInfo($arr);
         $this->assertNotNull($res[0]);
@@ -228,16 +235,11 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'search_value'=>'',
             'search_field'=>'',
-            'limit'=>1,
-            'page'=>1,
-            'type'=>1,
-            'like_args[xxx]'=>'',
-            'where_args[xxx]'=>'',
-            'filter_by_biz_grp'=>1,
-            'order_by'=>'',
-            'direction'=>'',
+            'limit'=>10,
+            'page'=>1
         );
         $res = $node -> listNode($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -247,10 +249,13 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array(
+                '0'=>'3ADCB6B6-4F66-ECC3-93AB-D3EC4792CF19'
+            ),
             'operate'=>'upgrade',
         );
         $res = $node -> upgradeNode($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -260,7 +265,9 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array(
+                '0'=>'3ADCB6B6-4F66-ECC3-93AB-D3EC4792CF19'
+            ),
         );
         $res = $node -> listNodeStatus($arr);
         $this->assertNotNull($res[0]);
@@ -272,7 +279,9 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array(
+                '0'=>'3ADCB6B6-4F66-ECC3-93AB-D3EC4792CF19'
+            ),
         );
         $res = $node -> deleteNode($arr);
         $this->assertNotNull($res[0]);

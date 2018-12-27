@@ -3,6 +3,7 @@ namespace i2up\Test\common;
 
 use i2up\common\GeneralInterface;
 use i2up\common\Auth;
+use i2up\Config;
                 
 class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
  {
@@ -11,7 +12,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> generalInterface = new GeneralInterface($auth);
     }
 
@@ -28,6 +29,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         $generalInterface = $this -> generalInterface;
         $res = $generalInterface -> updateDatabase();
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -38,15 +40,11 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
         $generalInterface = $this -> generalInterface;
         $arr = array(
             'page'=>1,
-            'end'=>1545645192,
             'limit'=>10,
-            'start'=>1545645100,
-            'type'=>'1',
-            'result'=>1,
-            'group_uuid'=>'',
-            'uuid'=>'',
+            'name'=>''
         );
         $res = $generalInterface -> listStatistics($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -56,9 +54,10 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         $generalInterface = $this -> generalInterface;
         $arr = array(
-            'id' => ''
+            'id' => '16'
         );
         $res = $generalInterface -> describeStatistics($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -71,6 +70,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
             'type'=>'I2VP_BK',
         );
         $res = $generalInterface -> readStatistics($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

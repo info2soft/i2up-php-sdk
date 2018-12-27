@@ -18,34 +18,78 @@ final class Auth
     private $password;
     private $baseUrl;
     private $authToken;
-    public function __construct($username, $pwd)
+    private $authSsoToken;
+    public $ip;
+    public function __construct($ip, $username, $pwd, $cachePath)
     {
         $this -> username = $username;
         $this -> password = $pwd;
-        $this -> baseUrl = Config::baseUrl . 'auth/';
-        $this -> authToken = $this -> getToken();
+        $this -> ip = $ip;
+        $this -> baseUrl = $ip . 'auth/';
+        $cache = $this -> getCacheToken($cachePath);
+        if (empty($cache)) {
+            $this -> saveCacheToken($cachePath);
+        } else {
+            $cacheTime = isset($cache[2]) ? (int) $cache[2] : 0;
+            $time = time();
+            $ip = isset($cache[3]) ? (string) $cache[3] : '';
+            if ($time - $cacheTime >= 7200 || $ip !== $this->ip) {
+                $this -> saveCacheToken($cachePath);
+            } else {
+                $this -> authToken = $cache[0];
+                $this -> authSsoToken = $cache[1];
+            }
+        }
+
     }
     private function getToken()
     {
         $headers = array('Accept' => 'application/json');
         $url = $this -> baseUrl . 'token';
         $body = array('username' => $this -> username, 'pwd' => $this -> password);
-
         $ret = Client::post($url, $body, $headers);
         if (!$ret->ok()) {
             return array(null, new Error($url, $ret));
         }
         $r = ($ret->body === null) ? array('code' => -1) : $ret->json();
         $code = $r['code'];
+        $arr = array();
         if ($code === 0) {
-            $token = $r['token'];
+            $arr['token'] = $r['token'];
+            $arr['sso_token'] = $r['sso_token'];
         } else {
-            $token = '';
+            $arr['token'] = '';
+            $arr['sso_token'] = '';
         }
-        return $token;
+        return $arr;
     }
     public function token() {
         return $this -> authToken;
+    }
+    private function getCacheToken($cachePath)
+    {
+        if (file_exists($cachePath . '/cacheToken.txt')) {
+            $res = file_get_contents($cachePath . '/cacheToken.txt');
+            if (!empty($res)) {
+                preg_match_all('/([a-zA-Z0-9\-_:\/.]+)\r/m',$res,$matches);
+                return $matches[1];
+            }
+            return $res;
+        }
+        return null;
+
+    }
+    private function saveCacheToken($cachePath)
+    {
+        $token = $this -> getToken();
+        $this -> authToken = $token['token'];
+        $this -> authSsoToken = $token['sso_token'];
+        $time = time();
+        $ip = $this -> ip;
+        $str = $this -> authToken . "\r". $this -> authSsoToken . "\r" . $time . "\r" . $ip . "\r";
+        $f_handler = fopen($cachePath . '/cacheToken.txt', 'wb'); // 结果文件
+        $f_handler and fwrite($f_handler, $str);
+        fclose($f_handler);
     }
 
     /**

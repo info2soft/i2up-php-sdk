@@ -3,6 +3,7 @@ namespace i2up\Test\system;
 
 use i2up\system\v20181217\User;
 use i2up\common\Auth;
+use i2up\Config;
 
 class UserTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +12,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth('admin', 'Info1234');
+        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
         $this -> user = new User($auth);
     }
 
@@ -19,7 +20,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $user = $this -> user;
         $arr = array(
-            'username'=>'test',
+            'username'=>'test2',
             'password'=>'11111111',
             'roles'=>array(
                 '0'=>'3'
@@ -43,6 +44,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
         );
         $res = $user -> listUser($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -52,9 +54,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $user = $this -> user;
         $arr = array(
-            'id' => ''
+            'id' => '7'
         );
         $res = $user -> describeUser($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -65,10 +68,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $user = $this -> user;
         $arr = array(
             'ids'=>array(
-                '0'=>'20'
+                '0'=>'8'
             ),
             'uuids'=>array(
-                '0'=>'6348CDE6-382D-EB3A-AB03-0B5FFE7CF8E3'
+                '0'=>'CE79E4A6-1120-60ED-C810-5AFFACF88382'
             )
         );
         $res = $user -> deleteUser($arr);
@@ -88,7 +91,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
                 '0'=>'3'
             ),
             'active'=>'1',
-            'email'=>'123@info2soft.com',
+            'email'=>'lis@info2soft.com',
             'mobile'=>'12332145248',
             'comment'=>'',
             'first_name'=>'',
@@ -110,6 +113,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'password'=>'Info1234',
         );
         $res = $user -> modifyUserPwd($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -148,5 +152,8 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
+        if ($res[0]['code'] === 0) {
+            unlink(__DIR__ . '/../cacheToken.txt');
+        }
     }
 }

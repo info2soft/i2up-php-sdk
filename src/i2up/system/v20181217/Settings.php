@@ -2,16 +2,16 @@
 
 namespace i2up\system\v20181217;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
+use i2up\util\RSA;
 
 class Settings {
     private $sysSettingUrl;
     private $token;
     public function __construct($auth)
     {
-        $this -> sysSettingUrl = Config::baseUrl . 'sys';
+        $this -> sysSettingUrl = $auth -> ip . 'sys';
         $this -> token = $auth -> token();
     }
 
@@ -22,6 +22,10 @@ class Settings {
      */
     public function updateSetting(array $body = array())
     {
+        if (isset($body['email_pwd'])) {
+            $RSA = new RSA();
+            $body['email_pwd'] = $RSA -> encrypt_with_public_key($body['email_pwd']);
+        }
         $url = $this -> sysSettingUrl . '/settings';
         $config = $this -> httpRequest('post', $url, $body);
         return $config;

@@ -2,7 +2,6 @@
 
 namespace i2up\common;
 
-use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
@@ -12,8 +11,8 @@ class Logs {
     private $token;
     public function __construct($auth)
     {
-        $this -> logsUrl = Config::baseUrl . 'logs';
-        $this -> opLogs = Config::baseUrl . '/op_log';
+        $this -> logsUrl = $auth -> ip . 'logs';
+        $this -> opLogs = $auth -> ip . 'op_log';
         $this -> token = $auth -> token();
     }
     /**
