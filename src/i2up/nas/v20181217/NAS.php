@@ -5,7 +5,7 @@ namespace i2up\nas\v20181217;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Nas {
+class NAS {
     private $url;
     private $token;
     public function __construct($auth)

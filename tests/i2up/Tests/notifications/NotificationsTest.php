@@ -20,10 +20,11 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $arr = array(
-            'type'=>1,
+            'type'=>101,
             'where_args[status]'=>1,
         );
         $res = $notifications -> listNotifications($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -33,9 +34,10 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'87620164-62D9-A118-2063-733ADEBB9C39'
         );
         $res = $notifications -> describeNotifications($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -54,7 +56,9 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $arr = array(
-            'uuids'=>array()
+            'uuids'=>array(
+                '0'=>'EA6E2384-792D-8F46-1B35-085A376C790B'
+            )
         );
         $res = $notifications -> deleteNotifications($arr);
         $this->assertNotNull($res[0]);
@@ -66,8 +70,10 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $arr = array(
-            'uuids'=>array(),
-            'type'=>1
+            'uuids'=>array(
+                '0'=>'FFC4711E-F003-89D9-1475-F641A3CDA58B'
+            ),
+            'type'=>101
         );
         $res = $notifications -> readNotifications($arr);
         $this->assertNotNull($res[0]);
@@ -80,6 +86,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $res = $notifications -> describeNotificationsConfig();
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -97,55 +104,55 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
                     'p_sms_sw'=>1
                 ),
                 '1'=>array(
-                    'type'=>1,
+                    'type'=>2,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '2'=>array(
-                    'type'=>1,
+                    'type'=>3,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '3'=>array(
-                    'type'=>1,
+                    'type'=>4,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '4'=>array(
-                    'type'=>1,
+                    'type'=>5,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '5'=>array(
-                    'type'=>1,
+                    'type'=>6,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '6'=>array(
-                    'type'=>1,
+                    'type'=>7,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '7'=>array(
-                    'type'=>1,
+                    'type'=>8,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '8'=>array(
-                    'type'=>1,
+                    'type'=>100,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1
                 ),
                 '9'=>array(
-                    'type'=>1,
+                    'type'=>101,
                     'email_sw'=>0,
                     'sms_sw'=>1,
                     'p_sms_sw'=>1

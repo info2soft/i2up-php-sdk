@@ -25,73 +25,61 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
                 'cdp_path'=>'',
                 'oph_path'=>'',
                 'secret_key'=>'',
-                'rep_name'=>'rrrrr',
-                'schedule'=>'',
+                'rep_name'=>'test5',
                 'snapshot_policy'=>'0',
-                'bk_path_policy'=>'0',
-                'cdp_process_time'=>'',
+                'bk_path_policy'=>'1',
+                'cdp_process_time'=>'03:39:20',
                 'mirr_open_type'=>'0',
                 'compress'=>'0',
                 'cdp_switch'=>'',
-                'snapshot_start'=>1515568566,
-                'group_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'cdp_baseline_format'=>'',
+                'snapshot_start'=>'',
+                'cdp_baseline_format'=>'0',
                 'cdp_bl_bkup_switch'=>0,
                 'encrypt_switch'=>'0',
                 'auto_start'=>'1',
-                'disk_limit'=>'0',
-                'wk_path'=>'D:\DataTest\\',
+                'wk_path'=>array(
+                    '0'=>'E:\\t\\'
+                ),
                 'band_width'=>'',
                 'snapshot_limit'=>'24',
-                'policy_start'=>1,
                 'mirr_sync_flag'=>'0',
-                'bk_path'=>'D:\DataTest2\\',
-                'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+                'bk_path'=>array(
+                    '0'=>'E:\test2\\'
+                ),
+                'wk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
                 'mirr_file_check'=>'0',
                 'cdp_bl_sched_switch'=>0,
-                'del_policy'=>'1',
-                'cmp_switch'=>1,
+                'del_policy'=>'0',
+                'cmp_switch'=>0,
                 'rep_type'=>0,
-                'snapshot_interval'=>'0',
+                'snapshot_interval'=>'1',
                 'file_type_filter_switch'=>0,
-                'policy_interval'=>1,
+                'policy_interval'=>'',
                 'snapshot_switch'=>0,
                 'file_type_filter'=>'',
-                'policy_operation'=>1,
-                'cdp_param'=>'',
+                'cdp_param'=>'3,30,0',
                 'oph_policy'=>'0',
                 'mirr_skip'=>'0',
-                'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'policy_limit'=>1,
+                'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
                 'cdp_bl_sched'=>'',
                 'excl_path'=>array(),
-                'mirr_sched'=>'3*03:00-14:00,2*02:00-15:00',
-                'bkup_one_time'=>1515568566,
+                'mirr_sched'=>'',
+                'bkup_one_time'=>null,
                 'mirr_sched_switch'=>0,
-                'cdp_snap_on'=>1,
-                'cdp_snap_interval'=>1,
-                'cdp_snap_count'=>1,
-                'ct_name_type'=>1,
+                'cdp_snap_on'=>0,
+                'cdp_snap_interval'=>30,
+                'cdp_snap_count'=>240,
+                'ct_name_type'=>0,
                 'ct_name_str1'=>'',
                 'ct_name_str2'=>'',
-                'ct_name_str3'=>'',
-                'ct_name_str4'=>'',
-                'cmp_file_check'=>1,
-                'cmp_schedule'=>array(
-                    '0'=>array(
-                        'sched_every'=>1,
-                        'sched_time'=>array(
-                            '0'=>'18:10'
-                        ),
-                        'sched_day'=>array(
-                            '0'=>20
-                        )
-                    )
-                ),
-                'thread_num'=>'0'
+                'cmp_file_check'=>0,
+                'cmp_schedule'=>array(),
+                'thread_num'=>'0',
+                'biz_grp_list'=>array()
             ),
         );
         $res = $repBackup -> createRepBackup($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -101,9 +89,10 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
         );
         $res = $repBackup -> describeRepBackup($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -113,73 +102,81 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4',
             'rep_backup'=>array(
-                'cdp_param'=>'',
-                'rep_type'=>0,
-                'bkup_one_time'=>1515568566,
-                'snapshot_switch'=>0,
-                'cdp_baseline_format'=>'',
-                'mirr_sync_flag'=>'0',
-                'mirr_open_type'=>'0',
-                'auto_start'=>'1',
-                'snapshot_policy'=>'0',
-                'cdp_bl_sched_switch'=>0,
-                'snapshot_interval'=>'0',
-                'bk_path'=>'D:\DataTest2\\',
-                'snapshot_start'=>1515568566,
-                'random_str'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+                'mirr_sync_attr'=>'1',
                 'cdp_path'=>'',
-                'file_type_filter_switch'=>0,
-                'cmp_schedule'=>array(
-                    'sched_time'=>'23:08',
-                    'sched_day'=>30,
-                    'sched_every'=>2
-                ),
-                'snapshot_limit'=>'24',
-                'cmp_switch'=>0,
                 'oph_path'=>'',
                 'secret_key'=>'',
-                'excl_path'=>array(),
-                'schedule'=>'',
-                'policy_interval'=>1,
-                'cdp_switch'=>'',
-                'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'policy_operation'=>1,
-                'wk_path'=>'D:\DataTest\\',
-                'mirr_skip'=>'0',
-                'policy_limit'=>1,
-                'cdp_bl_sched'=>'',
-                'del_policy'=>'1',
-                'mirr_sched'=>'3*03:00-14:00,2*02:00-15:00',
-                'encrypt_switch'=>'0',
-                'band_width'=>'3*03:00-14:00*2m,2*02:00-15:00*80m',
+                'rep_name'=>'test4',
+                'snapshot_policy'=>'0',
+                'bk_path_policy'=>'1',
+                'cdp_process_time'=>'03:39:20',
+                'mirr_open_type'=>'0',
                 'compress'=>'0',
-                'mirr_sync_attr'=>'1',
-                'policy_start'=>1,
-                'cdp_process_time'=>'',
-                'bk_path_policy'=>'0',
+                'cdp_switch'=>'',
+                'snapshot_start'=>'',
+                'cdp_baseline_format'=>'0',
                 'cdp_bl_bkup_switch'=>0,
-                'file_type_filter'=>'',
-                'disk_limit'=>'0',
-                'oph_policy'=>'0',
+                'encrypt_switch'=>'0',
+                'auto_start'=>'1',
+                'wk_path'=>array(
+                    '0'=>'E:\\t\\'
+                ),
+                'band_width'=>'',
+                'snapshot_limit'=>'24',
+                'mirr_sync_flag'=>'0',
+                'bk_path'=>array(
+                    '0'=>'E:\t2\\'
+                ),
+                'wk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
                 'mirr_file_check'=>'0',
-                'cmp_file_check'=>0,
+                'cdp_bl_sched_switch'=>0,
+                'del_policy'=>'0',
+                'cmp_switch'=>0,
+                'rep_type'=>0,
+                'snapshot_interval'=>'1',
+                'file_type_filter_switch'=>0,
+                'policy_interval'=>'',
+                'snapshot_switch'=>0,
+                'file_type_filter'=>'',
+                'cdp_param'=>'3,30,0',
+                'oph_policy'=>'0',
+                'mirr_skip'=>'0',
+                'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+                'cdp_bl_sched'=>'',
+                'excl_path'=>array(),
+                'mirr_sched'=>'',
+                'bkup_one_time'=>null,
                 'mirr_sched_switch'=>0,
-                'thread_num'=>'0'
+                'cdp_snap_on'=>0,
+                'cdp_snap_interval'=>30,
+                'cdp_snap_count'=>240,
+                'ct_name_type'=>0,
+                'ct_name_str1'=>'',
+                'ct_name_str2'=>'',
+                'cmp_file_check'=>0,
+                'cmp_schedule'=>array(),
+                'thread_num'=>'0',
+                'biz_grp_list'=>array(),
+                'random_str'=>'1DFFCDF4-FBDB-496F-95D0-20CD153DA7A6'
             ),
         );
         $res = $repBackup -> modifyRepBackup($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
+
     }
 
     public function testDeleteRepBackup()
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array(
+                '0'=>'D46D743E-A12E-2177-868F-275931A395DF'
+            ),
         );
         $res = $repBackup -> deleteRepBackup($arr);
         $this->assertNotNull($res[0]);
@@ -191,7 +188,9 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'rep_uuids'=>array()
+            'rep_uuids'=>array(
+                '0'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+            )
         );
         $res = $repBackup -> startRepBackup($arr);
         $this->assertNotNull($res[0]);
@@ -203,7 +202,9 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'rep_uuids'=>array()
+            'rep_uuids'=>array(
+                '0'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+            )
         );
         $res = $repBackup -> stopRepBackup($arr);
         $this->assertNotNull($res[0]);
@@ -215,9 +216,12 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'rep_uuids'=>array()
+            'rep_uuids'=>array(
+                '0'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+            )
         );
         $res = $repBackup -> listRepBackupStatus($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -228,12 +232,13 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'search_value'=>'',
-            'limit'=>1,
+            'limit'=>10,
             'type'=>1,
             'page'=>1,
             'search_field'=>''
         );
         $res = $repBackup -> listRepBackup($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -243,11 +248,12 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
             'page'=>1,
-            'limit'=>1
+            'limit'=>10
         );
         $res = $repBackup -> listRepBackupBaseLine($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -257,10 +263,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
-            'cdp_time_list'=>'2017-11-17 17:24:14',
+            'uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
+            'cdp_time_list'=>'2018-12-28_10-14-11',
         );
         $res = $repBackup -> deleteRepBackupBaseline($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -311,7 +318,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
             'page'=>1,
             'limit'=>10,
         );

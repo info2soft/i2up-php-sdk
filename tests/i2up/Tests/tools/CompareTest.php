@@ -22,28 +22,37 @@ class CompareTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'compare'=>array(
                 'excl_path'=>array(),
-                'bkup_one_time'=>1515568566,
+                'bkup_one_time'=>0,
                 'bkup_schedule'=>array(
-                    'sched_gap_min'=>4,
-                    'sched_time'=>'08:37',
-                    'sched_day'=>30,
-                    'sched_time_end'=>'08:32',
-                    'limit'=>7,
-                    'sched_time_start'=>'20:11',
-                    'sched_every'=>2
+                    'sched_gap_min'=>60,
+                    'sched_time'=>array(
+                        '0'=>'00:00:00'
+                    ),
+                    'sched_day'=>array(
+                        '0'=>'1'
+                    ),
+                    'sched_time_end'=>'23:59',
+                    'limit'=>"",
+                    'sched_time_start'=>'00:00',
+                    'sched_every'=>0
                 ),
                 'mirr_file_check'=>'1',
-                'task_name'=>'',
-                'wk_path'=>array(),
-                'bk_uuid'=>'',
+                'task_name'=>'testCompare1',
+                'wk_path'=>array(
+                    '0'=>'E:\t\\'
+                ),
+                'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
                 'cmp_type'=>0,
-                'bk_path'=>array(),
-                'bkup_policy'=>0,
+                'bk_path'=>array(
+                    '0'=>'E:\t2\\'
+                ),
+                'bkup_policy'=>2,
                 'compress'=>0,
-                'wk_uuid'=>''
+                'wk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84'
             )
         );
         $res = $compare -> createCompare($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -53,7 +62,7 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'1E4BD69D-F98B-992A-47EF-DA9A06DF3744'
         );
         $res = $compare -> describeCompare($arr);
         $this->assertNotNull($res[0]);
@@ -65,6 +74,7 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $res = $compare -> describeCompareResults();
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -89,9 +99,10 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('1E4BD69D-F98B-992A-47EF-DA9A06DF3744'),
         );
         $res = $compare -> listCompareStatus($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -102,7 +113,9 @@ class CompareTest extends \PHPUnit_Framework_TestCase
         $compare = $this -> compare;
         $arr = array(
             'operate'=>'download',
-            'task_uuids'=>array()
+            'task_uuids'=>array(
+                '0'=>'1E4BD69D-F98B-992A-47EF-DA9A06DF3744'
+            )
         );
         $res = $compare -> downloadCompare($arr);
         $this->assertNotNull($res[0]);
@@ -114,7 +127,9 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array(
+                '0'=>'1E4BD69D-F98B-992A-47EF-DA9A06DF3744'
+            ),
         );
         $res = $compare -> deleteCompare($arr);
         $this->assertNotNull($res[0]);
@@ -126,13 +141,14 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'4AED0B7A-5F4D-13DB-D742-94D40AEAF09A',
             'search_field'=>'',
-            'limit'=>1,
+            'limit'=>10,
             'search_value'=>'',
             'page'=>1,
         );
         $res = $compare -> listCircleCompareResult($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

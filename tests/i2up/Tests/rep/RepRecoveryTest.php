@@ -21,24 +21,30 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
         $repRecovery = $this -> repRecovery;
         $arr = array(
             'rep_recovery'=>array(
-                'cdp_position'=>'2017-11-17_15-30-40+-2',
-                'rc_name'=>'',
-                'cdp_time'=>'2018-04-24 13:43:26.0',
-                'wk_uuid'=>'Grey',
-                'snapshot_size'=>'1.34 GB',
+                'cdp_position'=>'',
+                'rc_name'=>'test',
+                'cdp_time'=>'',
+                'wk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+                'snapshot_size'=>'',
                 'cdp_rc_method'=>0,
-                'snapshot_time'=>'2017-11-17 17:24:14',
+                'snapshot_time'=>'',
                 'rc_type'=>0,
-                'snapshot_name'=>'c5809dd2-e8be-4389-ac0d-0a657ff94da0_snap_2017-11-17_17-24-14',
-                'bk_path'=>array(),
+                'snapshot_name'=>'',
+                'bk_path'=>array(
+                    '0'=>'E:\test2\E\t\\'
+                ),
                 'oph_policy'=>0,
                 'cdp_file'=>'Baseline',
                 'cdp_op'=>'backup',
-                'wk_path'=>array(),
-                'rep_uuid'=>''
+                'wk_path'=>array(
+                    '0'=>'E:\rc\\'
+                ),
+                'rep_uuid'=>'488EB72D-0F1B-A18A-4BAA-079BD4E3203E',
+                'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84'
             )
         );
         $res = $repRecovery -> createRepRecovery($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -48,7 +54,7 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'E3FAC4E2-D8AA-41E7-5BDA-FF39527EE14A'
         );
         $res = $repRecovery -> describeRepRecovery($arr);
         $this->assertNotNull($res[0]);
@@ -60,7 +66,9 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'rc_uuids'=>array(),
+            'rc_uuids'=>array(
+                '0'=>'E3FAC4E2-D8AA-41E7-5BDA-FF39527EE14A'
+            ),
         );
         $res = $repRecovery -> deleteRepRecovery($arr);
         $this->assertNotNull($res[0]);
@@ -88,9 +96,12 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'rc_uuids'=>array(),
+            'rc_uuids'=>array(
+                '0'=>'E3FAC4E2-D8AA-41E7-5BDA-FF39527EE14A'
+            ),
         );
         $res = $repRecovery -> startRepRecovery($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -100,7 +111,9 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'rc_uuids'=>array(),
+            'rc_uuids'=>array(
+                '0'=>'E3FAC4E2-D8AA-41E7-5BDA-FF39527EE14A'
+            ),
         );
         $res = $repRecovery -> stopRepRecovery($arr);
         $this->assertNotNull($res[0]);
@@ -124,7 +137,9 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'rc_uuids'=>array(),
+            'rc_uuids'=>array(
+                '0'=>'E3FAC4E2-D8AA-41E7-5BDA-FF39527EE14A'
+            ),
         );
         $res = $repRecovery -> listRepRecoveryStatus($arr);
         $this->assertNotNull($res[0]);
@@ -136,9 +151,10 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'rep_uuid'=>'',
+            'rep_uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
         );
         $res = $repRecovery -> listRepRecoveryCdpRange($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -148,16 +164,15 @@ class RepRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $repRecovery = $this -> repRecovery;
         $arr = array(
-            'rep_uuid'=>'',
-            'bk_path'=>array(),
-            'expand_offset'=>'',
-            'direction'=>'',
-            'cdp_time'=>'',
-            'position'=>'',
-            'bs_time'=>'',
-            'baseline_page'=>1,
+            'rep_uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
+            'bk_path'=>array(
+                '0'=>'E:\t2\E\t\\'
+            ),
+            'cdp_time'=>'2018-12-28 10:14:11',
+            'bs_time'=>'2018-12-28_10-14-11'
         );
         $res = $repRecovery -> listRepRecoveryCdpLog($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

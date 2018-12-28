@@ -176,9 +176,10 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'uuid'=>'3ADCB6B6-4F66-ECC3-93AB-D3EC4792CF19'
+            'uuid'=>'95561172-BD9F-81F2-232D-060F080B9500'
         );
         $res = $node -> describeNode($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

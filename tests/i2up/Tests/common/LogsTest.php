@@ -104,6 +104,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'start_time'=>1508833766,
         );
         $res = $logs -> listOpLog($arr);
+        var_dump($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
