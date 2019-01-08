@@ -32,41 +32,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'biz_grp_list'=>array(),
         );
         $res = $virtualizationSupport -> createVp($arr);
-        $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
-    }
-
-    public function testDescribeVp()
-    {
-        $virtualizationSupport = $this -> virtualizationSupport;
-        $arr = array(
-            'uuid' => '7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A'
-        );
-        $res = $virtualizationSupport -> describeVp($arr);
-        var_dump($res);
-        $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
-    }
-
-    public function testModifyVp()
-    {
-        $virtualizationSupport = $this -> virtualizationSupport;
-        $arr = array(
-            'uuid' => '7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A',
-            'comment'=>'',
-            'config_addr'=>'192.168.72.75',
-            'config_port'=>58083,
-            'os_pwd'=>'12345678',
-            'os_usr'=>'root',
-            'vp_addr'=>'192.168.88.107',
-            'vp_name'=>'test1',
-            'vp_type'=>0,
-            'bind_lic_list'=>array(),
-            'biz_grp_list'=>array(),
-        );
-        $res = $virtualizationSupport -> modifyVp($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -80,6 +46,44 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'limit'=>10,
         );
         $res = $virtualizationSupport -> listVp($arr);
+        var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDescribeVp()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'uuid' => '11111111-1111-1111-1111-111111111111'
+        );
+        $res = $virtualizationSupport -> describeVp($arr);
+        var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testModifyVp()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'uuid' => '11111111-1111-1111-1111-111111111111',
+            'comment'=>'',
+            'config_addr'=>'192.168.72.75',
+            'config_port'=>58083,
+            'os_pwd'=>'12345678',
+            'os_usr'=>'root',
+            'vp_addr'=>'192.168.88.107',
+            'vp_name'=>'test1',
+            'vp_type'=>0,
+            'bind_lic_list'=>array(),
+            'biz_grp_list'=>array(),
+            'random_str'=>'11111111-1111-1111-1111-111111111111'
+        );
+        $res = $virtualizationSupport -> modifyVp($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -90,11 +94,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'vp_uuids'=>array(
-                '0'=>'7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             ),
         );
         $res = $virtualizationSupport -> listVpStatus($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -105,10 +109,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'vp_uuids'=>array(
-                '0'=>'950820A8-12AF-01DA-9011-DA425B061DD8'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             ),
         );
         $res = $virtualizationSupport -> deleteVp($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -118,12 +123,12 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
             'path'=>'/',
             'force_rpc'=>0,
         );
         $res = $virtualizationSupport -> listVM($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -133,10 +138,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC'
+            'uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00'
         );
         $res = $virtualizationSupport -> describeVpAttribute($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -146,12 +151,12 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A',
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
             'bk_path'=>'H:\vp_bk5\test2_BAK_vm-11880_192.168.88.22\\',
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $virtualizationSupport -> listBakVer($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -161,14 +166,14 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A',
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
-            'bk_path'=>'H:\vp_bk5\test2_BAK_vm-11880_192.168.88.22\\',
-            'ver_sig'=>'6277F526-6D3D-4A44-B323-B2D96AF85CEC',
-            'time'=>'2018-12-27_10-40-45',
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'bk_path'=>'H:\vp_bk5\testRC1_BAK_99_192.168.85.139',
+            'ver_sig'=>'A59DB76E-E33D-4E22-BB08-59723B1FC539',
+            'time'=>'2019-01-07_13-10-45',
         );
         $res = $virtualizationSupport -> listBakVerInfo($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -178,13 +183,13 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
             'dir_file'=>'/',
-            'ds_name'=>'103-数据盘',
-            'dc_name'=>'i2test',
+            'ds_name'=>'datastore1',
+            'dc_name'=>'ha-datacenter',
         );
         $res = $virtualizationSupport -> listDatastoreFile($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -194,10 +199,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC'
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2'
         );
         $res = $virtualizationSupport -> listDatacenter($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -207,12 +212,12 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'dc_name'=>'i2test',
-            'dc_mor'=>'datacenter-2',
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+            'dc_name'=>'ha-datacenter',
+            'dc_mor'=>'ha-datacenter',
         );
         $res = $virtualizationSupport -> listDatacenterHost($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -222,10 +227,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'host_name'=>'192.168.88.103',
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+            'host_name'=>'localhost.localdomain',
         );
         $res = $virtualizationSupport -> listDatastore($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -235,10 +241,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'ds_name'=>'103-数据盘',
+            'uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+            'ds_name'=>'datastore1',
         );
         $res = $virtualizationSupport -> listDatastoreInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -251,19 +258,19 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'del_bkup_data'=>0,
             'quiet_snap'=>0,
             'quick_back'=>1,
-            'vp_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'vp_uuid'=>'C6335F62-2565-1957-4BB9-587F2FF46B00',
             'bk_path'=>"E:\\vp_bk5\\",
             'vm_list'=>array(
                 '0'=>array(
-                    'vm_name'=>'新建虚拟机3',
-                    'vm_ref'=>'vm-11880'
+                    'vm_name'=>'测试5',
+                    'vm_ref'=>'vm-10811'
                 )
             ),
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'lan_free'=>23,
             'rule_name'=>'vp_bk',
             'bkup_policy'=>0,
-            'bkup_one_time'=>1545876670,
+            'bkup_one_time'=>1546831899,
             'bkup_schedule'=>array(),
             'biz_grp_list'=>array(),
             'rule_type'=>0,
@@ -272,7 +279,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'mem_snap'=>0
         );
         $res = $virtualizationSupport -> createVpBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -282,24 +289,26 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '581F14F0-AFA5-B63D-07C1-818524B5978C',
+            'uuid' => 'D3D8883C-12DD-F1C5-BE78-934E08135463',
             'del_bkup_data'=>0,
             'quiet_snap'=>1,
             'quick_back'=>1,
             'bk_path'=>"E:\\vp_bk5\\",
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'lan_free'=>23,
             'rule_name'=>'temp',
             'bkup_policy'=>0,
-            'bkup_one_time'=>1545876670,
+            'bkup_one_time'=>1546831899,
             'bkup_schedule'=>array(),
             'biz_grp_list'=>array(),
             'rule_type'=>10,
             'band_width'=>'-1',
             'compress'=>0,
-            'mem_snap'=>0
+            'mem_snap'=>0,
+            'random_str'=>'4A469A79-16F0-18DF-2EDB-4F08FDB26BAB'
         );
         $res = $virtualizationSupport -> modifyVpBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -309,10 +318,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => 'A1A2E1A9-C388-7254-BFBE-F4ACDC9DFE36'
+            'uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23'
         );
         $res = $virtualizationSupport -> describeVpBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -322,9 +331,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => 'E5CC8E45-04BD-5277-A245-613242E393DE'
+            'uuid' => 'D3D8883C-12DD-F1C5-BE78-934E08135463'
         );
         $res = $virtualizationSupport -> describeVpBackupGroup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -339,7 +349,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'type'=>0,
         );
         $res = $virtualizationSupport -> listVpBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -355,7 +365,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'where_args[bk_path]'=>'H:\\vp_bk5\\',
         );
         $res = $virtualizationSupport -> listVpBackupGroup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -366,11 +376,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'A1A2E1A9-C388-7254-BFBE-F4ACDC9DFE36'
+                '0'=>'EC5A3225-C388-F935-6BC2-15AAA4EB5B23'
             )
         );
         $res = $virtualizationSupport -> listVpBackupStatus($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -381,10 +391,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'A1A2E1A9-C388-7254-BFBE-F4ACDC9DFE36'
+                '0'=>'EC5A3225-C388-F935-6BC2-15AAA4EB5B23'
             )
         );
         $res = $virtualizationSupport -> startVpBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -395,10 +406,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'A1A2E1A9-C388-7254-BFBE-F4ACDC9DFE36'
+                '0'=>'EC5A3225-C388-F935-6BC2-15AAA4EB5B23'
             )
         );
         $res = $virtualizationSupport -> stopVpBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -409,10 +421,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'A1A2E1A9-C388-7254-BFBE-F4ACDC9DFE36'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $virtualizationSupport -> deleteVpBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -422,80 +435,80 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'bk_path'=>'H:\vp_bk5\test2_BAK_vm-11880_192.168.88.22',
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
-            'new_ds'=>'103-数据盘',
+            'bk_path'=>'H:\vp_bk5\testRC1_BAK_99_192.168.85.139',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'new_ds'=>'datastore1',
             'vm_list'=>array(
                 '0'=>array(
                     'vm_cfg'=>array(
                         'alt_name'=>'',
                         'anno'=>'',
-                        'bk_path'=>'H:\vp_bk5\test2_BAK_vm-11880_192.168.88.22\\',
-                        'cdrom'=>'4,datastore-10,3,3000,200,0',
-                        'chg_id'=>'52 0a 10 06 51 70 ea 31-43 5c 6d 09 64 77 70 ae/6',
+                        'bk_path'=>'H:\vp_bk5\testRC1_BAK_99_192.168.85.139\\',
+                        'cdrom'=>'',
+                        'chg_id'=>'52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf/107',
                         'controller'=>'1,1000,100,3,0,3,noSharing,0',
                         'core_per_sock'=>'1',
                         'cpu'=>'1',
-                        'dc'=>'i2test',
-                        'disk'=>'2,[103-数据盘] 新建虚拟机3/新建虚拟机3.vmdk,persistent,1,4096,2000,1000,0,52 0a 10 06 51 70 ea 31-43 5c 6d 09 64 77 70 ae/6,0,0',
+                        'dc'=>'ha-datacenter',
+                        'disk'=>'2,[datastore1] 测试5/proxy gateway1.vmdk,persistent,1,2048,2000,1000,0,52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf/107,0,1',
                         'disk_count'=>'1',
                         'disk_list'=>array(
-                            '0'=>'新建虚拟机3.vmdk'
+                            '0'=>'proxy gateway1.vmdk'
                         ),
-                        'ds'=> '103-数据盘',
+                        'ds'=> 'datastore1',
                         'floppy'=>'',
                         'guest_os_id'=>'rhel6_64Guest',
-                        'hostname'=>'192.168.88.103',
+                        'hostname'=>'localhost.localdomain',
                         'mem_mb'=>'1024',
-                        'nic'=>'3,00:50:56:84:26:9f,1,4000,100,7,1,VM Network',
-                        'nic_count'=>'1',
+                        'nic'=>'3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network',
+                        'nic_count'=>'2',
                         'storeMem'=>'0',
-                        'time'=>'2018-12-27_10-40-45',
+                        'time'=>'2019-01-07_13-10-45',
                         'valid_data'=>4194304,
-                        'ver_sig'=>'6277F526-6D3D-4A44-B323-B2D96AF85CEC',
-                        'vm_name'=>'新建虚拟机3',
-                        'vm_ref'=>'vm-11880',
+                        'ver_sig'=>'A59DB76E-E33D-4E22-BB08-59723B1FC539',
+                        'vm_name'=>'测试5',
+                        'vm_ref'=>'99',
                         'vm_version'=>'vmx-08',
-                        'vp_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC'
+                        'vp_uuid'=>'928B88A6-CDBA-6F55-ADCB-15A8A935C9C2'
                     ),
-                    'ver_sig'=>'6277F526-6D3D-4A44-B323-B2D96AF85CEC',
-                    'vm_ref'=>'vm-11880',
-                    'vm_name'=>'新建虚拟机3',
+                    'ver_sig'=>'A59DB76E-E33D-4E22-BB08-59723B1FC539',
+                    'vm_ref'=>'99',
+                    'vm_name'=>'测试5',
                     'disk_list'=>array(
                         '0'=>array(
-                            'disk_name'=>'新建虚拟机3.vmdk',
+                            'disk_name'=>'proxy gateway1.vmdk',
                             'disk_path'=>'/',
                             'is_same'=>1,
-                            'new_ds'=>'103-数据盘'
+                            'new_ds'=>'datastore1'
                         )
                     )
                 )
             ),
-            'new_hostname'=>'192.168.88.103',
-            'new_dc'=>'i2test',
+            'new_hostname'=>'localhost.localdomain',
+            'new_dc'=>'ha-datacenter',
             'is_create'=>0,
-            'vp_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'vp_uuid'=>'928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
             'new_ds_path'=>'/',
-            'new_vp_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'rule_name'=>'test2',
+            'new_vp_uuid'=>'928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+            'rule_name'=>'testRC3',
             'lan_free'=>23,
             'rule_type'=>0,
             'automate'=>0,
-            'new_vm_name'=>'新建虚拟机3',
-            'new_dc_mor'=>'datacenter-2',
-            'api_type'=>'VirtualCenter',
+            'new_vm_name'=>'测试5',
+            'new_dc_mor'=>'ha-datacenter',
+            'api_type'=>'HostAgent',
             'biz_grp_list'=>array(),
             'cpu'=>1,
             'core_per_sock'=>1,
             'mem_snap'=>1,
             'mem_mb'=>1024,
-            'mac'=>'3,00:50:56:84:26:9f,1,4000,100,7,1,VM Network',
+            'mac'=>'3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network',
             'group_recovery'=>0,
-            'bind_width'=>-1,
-            'backup_rule_name'=>'test2',
+            'band_width'=>-1,
+            'backup_rule_name'=>'testRC1',
         );
         $res = $virtualizationSupport -> createVpRecovery($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -505,10 +518,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '13A4AD25-0B88-4416-7729-D9E6283A9825'
+            'uuid' => '641A27BB-B4D1-F482-1FB8-E856898626DA'
         );
         $res = $virtualizationSupport -> describeVpRecoveryGroup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -523,6 +536,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
         );
         $res = $virtualizationSupport -> listVpRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -532,9 +546,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'rule_uuids'=>'3132E130-82C2-7678-530C-E976F68F89F1',
+            'rule_uuids'=>'2E92D816-AFF0-A807-D90F-87991F789976',
         );
         $res = $virtualizationSupport -> listVpRecoveryStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -545,10 +560,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'3132E130-82C2-7678-530C-E976F68F89F1'
+                '0'=>'2E92D816-AFF0-A807-D90F-87991F789976'
             )
         );
         $res = $virtualizationSupport -> startVpRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -559,10 +575,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'3132E130-82C2-7678-530C-E976F68F89F1'
+                '0'=>'2E92D816-AFF0-A807-D90F-87991F789976'
             )
         );
         $res = $virtualizationSupport -> stopVpRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -576,7 +593,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids' => ''
         );
         $res = $virtualizationSupport -> clearFinishVpRecovery($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -587,10 +604,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'3132E130-82C2-7678-530C-E976F68F89F1'
+                '0'=>'2E92D816-AFF0-A807-D90F-87991F789976'
             )
         );
         $res = $virtualizationSupport -> deleteVpRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -600,21 +618,21 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'new_ds'=>'datastore107（1）',
+            'new_ds'=>'103-数据盘',
             'support_cbt'=>1,
-            'tgt_uuid'=>'7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A',
+            'tgt_uuid'=>'7F16E670-1A61-D565-6905-9C68B9520907',
             'del_bkup_swap'=>0,
-            'src_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+            'src_uuid'=>'7F16E670-1A61-D565-6905-9C68B9520907',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'automate'=>0,
             'rule_name'=>'testMove',
-            'new_dc'=>'ha-datacenter',
+            'new_dc'=>'i2test',
             'bk_path'=>'H:\vp_rep\\',
             'backup_type'=>'i',
-            'new_host'=>'dev-esxi.6.6.6',
+            'new_host'=>'192.168.88.103',
             'quiet_snap'=>0,
             'bkup_schedule'=>array(
-                'sched_time_start'=>'2018-12-27T03:28:39.977Z',
+                'sched_time_start'=>'2019-01-07T06:16:32.611Z',
                 'limit'=>0,
                 'sched_day'=>array(),
                 'sched_every'=>0,
@@ -626,21 +644,21 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'lan_free'=>23,
             'vm_list'=>array(
                 '0'=>array(
-                    'vm_name'=>'新建虚拟机6',
-                    'vm_ref'=>'vm-11890',
-                    'shd_name'=>'新建虚拟机6_move',
+                    'vm_name'=>'新建虚拟机1',
+                    'vm_ref'=>'vm-11877',
+                    'shd_name'=>'新建虚拟机1_move',
                     'overwrite'=>0
                 )
             ),
             'time_window'=>'',
-            'new_dc_mor'=>'ha-datacenter',
+            'new_dc_mor'=>'datacenter-2',
             'bkup_policy'=>0,
             'band_width'=>-1,
             'mem_snap'=>0,
             'rule_type'=>1
         );
         $res = $virtualizationSupport -> createVpMove($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -650,24 +668,24 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'new_ds'=>'datastore107（1）',
+            'new_ds'=>'103-数据盘',
             'support_cbt'=>1,
-            'tgt_uuid'=>'7BC084ED-E02D-5C82-6A98-EFCFCEEAEB3A',
+            'tgt_uuid'=>'7F16E670-1A61-D565-6905-9C68B9520907',
             'del_bkup_swap'=>0,
-            'src_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'bk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
+            'src_uuid'=>'7F16E670-1A61-D565-6905-9C68B9520907',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'automate'=>0,
             'rule_name'=>'testRep',
-            'new_dc'=>'ha-datacenter',
+            'new_dc'=>'i2test',
             'bk_path'=>'H:\vp_rep\\',
             'backup_type'=>'i',
-            'new_host'=>'dev-esxi.6.6.6',
+            'new_host'=>'192.168.88.103',
             'quiet_snap'=>0,
             'bkup_schedule'=>array(
-                'sched_time_start'=>0,
+                'sched_time_start'=>'2019-01-07T06:16:32.611Z',
                 'limit'=>0,
                 'sched_day'=>array(),
-                'sched_every'=>3,
+                'sched_every'=>0,
                 'sched_time'=>array(),
                 'sched_gap_min'=>0
             ),
@@ -678,18 +696,19 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
                 '0'=>array(
                     'vm_name'=>'新建虚拟机1',
                     'vm_ref'=>'vm-11877',
-                    'shd_name'=>'新建虚拟机1_ha',
+                    'shd_name'=>'新建虚拟机1_HA',
                     'overwrite'=>0
                 )
             ),
             'time_window'=>'',
-            'new_dc_mor'=>'ha-datacenter',
+            'new_dc_mor'=>'datacenter-2',
             'bkup_policy'=>0,
             'band_width'=>-1,
             'mem_snap'=>0,
             'rule_type'=>0
         );
         $res = $virtualizationSupport -> createVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -699,9 +718,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => 'D3C02FDB-2BFF-95EB-4916-16C76E25F824'
+            'uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9'
         );
         $res = $virtualizationSupport -> describeVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -711,9 +731,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '979AAA6F-7877-2600-C177-6AF8ACCC9111'
+            'uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13'
         );
         $res = $virtualizationSupport -> describeVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -755,6 +776,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'band_width'=>-1
         );
         $res = $virtualizationSupport -> modifyVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -796,6 +818,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'band_width'=>-1
         );
         $res = $virtualizationSupport -> modifyVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -809,6 +832,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'page'=>1
         );
         $res = $virtualizationSupport -> listVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -822,6 +846,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'page'=>1
         );
         $res = $virtualizationSupport -> listVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -832,11 +857,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'D3C02FDB-2BFF-95EB-4916-16C76E25F824'
+                '0'=>'16C1C399-6146-AD56-6D5D-7DBCC14804D9'
             ),
         );
         $res = $virtualizationSupport -> listVpMoveStatus($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -847,11 +872,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'979AAA6F-7877-2600-C177-6AF8ACCC9111'
+                '0'=>'F64AA5FC-48F0-B593-907A-958E5E95AD13'
             ),
         );
         $res = $virtualizationSupport -> listVpRepStatus($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -862,10 +887,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'D3C02FDB-2BFF-95EB-4916-16C76E25F824'
+                '0'=>'16C1C399-6146-AD56-6D5D-7DBCC14804D9'
             )
         );
         $res = $virtualizationSupport -> stopVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -876,10 +902,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'979AAA6F-7877-2600-C177-6AF8ACCC9111'
+                '0'=>'F64AA5FC-48F0-B593-907A-958E5E95AD13'
             )
         );
         $res = $virtualizationSupport -> stopVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -890,10 +917,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'D3C02FDB-2BFF-95EB-4916-16C76E25F824'
+                '0'=>'16C1C399-6146-AD56-6D5D-7DBCC14804D9'
             )
         );
         $res = $virtualizationSupport -> startVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -904,11 +932,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'979AAA6F-7877-2600-C177-6AF8ACCC9111'
+                '0'=>'F64AA5FC-48F0-B593-907A-958E5E95AD13'
             )
         );
         $res = $virtualizationSupport -> startVpRep($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -919,10 +947,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'D3C02FDB-2BFF-95EB-4916-16C76E25F824'
+                '0'=>'16C1C399-6146-AD56-6D5D-7DBCC14804D9'
             )
         );
         $res = $virtualizationSupport -> moveVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -933,12 +962,13 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'979AAA6F-7877-2600-C177-6AF8ACCC9111'
+                '0'=>'F64AA5FC-48F0-B593-907A-958E5E95AD13'
             ),
             'snap_point'=>'',
             'op_code'=>'0',
         );
         $res = $virtualizationSupport -> failoverVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -949,10 +979,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'979AAA6F-7877-2600-C177-6AF8ACCC9111'
+                '0'=>'F64AA5FC-48F0-B593-907A-958E5E95AD13'
             )
         );
         $res = $virtualizationSupport -> failbackVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -963,9 +994,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'D3C02FDB-2BFF-95EB-4916-16C76E25F824',),
+                '0'=>'16C1C399-6146-AD56-6D5D-7DBCC14804D9'
+            )
         );
         $res = $virtualizationSupport -> deleteVpMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -976,10 +1009,11 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'rule_uuids'=>array(
-                '0'=>'979AAA6F-7877-2600-C177-6AF8ACCC9111'
+                '0'=>'F64AA5FC-48F0-B593-907A-958E5E95AD13'
             )
         );
         $res = $virtualizationSupport -> deleteVpRep($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -989,10 +1023,10 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'uuid' => '979AAA6F-7877-2600-C177-6AF8ACCC9111'
+            'uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13'
         );
         $res = $virtualizationSupport -> listVpRepPointList($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

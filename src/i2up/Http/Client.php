@@ -89,17 +89,18 @@ final class Client
         }
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
 
+        echo 'request_method:'.$request->method . "\n";
         if ($request->method === 'POST' || $request->method === 'PUT' || $request->method === 'DELETE') {
             if (!empty($request->body)) {
-                var_dump($request -> body);
+                echo 'body:'.$request -> body . "\n";
                 $options[CURLOPT_POSTFIELDS] = $request->body;
             }
         } else if ($request->method === 'GET') {
             if (!empty($request->body)) {
                 $options[CURLOPT_URL] = $request->url . '?' . $request->body . '_=' . lcg_value();
-                var_dump($options[CURLOPT_URL]);
             }
         }
+        echo 'url:'.$options[CURLOPT_URL] . "\n";
         curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
         $t2 = microtime(true);

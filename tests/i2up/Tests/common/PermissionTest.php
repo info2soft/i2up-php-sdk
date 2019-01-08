@@ -20,6 +20,7 @@ class PermissionTest extends \PHPUnit_Framework_TestCase
     {
         $permission = $this -> permission;
         $res = $permission -> listCategory();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

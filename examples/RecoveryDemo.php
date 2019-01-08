@@ -80,7 +80,7 @@ $rc_status_arr = array(
 );
 $rc_status_res = $RepRecovery->listRepRecoveryStatus($rc_status_arr);
 if ($rc_status_res[0] == null || $rc_status_res[0]['code'] !== 0) return;
-var_dump($rc_status_res);
+var_export($rc_status_res);
 /**
  *  删除规则
  */
@@ -90,4 +90,4 @@ $delete_rc_arr = array(
     )
 );
 $delete_rc_res = $RepRecovery->deleteRepRecovery($delete_rc_arr);
-var_dump($delete_rc_res);
+var_export($delete_rc_res);

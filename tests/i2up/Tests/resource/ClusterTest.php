@@ -27,6 +27,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'config_port'=>1,
         );
         $res = $cluster -> authCls($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -41,6 +42,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'cls_node_name'=>'cluster-node1',
         );
         $res = $cluster -> verifyClsNode($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -63,6 +65,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $cluster -> createCls($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -75,6 +78,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $cluster -> describeCls($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -98,6 +102,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $cluster -> modifyCls($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -113,6 +118,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
         );
         $res = $cluster -> listCls($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -125,6 +131,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'node_uuids'=>array(),
         );
         $res = $cluster -> listClsStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -137,6 +144,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'node_uuids'=>array(),
         );
         $res = $cluster -> deleteCls($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -150,6 +158,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
             'node_uuid'=>'',
         );
         $res = $cluster -> clsDetail($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

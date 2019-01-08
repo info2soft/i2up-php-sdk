@@ -76,8 +76,7 @@ class NAS {
      */
     public function listNASStatus(array $body = array())
     {
-
-        $url = $this -> url;
+        $url = $this -> url . '/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

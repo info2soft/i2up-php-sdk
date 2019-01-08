@@ -22,6 +22,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
         $arr = array(
         );
         $res = $dataBaseBackup -> importConfig($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -33,6 +34,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
         $arr = array(
         );
         $res = $dataBaseBackup -> exportConfig($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -42,6 +44,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     {
         $dataBaseBackup = $this -> dataBaseBackup;
         $res = $dataBaseBackup -> listBackupHistory();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -53,6 +56,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
         $arr = array(
         );
         $res = $dataBaseBackup -> backupConfig($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -62,6 +66,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     {
         $dataBaseBackup = $this -> dataBaseBackup;
         $res = $dataBaseBackup -> describeBackupConfig();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

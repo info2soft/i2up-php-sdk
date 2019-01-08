@@ -31,6 +31,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'comment'=>'',
         );
         $res = $user -> createUser($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -44,7 +45,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
         );
         $res = $user -> listUser($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -54,10 +55,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $user = $this -> user;
         $arr = array(
-            'id' => '7'
+            'id' => '1'
         );
         $res = $user -> describeUser($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -75,6 +76,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $user -> deleteUser($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -84,7 +86,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $user = $this -> user;
         $arr = array(
-            'id' => '7',
+            'id' => '1',
             'username'=>'test',
             'password'=>'11111111',
             'roles'=>array(
@@ -99,7 +101,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
         );
 
         $res = $user -> modifyUser($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -113,7 +115,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'password'=>'Info1234',
         );
         $res = $user -> modifyUserPwd($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -123,6 +125,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $user = $this -> user;
         $res = $user -> listProfile();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -140,6 +143,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'comment'=>'',
         );
         $res = $user -> modifyProfile($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -149,6 +153,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         $user = $this -> user;
         $res = $user -> logout();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

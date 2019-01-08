@@ -22,23 +22,23 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rep_backup'=>array(
                 'mirr_sync_attr'=>'1',
-                'cdp_path'=>'',
-                'oph_path'=>'',
+                'cdp_path'=>'E:\test3\\',
+                'oph_path'=>'E:\test4\\',
                 'secret_key'=>'',
-                'rep_name'=>'test5',
+                'rep_name'=>'rep_backup',
                 'snapshot_policy'=>'0',
                 'bk_path_policy'=>'1',
-                'cdp_process_time'=>'03:39:20',
+                'cdp_process_time'=>'05:07:28',
                 'mirr_open_type'=>'0',
                 'compress'=>'0',
-                'cdp_switch'=>'',
-                'snapshot_start'=>'',
+                'cdp_switch'=>'1',
+                'snapshot_start'=>1546913351,
                 'cdp_baseline_format'=>'0',
                 'cdp_bl_bkup_switch'=>0,
                 'encrypt_switch'=>'0',
                 'auto_start'=>'1',
                 'wk_path'=>array(
-                    '0'=>'E:\\t\\'
+                    '0'=>'E:\\test\\'
                 ),
                 'band_width'=>'',
                 'snapshot_limit'=>'24',
@@ -58,10 +58,10 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
                 'snapshot_switch'=>0,
                 'file_type_filter'=>'',
                 'cdp_param'=>'3,30,0',
-                'oph_policy'=>'0',
+                'oph_policy'=>'2',
                 'mirr_skip'=>'0',
                 'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-                'cdp_bl_sched'=>'',
+                'cdp_bl_sched'=>'2|1|0|5',
                 'excl_path'=>array(),
                 'mirr_sched'=>'',
                 'bkup_one_time'=>null,
@@ -79,7 +79,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $repBackup -> createRepBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -89,10 +89,10 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $repBackup -> describeRepBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -102,32 +102,32 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'rep_backup'=>array(
                 'mirr_sync_attr'=>'1',
-                'cdp_path'=>'',
-                'oph_path'=>'',
+                'cdp_path'=>'E:\test3\\',
+                'oph_path'=>'E:\test4\\',
                 'secret_key'=>'',
-                'rep_name'=>'test4',
+                'rep_name'=>'rep_backup1',
                 'snapshot_policy'=>'0',
                 'bk_path_policy'=>'1',
-                'cdp_process_time'=>'03:39:20',
+                'cdp_process_time'=>'05:07:28',
                 'mirr_open_type'=>'0',
                 'compress'=>'0',
-                'cdp_switch'=>'',
-                'snapshot_start'=>'',
+                'cdp_switch'=>'1',
+                'snapshot_start'=>1546913351,
                 'cdp_baseline_format'=>'0',
                 'cdp_bl_bkup_switch'=>0,
                 'encrypt_switch'=>'0',
                 'auto_start'=>'1',
                 'wk_path'=>array(
-                    '0'=>'E:\\t\\'
+                    '0'=>'E:\\test\\'
                 ),
                 'band_width'=>'',
                 'snapshot_limit'=>'24',
                 'mirr_sync_flag'=>'0',
                 'bk_path'=>array(
-                    '0'=>'E:\t2\\'
+                    '0'=>'E:\test2\\'
                 ),
                 'wk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
                 'mirr_file_check'=>'0',
@@ -141,10 +141,10 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
                 'snapshot_switch'=>0,
                 'file_type_filter'=>'',
                 'cdp_param'=>'3,30,0',
-                'oph_policy'=>'0',
+                'oph_policy'=>'2',
                 'mirr_skip'=>'0',
                 'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-                'cdp_bl_sched'=>'',
+                'cdp_bl_sched'=>'2|1|0|5',
                 'excl_path'=>array(),
                 'mirr_sched'=>'',
                 'bkup_one_time'=>null,
@@ -159,11 +159,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
                 'cmp_schedule'=>array(),
                 'thread_num'=>'0',
                 'biz_grp_list'=>array(),
-                'random_str'=>'1DFFCDF4-FBDB-496F-95D0-20CD153DA7A6'
+                'random_str'=>'11111111-1111-1111-1111-111111111111'
             ),
         );
         $res = $repBackup -> modifyRepBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -175,10 +175,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'rep_uuids'=>array(
-                '0'=>'D46D743E-A12E-2177-868F-275931A395DF'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             ),
         );
         $res = $repBackup -> deleteRepBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -189,10 +190,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'rep_uuids'=>array(
-                '0'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $repBackup -> startRepBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -203,10 +205,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'rep_uuids'=>array(
-                '0'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $repBackup -> stopRepBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -217,11 +220,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'rep_uuids'=>array(
-                '0'=>'7561723E-1A62-B07D-0EE4-807EFF2706D4'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $repBackup -> listRepBackupStatus($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -238,7 +241,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
             'search_field'=>''
         );
         $res = $repBackup -> listRepBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -248,12 +251,12 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'page'=>1,
             'limit'=>10
         );
         $res = $repBackup -> listRepBackupBaseLine($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -263,11 +266,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'cdp_time_list'=>'2018-12-28_10-14-11',
         );
         $res = $repBackup -> deleteRepBackupBaseline($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -277,10 +280,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'path'=>'',
         );
         $res = $repBackup -> listRepBackupOrphan($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -290,11 +294,12 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
-            'path'=>'dir/dir/',
-            'orphan_list'=>'test.txt',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
+            'path'=>'/',
+            'orphan_list'=>array(),
         );
         $res = $repBackup -> deleteRepBackupOrphan($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -304,11 +309,12 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
-            'orphan'=>'test.txt',
-            'path'=>'dir/dir/',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
+            'orphan'=>'',
+            'path'=>'/',
         );
         $res = $repBackup -> downloadRepBackupOrphan($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -318,11 +324,12 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'3558E306-361D-5A0E-174F-D66ECF3EB4C4',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'page'=>1,
             'limit'=>10,
         );
         $res = $repBackup -> listRepBackupSnapshot($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -332,9 +339,10 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $repBackup -> createRepBackupSnapshot($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -344,12 +352,11 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
     {
         $repBackup = $this -> repBackup;
         $arr = array(
-            'uuid'=>'',
-            'snapshot_names'=>array(
-                '0'=>'name'
-            ),
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
+            'snapshot_names'=>array()
         );
         $res = $repBackup -> deleteRepBackupSnapshot($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

@@ -20,9 +20,10 @@ class QrTest extends \PHPUnit_Framework_TestCase
     {
         $qr = $this -> qr;
         $arr = array(
-            'timestamp'=>1545639362,
+            'timestamp'=>1546847456,
         );
         $res = $qr -> describeTimeStamp($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -37,9 +38,8 @@ class QrTest extends \PHPUnit_Framework_TestCase
             'format'=>'',
         );
         $res = $qr -> createQrPic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
     }
 
     public function testConfirmLogin()
@@ -47,9 +47,10 @@ class QrTest extends \PHPUnit_Framework_TestCase
         $qr = $this -> qr;
         $arr = array(
             'action'=>1,
-            'uuid'=>'7db1dae2b4131e718e885edf29b5cf739e6438e7',
+            'uuid'=>'3f6ed5ee2ff74b02092d0685c2b9328a55aa27db',
         );
         $res = $qr -> confirmLogin($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -62,6 +63,7 @@ class QrTest extends \PHPUnit_Framework_TestCase
             'app_name'=>'enterpriseApp',
         );
         $res = $qr -> obtainQrContent($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -71,9 +73,10 @@ class QrTest extends \PHPUnit_Framework_TestCase
     {
         $qr = $this -> qr;
         $arr = array(
-            'uuid'=>'94c15a475c46656220f40cb259ba4c945010a671',
+            'uuid'=>'cfb4729bf1030c04dbf402ba9456fe443c3f053a',
         );
         $res = $qr -> checkQrStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

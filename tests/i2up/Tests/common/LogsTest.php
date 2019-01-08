@@ -20,15 +20,13 @@ class LogsTest extends \PHPUnit_Framework_TestCase
     {
         $logs = $this -> logs;
         $arr = array(
-            'uuid'=>'F1E9FEAE-F249-FF9E-4A90-866DCBD5DB1E',
-            'level'=>1,
-            'start'=>1,
+            'uuid'=>'F97B3FD5-4D5D-41EE-22A9-740A74E1E13C',
+            'level'=>0,
             'page'=>1,
-            'end'=>1,
             'limit'=>10,
         );
         $res = $logs -> listTaskLog($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -48,7 +46,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
         );
         $res = $logs -> listHALog($arr);
         $this->assertNotNull($res[0]);
-        var_dump($res);
+        var_export($res);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
@@ -60,12 +58,10 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'level'=>1,
             'page'=>1,
             'limit'=>10,
-            'start'=>1,
-            'uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-            'end'=>1,
+            'uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $logs -> listNodeLog($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -75,6 +71,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
     {
         $logs = $this -> logs;
         $res = $logs -> listNpsvrLog();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -84,11 +81,11 @@ class LogsTest extends \PHPUnit_Framework_TestCase
     {
         $logs = $this -> logs;
         $arr = array(
-            'start_stamp'=>1545637314,
             'type'=>'real',
-            'uuid'=>'F1E9FEAE-F249-FF9E-4A90-866DCBD5DB1E',
+            'uuid'=>'F97B3FD5-4D5D-41EE-22A9-740A74E1E13C',
         );
         $res = $logs -> listTrafficLog($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -104,7 +101,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'start_time'=>1508833766,
         );
         $res = $logs -> listOpLog($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -118,6 +115,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'end_time'=>1508833953,
         );
         $res = $logs -> deleteOpLog($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -131,6 +129,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
             'start_time'=>1508833953,
         );
         $res = $logs -> downloadOpLog($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

@@ -24,6 +24,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'rc_data_path'=>'',
         );
         $res = $timingRecovery -> listTimingRecoveryMssqlTime($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -38,6 +39,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'rc_data_path'=>''
         );
         $res = $timingRecovery -> describeTimingRecoveryMssqlInitInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -52,6 +54,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'backup_task_uuid'=>'',
         );
         $res = $timingRecovery -> listTimingRecoveryPathList($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -69,6 +72,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $timingRecovery -> verifyTimingRecoveryMssqlInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -132,6 +136,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
                 'rc_point_in_time'=>'2017-12-21_13-16-53',),
         );
         $res = $timingRecovery -> createTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -191,6 +196,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
                 'rc_point_in_time'=>'2017-12-21_13-16-53',),
         );
         $res = $timingRecovery -> modifyTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -203,6 +209,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $timingRecovery -> describeTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -218,6 +225,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'search_field'=>'',
         );
         $res = $timingRecovery -> listTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -230,6 +238,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array(),
         );
         $res = $timingRecovery -> listTimingRecoveryStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -242,6 +251,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array(),
         );
         $res = $timingRecovery -> deleteTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -254,6 +264,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array()
         );
         $res = $timingRecovery -> startTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -266,6 +277,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array()
         );
         $res = $timingRecovery -> stopTimingRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

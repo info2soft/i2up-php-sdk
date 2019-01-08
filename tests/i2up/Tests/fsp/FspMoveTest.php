@@ -24,6 +24,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspMove -> listFspMoveNic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -37,6 +38,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspMove -> listFspMoveDir($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -50,6 +52,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspMove -> verifyFspMoveLicense($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -63,6 +66,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspMove -> verifyFspMoveOldRule($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -77,6 +81,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'sync_item'=>'C:\\',
         );
         $res = $fspMove -> verifyFspMoveVolumeSpace($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -90,6 +95,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspMove -> verifyFspMoveOsVersion($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -137,6 +143,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $fspMove -> createFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -182,6 +189,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
                 'band_width'=>'3*03:00-14:00*2m',),
         );
         $res = $fspMove -> modifyFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -194,6 +202,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $fspMove -> describeFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -206,6 +215,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array(),
         );
         $res = $fspMove -> deleteFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -221,6 +231,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'search_value'=>'',
         );
         $res = $fspMove -> listFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -233,6 +244,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspMove -> startFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -245,6 +257,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspMove -> stopFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -257,6 +270,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspMove -> moveFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -269,6 +283,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspMove -> rebootFspMove($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -281,6 +296,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array(),
         );
         $res = $fspMove -> listFspMoveStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

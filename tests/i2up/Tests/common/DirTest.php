@@ -21,14 +21,14 @@ class DirTest extends \PHPUnit_Framework_TestCase
         $dir = $this -> dir;
         $arr = array(
             'show_file'=>1,
-            'node_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+            'node_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'dev'=>0,
             'path'=>'',
             'rep_uuid'=>'',
-            'bs_time'=>'2018-10-23_13-23-08',
+            'bs_time'=>'',
         );
         $res = $dir -> listDir($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -38,10 +38,11 @@ class DirTest extends \PHPUnit_Framework_TestCase
     {
         $dir = $this -> dir;
         $arr = array(
-            'node_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-            'path'=>'E:\test2\\',
+            'node_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'path'=>'E:\test7\\',
         );
         $res = $dir -> createDir($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -51,10 +52,11 @@ class DirTest extends \PHPUnit_Framework_TestCase
     {
         $dir = $this -> dir;
         $arr = array(
-            'node_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
-            'path'=>'E:\test2\\',
+            'node_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'path'=>'E:\test7\\',
         );
         $res = $dir -> checkDir($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

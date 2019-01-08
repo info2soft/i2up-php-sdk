@@ -766,7 +766,6 @@ class VirtualizationSupport {
             $header = array();
         }
         $ret = null;
-        var_dump($url);
         if ($method === 'get') {
             $ret = Client::get($url, $body, $header);
         } else if ($method === 'put') {

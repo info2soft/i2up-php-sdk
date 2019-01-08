@@ -19,6 +19,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     {
         $dashboard = $this -> dashboard;
         $res = $dashboard -> overall();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -31,6 +32,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
             'limit'=>'10',
         );
         $res = $dashboard -> ha($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -39,12 +41,12 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     {
         $dashboard = $this -> dashboard;
         $arr = array(
-            'wk_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'wk_uuid'=>'F28BA5A6-4FF9-E596-4371-1ED203D45143',
             'mode'=>'month',
             'type'=>'I2VP_BK'
         );
         $res = $dashboard -> describeVpRuleRate($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -54,10 +56,10 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     {
         $dashboard = $this -> dashboard;
         $arr = array(
-            'vp_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
+            'vp_uuid'=>'F28BA5A6-4FF9-E596-4371-1ED203D45143',
         );
         $res = $dashboard -> describeVmProtectRate($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -72,7 +74,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
             'type'=>0,
         );
         $res = $dashboard -> node($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -87,7 +89,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
         );
         $res = $dashboard -> repBackup($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

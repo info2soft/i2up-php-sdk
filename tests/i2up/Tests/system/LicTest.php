@@ -23,6 +23,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'group_sn'=>'',
         );
         $res = $lic -> describeActivateInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -35,6 +36,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $lic -> downloadLicInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -44,7 +46,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $res = $lic -> describeLicCcHwCode();
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -59,7 +61,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $lic -> describeLicObjHwCode($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -69,6 +71,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $res = $lic -> activateLicAll();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -94,6 +97,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'sn'=>'10-111111-3333',
         );
         $res = $lic -> createLic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -116,6 +120,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'sign'=>'asldkfjklasdjflksjdflkjsajsldf',
         );
         $res = $lic -> updateLic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -142,6 +147,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'is_trial'=>'',
         );
         $res = $lic -> updateBatchLic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -154,7 +160,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC'
         );
         $res = $lic -> describeLic($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -172,7 +178,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'order_by'=>'',
         );
         $res = $lic -> listLic($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -185,6 +191,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'lic_uuids'=>array()
         );
         $res = $lic -> deleteLic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -200,7 +207,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'config_port'=>''
         );
         $res = $lic -> listLicObjBind($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -213,6 +220,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'lic_uuid'=>'DACFE73C-0A94-608C-F620-F50972E2CD36'
         );
         $res = $lic -> listLicBind($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -226,6 +234,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'lic_uuid'=>'9B41A083-96F6-F06F-C646-B84462FA205C'
         );
         $res = $lic -> updateLicBind($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -241,7 +250,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
             'filter_by_biz_grp'=>'1',
         );
         $res = $lic -> listLicObj($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

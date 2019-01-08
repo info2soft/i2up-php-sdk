@@ -28,6 +28,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $bizGroup -> createBizGroup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -46,6 +47,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $bizGroup -> modifyBizGroup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -58,6 +60,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $bizGroup -> describeBizGroup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -70,6 +73,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             'grp_uuids'=>array()
         );
         $res = $bizGroup -> deleteBizGroup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -87,6 +91,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             'page'=>1
         );
         $res = $bizGroup -> listBizGroup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -103,6 +108,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $bizGroup -> updateBizGroupBind($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -115,6 +121,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $bizGroup -> listBizGroupBind($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -128,6 +135,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
             'subtype'=>0
         );
         $res = $bizGroup -> listBizGroupResource($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

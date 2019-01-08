@@ -26,6 +26,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'limit'=>'10',
         );
         $res = $appHighAvailability -> listHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -39,7 +40,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'node_uuid'=>''
         );
         $res = $appHighAvailability -> startHA($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -53,6 +54,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'node_uuid'=>''
         );
         $res = $appHighAvailability -> stopHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -66,6 +68,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'node_uuid'=>''
         );
         $res = $appHighAvailability -> forceSwitchHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -78,6 +81,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'ha_uuid'=>array()
         );
         $res = $appHighAvailability -> deleteHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -90,6 +94,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'ha_uuid'=>array()
         );
         $res = $appHighAvailability -> listHAStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -102,6 +107,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'master_uuid'=>'',
         );
         $res = $appHighAvailability -> describeHAScriptPath($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -149,6 +155,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
                     'ha_uuid'=>'',),),
         );
         $res = $appHighAvailability -> modifyHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -206,6 +213,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $appHighAvailability -> createHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -219,6 +227,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'master_uuid'=>'',
         );
         $res = $appHighAvailability -> listNicInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -231,6 +240,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
             'uuid' => ''
         );
         $res = $appHighAvailability -> describeHA($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

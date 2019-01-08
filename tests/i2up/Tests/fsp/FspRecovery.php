@@ -25,6 +25,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuid'=>'',
         );
         $res = $fspRecovery -> listFspRecoveryDir($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -39,6 +40,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspRecovery -> listFspRecoveryNic($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -52,6 +54,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'rc_data_path'=>'C:\\back\\',
         );
         $res = $fspRecovery -> listFspRecoveryPoint($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -67,6 +70,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'dst_path'=>'???',
         );
         $res = $fspRecovery -> verifyFspRecoveryVolumeSpace($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -80,6 +84,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspRecovery -> verifyFspRecoveryOldRule($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -92,6 +97,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspRecovery -> verifyFspRecoveryLicense($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -106,6 +112,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $fspRecovery -> verifyFspRecoveryOsVersion($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -156,6 +163,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $fspRecovery -> createFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -208,6 +216,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $fspRecovery -> modifyFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -220,6 +229,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $fspRecovery -> desribeFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -232,6 +242,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspRecovery -> deleteFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -247,6 +258,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'limit'=>10,
         );
         $res = $fspRecovery -> listFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -259,6 +271,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspRecovery -> startFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -271,6 +284,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspRecovery -> stopFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -283,6 +297,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspRecovery -> moveFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -295,6 +310,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array()
         );
         $res = $fspRecovery -> rebootFspRecovery($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -308,6 +324,7 @@ class FspRecoveryTest extends \PHPUnit_Framework_TestCase
             'fsp_uuids'=>array(),
         );
         $res = $fspRecovery -> listFspRecoveryStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

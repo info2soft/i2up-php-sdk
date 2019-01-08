@@ -24,7 +24,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
             'where_args[status]'=>1,
         );
         $res = $notifications -> listNotifications($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -34,10 +34,10 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $arr = array(
-            'uuid'=>'87620164-62D9-A118-2063-733ADEBB9C39'
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $notifications -> describeNotifications($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -47,6 +47,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $res = $notifications -> describeNotificationsCount();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -57,10 +58,11 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         $notifications = $this -> notifications;
         $arr = array(
             'uuids'=>array(
-                '0'=>'EA6E2384-792D-8F46-1B35-085A376C790B'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $notifications -> deleteNotifications($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -71,11 +73,12 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         $notifications = $this -> notifications;
         $arr = array(
             'uuids'=>array(
-                '0'=>'FFC4711E-F003-89D9-1475-F641A3CDA58B'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             ),
             'type'=>101
         );
         $res = $notifications -> readNotifications($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -86,7 +89,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $res = $notifications -> describeNotificationsConfig();
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -160,6 +163,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $notifications -> updateNotificationsConfig($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -172,6 +176,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
             'email'=>''
         );
         $res = $notifications -> testNotificationsEmail($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -181,6 +186,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $res = $notifications -> resetNotificationsTimes();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

@@ -19,6 +19,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     {
         $auth = $this -> auth;
         $res = $auth -> describePhoneCode();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -28,6 +29,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     {
         $auth = $this -> auth;
         $res = $auth -> regAccount();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -37,6 +39,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     {
         $auth = $this -> auth;
         $res = $auth -> token();
+        var_export($res);
         $this->assertNotNull($res);
         $this->assertEquals(true, is_string($res));
     }
@@ -45,6 +48,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     {
         $auth = $this -> auth;
         $res = $auth -> resetPwd();
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -54,9 +58,10 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     {
         $auth = $this -> auth;
         $arr = array(
-            'access_token'=>'e94c0d9e51f1a785SN_BQFnp-TqdAuVvLvIvsiUa4r2yluaS4IL9P3EJTCHOg1ou5KaEY1V-Q0KjhMCtLGhP1TL6nNDf52HOCWJGfGqamoFZRfcvtygZonHp0WTnTcl588WBMmsfxHt0rmez_sIx73EAXhzpVmHE3TVuwQ',
+            'access_token'=>'f265ebeaa61e77e3g5CuJjQcr8G7KHJ3XjEhEc0DM6tl9UuE-KtlJDUa6CO6dOyBdk0MAnAb_KRJK63IwoF_DjgZTkP_cdMjhDl-pAa_RjlSdYkfLxbp7HTmyjXPC7ulTHQW2R0tmkfE9A9-r5L4ipq4BsfQC5XFNoL2uw',
         );
         $res = $auth -> checkLoginStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

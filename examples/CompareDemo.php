@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use i2up\common\Auth;
 use i2up\tools\v20181217\Compare;
@@ -90,4 +90,4 @@ $compare_delete_arr = array(
     )
 );
 $compare_delete_res = $Compare->deleteCompare($compare_delete_arr);
-var_dump($compare_delete_res);
+var_export($compare_delete_res);

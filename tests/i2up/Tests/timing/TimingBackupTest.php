@@ -23,6 +23,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $timingBackup -> describeTimingBackupMssqlSource($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -41,6 +42,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'src_node_uuid'=>'',
         );
         $res = $timingBackup -> verifyTimingBackupOracleInfo($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -59,6 +61,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'src_node_uuid'=>'',
         );
         $res = $timingBackup -> describeTimingBackupOracleContent($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -71,6 +74,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
         );
         $res = $timingBackup -> descibeTimingBackupOracleSriptPath($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -89,6 +93,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                 'user_id'=>'',),
         );
         $res = $timingBackup -> listTimingBackupMssqlDbList($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -172,6 +177,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             ),
         );
         $res = $timingBackup -> createTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -184,6 +190,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'uuid'=>''
         );
         $res = $timingBackup -> describeTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -267,6 +274,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             )
         );
         $res = $timingBackup -> modifyTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -283,6 +291,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'type'=>0,
         );
         $res = $timingBackup -> listTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -295,6 +304,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array(),
         );
         $res = $timingBackup -> listTimingBackupStatus($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -307,6 +317,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array(),
         );
         $res = $timingBackup -> deleteTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -319,6 +330,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array(),
         );
         $res = $timingBackup -> startTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -330,6 +342,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'task_uuids'=>array(),
         );
         $res = $timingBackup -> stopTimingBackup($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

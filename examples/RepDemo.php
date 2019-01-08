@@ -147,4 +147,4 @@ $rep_delete_arr = array(
     )
 );
 $rep_delete_res = $RepBackup->deleteRepBackup($rep_delete_arr);
-var_dump($rep_delete_res);
+var_export($rep_delete_res);

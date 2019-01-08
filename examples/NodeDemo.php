@@ -174,6 +174,6 @@ $delete_batch_node_arr = array(
     )
 );
 $delete_batch_node_res = $Node->deleteNode($delete_batch_node_arr);
-var_dump($delete_batch_node_res);
+var_export($delete_batch_node_res);
 
 

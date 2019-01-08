@@ -22,12 +22,12 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'task_uuid'=>'',
             'check_type'=>1,
-            'wk_uuid'=>'730B1B39-9906-F084-3C8F-DA7779141EA0',
-            'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'bk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'rep_uuid'=>'',
         );
         $res = $diagnose -> createDiagnose($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -38,10 +38,11 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
         $diagnose = $this -> diagnose;
         $arr = array(
             'check_uuids'=>array(
-                '0'=>'68AC211A-5158-F17C-E08C-98C95F02AC60'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $diagnose -> deleteDiagnose($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -55,6 +56,7 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
             'page'=>1
         );
         $res = $diagnose -> listDiagnose($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -65,11 +67,11 @@ class DiagnoseTest extends \PHPUnit_Framework_TestCase
         $diagnose = $this -> diagnose;
         $arr = array(
             'check_uuids'=>array(
-                '0'=>'68AC211A-5158-F17C-E08C-98C95F02AC60'
+                '0'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $diagnose -> downloadDiagnoseResult($arr);
-        var_dump($res);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
