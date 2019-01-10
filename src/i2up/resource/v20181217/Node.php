@@ -127,9 +127,9 @@ class Node {
      */
     public function createBatchNode(array $body = array())
     {
-        if (isset($body['os_pwd'])) {
+        if (isset($body['base_info_list'][0]['os_pwd'])) {
             $RSA = new RSA();
-            $body['os_pwd'] = $RSA ->encrypt_with_public_key($body['os_pwd']);
+            $body['base_info_list'][0]['os_pwd'] = $RSA ->encrypt_with_public_key($body['base_info_list'][0]['os_pwd']);
         }
         $url = $this -> url . '/batch';
         $res = $this -> httpRequest('post', $url, $body);

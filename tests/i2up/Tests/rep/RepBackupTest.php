@@ -310,7 +310,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'uuid'=>'11111111-1111-1111-1111-111111111111',
-            'orphan'=>'',
+            'orphan'=>'test.txt',
             'path'=>'/',
         );
         $res = $repBackup -> downloadRepBackupOrphan($arr);

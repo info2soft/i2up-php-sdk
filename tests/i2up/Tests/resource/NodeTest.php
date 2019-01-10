@@ -129,7 +129,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'node'=>array(
                 'config_addr'=>'192.168.72.76',
                 'proxy_switch'=>0,
@@ -161,10 +161,12 @@ class NodeTest extends \PHPUnit_Framework_TestCase
                 'config_port'=>'26821',
                 'comment'=>'',
                 'biz_grp_list'=>array(),
-                'i2id'=>''
+                'i2id'=>'',
+                'random_str'=>'11111111-1111-1111-1111-111111111111'
             )
         );
         $res = $node -> modifyNode($arr);
+        var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
@@ -174,7 +176,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'uuid'=>'95561172-BD9F-81F2-232D-060F080B9500'
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $node -> describeNode($arr);
         var_export($res);
