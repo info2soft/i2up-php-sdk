@@ -20,7 +20,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'group_sn'=>'',
+            'group_sn'=>'20-4570098558',
         );
         $res = $lic -> describeActivateInfo($arr);
         var_export($res);
@@ -33,7 +33,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
         );
         $res = $lic -> downloadLicInfo($arr);
         var_export($res);
@@ -57,7 +57,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
         $lic = $this -> lic;
         $arr = array(
             'obj_uuids'=>array(
-                '0'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC'
+                '0'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
             ),
         );
         $res = $lic -> describeLicObjHwCode($arr);
@@ -82,69 +82,40 @@ class LicTest extends \PHPUnit_Framework_TestCase
         $lic = $this -> lic;
         $arr = array(
             'license'=>array(
-                '10-111111-3333'=>array(
-                    'lic'=>'fMdsgzYMzelvzqGMzsIMA+5cSBfgSZJarq2gF/vUODTpxtl2gfmpLzHi3/IGOSe7rZ',
-                    'cat'=>'06'
-                ),
-                '20-111111-3333'=>array(
-                    'lic'=>'ce7nmPMrxsPfRn6t4xbnWeW2roARspsBubdiDnEm46R3NGBbtlXas/x',
-                    'cat'=>'09'
+                '20-4570098558-01'=>array(
+                    'feature'=>'cdp',
+                    'lic'=>'joEsLGQImYbDo2/DSG2RGR7VorckQmnPAAvFgLNCVd78KFDFb0Y0xtShHFyQVF6VXRUcHvyeqJEu1/nuMOyyJiO8RMoU4GHZMrK6iLDRoPZHV87tp0Jd80MfuTHrpBc209IjM+AkSsTM66Wdfy0tvLJMfPqhaYdg7M80X+fhRfeP6kj9ikSVvmJMHJ/ms7lrgz5D+s9jhtzW7tv9cz07bbankTgwyZf6rnjbgOI76tsKzYq8rsBttYSGf+oy1qa2nM7x/pQHE6oRiXVy8+Ju2dzpwvLlMurF75r7lWyMRPSniPHBQGrx4yEEeKVwuWCMRaSJVyId13qyP7gPBqes4jgsiVHvt1okhydrAeoq89KOgnOHPqrpS+qI9dvXFmFRiP9AB0i9ra67tDx5ItYNh/neNgxsNpV3q0Tf9PfoTKiKwcYMg0AiFeKuSpynDIL530Ek8Jm/7LbXU7+mUkeGO7BJo9gxEMJRTHuSRLCLIXWm2LY2S58WccsXkL7GFaamkh6lE1VX3quXavLpHC0ishL4D0ocEdAh507s6GKd59oVErFAyBOifEE9EONR+95wD9MQMc4SdNt4l4Z7ATj67JN86UFZ5xZpGEOnMgCSUuuzX/Nx0HSF6uUf3Zs6HcViudmXcvLwwaFeRScRDwHYVLhiABda/qAp8Ovoc8Aw/3w=',
                 )
             ),
-            'key'=>'fDTpxtl2gfmpLasldkfjklasdjflksjdflkjsajsldfzHi3/IGOSe',
-            'num'=>2,
-            'sign'=>'asldkfjklasdjflksjdflkjsajsldf',
-            'sn'=>'10-111111-3333',
+            'key'=>'5BrDir',
+            'num'=>1,
+            'sign'=>'',
+            'sn'=>array(
+                '0'=>'20-4570098558-01'
+            ),
         );
         $res = $lic -> createLic($arr);
         var_export($res);
-        $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
+
     }
 
-    public function testUpdateLic()
-    {
-        $lic = $this -> lic;
-        $arr = array(
-            'uuid'=>'',
-            'key'=>'fDTpxtl2gfmpLasldkfjklasdjflksjdflkjsajsldfzHi3/IGOSe',
-            'sn'=>'20-111111-3333',
-            'license'=>array(
-                '20-111111-3333'=>array(
-                    'lic'=>'ce7nmPMrxsPfRn6t4xbnWeW2roARspsBubdiDnEm46R3NGBbtlXas/x',
-                    'cat'=>'09'
-                )
-            ),
-            'num'=>1,
-            'sign'=>'asldkfjklasdjflksjdflkjsajsldf',
-        );
-        $res = $lic -> updateLic($arr);
-        var_export($res);
-        $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
-    }
 
     public function testUpdateBatchLic()
     {
         $lic = $this -> lic;
         $arr = array(
-            'sn'=>'10-111111-3333',
-            'sign'=>'asldkfjklasdjflksjdflkjsajsldf',
-            'num'=>2,
-            'key'=>'fDTpxtl2gfmpLasldkfjklasdjflksjdflkjsajsldfzHi3/IGOSe',
-            'license'=>array(
-                '10-111111-3333'=>array(
-                    'cat'=>'06',
-                    'lic'=>'fMdsgzYMzelvzqGMzsIMA+5cSBfgSZJarq2gF/vUODTpxtl2gfmpLzHi3/IGOSe7rZ'
-                ),
-                '20-111111-3333'=>array(
-                    'lic'=>'ce7nmPMrxsPfRn6t4xbnWeW2roARspsBubdiDnEm46R3NGBbtlXas/x',
-                    'cat'=>'09'
-                )
+            'sn'=>array(
+                '0'=>'20-4570098558-01'
             ),
-            'is_trial'=>'',
+            'sign'=>'',
+            'num'=>1,
+            'key'=>'5BrDir',
+            'license'=>array(
+                '20-4570098558-01'=>array(
+                    'feature'=>'cdp',
+                    'lic'=>'joEsLGQImYbDo2/DSG2RGR7VorckQmnPAAvFgLNCVd78KFDFb0Y0xtShHFyQVF6VXRUcHvyeqJEu1/nuMOyyJiO8RMoU4GHZMrK6iLDRoPZHV87tp0Jd80MfuTHrpBc209IjM+AkSsTM66Wdfy0tvLJMfPqhaYdg7M80X+fhRfeP6kj9ikSVvmJMHJ/ms7lrgz5D+s9jhtzW7tv9cz07bbankTgwyZf6rnjbgOI76tsKzYq8rsBttYSGf+oy1qa2nM7x/pQHE6oRiXVy8+Ju2dzpwvLlMurF75r7lWyMRPSniPHBQGrx4yEEeKVwuWCMRaSJVyId13qyP7gPBqes4jgsiVHvt1okhydrAeoq89KOgnOHPqrpS+qI9dvXFmFRiP9AB0i9ra67tDx5ItYNh/neNgxsNpV3q0Tf9PfoTKiKwcYMg0AiFeKuSpynDIL530Ek8Jm/7LbXU7+mUkeGO7BJo9gxEMJRTHuSRLCLIXWm2LY2S58WccsXkL7GFaamkh6lE1VX3quXavLpHC0ishL4D0ocEdAh507s6GKd59oVErFAyBOifEE9EONR+95wD9MQMc4SdNt4l4Z7ATj67JN86UFZ5xZpGEOnMgCSUuuzX/Nx0HSF6uUf3Zs6HcViudmXcvLwwaFeRScRDwHYVLhiABda/qAp8Ovoc8Aw/3w='
+                )
+            )
         );
         $res = $lic -> updateBatchLic($arr);
         var_export($res);
@@ -157,7 +128,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC'
+            'uuid'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
         );
         $res = $lic -> describeLic($arr);
         var_export($res);
@@ -188,7 +159,9 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'lic_uuids'=>array()
+            'lic_uuids'=>array(
+                '0'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
+            )
         );
         $res = $lic -> deleteLic($arr);
         var_export($res);
@@ -201,10 +174,10 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'obj_uuid'=>'4D130492-334A-42FC-46B6-E7F95FA3D6AC',
-            'obj_type'=>2,
-            'config_addr'=>'',
-            'config_port'=>''
+            'obj_uuid'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1',
+            'obj_type'=>0,
+            'config_addr'=>'192.168.72.76',
+            'config_port'=>'26821'
         );
         $res = $lic -> listLicObjBind($arr);
         var_export($res);
@@ -217,7 +190,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'lic_uuid'=>'DACFE73C-0A94-608C-F620-F50972E2CD36'
+            'lic_uuid'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
         );
         $res = $lic -> listLicBind($arr);
         var_export($res);
@@ -230,8 +203,10 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'obj_uuids'=>'7C6A64CB-F4C6-7876-03AA-9ACF61012274',
-            'lic_uuid'=>'9B41A083-96F6-F06F-C646-B84462FA205C'
+            'obj_uuids'=>array(
+                '0'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
+            ),
+            'lic_uuid'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1'
         );
         $res = $lic -> updateLicBind($arr);
         var_export($res);
@@ -244,9 +219,9 @@ class LicTest extends \PHPUnit_Framework_TestCase
     {
         $lic = $this -> lic;
         $arr = array(
-            'feature'=>'vp',
-            'obj_type'=>2,
-            'where_args[obj_uuid]'=>'E5CC8E45-04BD-5277-A245-613242E393DE',
+            'feature'=>'coopy',
+            'obj_type'=>0,
+            'where_args[obj_uuid]'=>'9D167FAC-F5A3-F577-8629-2A25070A49E1',
             'filter_by_biz_grp'=>'1',
         );
         $res = $lic -> listLicObj($arr);

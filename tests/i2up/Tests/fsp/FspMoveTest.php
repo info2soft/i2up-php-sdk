@@ -20,8 +20,8 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
+            'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
         );
         $res = $fspMove -> listFspMoveNic($arr);
         var_export($res);
@@ -35,7 +35,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
         $fspMove = $this -> fspMove;
         $arr = array(
             'fsp_uuid'=>'',
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
         );
         $res = $fspMove -> listFspMoveDir($arr);
         var_export($res);
@@ -48,8 +48,8 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-            'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
+            'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
         );
         $res = $fspMove -> verifyFspMoveLicense($arr);
         var_export($res);
@@ -62,8 +62,8 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-            'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
+            'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
         );
         $res = $fspMove -> verifyFspMoveOldRule($arr);
         var_export($res);
@@ -76,9 +76,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-            'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-            'sync_item'=>'C:\\',
+            'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
+            'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
+            'sync_item'=>'/',
         );
         $res = $fspMove -> verifyFspMoveVolumeSpace($arr);
         var_export($res);
@@ -91,8 +91,8 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
+            'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
         );
         $res = $fspMove -> verifyFspMoveOsVersion($arr);
         var_export($res);
@@ -106,39 +106,32 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
         $fspMove = $this -> fspMove;
         $arr = array(
             'fsp_move'=>array(
-                'fsp_name'=>'rrrrr',
+                'fsp_name'=>'testMove',
                 'service_uuid'=>'',
                 'monitor_type'=>0,
-                'bk_path'=>array(),
-                'compress'=>'0',
-                'net_mapping'=>array(
-                    '0'=>array(
-                        'bk_nic'=>array(
-                            'name'=>'Ethernet0',
-                            'type'=>'0',
-                            'ip'=>'192.168.72.74/255.255.240.0'
-                        ),
-                        'wk_nic'=>array(
-                            'name'=>'Ethernet0',
-                            'type'=>'0',
-                            'ip'=>'192.168.72.73/255.255.240.0'
-                        )
-                    )
+                'bk_path'=>array(
+                    "/I2FFO/bin/", "/I2FFO/boot/", "/I2FFO/etc/", "/I2FFO/lib/", "/I2FFO/lib64/", "/I2FFO/root/", "/I2FFO/sbin/", "/I2FFO/usr/bin/", "/I2FFO/usr/lib/", "/I2FFO/usr/lib64/", "/I2FFO/usr/libexec/", "/I2FFO/usr/local/", "/I2FFO/usr/sbin/", "/I2FFO/var/lib/nfs/"
                 ),
-                'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+                'compress'=>'0',
+                'net_mapping'=>array(),
+                'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
                 'encrypt_switch'=>'0',
                 'mirr_open_type'=>'0',
-                'sync_item'=>'C:',
+                'sync_item'=>'/',
                 'mirr_sync_flag'=>'0',
                 'net_mapping_type'=>'2',
                 'mirr_sync_attr'=>'1',
-                'band_width'=>'3*03:00-14:00*2m',
-                'excl_path'=>array(),
+                'band_width'=>'',
+                'excl_path'=>array(
+                    "/etc/X11/xorg.conf/", "/etc/init.d/i2node/", "/etc/rc.d/init.d/i2node/", "/etc/sdata/"
+                ),
                 'fsp_wk_shut_flag'=>'2',
                 'secret_key'=>'',
-                'wk_path'=>array(),
+                'wk_path'=>array(
+                    "/bin/", "/boot/", "/etc/", "/lib/", "/lib64/", "/root/", "/sbin/", "/usr/bin/", "/usr/lib/", "/usr/lib64/", "/usr/libexec/", "/usr/local/", "/usr/sbin/", "/var/lib/nfs/"
+                ),
                 'mirr_file_check'=>'0',
-                'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+                'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
                 'failover'=>'2'
             )
         );
@@ -153,40 +146,37 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'fsp_move'=>array(
-                'excl_path'=>array(),
-                'random_str'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'fsp_wk_shut_flag'=>'2',
-                'monitor_type'=>0,
-                'mirr_sync_attr'=>'1',
-                'net_mapping_type'=>'2',
-                'mirr_sync_flag'=>'0',
-                'mirr_file_check'=>'0',
-                'sync_item'=>'C:',
-                'secret_key'=>'',
-                'failover'=>'2',
-                'fsp_name'=>'rrrrr',
-                'mirr_open_type'=>'0',
-                'bk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'bk_path'=>array(),
-                'net_mapping'=>array(
-                    '0'=>array(
-                        'wk_nic'=>array(
-                            'ip'=>'192.168.72.73/255.255.240.0',
-                            'type'=>'0',
-                            'name'=>'Ethernet0',),
-                        'bk_nic'=>array(
-                            'type'=>'0',
-                            'name'=>'Ethernet0',
-                            'ip'=>'192.168.72.74/255.255.240.0',),),),
+                'fsp_name'=>'testMove',
                 'service_uuid'=>'',
-                'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+                'monitor_type'=>0,
+                'bk_path'=>array(
+                    "/I2FFO/bin/", "/I2FFO/boot/", "/I2FFO/etc/", "/I2FFO/lib/", "/I2FFO/lib64/", "/I2FFO/root/", "/I2FFO/sbin/", "/I2FFO/usr/bin/", "/I2FFO/usr/lib/", "/I2FFO/usr/lib64/", "/I2FFO/usr/libexec/", "/I2FFO/usr/local/", "/I2FFO/usr/sbin/", "/I2FFO/var/lib/nfs/"
+                ),
                 'compress'=>'0',
+                'net_mapping'=>array(),
+                'bk_uuid'=>'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
                 'encrypt_switch'=>'0',
-                'move_type'=>'0',
-                'wk_path'=>array(),
-                'band_width'=>'3*03:00-14:00*2m',),
+                'mirr_open_type'=>'0',
+                'sync_item'=>'/',
+                'mirr_sync_flag'=>'0',
+                'net_mapping_type'=>'2',
+                'mirr_sync_attr'=>'1',
+                'band_width'=>'',
+                'excl_path'=>array(
+                    "/etc/X11/xorg.conf/", "/etc/init.d/i2node/", "/etc/rc.d/init.d/i2node/", "/etc/sdata/"
+                ),
+                'fsp_wk_shut_flag'=>'2',
+                'secret_key'=>'',
+                'wk_path'=>array(
+                    "/bin/", "/boot/", "/etc/", "/lib/", "/lib64/", "/root/", "/sbin/", "/usr/bin/", "/usr/lib/", "/usr/lib64/", "/usr/libexec/", "/usr/local/", "/usr/sbin/", "/var/lib/nfs/"
+                ),
+                'mirr_file_check'=>'0',
+                'wk_uuid'=>'42614852-BB62-1EF7-FED0-D2354BF3149D',
+                'failover'=>'2',
+                'random_str'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $fspMove -> modifyFspMove($arr);
         var_export($res);
@@ -199,7 +189,7 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $fspMove -> describeFspMove($arr);
         var_export($res);
@@ -212,7 +202,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array(
+               '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $fspMove -> deleteFspMove($arr);
         var_export($res);
@@ -241,7 +233,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'fsp_uuids'=>array()
+            'fsp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $fspMove -> startFspMove($arr);
         var_export($res);
@@ -254,7 +248,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'fsp_uuids'=>array()
+            'fsp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $fspMove -> stopFspMove($arr);
         var_export($res);
@@ -267,7 +263,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'fsp_uuids'=>array()
+            'fsp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $fspMove -> moveFspMove($arr);
         var_export($res);
@@ -280,7 +278,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'fsp_uuids'=>array()
+            'fsp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $fspMove -> rebootFspMove($arr);
         var_export($res);
@@ -293,7 +293,9 @@ class FspMoveTest extends \PHPUnit_Framework_TestCase
     {
         $fspMove = $this -> fspMove;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $fspMove -> listFspMoveStatus($arr);
         var_export($res);

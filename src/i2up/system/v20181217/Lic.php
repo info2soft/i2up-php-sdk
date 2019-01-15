@@ -91,21 +91,6 @@ class Lic {
         return $res;
     }
 
-    /**
-     * 2 更新 lic
-     *
-     * @param array $body  参数详见 API 手册
-     * $body['uuid'] String  必填 uuid
-     * @return array
-     */
-    public function updateLic(array $body = array())
-    {
-        if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/' . $body['uuid'];
-        unset($body['uuid']);
-        $res = $this -> httpRequest('put', $url, $body);
-        return $res;
-    }
 
     /**
      * 2 更新 lic（批量，离线）

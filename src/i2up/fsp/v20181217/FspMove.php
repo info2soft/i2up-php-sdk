@@ -114,7 +114,7 @@ class FspMove {
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
-        $res = $this -> httpRequest('put', $url);
+        $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 

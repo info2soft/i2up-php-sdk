@@ -62,7 +62,7 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $arr = array(
-            'uuid'=>'11111111-1111-1111-1111-111111111111'
+            'uuid'=>'11111111-1111-1111-1111-11111111111'
         );
         $res = $compare -> describeCompare($arr);
         var_export($res);
@@ -101,7 +101,7 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     {
         $compare = $this -> compare;
         $arr = array(
-            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
+            'task_uuids'=>array('11111111-1111-1111-1111-11111111111'),
         );
         $res = $compare -> listCompareStatus($arr);
         var_export($res);

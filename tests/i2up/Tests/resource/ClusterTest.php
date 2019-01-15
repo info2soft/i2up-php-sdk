@@ -21,10 +21,10 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
         $cluster = $this -> cluster;
         $arr = array(
             'cls_is_local'=>1,
-            'os_pwd'=>'',
-            'os_user'=>'',
-            'config_addr'=>'',
-            'config_port'=>1,
+            'os_pwd'=>'info2soft_125',
+            'os_user'=>'i2test2018.com\administrator',
+            'config_addr'=>'192.168.87.14',
+            'config_port'=>26821,
         );
         $res = $cluster -> authCls($arr);
         var_export($res);
@@ -37,8 +37,8 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'node_uuid'=>'',
-            'cls_name'=>'cluster_2018',
+            'node_uuid'=>'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C',
+            'cls_name'=>'cluster-2018',
             'cls_node_name'=>'cluster-node1',
         );
         $res = $cluster -> verifyClsNode($arr);
@@ -54,14 +54,18 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'cls'=>array(
                 'comment'=>'',
-                'cls_disk'=>array(),
+                'cls_disk'=>array(
+                    '0'=>'E:\\'
+                ),
                 'config_port'=>'26821',
-                'cls_node'=>array(),
+                'cls_node'=>array(
+                    '0'=>'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C'
+                ),
                 'node_type'=>1,
                 'cls_is_local'=>1,
-                'os_user'=>'',
+                'os_user'=>'i2test2018.com\administrator',
                 'config_addr'=>'192.168.74.25',
-                'node_name'=>'aaaa'
+                'node_name'=>'cls'
             ),
         );
         $res = $cluster -> createCls($arr);
@@ -75,7 +79,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $cluster -> describeCls($arr);
         var_export($res);
@@ -88,17 +92,22 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'cls'=>array(
-                'cls_node'=>array(),
-                'os_user'=>'',
-                'cls_disk'=>array(),
-                'cls_is_local'=>1,
                 'comment'=>'',
-                'config_addr'=>'192.168.74.25',
+                'cls_disk'=>array(
+                    '0'=>'E:\\'
+                ),
                 'config_port'=>'26821',
+                'cls_node'=>array(
+                    '0'=>'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C'
+                ),
                 'node_type'=>1,
-                'node_name'=>'aaaa'
+                'cls_is_local'=>1,
+                'os_user'=>'i2test2018.com\administrator',
+                'config_addr'=>'192.168.74.25',
+                'node_name'=>'cls',
+                'random_str'=>'11111111-1111-1111-1111-111111111111'
             ),
         );
         $res = $cluster -> modifyCls($arr);
@@ -112,7 +121,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'limit'=>1,
+            'limit'=>10,
             'search_value'=>'',
             'search_field'=>'',
             'page'=>1,
@@ -128,7 +137,9 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $cluster -> listClsStatus($arr);
         var_export($res);
@@ -141,7 +152,9 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $cluster -> deleteCls($arr);
         var_export($res);
@@ -155,12 +168,10 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
         $cluster = $this -> cluster;
         $arr = array(
             'operate'=>'detail',
-            'node_uuid'=>'',
+            'node_uuid'=>'11111111-1111-1111-1111-111111111111',
         );
         $res = $cluster -> clsDetail($arr);
         var_export($res);
         $this->assertNotNull($res[0]);
-        $this->assertArrayHasKey('code',$res[0]);
-        $this->assertEquals(0, $res[0]['code']);
     }
 }

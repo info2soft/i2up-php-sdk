@@ -21,10 +21,10 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
         $bizGroup = $this -> bizGroup;
         $arr = array(
             'biz_grp'=>array(
-                'subtype'=>10,
+                'subtype'=>0,
                 'comment'=>'123',
-                'grp_name'=>'grp_name',
-                'type'=>3
+                'grp_name'=>'grp_name1',
+                'type'=>1
             )
         );
         $res = $bizGroup -> createBizGroup($arr);
@@ -38,10 +38,10 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
     {
         $bizGroup = $this -> bizGroup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'biz_grp'=>array(
                 'comment'=>'123',
-                'grp_name'=>'grp_name',
+                'grp_name'=>'grp_name2',
                 'type'=>3,
                 'subtype'=>10
             )
@@ -57,7 +57,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
     {
         $bizGroup = $this -> bizGroup;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $bizGroup -> describeBizGroup($arr);
         var_export($res);
@@ -70,7 +70,9 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
     {
         $bizGroup = $this -> bizGroup;
         $arr = array(
-            'grp_uuids'=>array()
+            'grp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $bizGroup -> deleteBizGroup($arr);
         var_export($res);
@@ -101,10 +103,9 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
     {
         $bizGroup = $this -> bizGroup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'FA26B3DA-CB4E-AFC1-0AFD-34112B35E711',
             'uuids'=>array(
-                '0'=>'928011BA-E134-E6A5-D84A-7933DD01894A',
-                '1'=>'366C1A15-96B0-599A-3079-0A437F9BC7E8'
+                '0'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F'
             )
         );
         $res = $bizGroup -> updateBizGroupBind($arr);
@@ -118,7 +119,7 @@ class BizGroupTest extends \PHPUnit_Framework_TestCase
     {
         $bizGroup = $this -> bizGroup;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $bizGroup -> listBizGroupBind($arr);
         var_export($res);

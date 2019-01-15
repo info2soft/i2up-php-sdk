@@ -36,8 +36,10 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
-            'node_uuid'=>''
+            'ha_uuid'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
+            'node_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F'
         );
         $res = $appHighAvailability -> startHA($arr);
         var_export($res);
@@ -50,8 +52,10 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
-            'node_uuid'=>''
+            'ha_uuid'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
+            'node_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F'
         );
         $res = $appHighAvailability -> stopHA($arr);
         var_export($res);
@@ -64,8 +68,10 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
-            'node_uuid'=>''
+            'ha_uuid'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
+            'node_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F'
         );
         $res = $appHighAvailability -> forceSwitchHA($arr);
         var_export($res);
@@ -78,7 +84,9 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array()
+            'ha_uuid'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $appHighAvailability -> deleteHA($arr);
         var_export($res);
@@ -91,7 +99,9 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array()
+            'ha_uuid'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
         );
         $res = $appHighAvailability -> listHAStatus($arr);
         var_export($res);
@@ -104,7 +114,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'master_uuid'=>'',
+            'master_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $appHighAvailability -> describeHAScriptPath($arr);
         var_export($res);
@@ -116,43 +126,159 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     public function testModifyHA()
     {
         $appHighAvailability = $this -> appHighAvailability;
-        $arr = array(
-            'ha_object'=>array(
-                '0'=>array(
-                    'sync_data'=>array(
-                        'create_start'=>1,
-                        'rule_relation'=>array(
-                            '0'=>array(
-                                'rep_name'=>'',
-                                'path'=>array(),
-                                'append_name'=>1,
-                                'autostart_rep'=>1,
-                                'uuid'=>'',),
-                            '1'=>array(
-                                'rep_name'=>'',
-                                'path'=>array(),
-                                'append_name'=>1,
-                                'autostart_rep'=>1,
-                                'uuid'=>'',),),
-                        'wait_cache'=>1,
-                        'need_rep_status'=>1,
-                        'back_rule'=>1,
-                        'excludes'=>array(),),
-                    'monitorn'=>array(),
-                    'ha_name'=>'',
-                    'heartbeatn'=>array(),
-                    'node_priorityn'=>array(),
-                    'master_uuid'=>'',
-                    'arbitration'=>array(
-                        'node'=>array(
-                            'arbit_port'=>1,
-                            'arbit_addr'=>'',
-                            'arbit_protocol'=>'',),
-                        'disk'=>array(),
-                        'radio'=>1,),
-                    'res_switchn'=>array(),
-                    'auto_switch'=>1,
-                    'ha_uuid'=>'',),),
+        $arr = array (
+            'heartbeat' =>
+                array (
+                    0 =>
+                        array (
+                            'interval' => 2,
+                            'maxfail' => 5,
+                            'protocol' => 'tcp',
+                            'ifconfig' =>
+                                array (
+                                    0 =>
+                                        array (
+                                            'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                                            'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+                                            'ip' => '192.168.72.75',
+                                        ),
+                                    1 =>
+                                        array (
+                                            'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                                            'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+                                            'ip' => '192.168.72.82',
+                                        ),
+                                ),
+                            'port' => 26850,
+                        ),
+                ),
+            'sync_data' =>
+                array (
+                    0 =>
+                        array (
+                            'back_rule' => 0,
+                            'need_rep_status' => 1,
+                            'create_start' => 0,
+                            'wait_cache' => 1,
+                            'rule_relation' =>
+                                array (
+                                    0 =>
+                                        array (
+                                            'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+                                            'autostart_rep' => 0,
+                                            'path' =>
+                                                array (
+                                                    0 => 'E:\\test\\',
+                                                ),
+                                            'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                                            'append_name' => 0,
+                                        ),
+                                    1 =>
+                                        array (
+                                            'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+                                            'autostart_rep' => 0,
+                                            'path' =>
+                                                array (
+                                                    0 => 'E:\\test\\',
+                                                ),
+                                            'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                                            'append_name' => 0,
+                                        ),
+                                ),
+                            'excludes' =>
+                                array (
+                                ),
+                        ),
+                ),
+            'arbitration' =>
+                array (
+                    'radio' => 1,
+                    'node' =>
+                        array (
+                            'arbit_protocol' => 'TCP',
+                            'arbit_addr' => '192.168.72.82',
+                            'arbit_port' => 26868,
+                        ),
+                    'disk' =>
+                        array (
+                            'path' => '',
+                        ),
+                ),
+            'master_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'ha_name' => 'sdk_ha',
+            'ha_uuid'=>'11111111-1111-1111-1111-111111111111',
+            'res_switch' =>
+                array (
+                    0 =>
+                        array (
+                            'script' =>
+                                array (
+                                    'after_failover' => '',
+                                    'before_failover' => '',
+                                    'before_switch' => '',
+                                    'after_switch' => '',
+                                ),
+                            'vip' =>
+                                array (
+                                    'top' => 0,
+                                    'ip' => '192.168.72.82',
+                                    'ifconfig' =>
+                                        array (
+                                            0 =>
+                                                array (
+                                                    'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                                                    'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+                                                    'label' => 'Ethernet0',
+                                                ),
+                                            1 =>
+                                                array (
+                                                    'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                                                    'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+                                                    'label' => 'Ethernet0',
+                                                ),
+                                        ),
+                                    'mask' => '255.255.255.0',
+                                    'del' => 0,
+                                ),
+                            'type' => 'ip',
+                        ),
+                ),
+            'auto_switch' => 1,
+            'monitor' =>
+                array (
+                    0 =>
+                        array (
+                            'threshold' => 90,
+                            'interval' => 2,
+                            'name' => '',
+                            'script' => '',
+                            'access_method' => '',
+                            'type' => 'cpu',
+                            'great' => '',
+                            'useid' => '',
+                            'maxfail' => 5,
+                            'action' => 'warn',
+                            'residual' => 1,
+                            'role' => 'master',
+                            'path' => '',
+                            'monitor_file' => '',
+                        ),
+                ),
+            'node_priority' =>
+                array (
+                    0 =>
+                        array (
+                            'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                            'priority' => 'high',
+                        ),
+                    1 =>
+                        array (
+                            'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                            'priority' => 'high',
+                        ),
+                ),
+            'ctrl_switch' => 0,
+            'random_str'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $appHighAvailability -> modifyHA($arr);
         var_export($res);
@@ -164,53 +290,157 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     public function testCreateHA()
     {
         $appHighAvailability = $this -> appHighAvailability;
-        $arr = array(
-            'ha_object'=>array(
-                '0'=>array(
-                    'heartbeatn'=>array(),
-                    'sync_data'=>array(
-                        'back_rule'=>1,
-                        'need_rep_status'=>1,
-                        'create_start'=>1,
-                        'wait_cache'=>1,
-                        'rule_relation'=>array(
-                            '0'=>array(
-                                'rep_name'=>'',
-                                'autostart_rep'=>1,
-                                'path'=>array(),
-                                'uuid'=>'',
-                                'append_name'=>1
-                            ),
-                            '1'=>array(
-                                'rep_name'=>'',
-                                'autostart_rep'=>1,
-                                'path'=>array(),
-                                'uuid'=>'',
-                                'append_name'=>1
-                            )
+        $arr = array (
+            'heartbeat' =>
+                array (
+                    0 =>
+                        array (
+                            'interval' => 2,
+                            'maxfail' => 5,
+                            'protocol' => 'tcp',
+                            'ifconfig' =>
+                                array (
+                                    0 =>
+                                        array (
+                                            'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                                            'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+                                            'ip' => '192.168.72.75',
+                                        ),
+                                    1 =>
+                                        array (
+                                            'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                                            'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+                                            'ip' => '192.168.72.82',
+                                        ),
+                                ),
+                            'port' => 26850,
                         ),
-                        'excludes'=>array()
-                    ),
-                    'arbitration'=>array(
-                        'radio'=>1,
-                        'node'=>array(
-                            'arbit_protocol'=>'',
-                            'arbit_addr'=>'',
-                            'arbit_port'=>1
+                ),
+            'sync_data' =>
+                array (
+                    0 =>
+                        array (
+                            'back_rule' => 0,
+                            'need_rep_status' => 1,
+                            'create_start' => 0,
+                            'wait_cache' => 1,
+                            'rule_relation' =>
+                                array (
+                                    0 =>
+                                        array (
+                                            'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+                                            'autostart_rep' => 0,
+                                            'path' =>
+                                                array (
+                                                    0 => 'E:\\test\\',
+                                                ),
+                                            'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                                            'append_name' => 0,
+                                        ),
+                                    1 =>
+                                        array (
+                                            'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+                                            'autostart_rep' => 0,
+                                            'path' =>
+                                                array (
+                                                    0 => 'E:\\test\\',
+                                                ),
+                                            'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                                            'append_name' => 0,
+                                        ),
+                                ),
+                            'excludes' =>
+                                array (
+                                ),
                         ),
-                        'disk'=>array(
-                            'path'=>''
-                        )
-                    ),
-                    'master_uuid'=>'',
-                    'ha_name'=>'',
-                    'res_switchn'=>array(),
-                    'auto_switch'=>1,
-                    'monitorn'=>array(),
-                    'node_priorityn'=>array(),
-                    'ctrl_switch'=>1
-                )
-            ),
+                ),
+            'arbitration' =>
+                array (
+                    'radio' => 1,
+                    'node' =>
+                        array (
+                            'arbit_protocol' => 'TCP',
+                            'arbit_addr' => '192.168.72.82',
+                            'arbit_port' => 26868,
+                        ),
+                    'disk' =>
+                        array (
+                            'path' => '',
+                        ),
+                ),
+            'master_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'ha_name' => 'sdk_ha1',
+            'res_switch' =>
+                array (
+                    0 =>
+                        array (
+                            'script' =>
+                                array (
+                                    'after_failover' => '',
+                                    'before_failover' => '',
+                                    'before_switch' => '',
+                                    'after_switch' => '',
+                                ),
+                            'vip' =>
+                                array (
+                                    'top' => 0,
+                                    'ip' => '192.168.72.82',
+                                    'ifconfig' =>
+                                        array (
+                                            0 =>
+                                                array (
+                                                    'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                                                    'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+                                                    'label' => 'Ethernet0',
+                                                ),
+                                            1 =>
+                                                array (
+                                                    'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                                                    'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+                                                    'label' => 'Ethernet0',
+                                                ),
+                                        ),
+                                    'mask' => '255.255.255.0',
+                                    'del' => 0,
+                                ),
+                            'type' => 'ip',
+                        ),
+                ),
+            'auto_switch' => 1,
+            'monitor' =>
+                array (
+                    0 =>
+                        array (
+                            'threshold' => 90,
+                            'interval' => 2,
+                            'name' => '',
+                            'script' => '',
+                            'access_method' => '',
+                            'type' => 'cpu',
+                            'great' => '',
+                            'useid' => '',
+                            'maxfail' => 5,
+                            'action' => 'warn',
+                            'residual' => 1,
+                            'role' => 'master',
+                            'path' => '',
+                            'monitor_file' => '',
+                        ),
+                ),
+            'node_priority' =>
+                array (
+                    0 =>
+                        array (
+                            'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                            'priority' => 'high',
+                        ),
+                    1 =>
+                        array (
+                            'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                            'priority' => 'high',
+                        ),
+                ),
+            'ctrl_switch' => 0,
         );
         $res = $appHighAvailability -> createHA($arr);
         var_export($res);
@@ -223,8 +453,11 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'node_uuid'=>array(),
-            'master_uuid'=>'',
+            'node_uuid'=>array(
+                '0'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+                '1'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F'
+            ),
+            'master_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $appHighAvailability -> listNicInfo($arr);
         var_export($res);
@@ -237,7 +470,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'uuid' => ''
+            'uuid' => '11111111-1111-1111-1111-111111111111'
         );
         $res = $appHighAvailability -> describeHA($arr);
         var_export($res);
