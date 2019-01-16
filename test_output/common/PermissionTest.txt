@@ -1,0 +1,47 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/permission/category
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["categories"]=>
+    array(12) {
+      [0]=>
+      string(6) "system"
+      [1]=>
+      string(8) "resource"
+      [2]=>
+      string(8) "template"
+      [3]=>
+      string(5) "rules"
+      [4]=>
+      string(2) "ha"
+      [5]=>
+      string(7) "nasSync"
+      [6]=>
+      string(3) "fsp"
+      [7]=>
+      string(14) "virtualSupport"
+      [8]=>
+      string(6) "timing"
+      [9]=>
+      string(10) "statistics"
+      [10]=>
+      string(5) "tools"
+      [11]=>
+      string(12) "notification"
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 575 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

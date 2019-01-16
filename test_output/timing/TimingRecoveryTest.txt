@@ -1,0 +1,46 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/timing/recovery/rc_path_list?rc_data_path=E%3A%5Ct%5C&bk_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&backup_task_uuid=11111111-1111-1111-1111-111111111111&_=0.53452423181718
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'backup_task' => 
+    array (
+      'bk_path' => 
+      array (
+        0 => 'E:\\t\\',
+      ),
+      'wk_path' => 
+      array (
+        0 => 'E:\\test\\',
+      ),
+      'backup_type' => 0,
+      'task_uuid' => '11111111-1111-1111-1111-111111111111',
+      'blk_direct_copy' => '0',
+      'file_check_switch' => '0',
+      'file_check_dir' => '',
+    ),
+    'recovery_task' => 
+    array (
+      'bk_path' => 
+      array (
+        0 => 'E:\\t\\2019-01-15_16-30-56\\E\\test\\',
+      ),
+      'rc_time_point_list' => 
+      array (
+        0 => '2019-01-15_16-30-56',
+      ),
+      'bk_data_type' => 1,
+      'wk_data_type' => 1,
+    ),
+    'mirr_blk_size' => 32768,
+  ),
+  1 => NULL,
+)
+
+Time: 829 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

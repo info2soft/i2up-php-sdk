@@ -1,0 +1,172 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/monitor/drivers_info/67E33CDB-D75B-15B3-367D-50C764F5A26F
+array(2) {
+  [0]=>
+  array(9) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["rpc"]=>
+    string(1) "1"
+    ["sdatad"]=>
+    string(1) "1"
+    ["srepd"]=>
+    string(1) "1"
+    ["log"]=>
+    string(1) "1"
+    ["ha"]=>
+    string(1) "1"
+    ["ha_detector"]=>
+    string(1) "1"
+    ["drivers"]=>
+    array(4) {
+      [0]=>
+      array(3) {
+        ["name"]=>
+        string(2) "C:"
+        ["total"]=>
+        string(11) "63012589568"
+        ["free"]=>
+        string(11) "36504756224"
+      }
+      [1]=>
+      array(3) {
+        ["name"]=>
+        string(2) "E:"
+        ["total"]=>
+        string(10) "4280283136"
+        ["free"]=>
+        string(9) "188768256"
+      }
+      [2]=>
+      array(3) {
+        ["name"]=>
+        string(2) "G:"
+        ["total"]=>
+        string(10) "4280283136"
+        ["free"]=>
+        string(10) "4046548992"
+      }
+      [3]=>
+      array(3) {
+        ["name"]=>
+        string(2) "H:"
+        ["total"]=>
+        string(12) "107371032576"
+        ["free"]=>
+        string(10) "3419537408"
+      }
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 888 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/monitor/chart_config/67E33CDB-D75B-15B3-367D-50C764F5A26F
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["switch"]=>
+    int(0)
+    ["configs"]=>
+    array(6) {
+      ["storage_io"]=>
+      int(1)
+      ["nic_io"]=>
+      int(0)
+      ["per_core"]=>
+      int(1)
+      ["per_disk"]=>
+      int(0)
+      ["net_in"]=>
+      int(0)
+      ["net_out"]=>
+      int(0)
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 572 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"storage_io":1,"nic_io":0,"per_core":1,"per_disk":0,"net_in":0,"net_out":0}
+url:http://192.168.72.70:58080/api/monitor/chart_config/67E33CDB-D75B-15B3-367D-50C764F5A26F
+array(2) {
+  [0]=>
+  array(2) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 630 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/monitor/chart_data/67E33CDB-D75B-15B3-367D-50C764F5A26F?start_time=154172680&last_time=154172980&_=0.90619781149655
+array(2) {
+  [0]=>
+  array(6) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["cpu"]=>
+    array(0) {
+    }
+    ["mem"]=>
+    array(0) {
+    }
+    ["nic"]=>
+    array(0) {
+    }
+    ["disk"]=>
+    array(0) {
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 603 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

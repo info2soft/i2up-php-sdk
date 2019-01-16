@@ -1,0 +1,982 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/dashboard/overall
+array(2) {
+  [0]=>
+  array(8) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["node_num"]=>
+    int(6)
+    ["rep_num"]=>
+    int(3)
+    ["ha_num"]=>
+    int(0)
+    ["node"]=>
+    array(3) {
+      ["UNKNOWN"]=>
+      int(4)
+      ["OFFLINE"]=>
+      int(0)
+      ["ONLINE"]=>
+      int(2)
+    }
+    ["rep"]=>
+    array(12) {
+      ["UNKNOWN"]=>
+      int(0)
+      ["FINISH"]=>
+      int(0)
+      ["STOP"]=>
+      int(0)
+      ["REPLICATION"]=>
+      int(3)
+      ["MIRROR"]=>
+      int(0)
+      ["EXCEPTION"]=>
+      int(0)
+      ["STALE"]=>
+      int(0)
+      ["SWITCH"]=>
+      int(0)
+      ["WAIT"]=>
+      int(0)
+      ["EXECUTING"]=>
+      int(0)
+      ["IDLE"]=>
+      int(0)
+      ["DEAD"]=>
+      int(0)
+    }
+    ["ha"]=>
+    array(2) {
+      ["master_status"]=>
+      array(8) {
+        ["HA_UNKNOWN"]=>
+        int(0)
+        ["HA_STOP"]=>
+        int(0)
+        ["HA_START"]=>
+        int(0)
+        ["HA_RUN"]=>
+        int(0)
+        ["HA_MIRROR"]=>
+        int(0)
+        ["HA_READY"]=>
+        int(0)
+        ["HA_WARN"]=>
+        int(0)
+        ["HA_FAIL"]=>
+        int(0)
+      }
+      ["master_role"]=>
+      array(9) {
+        ["HA_UNKNOWN"]=>
+        int(0)
+        ["HA_UNJOIN"]=>
+        int(0)
+        ["HA_MASTER"]=>
+        int(0)
+        ["HA_SLAVE"]=>
+        int(0)
+        ["HA_PREOVER"]=>
+        int(0)
+        ["HA_POSTOVER"]=>
+        int(0)
+        ["HA_PREBACK"]=>
+        int(0)
+        ["HA_POSTBACK"]=>
+        int(0)
+        ["HA_SWITCH"]=>
+        int(0)
+      }
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 1.21 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/dashboard/ha?page=1&limit=10&_=0.20332806319992
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["info_list"]=>
+    array(0) {
+    }
+    ["total"]=>
+    int(0)
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 583 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/dashboard/vp_rule?wk_uuid=F28BA5A6-4FF9-E596-4371-1ED203D45143&mode=month&type=I2VP_BK&_=0.27203580128168
+array(2) {
+  [0]=>
+  array(11) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["all_total_num"]=>
+    int(84)
+    ["all_trans_data_num"]=>
+    string(7) "4.48 GB"
+    ["all_success_num"]=>
+    int(7)
+    ["all_unread_err_num"]=>
+    int(57)
+    ["total_num"]=>
+    int(0)
+    ["trans_data_num"]=>
+    string(7) "0 Bytes"
+    ["success_num"]=>
+    int(0)
+    ["unread_err_num"]=>
+    int(0)
+    ["info_list"]=>
+    array(30) {
+      [0]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-10"
+      }
+      [1]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-11"
+      }
+      [2]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-12"
+      }
+      [3]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-13"
+      }
+      [4]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-14"
+      }
+      [5]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-15"
+      }
+      [6]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-16"
+      }
+      [7]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-17"
+      }
+      [8]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-18"
+      }
+      [9]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-19"
+      }
+      [10]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-20"
+      }
+      [11]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-21"
+      }
+      [12]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-22"
+      }
+      [13]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-23"
+      }
+      [14]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-24"
+      }
+      [15]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-25"
+      }
+      [16]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-26"
+      }
+      [17]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-27"
+      }
+      [18]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-28"
+      }
+      [19]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-29"
+      }
+      [20]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-30"
+      }
+      [21]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "12-31"
+      }
+      [22]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-01"
+      }
+      [23]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-02"
+      }
+      [24]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-03"
+      }
+      [25]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-04"
+      }
+      [26]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-05"
+      }
+      [27]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-06"
+      }
+      [28]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-07"
+      }
+      [29]=>
+      array(5) {
+        ["success_num"]=>
+        int(0)
+        ["total_num"]=>
+        int(0)
+        ["trans_data_num"]=>
+        string(7) "0 Bytes"
+        ["unread_err_num"]=>
+        int(0)
+        ["time"]=>
+        string(5) "01-08"
+      }
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 586 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/dashboard/vp_vm?vp_uuid=F28BA5A6-4FF9-E596-4371-1ED203D45143&_=0.56139264388934
+array(2) {
+  [0]=>
+  array(5) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["vm_protected"]=>
+    int(0)
+    ["vm_total"]=>
+    int(0)
+    ["info_list"]=>
+    array(0) {
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 558 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/dashboard/node?limit=30&page=1&type=0&_=0.92709650996396
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["info_list"]=>
+    array(6) {
+      [0]=>
+      array(15) {
+        ["username"]=>
+        string(5) "admin"
+        ["cache_path"]=>
+        string(18) "/var/i2data/cache/"
+        ["config_addr"]=>
+        string(13) "192.168.25.11"
+        ["data_addr"]=>
+        string(13) "192.168.25.11"
+        ["disk_limit"]=>
+        string(4) "9702"
+        ["log_path"]=>
+        string(16) "/var/i2data/log/"
+        ["mem_limit"]=>
+        string(2) "60"
+        ["node_name"]=>
+        string(13) "192.168.25.11"
+        ["node_role"]=>
+        string(1) "3"
+        ["node_uuid"]=>
+        string(36) "CE77F3D6-A6E3-A385-CE66-712313B7DDE8"
+        ["os_type"]=>
+        int(0)
+        ["os_version"]=>
+        string(0) ""
+        ["n_status"]=>
+        string(7) "UNKNOWN"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        NULL
+      }
+      [1]=>
+      array(15) {
+        ["username"]=>
+        string(5) "admin"
+        ["cache_path"]=>
+        string(18) "/var/i2data/cache/"
+        ["config_addr"]=>
+        string(13) "192.168.25.12"
+        ["data_addr"]=>
+        string(13) "192.168.25.12"
+        ["disk_limit"]=>
+        string(4) "2476"
+        ["log_path"]=>
+        string(16) "/var/i2data/log/"
+        ["mem_limit"]=>
+        string(2) "60"
+        ["node_name"]=>
+        string(13) "192.168.25.12"
+        ["node_role"]=>
+        string(1) "3"
+        ["node_uuid"]=>
+        string(36) "C11FE572-5207-3359-DB85-001E95F5F185"
+        ["os_type"]=>
+        int(0)
+        ["os_version"]=>
+        string(0) ""
+        ["n_status"]=>
+        string(7) "UNKNOWN"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        NULL
+      }
+      [2]=>
+      array(15) {
+        ["username"]=>
+        string(5) "admin"
+        ["cache_path"]=>
+        string(44) "C:\Program Files (x86)\info2soft\node\cache\"
+        ["config_addr"]=>
+        string(13) "192.168.25.21"
+        ["data_addr"]=>
+        string(13) "192.168.25.21"
+        ["disk_limit"]=>
+        string(5) "10240"
+        ["log_path"]=>
+        string(42) "C:\Program Files (x86)\info2soft\node\log\"
+        ["mem_limit"]=>
+        string(3) "354"
+        ["node_name"]=>
+        string(13) "192.168.25.21"
+        ["node_role"]=>
+        string(1) "3"
+        ["node_uuid"]=>
+        string(36) "5FB4B19E-957F-820C-887A-8D1593093C9B"
+        ["os_type"]=>
+        int(1)
+        ["os_version"]=>
+        string(0) ""
+        ["n_status"]=>
+        string(7) "UNKNOWN"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        NULL
+      }
+      [3]=>
+      array(15) {
+        ["username"]=>
+        string(5) "admin"
+        ["cache_path"]=>
+        string(44) "C:\Program Files (x86)\info2soft\node\cache\"
+        ["config_addr"]=>
+        string(13) "192.168.25.22"
+        ["data_addr"]=>
+        string(13) "192.168.25.22"
+        ["disk_limit"]=>
+        string(5) "10240"
+        ["log_path"]=>
+        string(42) "C:\Program Files (x86)\info2soft\node\log\"
+        ["mem_limit"]=>
+        string(3) "461"
+        ["node_name"]=>
+        string(13) "192.168.25.22"
+        ["node_role"]=>
+        string(1) "3"
+        ["node_uuid"]=>
+        string(36) "04ED35A8-F05F-21BA-33FC-4236019589FB"
+        ["os_type"]=>
+        int(1)
+        ["os_version"]=>
+        string(0) ""
+        ["n_status"]=>
+        string(7) "UNKNOWN"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        NULL
+      }
+      [4]=>
+      array(15) {
+        ["username"]=>
+        string(5) "admin"
+        ["cache_path"]=>
+        string(38) "C:\Program Files\info2soft\node\cache\"
+        ["config_addr"]=>
+        string(13) "192.168.72.82"
+        ["data_addr"]=>
+        string(13) "192.168.72.82"
+        ["disk_limit"]=>
+        string(5) "10000"
+        ["log_path"]=>
+        string(36) "C:\Program Files\info2soft\node\log\"
+        ["mem_limit"]=>
+        string(3) "512"
+        ["node_name"]=>
+        string(12) "move B 72.82"
+        ["node_role"]=>
+        string(1) "3"
+        ["node_uuid"]=>
+        string(36) "B8566905-411E-B2CD-A742-77B1346D8E84"
+        ["os_type"]=>
+        int(1)
+        ["os_version"]=>
+        string(59) "Microsoft Windows Server 2008 R2/x64 Edition/Service Pack 1"
+        ["n_status"]=>
+        string(6) "ONLINE"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        string(10) "1546936956"
+      }
+      [5]=>
+      array(15) {
+        ["username"]=>
+        string(5) "admin"
+        ["cache_path"]=>
+        string(44) "C:\Program Files (x86)\info2soft\node\cache\"
+        ["config_addr"]=>
+        string(13) "192.168.72.75"
+        ["data_addr"]=>
+        string(13) "192.168.72.75"
+        ["disk_limit"]=>
+        string(5) "10240"
+        ["log_path"]=>
+        string(42) "C:\Program Files (x86)\info2soft\node\log\"
+        ["mem_limit"]=>
+        string(4) "1060"
+        ["node_name"]=>
+        string(8) "N3_72.75"
+        ["node_role"]=>
+        string(1) "3"
+        ["node_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["os_type"]=>
+        int(1)
+        ["os_version"]=>
+        string(32) "Microsoft Windows 10/x64 Edition"
+        ["n_status"]=>
+        string(6) "ONLINE"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        string(10) "1546936955"
+      }
+    }
+    ["total"]=>
+    int(6)
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 1.13 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/dashboard/rep?limit=30&type=0&page=1&_=0.066945236603956
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["info_list"]=>
+    array(3) {
+      [0]=>
+      array(17) {
+        ["band_width"]=>
+        string(0) ""
+        ["bk_path_policy"]=>
+        string(1) "1"
+        ["random_str"]=>
+        string(36) "581FB896-6246-424A-1F9B-FA2D9E68A75E"
+        ["wk_node_name"]=>
+        string(8) "N3_72.75"
+        ["bk_node_name"]=>
+        string(8) "N3_72.75"
+        ["username"]=>
+        string(5) "admin"
+        ["bk_path"]=>
+        array(1) {
+          [0]=>
+          string(9) "G:\snap2\"
+        }
+        ["bk_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["excl_path"]=>
+        array(0) {
+        }
+        ["rep_name"]=>
+        string(8) "snapTest"
+        ["rep_type"]=>
+        int(0)
+        ["rep_uuid"]=>
+        string(36) "F97B3FD5-4D5D-41EE-22A9-740A74E1E13C"
+        ["wk_path"]=>
+        array(1) {
+          [0]=>
+          string(8) "G:\snap\"
+        }
+        ["wk_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["n_status"]=>
+        string(11) "REPLICATION"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        string(10) "1546936973"
+      }
+      [1]=>
+      array(17) {
+        ["band_width"]=>
+        string(0) ""
+        ["bk_path_policy"]=>
+        string(1) "1"
+        ["random_str"]=>
+        string(36) "4A79F2AB-7708-2147-4A79-20A3E1C6F483"
+        ["wk_node_name"]=>
+        string(8) "N3_72.75"
+        ["bk_node_name"]=>
+        string(8) "N3_72.75"
+        ["username"]=>
+        string(5) "admin"
+        ["bk_path"]=>
+        array(1) {
+          [0]=>
+          string(8) "G:\cdp2\"
+        }
+        ["bk_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["excl_path"]=>
+        array(0) {
+        }
+        ["rep_name"]=>
+        string(7) "testCDP"
+        ["rep_type"]=>
+        int(0)
+        ["rep_uuid"]=>
+        string(36) "051E0501-04EF-E1ED-0CEA-2E8751135CE4"
+        ["wk_path"]=>
+        array(1) {
+          [0]=>
+          string(7) "G:\cdp\"
+        }
+        ["wk_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["n_status"]=>
+        string(11) "REPLICATION"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        string(10) "1546936973"
+      }
+      [2]=>
+      array(17) {
+        ["band_width"]=>
+        string(0) ""
+        ["bk_path_policy"]=>
+        string(1) "1"
+        ["random_str"]=>
+        string(36) "71403C5B-69CB-0DE5-C1BC-B72BFFFA1A15"
+        ["wk_node_name"]=>
+        string(8) "N3_72.75"
+        ["bk_node_name"]=>
+        string(8) "N3_72.75"
+        ["username"]=>
+        string(5) "admin"
+        ["bk_path"]=>
+        array(1) {
+          [0]=>
+          string(11) "G:\normal2\"
+        }
+        ["bk_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["excl_path"]=>
+        array(0) {
+        }
+        ["rep_name"]=>
+        string(10) "testNormal"
+        ["rep_type"]=>
+        int(0)
+        ["rep_uuid"]=>
+        string(36) "AEF67854-A5DE-CDEE-6C13-ED8E5E763AEE"
+        ["wk_path"]=>
+        array(1) {
+          [0]=>
+          string(10) "G:\normal\"
+        }
+        ["wk_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["n_status"]=>
+        string(11) "REPLICATION"
+        ["n_role"]=>
+        NULL
+        ["time"]=>
+        string(10) "1546936973"
+      }
+    }
+    ["total"]=>
+    int(3)
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 926 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

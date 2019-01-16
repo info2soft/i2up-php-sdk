@@ -1,0 +1,2044 @@
+request_method:POST
+body:{"comment":"","config_addr":"192.168.72.75","config_port":58083,"os_pwd":"12345678","os_usr":"root","vp_addr":"192.168.88.107","vp_name":"test","vp_type":0,"bind_lic_list":[],"biz_grp_list":[]}
+url:http://192.168.72.70:58080/api/vp/platform
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 7.56 seconds, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/?page=1&limit=10&_=0.74686102416171
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'username' => 'admin',
+        'vp_uuid' => '11111111-1111-1111-1111-111111111111',
+        'vp_name' => 'test',
+        'random_str' => '11111111-1111-1111-1111-111111111111',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'vp_addr' => '192.168.88.107',
+        'os_usr' => 'root',
+        'os_pwd' => '12345678',
+        'config_addr' => '192.168.72.75',
+        'config_port' => 58083,
+        'comment' => '',
+        'create_time' => 1546938257,
+        'vp_type' => 0,
+        'npsvr_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      ),
+      1 => 
+      array (
+        'username' => 'admin',
+        'vp_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'vp_name' => '88.22',
+        'random_str' => '11111111-1111-1111-1111-111111111111',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'vp_addr' => '192.168.88.22',
+        'os_usr' => 'administrator',
+        'os_pwd' => '2',
+        'config_addr' => '192.168.72.75',
+        'config_port' => 58083,
+        'comment' => '',
+        'create_time' => 1546841760,
+        'vp_type' => 0,
+        'npsvr_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      ),
+      2 => 
+      array (
+        'username' => 'admin',
+        'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+        'vp_name' => '85.139',
+        'random_str' => '6BA1FEC9-7B83-74FB-FDF5-647E90F3F801',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'vp_addr' => '192.168.85.139',
+        'os_usr' => 'root',
+        'os_pwd' => '123qwe-=',
+        'config_addr' => '192.168.72.75',
+        'config_port' => 58083,
+        'comment' => '',
+        'create_time' => 1546833086,
+        'vp_type' => 0,
+        'npsvr_uuid' => NULL,
+      ),
+      3 => 
+      array (
+        'username' => 'admin',
+        'vp_uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
+        'vp_name' => '85.137',
+        'random_str' => 'D178FFE2-E512-BFA5-1550-AA7E6088897A',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'vp_addr' => '192.168.85.137',
+        'os_usr' => 'administrator',
+        'os_pwd' => '123qwe-=',
+        'config_addr' => '192.168.72.75',
+        'config_port' => 58083,
+        'comment' => '',
+        'create_time' => 1546831306,
+        'vp_type' => 0,
+        'npsvr_uuid' => NULL,
+      ),
+    ),
+    'total' => 4,
+  ),
+  1 => NULL,
+)
+
+Time: 569 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'vp_platform' => 
+    array (
+      'username' => 'admin',
+      'vp_uuid' => '11111111-1111-1111-1111-111111111111',
+      'vp_name' => 'test',
+      'random_str' => '11111111-1111-1111-1111-111111111111',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'vp_addr' => '192.168.88.107',
+      'os_usr' => 'root',
+      'os_pwd' => '12345678',
+      'config_addr' => '192.168.72.75',
+      'config_port' => 58083,
+      'comment' => '',
+      'create_time' => 1546938257,
+      'vp_type' => 0,
+      'npsvr_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+      'bind_lic_list' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 580 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+request_method:PUT
+body:{"comment":"","config_addr":"192.168.72.75","config_port":58083,"os_pwd":"12345678","os_usr":"root","vp_addr":"192.168.88.107","vp_name":"test1","vp_type":0,"bind_lic_list":[],"biz_grp_list":[],"random_str":"11111111-1111-1111-1111-111111111111"}
+url:http://192.168.72.70:58080/api/vp/platform/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 7.66 seconds, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/status?vp_uuids[]=11111111-1111-1111-1111-111111111111&_=0.91146357886048
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'vp_uuid' => '11111111-1111-1111-1111-111111111111',
+        'status' => 'ONLINE',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 654 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:DELETE
+body:{"vp_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/vp/platform/status
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 617 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/C6335F62-2565-1957-4BB9-587F2FF46B00/vm?path=%2F&force_rpc=0&_=0.35908959248033
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'vm_list' => 
+    array (
+      0 => 
+      array (
+        'morval' => 'datacenter-2',
+        'powerState' => '0',
+        'ExistRuletype' => '0',
+        'size' => '',
+        'name' => 'dc1Êý¾ÝÖÐÐÄ',
+        'time' => '',
+        'supportCbt' => '1',
+        'host_ip' => '',
+        'is_dir' => '1',
+        'tmp_type' => '2',
+      ),
+    ),
+    'create_time' => 1546937321,
+  ),
+  1 => NULL,
+)
+
+Time: 648 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/C6335F62-2565-1957-4BB9-587F2FF46B00/info
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'api_type' => 'VirtualCenter',
+    'api_version' => '6.0',
+    'ip' => '192.168.85.137',
+  ),
+  1 => NULL,
+)
+
+Time: 604 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/bak_ver?bk_path=H%3A%5Cvp_bk5%5Ctest2_BAK_vm-11880_192.168.88.22%5C&bk_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&_=0.2760573351562
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 
+      array (
+        'last' => 
+        array (
+          'isroot' => '',
+          'time' => '',
+        ),
+        'size' => '2097152',
+        'time' => '2018-12-27_10-40-45',
+        'backup_rule_uuid' => '6277F526-6D3D-4A44-B323-B2D96AF85CEC',
+        'is_root' => 49,
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 636 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/bak_ver_info?bk_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&bk_path=H%3A%5Cvp_bk5%5CtestRC1_BAK_99_192.168.85.139&ver_sig=A59DB76E-E33D-4E22-BB08-59723B1FC539&time=2019-01-07_13-10-45&_=0.54343519444053
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 
+      array (
+        'anno' => '',
+        'bk_path' => 'H:\\vp_bk5\\testRC1_BAK_99_192.168.85.139\\',
+        'cdrom' => '',
+        'controller' => '1,1000,100,3,0,3,noSharing,0',
+        'core_per_sock' => '1',
+        'cpu' => '1',
+        'dc' => 'ha-datacenter',
+        'disk' => '2,[datastore1] ²âÊÔ5/proxy gateway1.vmdk,persistent,1,2048,2000,1000,0,52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf/107,0,1',
+        'disk_count' => '1',
+        'ds' => 'datastore1',
+        'floppy' => '',
+        'guest_os_id' => 'rhel6_64Guest',
+        'hostname' => 'localhost.localdomain',
+        'nic' => '3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network',
+        'nic_count' => '2',
+        'storeMem' => '0',
+        'valid_data' => 4194304,
+        'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+        'alt_name' => '',
+        'chg_id' => '52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf/107',
+        'vm_ref' => '99',
+        'vm_version' => 'vmx-08',
+        'mem_mb' => '1024',
+        'vm_name' => '²âÊÔ5',
+        'disk_list' => 
+        array (
+          0 => 'proxy gateway1.vmdk',
+        ),
+        'ver_sig' => 'A59DB76E-E33D-4E22-BB08-59723B1FC539',
+        'time' => '2019-01-07_13-10-45',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 669 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/datastore_file?dir_file=%2F&ds_name=datastore1&dc_name=ha-datacenter&_=0.68749986367358
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 
+      array (
+        'path' => '/2012ºñÖÃ±¸ÖÃÁã_gugt/',
+        'name' => '2012ºñÖÃ±¸ÖÃÁã_gugt',
+      ),
+      1 => 
+      array (
+        'path' => '/CentOS7.3_x64_85.146/',
+        'name' => 'CentOS7.3_x64_85.146',
+      ),
+      2 => 
+      array (
+        'path' => '/CentOS7.3_x64_85.147/',
+        'name' => 'CentOS7.3_x64_85.147',
+      ),
+      3 => 
+      array (
+        'path' => '/Centos5.8_x64/',
+        'name' => 'Centos5.8_x64',
+      ),
+      4 => 
+      array (
+        'path' => '/Centos5.8_x86/',
+        'name' => 'Centos5.8_x86',
+      ),
+      5 => 
+      array (
+        'path' => '/Centos6.8/',
+        'name' => 'Centos6.8',
+      ),
+      6 => 
+      array (
+        'path' => '/Centos7.3_X64/',
+        'name' => 'Centos7.3_X64',
+      ),
+      7 => 
+      array (
+        'path' => '/H3C/',
+        'name' => 'H3C',
+      ),
+      8 => 
+      array (
+        'path' => '/H3C_2017-10-10_22_37_57/',
+        'name' => 'H3C_2017-10-10_22_37_57',
+      ),
+      9 => 
+      array (
+        'path' => '/RHEL6.5_x64/',
+        'name' => 'RHEL6.5_x64',
+      ),
+      10 => 
+      array (
+        'path' => '/RHEL6.5_x64_ha/',
+        'name' => 'RHEL6.5_x64_ha',
+      ),
+      11 => 
+      array (
+        'path' => '/RHVM/',
+        'name' => 'RHVM',
+      ),
+      12 => 
+      array (
+        'path' => '/Ubuntu12_x86/',
+        'name' => 'Ubuntu12_x86',
+      ),
+      13 => 
+      array (
+        'path' => '/centOS7.3_x64_1/',
+        'name' => 'centOS7.3_x64_1',
+      ),
+      14 => 
+      array (
+        'path' => '/centos6.0_64bit/',
+        'name' => 'centos6.0_64bit',
+      ),
+      15 => 
+      array (
+        'path' => '/el6ºñÖÃ±¸ÑÓ³ÙÖÃÁã_gugt/',
+        'name' => 'el6ºñÖÃ±¸ÑÓ³ÙÖÃÁã_gugt',
+      ),
+      16 => 
+      array (
+        'path' => '/el6ºñÖÃ±¸ÑÓ³ÙÖÃÁã_gugt_movewen/',
+        'name' => 'el6ºñÖÃ±¸ÑÓ³ÙÖÃÁã_gugt_movewen',
+      ),
+      17 => 
+      array (
+        'path' => '/el6¾«¼òÖÃ±¸_gugt/',
+        'name' => 'el6¾«¼òÖÃ±¸_gugt',
+      ),
+      18 => 
+      array (
+        'path' => '/el6¾«¼òÖÃ±¸_gugt_12/',
+        'name' => 'el6¾«¼òÖÃ±¸_gugt_12',
+      ),
+      19 => 
+      array (
+        'path' => '/el6¾«¼òÖÃ±¸_gugt_2/',
+        'name' => 'el6¾«¼òÖÃ±¸_gugt_2',
+      ),
+      20 => 
+      array (
+        'path' => '/el6¾«¼òÖÃ±¸_gugt_move/',
+        'name' => 'el6¾«¼òÖÃ±¸_gugt_move',
+      ),
+      21 => 
+      array (
+        'path' => '/el7ºñÖÃ±¸ÑÓ³ÙÖÁÁã_gugt/',
+        'name' => 'el7ºñÖÃ±¸ÑÓ³ÙÖÁÁã_gugt',
+      ),
+      22 => 
+      array (
+        'path' => '/group-yj_²âÊÔ7_group/',
+        'name' => 'group-yj_²âÊÔ7_group',
+      ),
+      23 => 
+      array (
+        'path' => '/group-yj_²âÊÔ8_group/',
+        'name' => 'group-yj_²âÊÔ8_group',
+      ),
+      24 => 
+      array (
+        'path' => '/proxy gateway1_move/',
+        'name' => 'proxy gateway1_move',
+      ),
+      25 => 
+      array (
+        'path' => '/recover-01/',
+        'name' => 'recover-01',
+      ),
+      26 => 
+      array (
+        'path' => '/redhat6.7_x64/',
+        'name' => 'redhat6.7_x64',
+      ),
+      27 => 
+      array (
+        'path' => '/redhat6.7_x64_move/',
+        'name' => 'redhat6.7_x64_move',
+      ),
+      28 => 
+      array (
+        'path' => '/unlocker208/',
+        'name' => 'unlocker208',
+      ),
+      29 => 
+      array (
+        'path' => '/vinchin/',
+        'name' => 'vinchin',
+      ),
+      30 => 
+      array (
+        'path' => '/vinchin85.142/',
+        'name' => 'vinchin85.142',
+      ),
+      31 => 
+      array (
+        'path' => '/w2008-thin_move/',
+        'name' => 'w2008-thin_move',
+      ),
+      32 => 
+      array (
+        'path' => '/win2008_r2_x64/',
+        'name' => 'win2008_r2_x64',
+      ),
+      33 => 
+      array (
+        'path' => '/win2008_r2_x64_1.01T/',
+        'name' => 'win2008_r2_x64_1.01T',
+      ),
+      34 => 
+      array (
+        'path' => '/win2008_r2_x64_move/',
+        'name' => 'win2008_r2_x64_move',
+      ),
+      35 => 
+      array (
+        'path' => '/win2008_r2_x64_move_compress_test/',
+        'name' => 'win2008_r2_x64_move_compress_test',
+      ),
+      36 => 
+      array (
+        'path' => '/win7_x64/',
+        'name' => 'win7_x64',
+      ),
+      37 => 
+      array (
+        'path' => '/win7_x64_new/',
+        'name' => 'win7_x64_new',
+      ),
+      38 => 
+      array (
+        'path' => '/win7_x86/',
+        'name' => 'win7_x86',
+      ),
+      39 => 
+      array (
+        'path' => '/win7_x86_move/',
+        'name' => 'win7_x86_move',
+      ),
+      40 => 
+      array (
+        'path' => '/windowsserver_move/',
+        'name' => 'windowsserver_move',
+      ),
+      41 => 
+      array (
+        'path' => '/ÖÐÎÄÃû³ÆÐéÄâ_move/',
+        'name' => 'ÖÐÎÄÃû³ÆÐéÄâ_move',
+      ),
+      42 => 
+      array (
+        'path' => '/ÖÐÎÄÃû³ÆÐéÄâ_move_move/',
+        'name' => 'ÖÐÎÄÃû³ÆÐéÄâ_move_move',
+      ),
+      43 => 
+      array (
+        'path' => '/ÁÙÊ±²âÊÔÄ¿Â¼/',
+        'name' => 'ÁÙÊ±²âÊÔÄ¿Â¼',
+      ),
+      44 => 
+      array (
+        'path' => '/²âÊÔ1/',
+        'name' => '²âÊÔ1',
+      ),
+      45 => 
+      array (
+        'path' => '/²âÊÔ1-DUMP/',
+        'name' => '²âÊÔ1-DUMP',
+      ),
+      46 => 
+      array (
+        'path' => '/²âÊÔ1_move/',
+        'name' => '²âÊÔ1_move',
+      ),
+      47 => 
+      array (
+        'path' => '/²âÊÔ2/',
+        'name' => '²âÊÔ2',
+      ),
+      48 => 
+      array (
+        'path' => '/²âÊÔ2-»Ö¸´33_move/',
+        'name' => '²âÊÔ2-»Ö¸´33_move',
+      ),
+      49 => 
+      array (
+        'path' => '/²âÊÔ3/',
+        'name' => '²âÊÔ3',
+      ),
+      50 => 
+      array (
+        'path' => '/²âÊÔ4_move/',
+        'name' => '²âÊÔ4_move',
+      ),
+      51 => 
+      array (
+        'path' => '/²âÊÔ5/',
+        'name' => '²âÊÔ5',
+      ),
+      52 => 
+      array (
+        'path' => '/²âÊÔ5_movewen/',
+        'name' => '²âÊÔ5_movewen',
+      ),
+      53 => 
+      array (
+        'path' => '/²âÊÔ6/',
+        'name' => '²âÊÔ6',
+      ),
+      54 => 
+      array (
+        'path' => '/²âÊÔ6_ha/',
+        'name' => '²âÊÔ6_ha',
+      ),
+      55 => 
+      array (
+        'path' => '/²âÊÔ7/',
+        'name' => '²âÊÔ7',
+      ),
+      56 => 
+      array (
+        'path' => '/²âÊÔ8/',
+        'name' => '²âÊÔ8',
+      ),
+      57 => 
+      array (
+        'path' => '/²âÊÔ9/',
+        'name' => '²âÊÔ9',
+      ),
+      58 => 
+      array (
+        'path' => '/²âÊÔ9_movewen/',
+        'name' => '²âÊÔ9_movewen',
+      ),
+      59 => 
+      array (
+        'path' => '/²âÊÔXX/',
+        'name' => '²âÊÔXX',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 792 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/datacenter
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 
+      array (
+        'dc_mor' => 'ha-datacenter',
+        'dc_name' => 'ha-datacenter',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 719 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/datacenter_host?dc_name=ha-datacenter&dc_mor=ha-datacenter&_=0.081545292759811
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 'localhost.localdomain',
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 818 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/datastore?host_name=localhost.localdomain&_=0.64772168868823
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 'datastore1',
+      1 => 'disk1',
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 824 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/platform/928B88A6-CDBA-6F55-ADCB-15A8A935C9C2/datastore_info?ds_name=datastore1&_=0.42804054918437
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'store_type' => 'VMFS',
+    'total' => '3718.00',
+    'free' => '1030.00',
+  ),
+  1 => NULL,
+)
+
+Time: 760 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+
+request_method:POST
+url:http://192.168.72.70:58080/api/vp/backup
+body:{"del_bkup_data":0,"quiet_snap":0,"quick_back":1,"vp_uuid":"C6335F62-2565-1957-4BB9-587F2FF46B00","bk_path":"E:\\vp_bk5\\","vm_list":[{"vm_name":"\u6d4b\u8bd55","vm_ref":"vm-10811"}],"bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","lan_free":23,"rule_name":"vp_bk","bkup_policy":0,"bkup_one_time":1546831899,"bkup_schedule":[],"biz_grp_list":[],"rule_type":0,"band_width":"-1","compress":0,"mem_snap":0}
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => array(
+        0 => array(
+	    'code' => 0,
+	    'message' => '[0] ²Ù×÷³É¹¦¡£'
+	    'rule_uuid' => 'D3D8883C-12DD-F1C5-BE78-934E08135463'
+	    'vm_name' => '²âÊÔ5'
+        )
+    )
+  ),
+  1 => NULL,
+)
+
+Time: 960 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:PUT
+body:{"del_bkup_data":0,"quiet_snap":1,"quick_back":1,"bk_path":"E:\\vp_bk5\\","bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","lan_free":23,"rule_name":"temp","bkup_policy":0,"bkup_one_time":1546831899,"bkup_schedule":[],"biz_grp_list":[],"rule_type":10,"band_width":"-1","compress":0,"mem_snap":0,"random_str":"4A469A79-16F0-18DF-2EDB-4F08FDB26BAB"}
+url:http://192.168.72.70:58080/api/vp/backup/D3D8883C-12DD-F1C5-BE78-934E08135463
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 607 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/backup/
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'vp_name' => '88.22',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'qwdqwd',
+        'vm_name' => 'ÐÂ½¨ÐéÄâ»ú6',
+        'vp_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => '11111111-1111-1111-1111-111111111111',
+        'rule_uuid' => '11111111-1111-1111-1111-111111111111',
+        'rule_type' => 0,
+      ),
+      1 => 
+      array (
+        'vp_name' => '85.139',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'testRC1',
+        'vm_name' => '²âÊÔ5',
+        'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => 'A020C838-10F4-4A65-30E1-779C57E6E1C6',
+        'rule_uuid' => '2DE30043-FC8E-5F80-78B8-C7C226EA07E2',
+        'rule_type' => 0,
+      ),
+      2 => 
+      array (
+        'vp_name' => '85.137',
+        'bk_node_name' => 'move B 72.82',
+        'username' => 'admin',
+        'rule_name' => 'testRC',
+        'vm_name' => '²âÊÔ1',
+        'vp_uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
+        'bk_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => '7B588C65-985E-6C2F-129F-1D61C387C1E9',
+        'rule_uuid' => '3ABD383B-A9BE-0D23-D0FF-A9CBAF1F9C38',
+        'rule_type' => 0,
+      ),
+      3 => 
+      array (
+        'vp_name' => '85.137',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'vp_bk',
+        'vm_name' => '²âÊÔ5',
+        'vp_uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => 'D3D8883C-12DD-F1C5-BE78-934E08135463',
+        'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+        'rule_type' => 0,
+      ),
+    ),
+    'total' => 4,
+  ),
+  1 => NULL,
+)
+
+Time: 586 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/backup/D3D8883C-12DD-F1C5-BE78-934E08135463/group
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'vp_backup' => 
+    array (
+      'vp_name' => '85.137',
+      'bk_node_name' => 'N3_72.75',
+      'group_uuid' => 'D3D8883C-12DD-F1C5-BE78-934E08135463',
+      'rule_name' => 'vp_bk',
+      'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'vp_uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
+      'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'bk_path' => 'E:\\vp_bk5\\',
+      'quick_back' => 1,
+      'bkup_policy' => 0,
+      'del_bkup_data' => 0,
+      'bkup_one_time' => 1546831899,
+      'lan_free' => 23,
+      'bkup_schedule' => 
+      array (
+      ),
+      'quiet_snap' => 0,
+      'create_time' => 1546831977,
+      'random_str' => '4A469A79-16F0-18DF-2EDB-4F08FDB26BAB',
+      'rule_type' => 0,
+      'mem_snap' => 0,
+      'band_width' => '-1',
+      'status' => NULL,
+      'compress' => 0,
+      'vm_list' => 
+      array (
+        0 => 
+        array (
+          'vm_name' => '²âÊÔ5',
+          'vm_ref' => 'vm-10811',
+          'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+        ),
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 545 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/backup?page=1&limit=10&type=0&_=0.30389989017886
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'vp_name' => '88.22',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'qwdqwd',
+        'vm_name' => 'ÐÂ½¨ÐéÄâ»ú6',
+        'vp_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => '11111111-1111-1111-1111-111111111111',
+        'rule_uuid' => '11111111-1111-1111-1111-111111111111',
+        'rule_type' => 0,
+      ),
+      1 => 
+      array (
+        'vp_name' => '85.139',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'testRC1',
+        'vm_name' => '²âÊÔ5',
+        'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => 'A020C838-10F4-4A65-30E1-779C57E6E1C6',
+        'rule_uuid' => '2DE30043-FC8E-5F80-78B8-C7C226EA07E2',
+        'rule_type' => 0,
+      ),
+      2 => 
+      array (
+        'vp_name' => '85.137',
+        'bk_node_name' => 'move B 72.82',
+        'username' => 'admin',
+        'rule_name' => 'testRC',
+        'vm_name' => '²âÊÔ1',
+        'vp_uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
+        'bk_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => '7B588C65-985E-6C2F-129F-1D61C387C1E9',
+        'rule_uuid' => '3ABD383B-A9BE-0D23-D0FF-A9CBAF1F9C38',
+        'rule_type' => 0,
+      ),
+      3 => 
+      array (
+        'vp_name' => '85.137',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'vp_bk',
+        'vm_name' => '²âÊÔ5',
+        'vp_uuid' => 'C6335F62-2565-1957-4BB9-587F2FF46B00',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => 'D3D8883C-12DD-F1C5-BE78-934E08135463',
+        'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+        'rule_type' => 0,
+      ),
+    ),
+    'total' => 4,
+  ),
+  1 => NULL,
+)
+
+Time: 547 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/backup/group?page=1&limit=10&type=0&where_args%5Bbk_path%5D=H%3A%5Cvp_bk5%5C&_=0.9371393340888
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'vp_name' => '85.139',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'group_uuid' => 'A020C838-10F4-4A65-30E1-779C57E6E1C6',
+        'rule_name' => 'testRC1',
+        'rule_uuid' => '2DE30043-FC8E-5F80-78B8-C7C226EA07E2',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'bk_path' => 'H:\\vp_bk5\\',
+        'quick_back' => 1,
+        'bkup_policy' => 0,
+        'del_bkup_data' => 0,
+        'bkup_one_time' => 1546837760,
+        'lan_free' => 23,
+        'bkup_schedule' => 
+        array (
+        ),
+        'quiet_snap' => 0,
+        'create_time' => 1546837842,
+        'random_str' => 'F4522086-77ED-FAAE-1422-0F439F8BEB3B',
+        'rule_type' => 0,
+        'mem_snap' => 0,
+        'band_width' => '-1',
+        'status' => NULL,
+        'compress' => 0,
+        'vm_list' => 
+        array (
+          0 => 
+          array (
+            'vm_name' => '²âÊÔ5',
+            'vm_ref' => '99',
+            'rule_uuid' => '2DE30043-FC8E-5F80-78B8-C7C226EA07E2',
+          ),
+        ),
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 550 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/backup/status?rule_uuids[]=EC5A3225-C388-F935-6BC2-15AAA4EB5B23&_=0.51423083622909
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+        'status' => 'STOP',
+        'progress' => 0,
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 667 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rule_uuids":["EC5A3225-C388-F935-6BC2-15AAA4EB5B23"],"operate":"start"}
+url:http://192.168.72.70:58080/api/vp/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 693 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rule_uuids":["EC5A3225-C388-F935-6BC2-15AAA4EB5B23"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/vp/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => 'EC5A3225-C388-F935-6BC2-15AAA4EB5B23',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 721 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"rule_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/vp/backup
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 912 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"bk_path":"H:\\vp_bk5\\testRC1_BAK_99_192.168.85.139","bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","new_ds":"datastore1","vm_list":[{"vm_cfg":{"alt_name":"","anno":"","bk_path":"H:\\vp_bk5\\testRC1_BAK_99_192.168.85.139\\","cdrom":"","chg_id":"52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf\/107","controller":"1,1000,100,3,0,3,noSharing,0","core_per_sock":"1","cpu":"1","dc":"ha-datacenter","disk":"2,[datastore1] \u6d4b\u8bd55\/proxy gateway1.vmdk,persistent,1,2048,2000,1000,0,52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf\/107,0,1","disk_count":"1","disk_list":["proxy gateway1.vmdk"],"ds":"datastore1","floppy":"","guest_os_id":"rhel6_64Guest","hostname":"localhost.localdomain","mem_mb":"1024","nic":"3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network","nic_count":"2","storeMem":"0","time":"2019-01-07_13-10-45","valid_data":4194304,"ver_sig":"A59DB76E-E33D-4E22-BB08-59723B1FC539","vm_name":"\u6d4b\u8bd55","vm_ref":"99","vm_version":"vmx-08","vp_uuid":"928B88A6-CDBA-6F55-ADCB-15A8A935C9C2"},"ver_sig":"A59DB76E-E33D-4E22-BB08-59723B1FC539","vm_ref":"99","vm_name":"\u6d4b\u8bd55","disk_list":[{"disk_name":"proxy gateway1.vmdk","disk_path":"\/","is_same":1,"new_ds":"datastore1"}]}],"new_hostname":"localhost.localdomain","new_dc":"ha-datacenter","is_create":0,"vp_uuid":"928B88A6-CDBA-6F55-ADCB-15A8A935C9C2","new_ds_path":"\/","new_vp_uuid":"928B88A6-CDBA-6F55-ADCB-15A8A935C9C2","rule_name":"testRC3","lan_free":23,"rule_type":0,"automate":0,"new_vm_name":"\u6d4b\u8bd55","new_dc_mor":"ha-datacenter","api_type":"HostAgent","biz_grp_list":[],"cpu":1,"core_per_sock":1,"mem_snap":1,"mem_mb":1024,"mac":"3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network","group_recovery":0,"band_width":-1,"backup_rule_name":"testRC1"}
+url:http://192.168.72.70:58080/api/vp/recovery
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '11111111-1111-1111-1111-111111111111',
+        'vm_name' => '²âÊÔ5',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 850 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/recovery/641A27BB-B4D1-F482-1FB8-E856898626DA/group
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'vp_recovery' => 
+    array (
+      'vp_name' => '85.139',
+      'new_vp_name' => '85.139',
+      'bk_node_name' => 'N3_72.75',
+      'group_uuid' => '641A27BB-B4D1-F482-1FB8-E856898626DA',
+      'rule_type' => 0,
+      'rule_uuid' => '2E92D816-AFF0-A807-D90F-87991F789976',
+      'rule_name' => 'testRC1',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+      'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'new_vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+      'new_dc' => 'ha-datacenter',
+      'new_ds' => 'datastore1',
+      'new_dc_mor' => 'ha-datacenter',
+      'bk_path' => 'H:\\vp_bk5\\testRC1_BAK_99_192.168.85.139',
+      'new_ds_path' => '/',
+      'new_hostname' => 'localhost.localdomain',
+      'new_vm_name' => '²âÊÔ5',
+      'cpu' => 1,
+      'core_per_sock' => 1,
+      'mem_mb' => 1024,
+      'mac' => '3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network',
+      'automate' => 0,
+      'api_type' => 'HostAgent',
+      'group_recovery' => 0,
+      'is_create' => 0,
+      'lan_free' => 23,
+      'create_time' => 1546841417,
+      'random_str' => '269279CF-B15D-6FBB-44D2-A91FFAF34701',
+      'status' => 'M_STOP',
+      'backup_rule_name' => 'testRC1',
+      'band_width' => NULL,
+      'vm_list' => 
+      array (
+        0 => 
+        array (
+          'vm_name' => '²âÊÔ5',
+          'vm_ref' => '99',
+          'ver_sig' => 'A59DB76E-E33D-4E22-BB08-59723B1FC539',
+          'vm_cfg' => 
+          array (
+            'alt_name' => '',
+            'anno' => '',
+            'bk_path' => 'H:\\vp_bk5\\testRC1_BAK_99_192.168.85.139\\',
+            'cdrom' => '',
+            'chg_id' => '52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf/107',
+            'controller' => '1,1000,100,3,0,3,noSharing,0',
+            'core_per_sock' => '1',
+            'cpu' => '1',
+            'dc' => 'ha-datacenter',
+            'disk' => '2,[datastore1] ²âÊÔ5/proxy gateway1.vmdk,persistent,1,2048,2000,1000,0,52 19 10 74 e2 c2 b3 63-de 7a 2e d2 9d 40 91 bf/107,0,1',
+            'disk_count' => '1',
+            'disk_list' => 
+            array (
+              0 => 'proxy gateway1.vmdk',
+            ),
+            'ds' => 'datastore1',
+            'floppy' => '',
+            'guest_os_id' => 'rhel6_64Guest',
+            'hostname' => 'localhost.localdomain',
+            'mem_mb' => '1024',
+            'nic' => '3,00:50:56:90:ff:ad,1,4000,100,7,1,VM Network;3,00:50:56:90:7b:51,1,4001,100,8,1,VM Network',
+            'nic_count' => '2',
+            'storeMem' => '0',
+            'time' => '2019-01-07_13-10-45',
+            'valid_data' => 4194304,
+            'ver_sig' => 'A59DB76E-E33D-4E22-BB08-59723B1FC539',
+            'vm_name' => '²âÊÔ5',
+            'vm_ref' => '99',
+            'vm_version' => 'vmx-08',
+            'vp_uuid' => '928B88A6-CDBA-6F55-ADCB-15A8A935C9C2',
+          ),
+          'disk_list' => 
+          array (
+            0 => 
+            array (
+              'disk_name' => 'proxy gateway1.vmdk',
+              'disk_path' => '/',
+              'is_same' => 1,
+              'new_ds' => 'datastore1',
+            ),
+          ),
+          'rule_uuid' => '2E92D816-AFF0-A807-D90F-87991F789976',
+        ),
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 614 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/recovery?type=1&limit=10&page=1&_=0.66416937852075
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+    ),
+    'total' => 0,
+  ),
+  1 => NULL,
+)
+
+Time: 575 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/recovery/status?rule_uuids=2E92D816-AFF0-A807-D90F-87991F789976&_=0.86909891193301
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'rule_uuid' => '2E92D816-AFF0-A807-D90F-87991F789976',
+        'status' => 'M_STOP',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 561 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rule_uuids":["2E92D816-AFF0-A807-D90F-87991F789976"],"operate":"start"}
+url:http://192.168.72.70:58080/api/vp/recovery/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '2E92D816-AFF0-A807-D90F-87991F789976',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 846 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"rule_uuids":["2E92D816-AFF0-A807-D90F-87991F789976"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/vp/recovery/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '2E92D816-AFF0-A807-D90F-87991F789976',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 6.83 seconds, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"rule_type":0,"rule_uuids":"","operate":"clear_finish"}
+url:http://192.168.72.70:58080/api/vp/recovery/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 605 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"rule_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/vp/recovery
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 760 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"new_ds":"103-\u6570\u636e\u76d8","support_cbt":1,"tgt_uuid":"7F16E670-1A61-D565-6905-9C68B9520907","del_bkup_swap":0,"src_uuid":"7F16E670-1A61-D565-6905-9C68B9520907","bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","automate":0,"rule_name":"testMove","new_dc":"i2test","bk_path":"H:\\vp_rep\\","backup_type":"i","new_host":"192.168.88.103","quiet_snap":0,"bkup_schedule":{"sched_time_start":"2019-01-07T06:16:32.611Z","limit":0,"sched_day":[],"sched_every":0,"sched_time":[],"sched_gap_min":0},"quick_back":1,"del_bkup_data":0,"lan_free":23,"vm_list":[{"vm_name":"\u65b0\u5efa\u865a\u62df\u673a1","vm_ref":"vm-11877","shd_name":"\u65b0\u5efa\u865a\u62df\u673a1_move","overwrite":0}],"time_window":"","new_dc_mor":"datacenter-2","bkup_policy":0,"band_width":-1,"mem_snap":0,"rule_type":1}
+url:http://192.168.72.70:58080/api/vp/move
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => array(
+        0 => array(
+	    'code' => 0,
+	    'message' => '[0] ²Ù×÷³É¹¦¡£'
+	    'rule_uuid' => '1C89A121-6B03-24B2-9273-D4B93C0687AD'
+	    'vm_name' => 'ÐÂ½¨ÐéÄâ»ú1'
+        )
+    )
+  ),
+  1 => NULL,
+)
+
+Time: 960 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"new_ds":"103-\u6570\u636e\u76d8","support_cbt":1,"tgt_uuid":"7F16E670-1A61-D565-6905-9C68B9520907","del_bkup_swap":0,"src_uuid":"7F16E670-1A61-D565-6905-9C68B9520907","bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","automate":0,"rule_name":"testRep","new_dc":"i2test","bk_path":"H:\\vp_rep\\","backup_type":"i","new_host":"192.168.88.103","quiet_snap":0,"bkup_schedule":{"sched_time_start":"2019-01-07T06:16:32.611Z","limit":0,"sched_day":[],"sched_every":0,"sched_time":[],"sched_gap_min":0},"quick_back":1,"del_bkup_data":0,"lan_free":23,"vm_list":[{"vm_name":"\u65b0\u5efa\u865a\u62df\u673a1","vm_ref":"vm-11877","shd_name":"\u65b0\u5efa\u865a\u62df\u673a1_HA","overwrite":0}],"time_window":"","new_dc_mor":"datacenter-2","bkup_policy":0,"band_width":-1,"mem_snap":0,"rule_type":0}
+url:http://192.168.72.70:58080/api/vp/rep
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => array(
+        0 => array(
+	    'code' => 0,
+	    'message' => '[0] ²Ù×÷³É¹¦¡£'
+	    'rule_uuid' => 'ABB1E43A-4A14-35FB-A270-20A35B13B9D6'
+	    'vm_name' => 'ÐÂ½¨ÐéÄâ»ú1'
+        )
+    )
+  ),
+  1 => NULL,
+)
+
+Time: 960 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/move/16C1C399-6146-AD56-6D5D-7DBCC14804D9
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'vp_move' => 
+    array (
+      'username' => 'admin',
+      'group_uuid' => '1C89A121-6B03-24B2-9273-D4B93C0687AD',
+      'rule_name' => 'testMove',
+      'automate' => 0,
+      'backup_type' => 'i',
+      'rule_uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'quick_back' => 1,
+      'lan_free' => 23,
+      'new_dc' => 'i2test',
+      'new_dc_mor' => 'datacenter-2',
+      'new_ds' => '103-Êý¾ÝÅÌ',
+      'new_host' => '192.168.88.103',
+      'overwrite' => 0,
+      'del_bkup_data' => 0,
+      'del_bkup_swap' => 0,
+      'bkup_schedule' => 
+      array (
+        'sched_time_start' => '2019-01-07T06:16:32.611Z',
+        'limit' => 0,
+        'sched_day' => 
+        array (
+        ),
+        'sched_every' => 0,
+        'sched_time' => 
+        array (
+        ),
+        'sched_gap_min' => 0,
+      ),
+      'src_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+      'tgt_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+      'shd_name' => 'ÐÂ½¨ÐéÄâ»ú1_move',
+      'vm_ref' => 'vm-11877',
+      'vm_name' => 'ÐÂ½¨ÐéÄâ»ú1',
+      'create_time' => 1546842628,
+      'bk_path' => 'H:\\vp_rep\\',
+      'quiet_snap' => 0,
+      'status' => NULL,
+      'rule_type' => 1,
+      'random_str' => 'E4DC610A-CA29-DA4A-7869-1D73464406D9',
+      'bkup_policy' => 0,
+      'time_window' => '',
+      'mem_snap' => 0,
+      'band_width' => '-1',
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 545 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/rep/F64AA5FC-48F0-B593-907A-958E5E95AD13
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'vp_rep' => 
+    array (
+      'username' => 'admin',
+      'group_uuid' => 'ABB1E43A-4A14-35FB-A270-20A35B13B9D6',
+      'rule_name' => 'testRep',
+      'automate' => 0,
+      'backup_type' => 'i',
+      'rule_uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'quick_back' => 1,
+      'lan_free' => 23,
+      'new_dc' => 'i2test',
+      'new_dc_mor' => 'datacenter-2',
+      'new_ds' => '103-Êý¾ÝÅÌ',
+      'new_host' => '192.168.88.103',
+      'overwrite' => 0,
+      'del_bkup_data' => 0,
+      'del_bkup_swap' => 0,
+      'bkup_schedule' => 
+      array (
+        'sched_time_start' => '2019-01-07T06:16:32.611Z',
+        'limit' => 0,
+        'sched_day' => 
+        array (
+        ),
+        'sched_every' => 0,
+        'sched_time' => 
+        array (
+        ),
+        'sched_gap_min' => 0,
+      ),
+      'src_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+      'tgt_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+      'shd_name' => 'ÐÂ½¨ÐéÄâ»ú1_HA',
+      'vm_ref' => 'vm-11877',
+      'vm_name' => 'ÐÂ½¨ÐéÄâ»ú1',
+      'create_time' => 1546842742,
+      'bk_path' => 'H:\\vp_rep\\',
+      'quiet_snap' => 0,
+      'status' => 'M_STOP',
+      'rule_type' => 0,
+      'random_str' => '4966776C-F2C9-3773-FE5F-E58AD76404E4',
+      'bkup_policy' => 0,
+      'time_window' => '',
+      'mem_snap' => 0,
+      'band_width' => '-1',
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 536 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/move?limit=10&page=1&_=0.23364154001496
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'src_name' => '88.22',
+        'tgt_name' => '88.22',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'testMove',
+        'vm_name' => 'ÐÂ½¨ÐéÄâ»ú1',
+        'src_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'tgt_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => '1C89A121-6B03-24B2-9273-D4B93C0687AD',
+        'rule_uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9',
+        'rule_type' => 1,
+        'bkup_policy' => 0,
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 570 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/rep?limit=10&page=1&_=0.96863653822659
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'src_name' => '88.22',
+        'tgt_name' => '88.22',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'rule_name' => 'testRep',
+        'vm_name' => 'ÐÂ½¨ÐéÄâ»ú1',
+        'src_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'tgt_uuid' => '7F16E670-1A61-D565-6905-9C68B9520907',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'group_uuid' => 'ABB1E43A-4A14-35FB-A270-20A35B13B9D6',
+        'rule_uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13',
+        'rule_type' => 0,
+        'bkup_policy' => 0,
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 564 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/move/status?rule_uuids[]=16C1C399-6146-AD56-6D5D-7DBCC14804D9&_=0.15519648933973
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'rule_uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9',
+        'status' => 'STOP',
+        'progress' => 0,
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 624 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/move/status?rule_uuids[]=F64AA5FC-48F0-B593-907A-958E5E95AD13&_=0.73487319146009
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'rule_uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13',
+        'status' => 'M_STOP',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 549 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"rule_uuids":["16C1C399-6146-AD56-6D5D-7DBCC14804D9"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/vp/move/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 723 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rule_uuids":["F64AA5FC-48F0-B593-907A-958E5E95AD13"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/vp/rep/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 775 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"rule_uuids":["16C1C399-6146-AD56-6D5D-7DBCC14804D9"],"operate":"start"}
+url:http://192.168.72.70:58080/api/vp/move/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 746 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rule_uuids":["F64AA5FC-48F0-B593-907A-958E5E95AD13"],"operate":"start"}
+url:http://192.168.72.70:58080/api/vp/rep/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => 'F64AA5FC-48F0-B593-907A-958E5E95AD13',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 794 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rule_uuids":["16C1C399-6146-AD56-6D5D-7DBCC14804D9"],"operate":"move"}
+url:http://192.168.72.70:58080/api/vp/move/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rule_uuid' => '16C1C399-6146-AD56-6D5D-7DBCC14804D9',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 760 ms, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/vp/rep/F64AA5FC-48F0-B593-907A-958E5E95AD13/point_list
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 1.22 seconds, Memory: 2.25MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

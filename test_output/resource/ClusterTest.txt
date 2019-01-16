@@ -1,0 +1,321 @@
+request_method:POST
+body:{"cls_is_local":1,"os_pwd":"1omXIIQIvnlmzfDShBK185+KKqT5uHPC9o67qp28AsXUVsnFzl8exS\/xSewGWwQc0r0p6ubh4js1Lv0sEeg1o305ct5L9NxJRakIHmVV+WwdnUO9B0620qeWl2RyMwa9r6puyT35nmaxaaGnDg5QGQKpUz+x3UT906Zab2lfNTL5xrmqionQBMC9k3ZUeRvxXJFTdUH0QKf7bY\/CGhnrn01UJaKdMAuP5BAEACz+Hhx984fFxAvk7OeoLzNIDDs2Gv+qQIfJJ6KVdzZuiifzIWgW1uKJGjQyxVCSdBOaFmZzTjFl3Z0tC3jrmhR89v\/6RoXV9uq4NUpn2B6tbPOfGQ==","os_user":"i2test2018.com\\administrator","config_addr":"192.168.87.14","config_port":26821}
+url:http://192.168.72.70:58080/api/cls/auth
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'cls_name' => 'cluster-2018',
+    'hd_list' => 
+    array (
+      0 => 'C:',
+      1 => 'E:',
+      2 => 'F:',
+      3 => 'G:',
+    ),
+    'cls_node_list' => 
+    array (
+      0 => 
+      array (
+        'cls_node_name' => 'cluster-node1',
+        'cls_node_status' => 0,
+      ),
+      1 => 
+      array (
+        'cls_node_name' => 'cluster-node2',
+        'cls_node_status' => 0,
+      ),
+    ),
+    'work_node_list' => 
+    array (
+      0 => 
+      array (
+        'node_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'node_name' => 'N3_72.75',
+      ),
+      1 => 
+      array (
+        'node_uuid' => '04ED35A8-F05F-21BA-33FC-4236019589FB',
+        'node_name' => '192.168.25.22',
+      ),
+      2 => 
+      array (
+        'node_uuid' => '5FB4B19E-957F-820C-887A-8D1593093C9B',
+        'node_name' => '192.168.25.21',
+      ),
+      3 => 
+      array (
+        'node_uuid' => 'C11FE572-5207-3359-DB85-001E95F5F185',
+        'node_name' => '192.168.25.12',
+      ),
+      4 => 
+      array (
+        'node_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+        'node_name' => 'move B 72.82',
+      ),
+      5 => 
+      array (
+        'node_uuid' => 'CE77F3D6-A6E3-A385-CE66-712313B7DDE8',
+        'node_name' => '192.168.25.11',
+      ),
+      6 => 
+      array (
+        'node_uuid' => '790502A5-F563-4E22-8E64-692713FDE812',
+        'node_name' => '87.12',
+      ),
+      7 => 
+      array (
+        'node_uuid' => 'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C',
+        'node_name' => '87.11',
+      ),
+      8 => 
+      array (
+        'node_uuid' => 'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
+        'node_name' => '71.78',
+      ),
+      9 => 
+      array (
+        'node_uuid' => '42614852-BB62-1EF7-FED0-D2354BF3149D',
+        'node_name' => '71.77',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 1.31 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"node_uuid":"BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C","cls_name":"cluster-2018","cls_node_name":"cluster-node1"}
+url:http://192.168.72.70:58080/api/cls/node_verify
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'node_name' => '87.11',
+    'node_uuid' => 'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C',
+    'config_addr' => '192.168.87.11',
+    'version' => '6.2-21501',
+  ),
+  1 => NULL,
+)
+
+Time: 654 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"cls":{"comment":"","cls_disk":["E:\\"],"config_port":"26821","cls_node":["BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C"],"node_type":1,"cls_is_local":1,"os_user":"i2test2018.com\\administrator","config_addr":"192.168.74.25","node_name":"cls"}}
+url:http://192.168.72.70:58080/api/cls
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 660 ms, Memory: 2.00MB
+
+OK (1 test, 0 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/cls/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'cls' => 
+    array (
+      'monitor_switch' => 0,
+      'mon_send_interval' => '10',
+      'mon_data_path' => NULL,
+      'mon_save_day' => '5',
+      'db_save_day' => '3',
+      'chart_config' => '0',
+      'info' => NULL,
+      'created_at' => '1547190936',
+      'updated_at' => NULL,
+      'username' => 'admin',
+      'id' => '30',
+      'bak_client_max' => '100',
+      'bak_root' => NULL,
+      'bak_service_type' => NULL,
+      'bak_user_max' => '100',
+      'bind_lic_list' => NULL,
+      'cache_path' => NULL,
+      'cls_disk' => 
+      array (
+        0 => 'E:\\',
+      ),
+      'cls_node' => 
+      array (
+        0 => 'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C',
+      ),
+      'cls_is_local' => 1,
+      'comment' => NULL,
+      'config_addr' => '192.168.74.25',
+      'config_port' => '26821',
+      'create_time' => '1547190936',
+      'data_addr' => '192.168.74.25',
+      'data_port' => '26831',
+      'disk_limit' => '100',
+      'en_snap_switch' => 1,
+      'log_path' => NULL,
+      'mem_limit' => '100',
+      'node_name' => 'cls',
+      'node_role' => '1',
+      'node_type' => 1,
+      'node_uuid' => '11111111-1111-1111-1111-111111111111',
+      'os_pwd' => NULL,
+      'os_version' => NULL,
+      'os_type' => 1,
+      'os_user' => 'i2test2018.com\\administrator',
+      'phy_type' => NULL,
+      'proxy_switch' => 0,
+      'random_str' => '11111111-1111-1111-1111-111111111111',
+      'rep_excl_path' => NULL,
+      'rep_path' => 
+      array (
+      ),
+      'security_check' => 0,
+      'status' => NULL,
+      'tc_uuid' => NULL,
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'vg' => NULL,
+      'i2id' => NULL,
+      'hardware_code' => NULL,
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 922 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:PUT
+body:{"cls":{"comment":"","cls_disk":["E:\\"],"config_port":"26821","cls_node":["BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C"],"node_type":1,"cls_is_local":1,"os_user":"i2test2018.com\\administrator","config_addr":"192.168.74.25","node_name":"cls","random_str":"11111111-1111-1111-1111-111111111111"}}
+url:http://192.168.72.70:58080/api/cls/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 674 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/cls?limit=10&search_value=&search_field=&page=1&_=0.53850366385658
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'username' => 'admin',
+        'config_addr' => '192.168.74.25',
+        'node_name' => 'cls',
+        'node_type' => 1,
+        'node_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 542 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"node_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/cls
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 10.7 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"operate":"detail","node_uuid":"11111111-1111-1111-1111-111111111111"}
+url:http://192.168.72.70:58080/api/cls/operate
+array (
+  0 => 
+  array (
+    'data' => 
+    array (
+      'ret' => 200,
+      'msg' => '',
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 10.7 seconds, Memory: 2.00MB
+
+OK (1 test, 1 assertion)
+
+Process finished with exit code 0

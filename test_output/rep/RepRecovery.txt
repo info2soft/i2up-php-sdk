@@ -1,0 +1,318 @@
+request_method:POST
+body:{"rep_recovery":{"cdp_position":"2019-01-02_16-35-21+-2","rc_name":"rep_recovery","cdp_time":"2019-01-02 16:35:21.0","wk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","snapshot_size":"1.34 GB","cdp_rc_method":0,"snapshot_time":"2017-11-17 17:24:14","rc_type":1,"snapshot_name":"c5809dd2-e8be-4389-ac0d-0a657ff94da0_snap_2017-11-17_17-24-14","bk_path":["G:\\cdp2\\G\\cdp\\"],"oph_policy":0,"cdp_file":"Baseline","cdp_op":"backup","wk_path":["G:\\cdp_rc\\"],"rep_uuid":"051E0501-04EF-E1ED-0CEA-2E8751135CE4","bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F"}}
+url:http://192.168.72.70:58080/api/rep/recovery
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 1.1 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/recovery/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'rep_recovery' => 
+    array (
+      'wk_node_name' => 'N3_72.75',
+      'bk_node_name' => 'N3_72.75',
+      'rep_name' => 'testCDP',
+      'username' => 'admin',
+      'id' => '14',
+      'cdp_file' => 'Baseline',
+      'cdp_op' => 'backup',
+      'cdp_position' => '2019-01-02_16-35-21+-2',
+      'cdp_rc_method' => 0,
+      'cdp_time' => '2019-01-02 16:35:21.0',
+      'create_time' => '1547002954',
+      'oph_policy' => 0,
+      'random_str' => '11111111-1111-1111-1111-111111111111',
+      'rc_name' => 'rep_recovery',
+      'rc_type' => 1,
+      'rc_uuid' => '11111111-1111-1111-1111-111111111111',
+      'rep_uuid' => '051E0501-04EF-E1ED-0CEA-2E8751135CE4',
+      'snapshot_name' => NULL,
+      'snapshot_size' => NULL,
+      'snapshot_time' => NULL,
+      'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'wk_path' => 
+      array (
+        0 => 'G:\\cdp_rc\\',
+      ),
+      'src_wk_uuid' => NULL,
+      'status' => NULL,
+      'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'bk_path' => 
+      array (
+        0 => 'G:\\cdp2\\G\\cdp\\',
+      ),
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'ct_name_type' => 0,
+      'ct_name_str1' => NULL,
+      'ct_name_str2' => NULL,
+      'ct_name_str3' => NULL,
+      'ct_name_str4' => NULL,
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 567 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"rc_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/rep/recovery
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 777 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/recovery?search_field=&search_value=&limit=10&type=1&page=1&_=0.39201773328048
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'wk_node_name' => 'N3_72.75',
+        'bk_node_name' => 'N3_72.75',
+        'rep_name' => 'testCDP',
+        'username' => 'admin',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'cdp_time' => '2019-01-02 16:35:21.0',
+        'create_time' => '1547002954',
+        'rc_name' => 'rep_recovery',
+        'rc_type' => 1,
+        'rc_uuid' => '11111111-1111-1111-1111-111111111111',
+        'rep_uuid' => '051E0501-04EF-E1ED-0CEA-2E8751135CE4',
+        'snapshot_time' => NULL,
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 550 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rc_uuids":["11111111-1111-1111-1111-111111111111"],"operate":"start"}
+url:http://192.168.72.70:58080/api/rep/recovery/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rc_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 1.11 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rc_uuids":["11111111-1111-1111-1111-111111111111"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/rep/recovery/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rc_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 850 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"rc_type":0,"operate":"clear_finish"}
+url:http://192.168.72.70:58080/api/rep/recovery/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 701 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/recovery/status?rc_uuids[]=11111111-1111-1111-1111-111111111111&_=0.10660930268473
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'rc_uuid' => '11111111-1111-1111-1111-111111111111',
+        'status' => 'M_STOP',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 565 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/recovery/cdp_range?rep_uuid=051E0501-04EF-E1ED-0CEA-2E8751135CE4&_=0.963104562542
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'start_time' => '2019-01-02 16:35:21',
+    'end_time' => '2019-01-09 01:20:54',
+  ),
+  1 => NULL,
+)
+
+Time: 749 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/recovery/cdp_log?rep_uuid=051E0501-04EF-E1ED-0CEA-2E8751135CE4&bk_path[]=E%3A%5Ct2%5CE%5Ct%5C&cdp_time=2018-12-28+10%3A14%3A11&bs_time=2018-12-28_10-14-11&_=0.33203613731776
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'cdp_log' => 
+    array (
+      0 => 
+      array (
+        'cdp_time' => '2019-01-02 16:35:21.0',
+        'cdp_op' => 'backup',
+        'cdp_file' => 'Baseline',
+        'position' => '2019-01-02_16-35-21+-2',
+        'count' => 1,
+        'no' => 1,
+      ),
+      1 => 
+      array (
+        'cdp_time' => '2019-01-02 16:35:21.0',
+        'cdp_op' => 'backup',
+        'cdp_file' => 'Delta',
+        'position' => '2019-01-02_16-35-21+-1',
+        'count' => 1,
+        'no' => 2,
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 987 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

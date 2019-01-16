@@ -1,0 +1,50 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/storage?node_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&rep_uuid=F97B3FD5-4D5D-41EE-22A9-740A74E1E13C&byte_format=1&_=0.93599510741715
+array(2) {
+  [0]=>
+  array(5) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["driver_list"]=>
+    array(1) {
+      ["G:"]=>
+      array(3) {
+        ["name"]=>
+        string(2) "G:"
+        ["total"]=>
+        string(6) "4.0 GB"
+        ["free"]=>
+        string(6) "3.8 GB"
+      }
+    }
+    ["total_cdp_size"]=>
+    string(7) "0 Bytes"
+    ["rep_list"]=>
+    array(1) {
+      ["F97B3FD5-4D5D-41EE-22A9-740A74E1E13C"]=>
+      array(4) {
+        ["rep_uuid"]=>
+        string(36) "F97B3FD5-4D5D-41EE-22A9-740A74E1E13C"
+        ["repsize"]=>
+        string(7) "6 Bytes"
+        ["cdpsize"]=>
+        string(7) "0 Bytes"
+        ["snapsize"]=>
+        string(7) "0 Bytes"
+      }
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 641 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+

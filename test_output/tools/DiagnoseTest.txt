@@ -1,0 +1,120 @@
+request_method:POST
+body:{"task_uuid":"","check_type":1,"wk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","rep_uuid":""}
+url:http://192.168.72.70:58080/api/diagnose
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 541 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:DELETE
+body:{"check_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/diagnose
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 643 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/diagnose?limit=10&page=1&_=0.93012277197215
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'item_name' => NULL,
+        'wk_node_name' => 'N3_72.75',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'id' => '3',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'item_uuid' => NULL,
+        'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'check_uuid' => '11111111-1111-1111-1111-111111111111',
+        'check_type' => 1,
+        'status' => 'DIAGNOSE',
+        'result' => NULL,
+        'download_url' => NULL,
+        'create_time' => 1546940343,
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 559 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/diagnose?check_uuids[]=11111111-1111-1111-1111-111111111111&_=0.51661366142277
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'item_name' => NULL,
+        'wk_node_name' => 'N3_72.75',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'id' => '3',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'item_uuid' => NULL,
+        'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'check_uuid' => '11111111-1111-1111-1111-111111111111',
+        'check_type' => 1,
+        'status' => 'DIAGNOSE',
+        'result' => NULL,
+        'download_url' => NULL,
+        'create_time' => 1546940343,
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 555 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

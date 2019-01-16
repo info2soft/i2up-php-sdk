@@ -1,0 +1,392 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/version
+array(2) {
+  [0]=>
+  array(1) {
+    ["data"]=>
+    NULL
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 462 ms, Memory: 2.00MB
+
+OK (1 test, 1 assertion)
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/migrate
+array(2) {
+  [0]=>
+  array(1) {
+    ["data"]=>
+    NULL
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 625 ms, Memory: 2.00MB
+
+OK (1 test, 1 assertion)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/statistics?page=1&limit=10&name=&_=0.29251628095367
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["list"]=>
+    array(10) {
+      [0]=>
+      array(10) {
+        ["id"]=>
+        string(1) "2"
+        ["name"]=>
+        string(6) "testRC"
+        ["uuid"]=>
+        string(36) "D35717B8-0D09-8788-2893-03144698F656"
+        ["detail"]=>
+        string(476) "{"uuid":"D35717B8-0D09-8788-2893-03144698F656","name":"testRC","type":"I2VP_BK","stage":"1","policy":"1","sync_obj_num":"1","file_skiped_num":"0","start_time":"2019-01-07 13:08:35","end_time":"2019-01-07 13:08:35","trans_data_num":"","data_writed_num":"","src_type":"5","src_size":"","create_time":"2019-01-07 13:08:35","project_failed_num":"","dir_failed_num":"","dup_rate":"0%","space_occu":"","bkup_window":"","result":"error","tran_rate":"","used_time":"","data_size":"0"}"
+        ["result"]=>
+        string(1) "0"
+        ["start_time"]=>
+        string(19) "2019-01-07 13:08:35"
+        ["end_time"]=>
+        string(19) "2019-01-07 13:08:35"
+        ["type"]=>
+        string(7) "I2VP_BK"
+        ["status"]=>
+        string(1) "0"
+        ["create_time"]=>
+        string(10) "1546837716"
+      }
+      [1]=>
+      array(10) {
+        ["id"]=>
+        string(1) "6"
+        ["name"]=>
+        string(15) "testRC1-测试5"
+        ["uuid"]=>
+        string(36) "2DE30043-FC8E-5F80-78B8-C7C226EA07E2"
+        ["detail"]=>
+        string(520) "{"bkup_window":"","create_time":"2019-01-07 13:16:09","data_writed_num":"2147483648","dir_failed_num":"","dup_rate":"0%","end_time":"2019-01-07 13:16:09","file_skiped_num":0,"name":"testRC1-\u6d4b\u8bd55","policy":1,"project_failed_num":"","result":"SUCCEED","space_occu":"2147483648","src_size":"2147483648","src_type":5,"stage":0,"start_time":"2019-01-07 13:10:46","sync_obj_num":1,"tran_rate":"6648556.00","trans_data_num":"2147483648","type":"I2VP_BK","used_time":"323","uuid":"2DE30043-FC8E-5F80-78B8-C7C226EA07E2"}"
+        ["result"]=>
+        string(1) "0"
+        ["start_time"]=>
+        string(19) "2019-01-07 13:10:46"
+        ["end_time"]=>
+        string(19) "2019-01-07 13:16:09"
+        ["type"]=>
+        string(7) "I2VP_BK"
+        ["status"]=>
+        string(1) "0"
+        ["create_time"]=>
+        string(10) "1546838172"
+      }
+      [2]=>
+      array(10) {
+        ["id"]=>
+        string(1) "9"
+        ["name"]=>
+        string(23) "testMv-新建虚拟机1"
+        ["uuid"]=>
+        string(36) "296F041B-4756-5479-9599-5088041688C7"
+        ["detail"]=>
+        string(537) "{"bkup_window":"","create_time":"2019-01-07 14:26:56","data_writed_num":"2147483648","dir_failed_num":"","dup_rate":"0%","end_time":"2019-01-07 14:26:56","file_skiped_num":0,"name":"testMv-\u65b0\u5efa\u865a\u62df\u673a1","policy":1,"project_failed_num":"","result":"SUCCEED","space_occu":"2147483648","src_size":"2147483648","src_type":5,"stage":0,"start_time":"2019-01-07 14:19:12","sync_obj_num":1,"tran_rate":"4628197.00","trans_data_num":"2147483648","type":"I2VP_MV","used_time":"464","uuid":"296F041B-4756-5479-9599-5088041688C7"}"
+        ["result"]=>
+        string(1) "0"
+        ["start_time"]=>
+        string(19) "2019-01-07 14:19:12"
+        ["end_time"]=>
+        string(19) "2019-01-07 14:26:56"
+        ["type"]=>
+        string(7) "I2VP_MV"
+        ["status"]=>
+        string(1) "0"
+        ["create_time"]=>
+        string(10) "1546842423"
+      }
+      [3]=>
+      array(10) {
+        ["id"]=>
+        string(2) "12"
+        ["name"]=>
+        string(24) "testRep-新建虚拟机1"
+        ["uuid"]=>
+        string(36) "F64AA5FC-48F0-B593-907A-958E5E95AD13"
+        ["detail"]=>
+        string(530) "{"bkup_window":"","create_time":"2019-01-07 14:33:07","data_writed_num":"79691776","dir_failed_num":"","dup_rate":"0%","end_time":"2019-01-07 14:33:07","file_skiped_num":0,"name":"testRep-\u65b0\u5efa\u865a\u62df\u673a1","policy":1,"project_failed_num":"","result":"-3523","space_occu":"79691776","src_size":"2147483648","src_type":5,"stage":11,"start_time":"2019-01-07 14:32:34","sync_obj_num":1,"tran_rate":"2414902.00","trans_data_num":"79691776","type":"I2VP_PT","used_time":"33","uuid":"F64AA5FC-48F0-B593-907A-958E5E95AD13"}"
+        ["result"]=>
+        string(5) "-3523"
+        ["start_time"]=>
+        string(19) "2019-01-07 14:32:34"
+        ["end_time"]=>
+        string(19) "2019-01-07 14:33:07"
+        ["type"]=>
+        string(7) "I2VP_PT"
+        ["status"]=>
+        string(1) "0"
+        ["create_time"]=>
+        string(10) "1546842793"
+      }
+      [4]=>
+      array(10) {
+        ["id"]=>
+        string(1) "7"
+        ["name"]=>
+        string(18) "testRC1-娴嬭瘯5"
+        ["uuid"]=>
+        string(36) "FDA6C377-870A-D36D-0F5F-E766B29BBC7E"
+        ["detail"]=>
+        string(518) "{"bkup_window":"","create_time":"2019-01-07 13:52:18","data_writed_num":"96468992","dir_failed_num":"","dup_rate":"0%","end_time":"2019-01-07 13:52:18","file_skiped_num":0,"name":"testRC1-\u5a34\u5b2d\u762f5","policy":1,"project_failed_num":"","result":"-3523","space_occu":"96468992","src_size":"2147483648","src_type":5,"stage":11,"start_time":"2019-01-07 13:51:45","sync_obj_num":1,"tran_rate":"2923302.00","trans_data_num":"96468992","type":"I2VP_RC","used_time":"33","uuid":"FDA6C377-870A-D36D-0F5F-E766B29BBC7E"}"
+        ["result"]=>
+        string(5) "-3523"
+        ["start_time"]=>
+        string(19) "2019-01-07 13:51:45"
+        ["end_time"]=>
+        string(19) "2019-01-07 13:52:18"
+        ["type"]=>
+        string(7) "I2VP_RC"
+        ["status"]=>
+        string(1) "1"
+        ["create_time"]=>
+        string(10) "1546840342"
+      }
+      [5]=>
+      array(10) {
+        ["id"]=>
+        string(1) "8"
+        ["name"]=>
+        string(18) "testRC1-娴嬭瘯5"
+        ["uuid"]=>
+        string(36) "2E92D816-AFF0-A807-D90F-87991F789976"
+        ["detail"]=>
+        string(518) "{"bkup_window":"","create_time":"2019-01-07 14:10:37","data_writed_num":"46137344","dir_failed_num":"","dup_rate":"0%","end_time":"2019-01-07 14:10:37","file_skiped_num":0,"name":"testRC1-\u5a34\u5b2d\u762f5","policy":1,"project_failed_num":"","result":"-3523","space_occu":"46137344","src_size":"2147483648","src_type":5,"stage":11,"start_time":"2019-01-07 14:10:19","sync_obj_num":1,"tran_rate":"2563185.00","trans_data_num":"46137344","type":"I2VP_RC","used_time":"18","uuid":"2E92D816-AFF0-A807-D90F-87991F789976"}"
+        ["result"]=>
+        string(5) "-3523"
+        ["start_time"]=>
+        string(19) "2019-01-07 14:10:19"
+        ["end_time"]=>
+        string(19) "2019-01-07 14:10:37"
+        ["type"]=>
+        string(7) "I2VP_RC"
+        ["status"]=>
+        string(1) "1"
+        ["create_time"]=>
+        string(10) "1546841442"
+      }
+      [6]=>
+      array(10) {
+        ["id"]=>
+        string(2) "10"
+        ["name"]=>
+        string(8) "testMove"
+        ["uuid"]=>
+        string(36) "16C1C399-6146-AD56-6D5D-7DBCC14804D9"
+        ["detail"]=>
+        string(477) "{"uuid":"16C1C399-6146-AD56-6D5D-7DBCC14804D9","name":"testMove","type":"I2VP_MV","stage":"1","policy":"1","sync_obj_num":"1","file_skiped_num":"0","start_time":"2019-01-07 14:30:29","end_time":"2019-01-07 14:30:29","trans_data_num":"","data_writed_num":"","src_type":"5","src_size":"","create_time":"2019-01-07 14:30:29","project_failed_num":"","dir_failed_num":"","dup_rate":"0%","space_occu":"","bkup_window":"","result":"6101","tran_rate":"","used_time":"","data_size":"0"}"
+        ["result"]=>
+        string(4) "6101"
+        ["start_time"]=>
+        string(19) "2019-01-07 14:30:29"
+        ["end_time"]=>
+        string(19) "2019-01-07 14:30:29"
+        ["type"]=>
+        string(7) "I2VP_MV"
+        ["status"]=>
+        string(1) "1"
+        ["create_time"]=>
+        string(10) "1546842629"
+      }
+      [7]=>
+      array(10) {
+        ["id"]=>
+        string(2) "11"
+        ["name"]=>
+        string(8) "testMove"
+        ["uuid"]=>
+        string(36) "16C1C399-6146-AD56-6D5D-7DBCC14804D9"
+        ["detail"]=>
+        string(477) "{"uuid":"16C1C399-6146-AD56-6D5D-7DBCC14804D9","name":"testMove","type":"I2VP_MV","stage":"1","policy":"1","sync_obj_num":"1","file_skiped_num":"0","start_time":"2019-01-07 14:30:36","end_time":"2019-01-07 14:30:36","trans_data_num":"","data_writed_num":"","src_type":"5","src_size":"","create_time":"2019-01-07 14:30:36","project_failed_num":"","dir_failed_num":"","dup_rate":"0%","space_occu":"","bkup_window":"","result":"6101","tran_rate":"","used_time":"","data_size":"0"}"
+        ["result"]=>
+        string(4) "6101"
+        ["start_time"]=>
+        string(19) "2019-01-07 14:30:36"
+        ["end_time"]=>
+        string(19) "2019-01-07 14:30:36"
+        ["type"]=>
+        string(7) "I2VP_MV"
+        ["status"]=>
+        string(1) "1"
+        ["create_time"]=>
+        string(10) "1546842637"
+      }
+      [8]=>
+      array(10) {
+        ["id"]=>
+        string(1) "1"
+        ["name"]=>
+        string(6) "testRC"
+        ["uuid"]=>
+        string(36) "D35717B8-0D09-8788-2893-03144698F656"
+        ["detail"]=>
+        string(476) "{"uuid":"D35717B8-0D09-8788-2893-03144698F656","name":"testRC","type":"I2VP_BK","stage":"1","policy":"1","sync_obj_num":"1","file_skiped_num":"0","start_time":"2019-01-07 13:08:34","end_time":"2019-01-07 13:08:34","trans_data_num":"","data_writed_num":"","src_type":"5","src_size":"","create_time":"2019-01-07 13:08:34","project_failed_num":"","dir_failed_num":"","dup_rate":"0%","space_occu":"","bkup_window":"","result":"-6073","tran_rate":"","used_time":"","data_size":"0"}"
+        ["result"]=>
+        string(5) "-6073"
+        ["start_time"]=>
+        string(19) "2019-01-07 13:08:34"
+        ["end_time"]=>
+        string(19) "2019-01-07 13:08:34"
+        ["type"]=>
+        string(7) "I2VP_BK"
+        ["status"]=>
+        string(1) "1"
+        ["create_time"]=>
+        string(10) "1546837715"
+      }
+      [9]=>
+      array(10) {
+        ["id"]=>
+        string(1) "3"
+        ["name"]=>
+        string(6) "testRC"
+        ["uuid"]=>
+        string(36) "3ABD383B-A9BE-0D23-D0FF-A9CBAF1F9C38"
+        ["detail"]=>
+        string(476) "{"uuid":"3ABD383B-A9BE-0D23-D0FF-A9CBAF1F9C38","name":"testRC","type":"I2VP_BK","stage":"1","policy":"1","sync_obj_num":"1","file_skiped_num":"0","start_time":"2019-01-07 13:09:15","end_time":"2019-01-07 13:09:15","trans_data_num":"","data_writed_num":"","src_type":"5","src_size":"","create_time":"2019-01-07 13:09:15","project_failed_num":"","dir_failed_num":"","dup_rate":"0%","space_occu":"","bkup_window":"","result":"-6073","tran_rate":"","used_time":"","data_size":"0"}"
+        ["result"]=>
+        string(5) "-6073"
+        ["start_time"]=>
+        string(19) "2019-01-07 13:09:15"
+        ["end_time"]=>
+        string(19) "2019-01-07 13:09:15"
+        ["type"]=>
+        string(7) "I2VP_BK"
+        ["status"]=>
+        string(1) "1"
+        ["create_time"]=>
+        string(10) "1546837755"
+      }
+    }
+    ["total"]=>
+    int(29)
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 559 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/statistics/1
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["detail"]=>
+    array(23) {
+      ["uuid"]=>
+      string(36) "D35717B8-0D09-8788-2893-03144698F656"
+      ["name"]=>
+      string(6) "testRC"
+      ["type"]=>
+      string(7) "I2VP_BK"
+      ["stage"]=>
+      string(1) "1"
+      ["policy"]=>
+      string(1) "1"
+      ["sync_obj_num"]=>
+      string(1) "1"
+      ["file_skiped_num"]=>
+      string(1) "0"
+      ["start_time"]=>
+      string(19) "2019-01-07 13:08:34"
+      ["end_time"]=>
+      string(19) "2019-01-07 13:08:34"
+      ["trans_data_num"]=>
+      string(0) ""
+      ["data_writed_num"]=>
+      string(0) ""
+      ["src_type"]=>
+      string(1) "5"
+      ["src_size"]=>
+      string(0) ""
+      ["create_time"]=>
+      string(19) "2019-01-07 13:08:34"
+      ["project_failed_num"]=>
+      string(0) ""
+      ["dir_failed_num"]=>
+      string(0) ""
+      ["dup_rate"]=>
+      string(2) "0%"
+      ["space_occu"]=>
+      string(0) ""
+      ["bkup_window"]=>
+      string(0) ""
+      ["result"]=>
+      string(5) "-6073"
+      ["tran_rate"]=>
+      string(0) ""
+      ["used_time"]=>
+      string(0) ""
+      ["data_size"]=>
+      string(1) "0"
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 607 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:PUT
+body:{"type":"I2VP_BK"}
+url:http://192.168.72.70:58080/api/statistics
+array(2) {
+  [0]=>
+  array(2) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 574 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+

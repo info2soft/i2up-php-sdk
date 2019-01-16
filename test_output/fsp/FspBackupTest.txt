@@ -1,0 +1,630 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/fsp/backup/nic_list?wk_uuid=F85DFEC0-149E-373D-0B9E-3DA9A5C43940&bk_uuid=42614852-BB62-1EF7-FED0-D2354BF3149D&_=0.90290276512939
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'wk_nic_list' => 
+    array (
+      0 => 
+      array (
+        'name' => 'eth2',
+        'type' => '0',
+        'ip' => '192.168.71.78/255.255.240.0',
+        'gw' => '192.168.64.1',
+        'dns' => '0.0.0.0',
+      ),
+      1 => 
+      array (
+        'name' => 'virbr0',
+        'type' => '0',
+        'ip' => '192.168.122.1/255.255.255.0',
+        'gw' => '0.0.0.0',
+        'dns' => '0.0.0.0',
+      ),
+      2 => 
+      array (
+        'name' => 'virbr0-nic',
+        'type' => '0',
+        'ip' => '0.0.0.0/0.0.0.0',
+        'gw' => '0.0.0.0',
+        'dns' => '0.0.0.0',
+      ),
+    ),
+    'bk_nic_list' => 
+    array (
+      0 => 
+      array (
+        'name' => 'eth2',
+        'type' => '0',
+        'ip' => '192.168.71.77/255.255.240.0',
+        'gw' => '192.168.64.1',
+        'dns' => '210.22.84.3',
+      ),
+      1 => 
+      array (
+        'name' => 'virbr0',
+        'type' => '0',
+        'ip' => '192.168.122.1/255.255.255.0',
+        'gw' => '0.0.0.0',
+        'dns' => '210.22.84.3',
+      ),
+      2 => 
+      array (
+        'name' => 'virbr0-nic',
+        'type' => '0',
+        'ip' => '0.0.0.0/0.0.0.0',
+        'gw' => '0.0.0.0',
+        'dns' => '210.22.84.3',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 772 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/fsp/backup/dir_list?wk_uuid=F85DFEC0-149E-373D-0B9E-3DA9A5C43940&_=0.90041256030258
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'hd_list' => 
+    array (
+      0 => 
+      array (
+        'label' => '/',
+        'is_system' => 1,
+      ),
+    ),
+    'dir_list' => 
+    array (
+      0 => 
+      array (
+        'wk_path' => '/',
+        'type' => '1',
+      ),
+      1 => 
+      array (
+        'wk_path' => '/boot/',
+        'type' => '1',
+      ),
+      2 => 
+      array (
+        'wk_path' => '/cgroup/',
+        'type' => '2',
+      ),
+      3 => 
+      array (
+        'wk_path' => '/dev/',
+        'type' => '2',
+      ),
+      4 => 
+      array (
+        'wk_path' => '/etc/X11/xorg.conf/',
+        'type' => '2',
+      ),
+      5 => 
+      array (
+        'wk_path' => '/etc/init.d/i2node/',
+        'type' => '2',
+      ),
+      6 => 
+      array (
+        'wk_path' => '/etc/rc.d/init.d/i2node/',
+        'type' => '2',
+      ),
+      7 => 
+      array (
+        'wk_path' => '/etc/sdata/',
+        'type' => '2',
+      ),
+      8 => 
+      array (
+        'wk_path' => '/lost+found/',
+        'type' => '2',
+      ),
+      9 => 
+      array (
+        'wk_path' => '/media/',
+        'type' => '2',
+      ),
+      10 => 
+      array (
+        'wk_path' => '/mnt/',
+        'type' => '2',
+      ),
+      11 => 
+      array (
+        'wk_path' => '/proc/',
+        'type' => '2',
+      ),
+      12 => 
+      array (
+        'wk_path' => '/run/',
+        'type' => '2',
+      ),
+      13 => 
+      array (
+        'wk_path' => '/selinux/',
+        'type' => '2',
+      ),
+      14 => 
+      array (
+        'wk_path' => '/sys/',
+        'type' => '2',
+      ),
+      15 => 
+      array (
+        'wk_path' => '/tmp/',
+        'type' => '2',
+      ),
+      16 => 
+      array (
+        'wk_path' => '/usr/local/sdata/',
+        'type' => '2',
+      ),
+      17 => 
+      array (
+        'wk_path' => '/var/i2/',
+        'type' => '2',
+      ),
+      18 => 
+      array (
+        'wk_path' => '/var/i2data/',
+        'type' => '2',
+      ),
+      19 => 
+      array (
+        'wk_path' => '/var/lock/',
+        'type' => '2',
+      ),
+      20 => 
+      array (
+        'wk_path' => '/var/run/vmblock-fuse/',
+        'type' => '2',
+      ),
+    ),
+    'os_type' => NULL,
+  ),
+  1 => NULL,
+)
+
+Time: 765 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"bk_path":["\/fsp_bk\/"],"bk_uuid":"F85DFEC0-149E-373D-0B9E-3DA9A5C43940","wk_uuid":"42614852-BB62-1EF7-FED0-D2354BF3149D","excl_path":["\/cgroup\/","\/dev\/","\/etc\/X11\/xorg.conf\/","\/etc\/init.d\/i2node\/","\/etc\/rc.d\/init.d\/i2node\/","\/etc\/sdata\/","\/lost+found\/","\/media\/","\/mnt\/","\/proc\/","\/run\/","\/selinux\/","\/sys\/","\/tmp\/","\/usr\/local\/sdata\/","\/var\/i2\/","\/var\/i2data\/","\/var\/lock\/","\/var\/run\/vmblock-fuse\/"],"wk_path":["\/"]}
+url:http://192.168.72.70:58080/api/fsp/backup/verify_coopy_space
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'bk_disk_need' => 0,
+    'bk_disk_free' => 0,
+  ),
+  1 => NULL,
+)
+
+Time: 621 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"wk_uuid":"42614852-BB62-1EF7-FED0-D2354BF3149D"}
+url:http://192.168.72.70:58080/api/fsp/backup/verify_license
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 667 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"bk_uuid":"F85DFEC0-149E-373D-0B9E-3DA9A5C43940","bk_path":["\/fsp_bk\/"],"wk_uuid":"42614852-BB62-1EF7-FED0-D2354BF3149D"}
+url:http://192.168.72.70:58080/api/fsp/backup/verify_old_rule
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 614 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"bk_uuid":"F85DFEC0-149E-373D-0B9E-3DA9A5C43940","wk_uuid":"42614852-BB62-1EF7-FED0-D2354BF3149D"}
+url:http://192.168.72.70:58080/api/fsp/backup/verify_os_version
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'wk_os_ver' => 'Red Hat 6.5 x86_64',
+    'bk_os_ver' => 'Red Hat 6.5 x86_64',
+  ),
+  1 => NULL,
+)
+
+Time: 690 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"fsp_backup":{"secret_key":"","band_width":"","mirr_open_type":"0","service_uuid":"","mirr_sync_flag":"0","excl_path":["\/cgroup\/","\/dev\/","\/etc\/X11\/xorg.conf\/","\/etc\/init.d\/i2node\/","\/etc\/rc.d\/init.d\/i2node\/","\/etc\/sdata\/","\/lost+found\/","\/media\/","\/mnt\/","\/proc\/","\/run\/","\/selinux\/","\/sys\/","\/tmp\/","\/usr\/local\/sdata\/","\/var\/i2\/","\/var\/i2data\/","\/var\/lock\/","\/var\/run\/vmblock-fuse\/"],"bkup_one_time":0,"encrypt_switch":"0","mirr_sync_attr":"1","bk_uuid":"F85DFEC0-149E-373D-0B9E-3DA9A5C43940","wk_data_type":1,"bk_path":["\/fsp_bk\/"],"sync_item":"\/","bkup_policy":2,"mirr_file_check":"0","compress":"0","monitor_type":0,"failover":"0","wk_path":["\/"],"fsp_name":"test","wk_uuid":"42614852-BB62-1EF7-FED0-D2354BF3149D","fsp_wk_shut_flag":"2","bk_data_type":1,"bkup_schedule":[],"fsp_type":3}}
+url:http://192.168.72.70:58080/api/fsp/backup
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 3.16 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:PUT
+body:{"fsp_backup":{"secret_key":"","band_width":"","mirr_open_type":"0","service_uuid":"","mirr_sync_flag":"0","excl_path":["\/cgroup\/","\/dev\/","\/etc\/X11\/xorg.conf\/","\/etc\/init.d\/i2node\/","\/etc\/rc.d\/init.d\/i2node\/","\/etc\/sdata\/","\/lost+found\/","\/media\/","\/mnt\/","\/proc\/","\/run\/","\/selinux\/","\/sys\/","\/tmp\/","\/usr\/local\/sdata\/","\/var\/i2\/","\/var\/i2data\/","\/var\/lock\/","\/var\/run\/vmblock-fuse\/"],"bkup_one_time":0,"encrypt_switch":"0","mirr_sync_attr":"1","bk_uuid":"F85DFEC0-149E-373D-0B9E-3DA9A5C43940","wk_data_type":1,"bk_path":["\/fsp_bk\/"],"sync_item":"\/","bkup_policy":2,"mirr_file_check":"0","compress":"0","monitor_type":0,"failover":"0","wk_path":["\/"],"fsp_name":"test1","wk_uuid":"42614852-BB62-1EF7-FED0-D2354BF3149D","fsp_wk_shut_flag":"2","bk_data_type":1,"bkup_schedule":[],"fsp_type":3,"random_str":"11111111-1111-1111-1111-111111111111"}}
+url:http://192.168.72.70:58080/api/fsp/backup/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 2.98 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/fsp/backup/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'fsp_backup' => 
+    array (
+      'id' => '2',
+      'auto_start' => '0',
+      'band_width' => '',
+      'bkup_one_time' => 0,
+      'bkup_policy' => 2,
+      'bkup_schedule' => 
+      array (
+      ),
+      'compress' => '0',
+      'cmp_file_check' => '0',
+      'cmp_schedule' => NULL,
+      'cmp_switch' => '0',
+      'create_time' => '1547177169',
+      'encrypt_switch' => '0',
+      'mirr_file_check' => '0',
+      'mirr_open_type' => '0',
+      'mirr_sync_attr' => '1',
+      'mirr_sync_flag' => '0',
+      'mirr_skip' => '0',
+      'random_str' => '11111111-1111-1111-1111-111111111111',
+      'secret_key' => '',
+      'snapshot_interval' => '24',
+      'snapshot_limit' => '2',
+      'snapshot_policy' => '0',
+      'snapshot_start' => NULL,
+      'snapshot_switch' => '0',
+      'bk_path_policy' => '1',
+      'uuid' => '11111111-1111-1111-1111-111111111111',
+      'wk_node_name' => '71.77',
+      'bk_node_name' => '71.78',
+      'wk_ip' => '192.168.71.77',
+      'wk_port' => '26821',
+      'bk_ip' => '192.168.71.78',
+      'bk_port' => '26821',
+      'username' => 'admin',
+      'backup_type' => '0',
+      'boot_time' => NULL,
+      'excl_path' => 
+      array (
+        0 => '/cgroup/',
+        1 => '/dev/',
+        2 => '/etc/X11/xorg.conf/',
+        3 => '/etc/init.d/i2node/',
+        4 => '/etc/rc.d/init.d/i2node/',
+        5 => '/etc/sdata/',
+        6 => '/lost+found/',
+        7 => '/media/',
+        8 => '/mnt/',
+        9 => '/proc/',
+        10 => '/run/',
+        11 => '/selinux/',
+        12 => '/sys/',
+        13 => '/tmp/',
+        14 => '/usr/local/sdata/',
+        15 => '/var/i2/',
+        16 => '/var/i2data/',
+        17 => '/var/lock/',
+        18 => '/var/run/vmblock-fuse/',
+      ),
+      'failover' => '0',
+      'fsp_name' => 'test1',
+      'fsp_type' => 3,
+      'fsp_uuid' => '11111111-1111-1111-1111-111111111111',
+      'fsp_wk_shut_flag' => '2',
+      'wk_path' => 
+      array (
+        0 => '/',
+      ),
+      'wk_data_type' => 1,
+      'heartbeat' => '10',
+      'max_fail_times' => '6',
+      'monitor_ips' => '',
+      'monitor_type' => 0,
+      'move_type' => NULL,
+      'net_mapping' => 
+      array (
+      ),
+      'net_mapping_type' => NULL,
+      'post_over_script' => '',
+      'pre_over_script' => '',
+      'recovery_data_path' => NULL,
+      'restore_point' => NULL,
+      'running_service' => 
+      array (
+        0 => 'sshd',
+      ),
+      'snapshot' => '0',
+      'wk_uuid' => '42614852-BB62-1EF7-FED0-D2354BF3149D',
+      'status' => 'M_STOP',
+      'sync_item' => '/',
+      'bk_path' => 
+      array (
+        0 => '/fsp_bk/',
+      ),
+      'bk_uuid' => 'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
+      'bk_data_type' => 1,
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 609 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"fsp_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/fsp/backup
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 716 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/fsp/backup?type=3&limit=10&page=1&_=0.86730038177476
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'band_width' => '',
+        'bk_path_policy' => '1',
+        'random_str' => '11111111-1111-1111-1111-111111111111',
+        'wk_node_name' => '71.77',
+        'bk_node_name' => '71.78',
+        'username' => 'admin',
+        'bk_uuid' => 'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
+        'fsp_name' => 'test1',
+        'fsp_type' => 3,
+        'fsp_uuid' => '11111111-1111-1111-1111-111111111111',
+        'wk_uuid' => '42614852-BB62-1EF7-FED0-D2354BF3149D',
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 833 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"fsp_uuids":["11111111-1111-1111-1111-111111111111"],"operate":"start"}
+url:http://192.168.72.70:58080/api/fsp/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'fsp_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 2.74 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"fsp_uuids":["11111111-1111-1111-1111-111111111111"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/fsp/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'fsp_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 2.82 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"fsp_uuids":[],"operate":"finish"}
+url:http://192.168.72.70:58080/api/fsp/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 627 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/fsp/backup/status?fsp_uuids[]=11111111-1111-1111-1111-111111111111&_=0.40939243275805
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'fsp_uuid' => '11111111-1111-1111-1111-111111111111',
+        'status' => 'M_STOP',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 540 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

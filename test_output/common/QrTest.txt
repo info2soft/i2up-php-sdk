@@ -1,0 +1,124 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/qr/t?timestamp=1546847456&_=0.77097676048398
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["t"]=>
+    string(18) "154693629468472941"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 557 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/qr?point_size=1&text=test&format=&_=0.59408444435027
+array(2) {
+  [0]=>
+  array(1) {
+    ["data"]=>
+    NULL
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 607 ms, Memory: 2.00MB
+
+OK (1 test, 1 assertion)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"action":1,"uuid":"3f6ed5ee2ff74b02092d0685c2b9328a55aa27db"}
+url:http://192.168.72.70:58080/api/qr/event
+array(2) {
+  [0]=>
+  array(2) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 498 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"app_name":"enterpriseApp"}
+url:http://192.168.72.70:58080/api/qr/generate
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["content"]=>
+    array(2) {
+      ["uuid"]=>
+      string(40) "3f6ed5ee2ff74b02092d0685c2b9328a55aa27db"
+      ["t"]=>
+      string(18) "154693631656413544"
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 556 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"uuid":"cfb4729bf1030c04dbf402ba9456fe443c3f053a"}
+url:http://192.168.72.70:58080/api/qr/status
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["status"]=>
+    string(1) "0"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 533 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

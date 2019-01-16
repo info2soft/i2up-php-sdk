@@ -1,0 +1,272 @@
+request_method:POST
+body:{"compare":{"excl_path":[],"bkup_one_time":0,"bkup_schedule":{"sched_gap_min":60,"sched_time":["00:00:00"],"sched_day":["1"],"sched_time_end":"23:59","limit":"","sched_time_start":"00:00","sched_every":0},"mirr_file_check":"1","task_name":"testCompare1","wk_path":["E:\\test\\"],"bk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","cmp_type":0,"bk_path":["E:\\test\\"],"bkup_policy":2,"compress":0,"wk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F"}}
+url:http://192.168.72.70:58080/api/compare
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 1.1 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/compare/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'compare' => 
+    array (
+      'username' => 'admin',
+      'id' => '5',
+      'bkup_one_time' => 0,
+      'bkup_policy' => 2,
+      'bkup_schedule' => 
+      array (
+        'sched_gap_min' => 60,
+        'sched_time' => 
+        array (
+          0 => '00:00:00',
+        ),
+        'sched_day' => 
+        array (
+          0 => '1',
+        ),
+        'sched_time_end' => '23:59',
+        'limit' => '',
+        'sched_time_start' => '00:00',
+        'sched_every' => 0,
+      ),
+      'cmp_type' => 0,
+      'compress' => 0,
+      'create_time' => 1547003367,
+      'end_time' => NULL,
+      'excl_path' => 
+      array (
+      ),
+      'mirr_file_check' => 1,
+      'random_str' => '11111111-1111-1111-1111-111111111111',
+      'raw_uuid' => NULL,
+      'result_sum' => NULL,
+      'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'wk_path' => 
+      array (
+        0 => 'E:\\test\\',
+      ),
+      'start_time' => 1547003367,
+      'status' => 'GENERATING',
+      'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'bk_path' => 
+      array (
+        0 => 'E:\\test\\',
+      ),
+      'task_name' => 'testCompare1',
+      'task_type' => 0,
+      'task_uuid' => '11111111-1111-1111-1111-111111111111',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'ct_name_type' => 0,
+      'ct_name_str1' => NULL,
+      'ct_name_str2' => NULL,
+      'ct_name_str3' => NULL,
+      'ct_name_str4' => NULL,
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 553 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/logs
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '',
+    'logs' => 
+    array (
+    ),
+    'total' => 0,
+  ),
+  1 => NULL,
+)
+
+Time: 593 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/compare?search_value=&limit=10&page=1&search_field=&_=0.24152485287614
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'wk_node_name' => 'N3_72.75',
+        'bk_node_name' => 'N3_72.75',
+        'username' => 'admin',
+        'bk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'bkup_policy' => 2,
+        'create_time' => 1547003367,
+        'end_time' => NULL,
+        'result_sum' => NULL,
+        'start_time' => 1547003367,
+        'status' => 'GENERATING',
+        'task_name' => 'testCompare1',
+        'task_uuid' => '11111111-1111-1111-1111-111111111111',
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 549 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/compare/status?task_uuids[]=11111111-1111-1111-1111-111111111111&_=0.38765606316298
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'task_uuid' => '11111111-1111-1111-1111-111111111111',
+        'status' => 'GENERATING',
+        'result_sum' => NULL,
+        'start_time' => 1547003367,
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 539 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"operate":"download","task_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/compare/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'file_name' => 'CPR_20190109111053.zip',
+    'download_url' => '/download/CPR_20190109111053.zip',
+  ),
+  1 => NULL,
+)
+
+Time: 720 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"task_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/compare
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'task_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 697 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/compare/11111111-1111-1111-1111-111111111111/result_list?search_field=&limit=10&search_value=&page=1&_=0.99110796535958
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+    ),
+    'total' => 0,
+  ),
+  1 => NULL,
+)
+
+Time: 649 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+

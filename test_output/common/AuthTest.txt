@@ -1,0 +1,38 @@
+request_method:POST
+body:{"username":"admin","pwd":"Info1234"}
+url:http://192.168.72.70:58080/api/auth/token
+
+2ee5b56aba11ab3b372c65bf9f2b425fab7bab47
+
+
+Time: 566 ms, Memory: 2.00MB
+
+OK (1 test, 2 assertions)
+
+Process finished with exit code 0
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/auth/token?access_token=f265ebeaa61e77e3g5CuJjQcr8G7KHJ3XjEhEc0DM6tl9UuE-KtlJDUa6CO6dOyBdk0MAnAb_KRJK63IwoF_DjgZTkP_cdMjhDl-pAa_RjlSdYkfLxbp7HTmyjXPC7ulTHQW2R0tmkfE9A9-r5L4ipq4BsfQC5XFNoL2uw&_=0.012545931494957
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["username"]=>
+    string(5) "admin"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 602 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+

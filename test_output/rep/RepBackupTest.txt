@@ -1,0 +1,456 @@
+request_method:POST
+body:{"rep_backup":{"mirr_sync_attr":"1","cdp_path":"E:\\test3\\","oph_path":"E:\\test4\\","secret_key":"","rep_name":"rep_backup","snapshot_policy":"0","bk_path_policy":"1","cdp_process_time":"05:07:28","mirr_open_type":"0","compress":"0","cdp_switch":"1","snapshot_start":1546913351,"cdp_baseline_format":"0","cdp_bl_bkup_switch":0,"encrypt_switch":"0","auto_start":"1","wk_path":["E:\\test\\"],"band_width":"","snapshot_limit":"24","mirr_sync_flag":"0","bk_path":["E:\\test2\\"],"wk_uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","mirr_file_check":"0","cdp_bl_sched_switch":0,"del_policy":"0","cmp_switch":0,"rep_type":0,"snapshot_interval":"1","file_type_filter_switch":0,"policy_interval":"","snapshot_switch":0,"file_type_filter":"","cdp_param":"3,30,0","oph_policy":"2","mirr_skip":"0","bk_uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","cdp_bl_sched":"2|1|0|5","excl_path":[],"mirr_sched":"","bkup_one_time":null,"mirr_sched_switch":0,"cdp_snap_on":0,"cdp_snap_interval":30,"cdp_snap_count":240,"ct_name_type":0,"ct_name_str1":"","ct_name_str2":"","cmp_file_check":0,"cmp_schedule":[],"thread_num":"0","biz_grp_list":[]}}
+url:http://192.168.72.70:58080/api/rep/backup
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 3.07 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'rep_backup' => 
+    array (
+      'id' => '12',
+      'auto_start' => '1',
+      'band_width' => '',
+      'bkup_one_time' => NULL,
+      'bkup_policy' => '2',
+      'bkup_schedule' => NULL,
+      'compress' => '0',
+      'cmp_file_check' => 0,
+      'cmp_schedule' => 
+      array (
+      ),
+      'cmp_switch' => 0,
+      'create_time' => '1547001207',
+      'encrypt_switch' => '0',
+      'mirr_file_check' => '0',
+      'mirr_open_type' => '0',
+      'mirr_sync_attr' => '1',
+      'mirr_sync_flag' => '0',
+      'mirr_skip' => '0',
+      'random_str' => '11111111-1111-1111-1111-111111111111',
+      'secret_key' => '',
+      'snapshot_interval' => '24',
+      'snapshot_limit' => '2',
+      'snapshot_policy' => '0',
+      'snapshot_start' => NULL,
+      'snapshot_switch' => 0,
+      'bk_path_policy' => '1',
+      'uuid' => '11111111-1111-1111-1111-111111111111',
+      'wk_node_name' => 'move B 72.82',
+      'bk_node_name' => 'move B 72.82',
+      'wk_ip' => '192.168.72.82',
+      'wk_port' => '26821',
+      'bk_ip' => '192.168.72.82',
+      'bk_port' => '26821',
+      'username' => 'admin',
+      'cdp_baseline_format' => '0',
+      'cdp_bl_bkup_switch' => 0,
+      'cdp_bl_sched' => '2|1|0|5',
+      'cdp_bl_sched_switch' => 0,
+      'cdp_param' => '3,30,0',
+      'cdp_path' => 'E:\\test3\\',
+      'cdp_process_time' => '05:07:28',
+      'cdp_switch' => '1',
+      'del_policy' => '0',
+      'disk_limit' => '0',
+      'excl_path' => 
+      array (
+      ),
+      'file_type_filter' => '',
+      'file_type_filter_switch' => 0,
+      'wk_path' => 
+      array (
+        0 => 'E:\\test\\',
+      ),
+      'oph_path' => 'E:\\test4\\',
+      'oph_policy' => '2',
+      'rep_name' => 'rep_backup',
+      'rep_type' => 0,
+      'rep_uuid' => '11111111-1111-1111-1111-111111111111',
+      'schedule' => NULL,
+      'wk_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+      'bk_path' => 
+      array (
+        0 => 'E:\\test2\\',
+      ),
+      'bk_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'group_uuid' => NULL,
+      'status' => NULL,
+      'sync_rep_uuid' => NULL,
+      'init_capacity' => '0',
+      'mirr_sched' => '',
+      'mirr_sched_switch' => 0,
+      'bk_path_block' => '0',
+      'cdp_snap_on' => 0,
+      'cdp_snap_interval' => 30,
+      'cdp_snap_count' => 240,
+      'ct_name_type' => 0,
+      'ct_name_str1' => '',
+      'ct_name_str2' => '',
+      'ct_name_str3' => NULL,
+      'ct_name_str4' => NULL,
+      'is_from_ha' => 0,
+      'thread_num' => '0',
+      'biz_grp_list' => 
+      array (
+      ),
+      'biz_grp_name' => 
+      array (
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 591 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:PUT
+body:{"rep_backup":{"mirr_sync_attr":"1","cdp_path":"E:\\test3\\","oph_path":"E:\\test4\\","secret_key":"","rep_name":"rep_backup1","snapshot_policy":"0","bk_path_policy":"1","cdp_process_time":"05:07:28","mirr_open_type":"0","compress":"0","cdp_switch":"1","snapshot_start":1546913351,"cdp_baseline_format":"0","cdp_bl_bkup_switch":0,"encrypt_switch":"0","auto_start":"1","wk_path":["E:\\test\\"],"band_width":"","snapshot_limit":"24","mirr_sync_flag":"0","bk_path":["E:\\test2\\"],"wk_uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","mirr_file_check":"0","cdp_bl_sched_switch":0,"del_policy":"0","cmp_switch":0,"rep_type":0,"snapshot_interval":"1","file_type_filter_switch":0,"policy_interval":"","snapshot_switch":0,"file_type_filter":"","cdp_param":"3,30,0","oph_policy":"2","mirr_skip":"0","bk_uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","cdp_bl_sched":"2|1|0|5","excl_path":[],"mirr_sched":"","bkup_one_time":null,"mirr_sched_switch":0,"cdp_snap_on":0,"cdp_snap_interval":30,"cdp_snap_count":240,"ct_name_type":0,"ct_name_str1":"","ct_name_str2":"","cmp_file_check":0,"cmp_schedule":[],"thread_num":"0","biz_grp_list":[],"random_str":"11111111-1111-1111-1111-111111111111"}}
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'uuid' => '11111111-1111-1111-1111-111111111111',
+  ),
+  1 => NULL,
+)
+
+Time: 3.03 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"rep_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/rep/backup
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 614 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+
+request_method:POST
+body:{"rep_uuids":["11111111-1111-1111-1111-111111111111"],"operate":"start"}
+url:http://192.168.72.70:58080/api/rep/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rep_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 2.66 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:POST
+body:{"rep_uuids":["11111111-1111-1111-1111-111111111111"],"operate":"stop"}
+url:http://192.168.72.70:58080/api/rep/backup/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'success_list' => 
+    array (
+      0 => 
+      array (
+        'code' => 0,
+        'message' => '[0] success',
+        'rep_uuid' => '11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 2.69 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/backup/status?rep_uuids[]=11111111-1111-1111-1111-111111111111&_=0.074809284591484
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'rep_uuid' => '11111111-1111-1111-1111-111111111111',
+        'status' => 'M_STOP',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 562 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/backup?search_value=&limit=10&type=1&page=1&search_field=&_=0.89897746575046
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+    ),
+    'total' => 0,
+  ),
+  1 => NULL,
+)
+
+Time: 601 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/cdp_bl_list?page=1&limit=10&_=0.27447033443744
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'list' => 
+    array (
+      0 => 
+      array (
+        'bs_time' => '2019-01-08_10-16-48',
+        'wk_path' => 
+        array (
+          0 => 'E:\\test\\',
+        ),
+        'bk_path' => 
+        array (
+          0 => 'E:\\test2\\',
+        ),
+        'next_bs_time' => NULL,
+      ),
+    ),
+    'total' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 684 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"cdp_time_list":"2018-12-28_10-14-11"}
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/cdp_bl_list
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 606 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/orphan_list?path=&_=0.36762841163124
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'orphan_list' => NULL,
+    'rep_oph_path' => 'E:\\test4\\',
+    'separator' => '\\',
+  ),
+  1 => NULL,
+)
+
+Time: 565 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"path":"\/","orphan_list":[]}
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/orphan_list
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 568 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/snapshot_list?page=1&limit=10&_=0.34802897571171
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'snapshot_list' => 
+    array (
+      0 => 
+      array (
+        'snapshot_name' => '33bdeb34-572b-40ca-a36a-78646bf5a63a_snap_2019-01-08_11-40-35',
+        'snapshot_time' => '2019-01-08 11:40:35',
+        'snapshot_size' => '384 MB',
+      ),
+    ),
+    'total' => 1,
+    'os_type' => 1,
+  ),
+  1 => NULL,
+)
+
+Time: 856 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/snapshot_list
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 908 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"snapshot_names":[]}
+url:http://192.168.72.70:58080/api/rep/backup/11111111-1111-1111-1111-111111111111/snapshot_list
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 535 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

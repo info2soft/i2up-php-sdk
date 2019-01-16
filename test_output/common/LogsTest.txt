@@ -1,0 +1,1646 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/logs?uuid=F97B3FD5-4D5D-41EE-22A9-740A74E1E13C&level=0&page=1&limit=10&_=0.010458422178477
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["logs"]=>
+    array(1) {
+      [0]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 12:55:03"
+        ["id"]=>
+        string(3) "920"
+        ["uuid"]=>
+        string(36) "F97B3FD5-4D5D-41EE-22A9-740A74E1E13C"
+        ["log_level"]=>
+        string(1) "0"
+        ["operation"]=>
+        string(1) "E"
+        ["detail"]=>
+        string(20) "mirror errno = -3523"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "0"
+      }
+    }
+    ["total"]=>
+    int(1)
+  }
+  [1]=>
+  NULL
+}
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/logs/ha?uuid=F1E9FEAE-F249-FF9E-4A90-866DCBD5DB1E&end=1&level=1&start=1&node_uuid=&page=1&limit=1&_=0.21717460020996
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["logs"]=>
+    array(0) {
+    }
+    ["total"]=>
+    int(0)
+  }
+  [1]=>
+  NULL
+}
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/logs/node?level=1&page=1&limit=10&uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&_=0.28652858071555
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["logs"]=>
+    array(10) {
+      [0]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 11:32:59"
+        ["id"]=>
+        string(3) "624"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(20) "Lock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [1]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 11:33:01"
+        ["id"]=>
+        string(3) "627"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(22) "Unlock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [2]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 11:33:17"
+        ["id"]=>
+        string(3) "630"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(20) "Lock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [3]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 11:33:20"
+        ["id"]=>
+        string(3) "633"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(22) "Unlock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [4]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 11:39:32"
+        ["id"]=>
+        string(3) "638"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(20) "Lock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [5]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 11:39:34"
+        ["id"]=>
+        string(3) "641"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(22) "Unlock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [6]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 13:01:07"
+        ["id"]=>
+        string(4) "1087"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(20) "Lock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [7]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 13:01:09"
+        ["id"]=>
+        string(4) "1090"
+        ["uuid"]=>
+        string(36) "EC5A3225-C388-F935-6BC2-15AAA4EB5B23"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(22) "Unlock vm failed -3522"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "3"
+      }
+      [8]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 13:09:16"
+        ["id"]=>
+        string(4) "1194"
+        ["uuid"]=>
+        string(36) "3ABD383B-A9BE-0D23-D0FF-A9CBAF1F9C38"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(19) "Lock vm failed 3600"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "5"
+      }
+      [9]=>
+      array(10) {
+        ["create_time"]=>
+        string(19) "2019-01-07 13:09:16"
+        ["id"]=>
+        string(4) "1196"
+        ["uuid"]=>
+        string(36) "3ABD383B-A9BE-0D23-D0FF-A9CBAF1F9C38"
+        ["log_level"]=>
+        string(1) "1"
+        ["operation"]=>
+        string(0) ""
+        ["detail"]=>
+        string(16) "Clean up data -3"
+        ["result"]=>
+        string(0) ""
+        ["readed"]=>
+        string(1) "f"
+        ["m_uuid"]=>
+        string(36) "67E33CDB-D75B-15B3-367D-50C764F5A26F"
+        ["log_type"]=>
+        string(1) "5"
+      }
+    }
+    ["total"]=>
+    int(20)
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 561 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/logs/npsvr
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["logs"]=>
+    array(0) {
+    }
+    ["total"]=>
+    int(0)
+  }
+  [1]=>
+  NULL
+}
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/logs/traffic?type=real&uuid=F97B3FD5-4D5D-41EE-22A9-740A74E1E13C&_=0.56268239390819
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["traffics"]=>
+    array(90) {
+      [0]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934848)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [1]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934858)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [2]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934868)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [3]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934878)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [4]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934888)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [5]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934898)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [6]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934908)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [7]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934918)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [8]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934928)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [9]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934938)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [10]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934948)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [11]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934958)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [12]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934968)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [13]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934978)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [14]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934988)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [15]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546934998)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [16]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935008)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [17]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935018)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [18]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935028)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [19]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935038)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [20]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935048)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [21]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935058)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [22]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935068)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [23]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935078)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [24]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935088)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [25]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935098)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [26]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935108)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [27]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935118)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [28]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935128)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [29]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935138)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [30]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935148)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [31]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935158)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [32]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935168)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [33]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935178)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [34]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935188)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [35]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935198)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [36]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935208)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(2047)
+      }
+      [37]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935218)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [38]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935228)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [39]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935238)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [40]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935248)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [41]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935258)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [42]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935268)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [43]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935278)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [44]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935288)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [45]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935298)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [46]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935308)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [47]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935318)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [48]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935328)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [49]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935338)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [50]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935348)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [51]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935358)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [52]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935368)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [53]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935378)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [54]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935388)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [55]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935398)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [56]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935408)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [57]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935418)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [58]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935428)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [59]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935438)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [60]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935448)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [61]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935458)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [62]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935468)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [63]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935478)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [64]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935488)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [65]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935498)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [66]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935508)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [67]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935518)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [68]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935528)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [69]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935538)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [70]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935548)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [71]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935558)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [72]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935568)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [73]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935578)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [74]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935588)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [75]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935598)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [76]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935608)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [77]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935618)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [78]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935628)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [79]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935638)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [80]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935648)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [81]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935658)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [82]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935668)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [83]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935678)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [84]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935688)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [85]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935698)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [86]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935708)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [87]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935718)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+      [88]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935728)
+        ["traffic"]=>
+        int(16)
+        ["speed"]=>
+        float(1.6)
+        ["latency"]=>
+        int(0)
+      }
+      [89]=>
+      array(4) {
+        ["start_time"]=>
+        int(1546935738)
+        ["traffic"]=>
+        int(32)
+        ["speed"]=>
+        float(3.2)
+        ["latency"]=>
+        int(0)
+      }
+    }
+    ["buff"]=>
+    array(3) {
+      ["disk"]=>
+      int(0)
+      ["mem"]=>
+      int(0)
+      ["send"]=>
+      int(0)
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 539 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/op_log?page=1&end_time=1508833953&limit=10&start_time=1508833766&_=0.54654359910203
+array(2) {
+  [0]=>
+  array(4) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+    ["logs"]=>
+    array(10) {
+      [0]=>
+      array(11) {
+        ["id"]=>
+        string(1) "1"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546416705"
+        ["start_time"]=>
+        string(10) "1546416702"
+        ["end_time"]=>
+        string(10) "1546416705"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(36) "创建节点 [ 名称 : "N3_72.75" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [1]=>
+      array(11) {
+        ["id"]=>
+        string(1) "2"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546416796"
+        ["start_time"]=>
+        string(10) "1546416796"
+        ["end_time"]=>
+        string(10) "1546416796"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(12) "添加许可"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [2]=>
+      array(11) {
+        ["id"]=>
+        string(1) "3"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546416801"
+        ["start_time"]=>
+        string(10) "1546416801"
+        ["end_time"]=>
+        string(10) "1546416801"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(35) "更新许可绑定 [ 数量 : "1" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [3]=>
+      array(11) {
+        ["id"]=>
+        string(1) "4"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546416806"
+        ["start_time"]=>
+        string(10) "1546416806"
+        ["end_time"]=>
+        string(10) "1546416806"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(35) "更新许可绑定 [ 数量 : "1" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [4]=>
+      array(11) {
+        ["id"]=>
+        string(1) "5"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546416986"
+        ["start_time"]=>
+        string(10) "1546416984"
+        ["end_time"]=>
+        string(10) "1546416986"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(44) "创建复制规则 [ 名称 : "testNormal" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [5]=>
+      array(11) {
+        ["id"]=>
+        string(1) "6"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546417035"
+        ["start_time"]=>
+        string(10) "1546417034"
+        ["end_time"]=>
+        string(10) "1546417035"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(34) "创建还原任务 [ 名称 : "" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [6]=>
+      array(11) {
+        ["id"]=>
+        string(1) "7"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546417165"
+        ["start_time"]=>
+        string(10) "1546417164"
+        ["end_time"]=>
+        string(10) "1546417165"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(35) "update_rep_recovery [ 名称 : "" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [7]=>
+      array(11) {
+        ["id"]=>
+        string(1) "8"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546417196"
+        ["start_time"]=>
+        string(10) "1546417196"
+        ["end_time"]=>
+        string(10) "1546417196"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(35) "update_rep_recovery [ 名称 : "" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+      [8]=>
+      array(11) {
+        ["id"]=>
+        string(1) "9"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546417337"
+        ["start_time"]=>
+        string(10) "1546417337"
+        ["end_time"]=>
+        string(10) "1546417337"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(35) "update_rep_recovery [ 名称 : "" ]"
+        ["result"]=>
+        string(8) "10001009"
+        ["failure_reason"]=>
+        string(23) "[10001009] 名称重复"
+        ["type"]=>
+        string(1) "0"
+      }
+      [9]=>
+      array(11) {
+        ["id"]=>
+        string(2) "10"
+        ["user_uuid"]=>
+        string(36) "1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC"
+        ["user_name"]=>
+        string(5) "admin"
+        ["op_time"]=>
+        string(10) "1546417343"
+        ["start_time"]=>
+        string(10) "1546417342"
+        ["end_time"]=>
+        string(10) "1546417343"
+        ["address"]=>
+        string(14) "192.168.71.212"
+        ["description"]=>
+        string(35) "update_rep_recovery [ 名称 : "" ]"
+        ["result"]=>
+        string(1) "0"
+        ["failure_reason"]=>
+        string(19) "[0] 操作成功。"
+        ["type"]=>
+        string(1) "0"
+      }
+    }
+    ["total"]=>
+    int(181)
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 559 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

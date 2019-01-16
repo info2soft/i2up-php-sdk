@@ -1,0 +1,114 @@
+
+request_method:GET
+url:http://192.168.72.70:58080/api/dir?show_file=1&node_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&dev=0&path=&rep_uuid=&bs_time=&_=0.020601078498101
+array(2) {
+  [0]=>
+  array(3) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(0) ""
+    ["dir_list"]=>
+    array(4) {
+      [0]=>
+      array(4) {
+        ["name"]=>
+        string(2) "C:"
+        ["time"]=>
+        string(0) ""
+        ["size"]=>
+        string(0) ""
+        ["is_dir"]=>
+        bool(true)
+      }
+      [1]=>
+      array(4) {
+        ["name"]=>
+        string(2) "E:"
+        ["time"]=>
+        string(0) ""
+        ["size"]=>
+        string(0) ""
+        ["is_dir"]=>
+        bool(true)
+      }
+      [2]=>
+      array(4) {
+        ["name"]=>
+        string(2) "G:"
+        ["time"]=>
+        string(0) ""
+        ["size"]=>
+        string(0) ""
+        ["is_dir"]=>
+        bool(true)
+      }
+      [3]=>
+      array(4) {
+        ["name"]=>
+        string(2) "H:"
+        ["time"]=>
+        string(0) ""
+        ["size"]=>
+        string(0) ""
+        ["is_dir"]=>
+        bool(true)
+      }
+    }
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 1.05 seconds, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+request_method:POST
+body:{"node_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","path":"E:\\test7\\"}
+url:http://192.168.72.70:58080/api/dir
+array(2) {
+  [0]=>
+  array(2) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 628 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+request_method:POST
+body:{"node_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","path":"E:\\test7\\"}
+url:http://192.168.72.70:58080/api/dir/check
+array(2) {
+  [0]=>
+  array(2) {
+    ["code"]=>
+    int(0)
+    ["message"]=>
+    string(11) "[0] success"
+  }
+  [1]=>
+  NULL
+}
+
+
+Time: 590 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0

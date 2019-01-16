@@ -1,0 +1,305 @@
+request_method:POST
+body:{"biz_grp":{"subtype":0,"comment":"123","grp_name":"grp_name1","type":1}}
+url:http://192.168.72.70:58080/api/biz_grp
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 590 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:PUT
+body:{"biz_grp":{"comment":"123","grp_name":"grp_name2","type":3,"subtype":10}}
+url:http://192.168.72.70:58080/api/biz_grp/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 638 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/biz_grp/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'biz_grp' => 
+    array (
+      'username' => 'admin',
+      'id' => '3',
+      'grp_uuid' => '11111111-1111-1111-1111-111111111111',
+      'grp_name' => 'grp_name2',
+      'type' => 3,
+      'subtype' => 10,
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'comment' => '123',
+      'create_time' => 1547190126,
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 549 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+
+
+
+request_method:DELETE
+body:{"grp_uuids":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/biz_grp
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 617 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/biz_grp?limit=10&search_field=&search_value=&direction=&order_by=&page=1&_=0.28665771790727
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'username' => 'admin',
+        'id' => '3',
+        'grp_uuid' => '11111111-1111-1111-1111-111111111111',
+        'grp_name' => 'grp_name2',
+        'type' => 3,
+        'subtype' => 10,
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'comment' => '123',
+        'create_time' => 1547190126,
+      ),
+      1 => 
+      array (
+        'username' => 'admin',
+        'id' => '2',
+        'grp_uuid' => 'FA26B3DA-CB4E-AFC1-0AFD-34112B35E711',
+        'grp_name' => 'grp_name',
+        'type' => 1,
+        'subtype' => 0,
+        'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+        'comment' => '123',
+        'create_time' => 1546832945,
+      ),
+    ),
+    'total' => 2,
+  ),
+  1 => NULL,
+)
+
+Time: 581 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+
+
+
+request_method:PUT
+body:{"uuids":["67E33CDB-D75B-15B3-367D-50C764F5A26F"]}
+url:http://192.168.72.70:58080/api/biz_grp/FA26B3DA-CB4E-AFC1-0AFD-34112B35E711/bind
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 637 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/biz_grp/11111111-1111-1111-1111-111111111111/bind
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 575 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/biz_grp/res?type=1&subtype=0&_=0.15317477284266
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'info_list' => 
+    array (
+      0 => 
+      array (
+        'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'name' => 'N3_72.75',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1546416702,
+      ),
+      1 => 
+      array (
+        'uuid' => '04ED35A8-F05F-21BA-33FC-4236019589FB',
+        'name' => '192.168.25.22',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1546934755,
+      ),
+      2 => 
+      array (
+        'uuid' => '5FB4B19E-957F-820C-887A-8D1593093C9B',
+        'name' => '192.168.25.21',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1546935037,
+      ),
+      3 => 
+      array (
+        'uuid' => 'C11FE572-5207-3359-DB85-001E95F5F185',
+        'name' => '192.168.25.12',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1546935183,
+      ),
+      4 => 
+      array (
+        'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+        'name' => 'move B 72.82',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1546836502,
+      ),
+      5 => 
+      array (
+        'uuid' => 'CE77F3D6-A6E3-A385-CE66-712313B7DDE8',
+        'name' => '192.168.25.11',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1546935241,
+      ),
+      6 => 
+      array (
+        'uuid' => '790502A5-F563-4E22-8E64-692713FDE812',
+        'name' => '87.12',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1547109654,
+      ),
+      7 => 
+      array (
+        'uuid' => 'BD7D3EF7-2F75-E2BB-A2CB-CFE936CF1F6C',
+        'name' => '87.11',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1547109751,
+      ),
+      8 => 
+      array (
+        'uuid' => 'F85DFEC0-149E-373D-0B9E-3DA9A5C43940',
+        'name' => '71.78',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1547173052,
+      ),
+      9 => 
+      array (
+        'uuid' => '42614852-BB62-1EF7-FED0-D2354BF3149D',
+        'name' => '71.77',
+        'wk_uuid' => NULL,
+        'bk_uuid' => NULL,
+        'other' => NULL,
+        'type' => 1,
+        'subtype' => 0,
+        'create_time' => 1547172369,
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 614 ms, Memory: 2.00MB
+

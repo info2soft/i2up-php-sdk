@@ -1,0 +1,529 @@
+request_method:GET
+url:http://192.168.72.70:58080/api/ha?filter_value=&filter_type=&page=1&limit=10&_=0.84633456987248
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '',
+    'list' => 
+    array (
+    ),
+    'total' => 0,
+  ),
+  1 => NULL,
+)
+
+Time: 649 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+
+request_method:POST
+body:{"ha_uuid":["11111111-1111-1111-1111-111111111111"],"node_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","type":"start"}
+url:http://192.168.72.70:58080/api/ha/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 884 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+
+
+request_method:POST
+body:{"ha_uuid":["11111111-1111-1111-1111-111111111111"],"node_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","type":"stop"}
+url:http://192.168.72.70:58080/api/ha/operate
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 819 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:DELETE
+body:{"ha_uuid":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/ha
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 664 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"ha_uuid":["11111111-1111-1111-1111-111111111111"]}
+url:http://192.168.72.70:58080/api/ha/status
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'status' => 
+    array (
+      0 => 
+      array (
+        'ha_uuid' => 'HA_11111111-1111-1111-1111-111111111111',
+        'status' => 'HA_RUN',
+        'node_role' => 'HA_MASTER',
+        'node_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'node_ha_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F_11111111-1111-1111-1111-111111111111',
+      ),
+      1 => 
+      array (
+        'ha_uuid' => 'HA_11111111-1111-1111-1111-111111111111',
+        'status' => 'HA_RUN',
+        'node_role' => 'HA_SLAVE',
+        'node_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+        'node_ha_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84_11111111-1111-1111-1111-111111111111',
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 658 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/ha/script_path?master_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&_=0.3785229251515
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '',
+    'script_path' => 'C:\\Program Files (x86)\\info2soft\\node\\scripts',
+  ),
+  1 => NULL,
+)
+
+Time: 718 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:PUT
+body:{"heartbeat":[{"interval":2,"maxfail":5,"protocol":"tcp","ifconfig":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","netif":"{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}","ip":"192.168.72.75"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","netif":"{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}","ip":"192.168.72.82"}],"port":26850}],"sync_data":[{"back_rule":0,"need_rep_status":1,"create_start":0,"wait_cache":1,"rule_relation":[{"rep_name":"sdk_ha-N3_72.75-N4_72.76","autostart_rep":0,"path":["E:\\test\\"],"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","append_name":0},{"rep_name":"sdk_ha-N3_72.75-N4_72.76","autostart_rep":0,"path":["E:\\test\\"],"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","append_name":0}],"excludes":[]}],"arbitration":{"radio":1,"node":{"arbit_protocol":"TCP","arbit_addr":"192.168.72.82","arbit_port":26868},"disk":{"path":""}},"master_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","ha_name":"sdk_ha","ha_uuid":"11111111-1111-1111-1111-111111111111","res_switch":[{"script":{"after_failover":"","before_failover":"","before_switch":"","after_switch":""},"vip":{"top":0,"ip":"192.168.72.82","ifconfig":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","netif":"{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}","label":"Ethernet0"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","netif":"{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}","label":"Ethernet0"}],"mask":"255.255.255.0","del":0},"type":"ip"}],"auto_switch":1,"monitor":[{"threshold":90,"interval":2,"name":"","script":"","access_method":"","type":"cpu","great":"","useid":"","maxfail":5,"action":"warn","residual":1,"role":"master","path":"","monitor_file":""}],"node_priority":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","priority":"high"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","priority":"high"}],"ctrl_switch":0,"random_str":"11111111-1111-1111-1111-111111111111"}
+url:http://192.168.72.70:58080/api/ha
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 978 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"heartbeat":[{"interval":2,"maxfail":5,"protocol":"tcp","ifconfig":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","netif":"{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}","ip":"192.168.72.75"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","netif":"{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}","ip":"192.168.72.82"}],"port":26850}],"sync_data":[{"back_rule":0,"need_rep_status":1,"create_start":0,"wait_cache":1,"rule_relation":[{"rep_name":"sdk_ha-N3_72.75-N4_72.76","autostart_rep":0,"path":["E:\\test\\"],"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","append_name":0},{"rep_name":"sdk_ha-N3_72.75-N4_72.76","autostart_rep":0,"path":["E:\\test\\"],"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","append_name":0}],"excludes":[]}],"arbitration":{"radio":1,"node":{"arbit_protocol":"TCP","arbit_addr":"192.168.72.82","arbit_port":26868},"disk":{"path":""}},"master_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","ha_name":"sdk_ha1","res_switch":[{"script":{"after_failover":"","before_failover":"","before_switch":"","after_switch":""},"vip":{"top":0,"ip":"192.168.72.82","ifconfig":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","netif":"{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}","label":"Ethernet0"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","netif":"{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}","label":"Ethernet0"}],"mask":"255.255.255.0","del":0},"type":"ip"}],"auto_switch":1,"monitor":[{"threshold":90,"interval":2,"name":"","script":"","access_method":"","type":"cpu","great":"","useid":"","maxfail":5,"action":"warn","residual":1,"role":"master","path":"","monitor_file":""}],"node_priority":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","priority":"high"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","priority":"high"}],"ctrl_switch":0}
+url:http://192.168.72.70:58080/api/ha
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[10031018] rule.wk_node_version_diff_from_bk 7.0.1.28553 , 7.0-26764',
+  ),
+  1 => NULL,
+)
+
+Time: 3.31 seconds, Memory: 2.00MB
+
+OK (1 test, 0 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"heartbeat":[{"interval":2,"maxfail":5,"protocol":"tcp","ifconfig":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","netif":"{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}","ip":"192.168.72.75"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","netif":"{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}","ip":"192.168.72.82"}],"port":26850}],"sync_data":[{"back_rule":0,"need_rep_status":1,"create_start":0,"wait_cache":1,"rule_relation":[{"rep_name":"sdk_ha-N3_72.75-N4_72.76","autostart_rep":0,"path":["E:\\test\\"],"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","append_name":0},{"rep_name":"sdk_ha-N3_72.75-N4_72.76","autostart_rep":0,"path":["E:\\test\\"],"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","append_name":0}],"excludes":[]}],"arbitration":{"radio":1,"node":{"arbit_protocol":"TCP","arbit_addr":"192.168.72.82","arbit_port":26868},"disk":{"path":""}},"master_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","ha_name":"sdk_ha1","res_switch":[{"script":{"after_failover":"","before_failover":"","before_switch":"","after_switch":""},"vip":{"top":0,"ip":"192.168.72.82","ifconfig":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","netif":"{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}","label":"Ethernet0"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","netif":"{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}","label":"Ethernet0"}],"mask":"255.255.255.0","del":0},"type":"ip"}],"auto_switch":1,"monitor":[{"threshold":90,"interval":2,"name":"","script":"","access_method":"","type":"cpu","great":"","useid":"","maxfail":5,"action":"warn","residual":1,"role":"master","path":"","monitor_file":""}],"node_priority":[{"uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","priority":"high"},{"uuid":"B8566905-411E-B2CD-A742-77B1346D8E84","priority":"high"}],"ctrl_switch":0}
+url:http://192.168.72.70:58080/api/ha
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[10031018] rule.wk_node_version_diff_from_bk 7.0.1.28553 , 7.0-26764',
+  ),
+  1 => NULL,
+)
+
+Time: 3.24 seconds, Memory: 2.00MB
+
+OK (1 test, 0 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/ha/netif?node_uuid[]=B8566905-411E-B2CD-A742-77B1346D8E84&node_uuid[]=67E33CDB-D75B-15B3-367D-50C764F5A26F&master_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&_=0.98620533837251
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'netif' => 
+    array (
+      0 => 
+      array (
+        'node_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+        'ifconfig' => 
+        array (
+          0 => 
+          array (
+            'ips' => 
+            array (
+              0 => '192.168.72.82',
+            ),
+            'label' => 'Ethernet0',
+            'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+          ),
+        ),
+      ),
+      1 => 
+      array (
+        'node_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+        'ifconfig' => 
+        array (
+          0 => 
+          array (
+            'ips' => 
+            array (
+              0 => '192.168.72.75',
+              1 => '192.168.72.82',
+            ),
+            'label' => 'Ethernet0',
+            'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+          ),
+        ),
+      ),
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 811 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:GET
+url:http://192.168.72.70:58080/api/ha/11111111-1111-1111-1111-111111111111
+array (
+  0 => 
+  array (
+    'code' => 0,
+    'message' => '',
+    'ha_info' => 
+    array (
+      'id' => '8',
+      'ha_name' => 'sdk_ha1',
+      'ha_uuid' => '11111111-1111-1111-1111-111111111111',
+      'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+      'master_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+      'auto_switch' => '1',
+      'node_priority' => 
+      array (
+        0 => 
+        array (
+          'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+          'priority' => 'high',
+          'node_name' => 'N3_72.75',
+        ),
+        1 => 
+        array (
+          'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+          'priority' => 'high',
+          'node_name' => 'move B 72.82',
+        ),
+      ),
+      'arbitration' => 
+      array (
+        'radio' => 1,
+        'node' => 
+        array (
+          'arbit_protocol' => 'TCP',
+          'arbit_addr' => '192.168.72.82',
+          'arbit_port' => 26868,
+        ),
+        'disk' => 
+        array (
+          'path' => '',
+        ),
+      ),
+      'heartbeat' => 
+      array (
+        0 => 
+        array (
+          'interval' => 2,
+          'maxfail' => 5,
+          'protocol' => 'tcp',
+          'ifconfig' => 
+          array (
+            0 => 
+            array (
+              'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+              'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+              'ip' => '192.168.72.75',
+            ),
+            1 => 
+            array (
+              'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+              'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+              'ip' => '192.168.72.82',
+            ),
+          ),
+          'port' => 26850,
+        ),
+      ),
+      'monitor' => 
+      array (
+        0 => 
+        array (
+          'threshold' => 90,
+          'interval' => 2,
+          'name' => '',
+          'script' => '',
+          'access_method' => '',
+          'type' => 'cpu',
+          'great' => '',
+          'useid' => '',
+          'maxfail' => 5,
+          'action' => 'warn',
+          'residual' => 1,
+          'role' => 'master',
+          'path' => '',
+          'monitor_file' => '',
+        ),
+      ),
+      'res_switch' => 
+      array (
+        0 => 
+        array (
+          'script' => 
+          array (
+            'after_failover' => '',
+            'before_failover' => '',
+            'before_switch' => '',
+            'after_switch' => '',
+          ),
+          'vip' => 
+          array (
+            'top' => 0,
+            'ip' => '192.168.72.82',
+            'ifconfig' => 
+            array (
+              0 => 
+              array (
+                'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                'netif' => '{AB1E4EFF-14FE-441E-8A1F-EE59BDA12D6F}',
+                'label' => 'Ethernet0',
+              ),
+              1 => 
+              array (
+                'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+                'netif' => '{5C3A44A0-EF11-4705-A9A3-2F3ACEED4798}',
+                'label' => 'Ethernet0',
+              ),
+            ),
+            'mask' => '255.255.255.0',
+            'del' => 0,
+          ),
+          'type' => 'ip',
+        ),
+      ),
+      'rules' => 
+      array (
+        '11111111-1111-1111-1111-111111111111' => 
+        array (
+          'id' => '34',
+          'auto_start' => '0',
+          'band_width' => '',
+          'bkup_one_time' => NULL,
+          'bkup_policy' => '2',
+          'bkup_schedule' => NULL,
+          'compress' => '0',
+          'cmp_file_check' => 0,
+          'cmp_schedule' => NULL,
+          'cmp_switch' => 0,
+          'create_time' => '1547456690',
+          'encrypt_switch' => '0',
+          'mirr_file_check' => '0',
+          'mirr_open_type' => '0',
+          'mirr_sync_attr' => '1',
+          'mirr_sync_flag' => '0',
+          'mirr_skip' => '0',
+          'random_str' => '11111111-1111-1111-1111-111111111111',
+          'secret_key' => '',
+          'snapshot_interval' => '24',
+          'snapshot_limit' => '2',
+          'snapshot_policy' => '0',
+          'snapshot_start' => NULL,
+          'snapshot_switch' => 0,
+          'bk_path_policy' => '0',
+          'uuid' => '11111111-1111-1111-1111-111111111111',
+          'cdp_baseline_format' => NULL,
+          'cdp_bl_bkup_switch' => NULL,
+          'cdp_bl_sched' => NULL,
+          'cdp_bl_sched_switch' => 0,
+          'cdp_param' => NULL,
+          'cdp_path' => NULL,
+          'cdp_process_time' => '00:00:00',
+          'cdp_switch' => '0',
+          'del_policy' => '0',
+          'disk_limit' => '0',
+          'excl_path' => 
+          array (
+          ),
+          'file_type_filter' => NULL,
+          'file_type_filter_switch' => 0,
+          'wk_path' => 
+          array (
+            0 => 'E:\\test\\',
+          ),
+          'oph_path' => '',
+          'oph_policy' => '0',
+          'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+          'rep_type' => 0,
+          'rep_uuid' => '11111111-1111-1111-1111-111111111111',
+          'schedule' => NULL,
+          'wk_uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+          'bk_path' => 
+          array (
+            0 => 'E:\\test\\',
+          ),
+          'bk_uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+          'user_uuid' => '1BCFCAA3-E3C8-3E28-BDC5-BE36FDC2B5DC',
+          'group_uuid' => NULL,
+          'status' => NULL,
+          'sync_rep_uuid' => NULL,
+          'init_capacity' => '0',
+          'mirr_sched' => NULL,
+          'mirr_sched_switch' => 0,
+          'bk_path_block' => '0',
+          'cdp_snap_on' => 0,
+          'cdp_snap_interval' => 0,
+          'cdp_snap_count' => 0,
+          'ct_name_type' => 0,
+          'ct_name_str1' => NULL,
+          'ct_name_str2' => NULL,
+          'ct_name_str3' => NULL,
+          'ct_name_str4' => NULL,
+          'is_from_ha' => 1,
+          'thread_num' => '0',
+        ),
+      ),
+      'sync_data' => 
+      array (
+        0 => 
+        array (
+          'back_rule' => 0,
+          'need_rep_status' => 1,
+          'create_start' => 0,
+          'wait_cache' => 1,
+          'rule_relation' => 
+          array (
+            0 => 
+            array (
+              'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+              'autostart_rep' => 0,
+              'path' => 
+              array (
+                0 => 'E:\\test\\',
+              ),
+              'uuid' => '67E33CDB-D75B-15B3-367D-50C764F5A26F',
+              'append_name' => 0,
+            ),
+            1 => 
+            array (
+              'rep_name' => 'sdk_ha-N3_72.75-N4_72.76',
+              'autostart_rep' => 0,
+              'path' => 
+              array (
+                0 => 'E:\\test\\',
+              ),
+              'uuid' => 'B8566905-411E-B2CD-A742-77B1346D8E84',
+              'append_name' => 0,
+            ),
+          ),
+          'excludes' => 
+          array (
+          ),
+        ),
+      ),
+      'status' => '',
+      'ha_send_xml' => 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48STJIQT48SEFSVUxFPjxOQU1FPjwhW0NEQVRBW3Nka19oYTFdXT48L05BTUU+PFVVSUQ+PCFbQ0RBVEFbMTExMTExMTEtMTExMS0xMTExLTExMTEtMTExMTExMTExMTExXV0+PC9VVUlEPjxBVVRPU1dJVENIPjwhW0NEQVRBW3llc11dPjwvQVVUT1NXSVRDSD48Q1RSTFNXSVRDSD48IVtDREFUQVtub11dPjwvQ1RSTFNXSVRDSD48TkVFRFJFUFNUQVVUUz48IVtDREFUQVt5ZXNdXT48L05FRURSRVBTVEFVVFM+PE5PREVTPjxOT0RFPjxVVUlEPjwhW0NEQVRBWzY3RTMzQ0RCLUQ3NUItMTVCMy0zNjdELTUwQzc2NEY1QTI2Rl1dPjwvVVVJRD48UFJJT1JJVD48IVtDREFUQVtoaWdoXV0+PC9QUklPUklUPjxERUZNQVNURVI+PCFbQ0RBVEFbeWVzXV0+PC9ERUZNQVNURVI+PFNUQVJUPjwhW0NEQVRBW3llc11dPjwvU1RBUlQ+PC9OT0RFPjxOT0RFPjxVVUlEPjwhW0NEQVRBW0I4NTY2OTA1LTQxMUUtQjJDRC1BNzQyLTc3QjEzNDZEOEU4NF1dPjwvVVVJRD48UFJJT1JJVD48IVtDREFUQVtoaWdoXV0+PC9QUklPUklUPjxERUZNQVNURVI+PCFbQ0RBVEFbbm9dXT48L0RFRk1BU1RFUj48U1RBUlQ+PCFbQ0RBVEFbeWVzXV0+PC9TVEFSVD48L05PREU+PC9OT0RFUz48SEVBUlRTPjxIRUFSVD48SU5ERVg+PCFbQ0RBVEFbMV1dPjwvSU5ERVg+PFBST1RPQ09MPjwhW0NEQVRBW3RjcF1dPjwvUFJPVE9DT0w+PFBPUlQ+PCFbQ0RBVEFbMjY4NTBdXT48L1BPUlQ+PElOVEVSVkFMPjwhW0NEQVRBWzJdXT48L0lOVEVSVkFMPjxNQVhGQUlMPjwhW0NEQVRBWzVdXT48L01BWEZBSUw+PE5PREVTPjxOT0RFPjxJUD48IVtDREFUQVsxOTIuMTY4LjcyLjc1XV0+PC9JUD48TkVUSUY+PCFbQ0RBVEFbe0FCMUU0RUZGLTE0RkUtNDQxRS04QTFGLUVFNTlCREExMkQ2Rn1dXT48L05FVElGPjxVVUlEPjwhW0NEQVRBWzY3RTMzQ0RCLUQ3NUItMTVCMy0zNjdELTUwQzc2NEY1QTI2Rl1dPjwvVVVJRD48L05PREU+PE5PREU+PElQPjwhW0NEQVRBWzE5Mi4xNjguNzIuODJdXT48L0lQPjxORVRJRj48IVtDREFUQVt7NUMzQTQ0QTAtRUYxMS00NzA1LUE5QTMtMkYzQUNFRUQ0Nzk4fV1dPjwvTkVUSUY+PFVVSUQ+PCFbQ0RBVEFbQjg1NjY5MDUtNDExRS1CMkNELUE3NDItNzdCMTM0NkQ4RTg0XV0+PC9VVUlEPjwvTk9ERT48L05PREVTPjwvSEVBUlQ+PC9IRUFSVFM+PFJFUFJVTEVTPjxSRVBSVUxFPjxDTEVBUkJVRj48IVtDREFUQVt5ZXNdXT48L0NMRUFSQlVGPjxSRVZFUlNFUj48IVtDREFUQVtub11dPjwvUkVWRVJTRVI+PEZST01VVUlEPjwhW0NEQVRBWzY3RTMzQ0RCLUQ3NUItMTVCMy0zNjdELTUwQzc2NEY1QTI2Rl1dPjwvRlJPTVVVSUQ+PFRPVVVJRD48IVtDREFUQVtCODU2NjkwNS00MTFFLUIyQ0QtQTc0Mi03N0IxMzQ2RDhFODRdXT48L1RPVVVJRD48UkVQVVVJRD48IVtDREFUQVsxMTExMTExMS0xMTExLTExMTEtMTExMS0xMTExMTExMTExMTFdXT48L1JFUFVVSUQ+PFJFUFNUQVJUPjwhW0NEQVRBW25vXV0+PC9SRVBTVEFSVD48L1JFUFJVTEU+PC9SRVBSVUxFUz48TU9OSVRPUlM+PE1PTklUT1I+PElOREVYPjwhW0NEQVRBWzFdXT48L0lOREVYPjxUWVBFPjwhW0NEQVRBW2NwdV1dPjwvVFlQRT48SU5URVJWQUw+PCFbQ0RBVEFbMl1dPjwvSU5URVJWQUw+PE1BWEZBSUw+PCFbQ0RBVEFbNV1dPjwvTUFYRkFJTD48Uk9MRT48IVtDREFUQVttYXN0ZXJdXT48L1JPTEU+PEFDVElPTj48IVtDREFUQVt3YXJuXV0+PC9BQ1RJT04+PENQVUNPTkY+PFRIUkVTSE9MRD48IVtDREFUQVs5MF1dPjwvVEhSRVNIT0xEPjwvQ1BVQ09ORj48L01PTklUT1I+PC9NT05JVE9SUz48U1dJVENIUz48U1dJVENIPjxJTkRFWD48IVtDREFUQVsxXV0+PC9JTkRFWD48VFlQRT48IVtDREFUQVtpcF1dPjwvVFlQRT48SVBTV0lUQ0g+PElQPjwhW0NEQVRBWzE5Mi4xNjguNzIuODJdXT48L0lQPjxNQVNLPjwhW0NEQVRBWzI1NS4yNTUuMjU1LjBdXT48L01BU0s+PFRPUD48IVtDREFUQVtub11dPjwvVE9QPjxERUw+PCFbQ0RBVEFbbm9dXT48L0RFTD48Tk9ERVM+PE5PREU+PE5FVElGPjwhW0NEQVRBW3tBQjFFNEVGRi0xNEZFLTQ0MUUtOEExRi1FRTU5QkRBMTJENkZ9XV0+PC9ORVRJRj48VVVJRD48IVtDREFUQVs2N0UzM0NEQi1ENzVCLTE1QjMtMzY3RC01MEM3NjRGNUEyNkZdXT48L1VVSUQ+PC9OT0RFPjxOT0RFPjxORVRJRj48IVtDREFUQVt7NUMzQTQ0QTAtRUYxMS00NzA1LUE5QTMtMkYzQUNFRUQ0Nzk4fV1dPjwvTkVUSUY+PFVVSUQ+PCFbQ0RBVEFbQjg1NjY5MDUtNDExRS1CMkNELUE3NDItNzdCMTM0NkQ4RTg0XV0+PC9VVUlEPjwvTk9ERT48L05PREVTPjwvSVBTV0lUQ0g+PC9TV0lUQ0g+PC9TV0lUQ0hTPjxBUkJJVFJBVElPTj48VFlQRT48IVtDREFUQVtub2RlXV0+PC9UWVBFPjxOT0RFQVJCQ09ORj48QUREUkVTUz48IVtDREFUQVsxOTIuMTY4LjcyLjgyXV0+PC9BRERSRVNTPjxQUk9UT0NPTD48IVtDREFUQVtUQ1BdXT48L1BST1RPQ09MPjxQT1JUPjwhW0NEQVRBWzI2ODY4XV0+PC9QT1JUPjwvTk9ERUFSQkNPTkY+PC9BUkJJVFJBVElPTj48L0hBUlVMRT48L0kySEE+',
+      'create_time' => '1547456690',
+      'ctrl_switch' => '0',
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 663 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
