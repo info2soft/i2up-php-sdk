@@ -20,7 +20,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $timingBackup -> describeTimingBackupMssqlSource($arr);
         var_export($res);
@@ -71,7 +71,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $timingBackup -> descibeTimingBackupOracleSriptPath($arr);
         var_export($res);
@@ -84,7 +84,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
+            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'mssql_settings'=>array(
                 'win_verify'=>0,
                 'instance_name'=>'',
@@ -115,16 +115,14 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                     'ora_passwd'=>'Info1234',
                     'ora_home_path'=>''
                 ),
-                'policy_uuid'=>'38FFA6E2-2A40-31D6-7A94-E8168EBA9FF1',
-                'wk_data_type'=>0,
-                'task_name'=>'',
-                'backup_type'=>1,
+                'wk_data_type'=>1,
+                'task_name'=>'test',
                 'del_policy'=>0,
                 'mirr_sync_flag'=>0,
                 'snap_type'=>0,
                 'oracle_rman_settings'=>array(
                     'rman_skip_offline'=>0,
-                    'rman_num_streams_arch'=>1,
+                    'rman_num_streams_arch'=>20,
                     'rman_del_arch'=>1,
                     'rman_include_arch_flag'=>1,
                     'rman_num_streams_df'=>1,
@@ -138,42 +136,37 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                 ),
                 'compress'=>0,
                 'encrypt_switch'=>0,
-                'wk_path'=>array(),
+                'wk_path'=>array(
+                    '0'=>'E:\\test\\'
+                ),
                 'excl_path'=>array(),
                 'bk_data_type'=>1,
                 'mirr_blk_size'=>0,
-                'bk_path'=>array(),
+                'bk_path'=>array(
+                    '0'=>'E:\\t\\'
+                ),
                 'blk_direct_copy'=>0,
                 'mirr_open_type'=>0,
                 'mssql_settings'=>array(
-                    'instance_name'=>'',
-                    'time_out'=>'2',
+                    'instance_name'=>'MSSQLSERVER',
+                    'time_out'=>'',
                     'data_source'=>'',
-                    'win_verify'=>0,
+                    'win_verify'=>1,
                     'user_id'=>'',
                     'db_name'=>'',
                     'pass_word'=>'',
                     'check_out'=>1
                 ),
-                'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'bk_uuid'=>'Jane',
-                'bkup_policy'=>0,
+                'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+                'bkup_policy'=>2,
                 'bkup_window'=>array(
-                    'sched_time_start'=>'08:04',
-                    'sched_time_end'=>'23:11'
+                    'sched_time_start'=>'00:00',
+                    'sched_time_end'=>'00:00'
                 ),
-                'bkup_one_time'=>1515568566,
-                'bkup_schedule'=>array(
-                    '0'=>array(
-                        'limit'=>60,
-                        'sched_day'=>23,
-                        'sched_every'=>2,
-                        'sched_time'=>'03:45',
-                        'sched_gap_min'=>49
-                    )
-                ),
+                'bkup_one_time'=>1547538235,
+                'bkup_schedule'=>array(),
                 'task_type'=>0,
-                'file_check_dir'=>''
             ),
         );
         $res = $timingBackup -> createTimingBackup($arr);
@@ -187,7 +180,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'uuid'=>''
+            'uuid'=>'11111111-1111-1111-1111-111111111111'
         );
         $res = $timingBackup -> describeTimingBackup($arr);
         var_export($res);
@@ -200,7 +193,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'uuid'=>'',
+            'uuid'=>'11111111-1111-1111-1111-111111111111',
             'timing_backup'=>array(
                 'mirr_sync_attr'=>1,
                 'secret_key'=>'',
@@ -213,16 +206,14 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                     'ora_passwd'=>'Info1234',
                     'ora_home_path'=>''
                 ),
-                'policy_uuid'=>'38FFA6E2-2A40-31D6-7A94-E8168EBA9FF1',
-                'wk_data_type'=>0,
-                'task_name'=>'',
-                'backup_type'=>1,
+                'wk_data_type'=>1,
+                'task_name'=>'test1',
                 'del_policy'=>0,
                 'mirr_sync_flag'=>0,
                 'snap_type'=>0,
                 'oracle_rman_settings'=>array(
                     'rman_skip_offline'=>0,
-                    'rman_num_streams_arch'=>1,
+                    'rman_num_streams_arch'=>20,
                     'rman_del_arch'=>1,
                     'rman_include_arch_flag'=>1,
                     'rman_num_streams_df'=>1,
@@ -236,42 +227,39 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                 ),
                 'compress'=>0,
                 'encrypt_switch'=>0,
-                'wk_path'=>array(),
+                'wk_path'=>array(
+                    '0'=>'E:\\test\\'
+                ),
                 'excl_path'=>array(),
                 'bk_data_type'=>1,
                 'mirr_blk_size'=>0,
-                'bk_path'=>array(),
+                'bk_path'=>array(
+                    '0'=>'E:\\t\\'
+                ),
                 'blk_direct_copy'=>0,
                 'mirr_open_type'=>0,
                 'mssql_settings'=>array(
-                    'instance_name'=>'',
-                    'time_out'=>'2',
+                    'instance_name'=>'MSSQLSERVER',
+                    'time_out'=>'',
                     'data_source'=>'',
-                    'dbsize'=>'',
-                    'win_verify'=>0,
+                    'win_verify'=>1,
                     'user_id'=>'',
                     'db_name'=>'',
-                    'pass_word'=>''
+                    'pass_word'=>'',
+                    'check_out'=>1
                 ),
-                'wk_uuid'=>'0DD4E727-70AB-62C6-BEB5-D012DFAE46E3',
-                'bk_uuid'=>'Jane',
-                'bkup_policy'=>0,
+                'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+                'bk_uuid'=>'B8566905-411E-B2CD-A742-77B1346D8E84',
+                'bkup_policy'=>2,
                 'bkup_window'=>array(
-                    'sched_time_start'=>'15:18',
-                    'sched_time_end'=>'14:37'
+                    'sched_time_start'=>'00:00',
+                    'sched_time_end'=>'00:00'
                 ),
-                'bkup_one_time'=>1515568566,
-                'bkup_schedule'=>array(
-                    '0'=>array(
-                        'limit'=>25,
-                        'sched_day'=>24,
-                        'sched_every'=>2,
-                        'sched_time'=>'04:07',
-                        'sched_gap_min'=>49
-                    )
-                ),
-                'task_type'=>0
-            )
+                'bkup_one_time'=>1547538235,
+                'bkup_schedule'=>array(),
+                'task_type'=>0,
+                'random_str'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $timingBackup -> modifyTimingBackup($arr);
         var_export($res);
@@ -285,7 +273,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
         $timingBackup = $this -> timingBackup;
         $arr = array(
             'search_field'=>'',
-            'limit'=>1,
+            'limit'=>10,
             'page'=>1,
             'search_value'=>'',
             'type'=>0,
@@ -301,7 +289,9 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $timingBackup -> listTimingBackupStatus($arr);
         var_export($res);
@@ -314,7 +304,9 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $timingBackup -> deleteTimingBackup($arr);
         var_export($res);
@@ -327,7 +319,9 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $timingBackup -> startTimingBackup($arr);
         var_export($res);
@@ -339,7 +333,9 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            ),
         );
         $res = $timingBackup -> stopTimingBackup($arr);
         var_export($res);
