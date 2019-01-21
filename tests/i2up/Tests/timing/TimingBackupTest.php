@@ -20,7 +20,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     {
         $timingBackup = $this -> timingBackup;
         $arr = array(
-            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
+            'wk_uuid'=>'22D03E06-94D0-5E2C-336E-4BEEC2D28EC4',
         );
         $res = $timingBackup -> describeTimingBackupMssqlSource($arr);
         var_export($res);
@@ -39,7 +39,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                 'ora_home_path'=>'',
                 'ora_passwd'=>'Info1234'
             ),
-            'src_node_uuid'=>'',
+            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $timingBackup -> verifyTimingBackupOracleInfo($arr);
         var_export($res);
@@ -58,7 +58,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
                 'ora_sid_name'=>'',
                 'ora_content_type'=>0
             ),
-            'src_node_uuid'=>'',
+            'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
         );
         $res = $timingBackup -> describeTimingBackupOracleContent($arr);
         var_export($res);
@@ -87,10 +87,11 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
             'wk_uuid'=>'67E33CDB-D75B-15B3-367D-50C764F5A26F',
             'mssql_settings'=>array(
                 'win_verify'=>0,
-                'instance_name'=>'',
-                'pass_word'=>'',
-                'data_source'=>'',
-                'user_id'=>'',),
+                'instance_name'=>'MSSQLSERVER',
+                'pass_word'=>'123456',
+                'data_source'=>'WIN-EGKN86NF3PM',
+                'user_id'=>'sa',
+                )
         );
         $res = $timingBackup -> listTimingBackupMssqlDbList($arr);
         var_export($res);

@@ -19,6 +19,51 @@ Process finished with exit code 0
 
 
 
+request_method:POST
+body:{"oracle_settings":{"ora_sid_name":"","ora_port":1,"ora_home_path":"","ora_passwd":"Info1234"},"wk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F"}
+url:http://192.168.72.70:58080/api/timing/backup/verify_oracle_info
+array (
+  0 =>
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+  ),
+  1 => NULL,
+)
+
+Time: 559 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"oracle_settings":{"ora_passwd":"Info1234","ora_port":1,"ora_sid_name":"","ora_content_type":0},"wk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F"}
+url:http://192.168.72.70:58080/api/timing/backup/oracle_content
+array (
+  0 =>
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'oracle_content' =>
+    array (
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 616 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
 request_method:GET
 url:http://192.168.72.70:58080/api/timing/backup/oracle_script_path?wk_uuid=67E33CDB-D75B-15B3-367D-50C764F5A26F&_=0.29650848375421
 array (
@@ -32,6 +77,41 @@ array (
 )
 
 Time: 913 ms, Memory: 2.00MB
+
+OK (1 test, 3 assertions)
+
+Process finished with exit code 0
+
+
+
+
+request_method:POST
+body:{"wk_uuid":"67E33CDB-D75B-15B3-367D-50C764F5A26F","mssql_settings":{"win_verify":0,"instance_name":"MSSQLSERVER","pass_word":"123456","data_source":"WIN-EGKN86NF3PM","user_id":"sa"}}
+url:http://192.168.72.70:58080/api/timing/backup/mssql_db_list
+array (
+  0 =>
+  array (
+    'code' => 0,
+    'message' => '[0] success',
+    'mssql_db_list' =>
+    array (
+      0 => 'master',
+      1 => 'tempdb',
+      2 => 'model',
+      3 => 'msdb',
+      4 => 'ReportServer',
+      5 => 'ReportServerTempDB',
+      6 => 'test',
+      7 => 'a1',
+      8 => 'test2',
+      9 => 'test3',
+      10 => 'test4',
+    ),
+  ),
+  1 => NULL,
+)
+
+Time: 847 ms, Memory: 2.00MB
 
 OK (1 test, 3 assertions)
 
