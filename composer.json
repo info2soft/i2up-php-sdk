@@ -3,7 +3,7 @@
     "description": "i2up PHP SDK",
     "type": "library",
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.3",
