@@ -16,6 +16,23 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         $this -> notifications = new Notifications($auth);
     }
 
+    public function testAddNotifications()
+    {
+        $notifications = $this -> notifications;
+        $arr = array(
+            'type'=>'timing',
+            'uuid'=>'82275AFD-97D0-15B4-D477-011E397113D6',
+            'msg'=>'规则/任务执行失败/成功/超时/策略取消',
+            'name'=>'timing_test',
+            'table'=>'',
+            'module'=>'',
+        );
+        $res = $notifications -> addNotifications($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
     public function testListNotifications()
     {
         $notifications = $this -> notifications;
@@ -177,6 +194,19 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         );
         $res = $notifications -> testNotificationsEmail($arr);
         var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testTestNotificationsSms()
+    {
+        $notifications = $this -> notifications;
+        $arr = array(
+            'temp_id'=>'',
+            'mobile'=>'',
+        );
+        $res = $notifications -> testNotificationsSms($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

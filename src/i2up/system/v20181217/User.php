@@ -11,7 +11,7 @@ class User {
     private $token;
     public function __construct($auth)
     {
-        $this -> userUrl = $auth -> ip . 'user';
+        $this -> userUrl = $auth -> ip;
         $this -> token = $auth -> token();
     }
 
@@ -22,7 +22,7 @@ class User {
      */
     public function listUser(array $body = array())
     {
-        $url = $this -> userUrl;
+        $url = $this -> userUrl . 'user';
         $userList = $this -> httpRequest('get', $url, $body);
         return $userList;
     }
@@ -35,7 +35,7 @@ class User {
     public function modifyUser(array $body = array())
     {
         if (empty($body) || !isset($body['id'])) return $body;
-        $url = $this -> userUrl . '/' . $body['id'];
+        $url = $this -> userUrl . 'user/' . $body['id'];
         $RSA = new RSA();
         $body['password'] = $RSA -> encrypt_with_public_key($body['password']);
         $res = $this -> httpRequest('put', $url, $body);
@@ -52,7 +52,7 @@ class User {
         if (empty($body) || !isset($body['password'])) return $body;
         $RSA = new RSA();
         $body['password'] = $RSA -> encrypt_with_public_key($body['password']);
-        $url = $this -> userUrl;
+        $url = $this -> userUrl . 'user';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -64,7 +64,7 @@ class User {
      */
     public function deleteUser(array $body = array())
     {
-        $url = $this -> userUrl;
+        $url = $this -> userUrl . 'user';
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -76,7 +76,7 @@ class User {
      */
     public function modifyUserPwd(array $body = array())
     {
-        $url = $this -> userUrl . '/password';
+        $url = $this -> userUrl . 'user/password';
         $RSA = new RSA();
         $body['password'] = $RSA -> encrypt_with_public_key($body['password']);
         $body['old_password'] = $RSA -> encrypt_with_public_key($body['old_password']);
@@ -90,7 +90,7 @@ class User {
      */
     public function listProfile()
     {
-        $url = $this -> userUrl . '/profile';
+        $url = $this -> userUrl . 'user/profile';
         $profile = $this -> httpRequest('get', $url);
         return $profile;
     }
@@ -107,7 +107,7 @@ class User {
      */
     public function modifyProfile(array $body = array())
     {
-        $url = $this -> userUrl . '/profile';
+        $url = $this -> userUrl . 'user/profile';
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -121,7 +121,7 @@ class User {
     public function describeUser(array $body = array())
     {
         if (empty($body) || !isset($body['id'])) return $body;
-        $url = $this -> userUrl . '/' . $body['id'];
+        $url = $this -> userUrl . 'user/' . $body['id'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -131,10 +131,72 @@ class User {
      */
     public function logout()
     {
-        $url = $this -> userUrl . '/logout';
-        $res =  $this -> httpRequest('post', $url);
+        $url = $this -> userUrl . 'user/logout';
+        $res = $this -> httpRequest('post', $url);
         return $res;
     }
+
+    /**
+     * AccessKey列表
+     * @param array $body
+     * @return array
+     */
+    public function listAk(array $body = array())
+    {
+        $url = $this -> userUrl . 'ak';
+        $res =  $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * AccessKey新建
+     * @param array $body
+     * @return array
+     */
+    public function createAk(array $body = array())
+    {
+        $url = $this -> userUrl . 'ak';
+        $res =  $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * AccessKey更新
+     * @param array $body
+     * @return array
+     */
+    public function modifyAk(array $body = array())
+    {
+        $url = $this -> userUrl . 'ak';
+        $res =  $this -> httpRequest('put', $url, $body);
+        return $res;
+    }
+
+    /**
+     * AccessKey删除
+     * @param array $body
+     * $body['access_key'] String access_key
+     * @return array
+     */
+    public function deleteAk(array $body = array())
+    {
+        $url = $this -> userUrl . 'ak';
+        $res =  $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 角色管理 - 角色列表
+     * @param array $body
+     * @return array
+     */
+    public function listRole(array $body = array())
+    {
+        $url = $this -> userUrl . 'role';
+        $res =  $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

@@ -73,6 +73,19 @@ class GeneralInterface {
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
+
+    /**
+     * 统计报表 - 整体统计
+     * @param array $body
+     * @return array
+     */
+    public function listStatisticsChart(array $body = array())
+    {
+        $url = $this -> url . 'statistics/chart';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

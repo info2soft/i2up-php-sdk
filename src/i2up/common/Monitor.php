@@ -79,6 +79,17 @@ class Monitor {
     }
 
     /**
+     * 获取备端系统状态（用于平台监控）
+     * @return array
+     */
+    public function listBkNodeOverall()
+    {
+        $url = $this -> url . '/bk_node_overall';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
      * 图表数据
      * @param array $body
      * body['uuid'] String

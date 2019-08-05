@@ -178,6 +178,20 @@ class TimingRecovery
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
+
+    /**
+     * 恢复 准备1 - DB2获取时间列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listTimingRecoveryDb2Time(array $body = array())
+    {
+        $url = $this -> recoveryUrl . '/rc_db2_time';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

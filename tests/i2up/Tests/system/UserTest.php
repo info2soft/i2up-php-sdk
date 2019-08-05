@@ -161,4 +161,67 @@ class UserTest extends \PHPUnit_Framework_TestCase
             unlink(__DIR__ . '/../cacheToken.txt');
         }
     }
+
+    public function testListAk()
+    {
+        $user = $this -> user;
+        $arr = array(
+        );
+        $res = $user -> listAk($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testCreateAk()
+    {
+        $user = $this -> user;
+        $arr = array(
+        );
+        $res = $user -> createAk($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testModifyAk()
+    {
+        $user = $this -> user;
+        $arr = array(
+            'access_key'=>'VqUyHS2YQkxnAEZBjFP38e9ht7IaJNlO',
+            'status'=>0,
+        );
+        $res = $user -> modifyAk($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDeleteAk()
+    {
+        $user = $this -> user;
+        $arr = array(
+            'access_key'=>'VqUyHS2YQkxnAEZBjFP38e9ht7IaJNlO',
+        );
+        $res = $user -> deleteAk($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+
+    public function testListRole()
+    {
+        $user = $this -> user;
+        $arr = array(
+            'filter_value'=>'operator',
+            'filter_type'=>'name',
+            'page'=>'1',
+            'limit'=>'10',
+        );
+        $res = $user -> listRole($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

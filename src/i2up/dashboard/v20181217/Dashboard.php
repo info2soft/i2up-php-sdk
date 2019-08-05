@@ -27,6 +27,17 @@ class Dashboard {
     }
 
     /**
+     * Dashboard - 平台监控（整体状态统计）
+     * @return array
+     */
+    public function upMonitorOverall()
+    {
+        $url = $this -> url . '/up_monitor_overall';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
      * 高可用列表
      * @param array $body
      * $body['page'] String  default 1

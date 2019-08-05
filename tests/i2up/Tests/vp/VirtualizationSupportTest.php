@@ -1031,4 +1031,118 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testDescribeVpFileRecoveryVmIp()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'recovery_uuid'=>'',
+        );
+        $res = $virtualizationSupport -> describeVpFileRecoveryVmIp($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testVpFileRecoveryLivecdPartition()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'recovery_uuid'=>'FdDBC2BB-ddB2-5845-1d58-44f97B4d5C39',
+            'bk_ip'=>'',
+        );
+        $res = $virtualizationSupport -> vpFileRecoveryLivecdPartition($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testCreateVpFileRecovery()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'wk_ip'=>'',
+            'os_user'=>'',
+            'os_pwd'=>'',
+            'wk_port'=>26888,
+            'wk_path'=>array(),
+            'is_override'=>0,
+            'rule_name'=>'',
+            'recovery_uuid'=>'',
+            'bk_path'=>array(),
+            'bk_ip'=>'',
+            'is_remote'=>1,
+        );
+        $res = $virtualizationSupport -> createVpFileRecovery($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDescribeVpFileRecovery()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+        );
+        $res = $virtualizationSupport -> describeVpFileRecovery($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testListVpFileRecovery()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'page'=>1,
+            'limit'=>1,
+        );
+        $res = $virtualizationSupport -> listVpFileRecovery($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testListVpFileRecoveryStatus()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'rule_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
+        );
+        $res = $virtualizationSupport -> listVpFileRecoveryStatus($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDeleteVpFileRecovery()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'rule_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
+        );
+        $res = $virtualizationSupport -> deleteVpFileRecovery($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testUpdateDataAgentVp()
+    {
+        $virtualizationSupport = $this -> virtualizationSupport;
+        $arr = array(
+            'operate'=>'update_data_agent',
+            'vp_uuids'=>array(
+                '0'=>'11111111-1111-1111-1111-111111111111'
+            )
+        );
+        $res = $virtualizationSupport -> updateDataAgentVp($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

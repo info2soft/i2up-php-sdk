@@ -13,6 +13,20 @@ class RepBackup {
         $this -> url = $auth -> ip . 'rep/backup';
         $this -> token = $auth -> token();
     }
+
+    /**
+     * 复制规则 - 获取 cdp zfs池列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listRepBackupCdpZfs(array $body = array())
+    {
+        $url = $this -> url . '/cdp_zfs';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     /**
      * 新建规则
      *

@@ -1,161 +1,143 @@
 <?php
 
-namespace i2up\notifications\v20181217;
+namespace i2up\upMonitor\v20190805;
 
+use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Notifications {
+class UpMonitor {
     private $url;
     private $token;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = $auth -> ip . 'notifications';
+        $this -> url = Config::baseUrl . 'up_monitor';
         $this -> token = $auth -> token();
     }
-
     /**
-     * 消息 添加
+     * 子平台 - 认证
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function addNotifications(array $body = array())
+    public function authUpMonitor(array $body = array())
     {
-        $url = $this -> url;
+        $url = $this -> url . '/auth';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
 
     /**
-     * 消息 列表
+     * 子平台 - 获取子平台token
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNotifications(array $body = array())
+    public function describeUpMonitorToken(array $body = array())
     {
-        $url = $this -> url;
+        $url = $this -> url . '/token';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 消息 单个
+     * 子平台 - 新建
      *
-     * @param array $body
-     * $body['uuid'] String  必填 uuid
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function describeNotifications(array $body = array())
+    public function createUpMonitor(array $body = array())
+    {
+        $url = $this -> url;
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 子平台 - 修改
+     *
+     * @body['uuid'] String  必填 节点uuid
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function modifyUpMonitor(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 数量
-     *
-     * @return array
-     */
-    public function describeNotificationsCount()
-    {
-        $url = $this -> url . '/count';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 操作  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'delete';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     * 消息 操作  标记已读
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function readNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'read';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 配置 获取
-     *
-     * @return array
-     */
-    public function describeNotificationsConfig()
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 配置 更新
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function updateNotificationsConfig(array $body = array())
-    {
-        $url = $this -> url . '/config';
+        $url = $this -> url . '/' . $body['uuid'];
+        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 
     /**
-     * 邮件测试
+     * 子平台 - 获取单个
      *
+     * @body['uuid'] String  必填 节点uuid
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function testNotificationsEmail(array $body = array())
+    public function describeUpMonitor(array $body = array())
     {
-        $url = $this -> url . '/email_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 短信测试
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function testNotificationsSms(array $body = array())
-    {
-        $url = $this -> url . '/sms_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @return array
-     */
-    public function resetNotificationsTimes()
-    {
-        $url = $this -> url . '/reset_notify_times';
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
+
+    /**
+     * 子平台 - 获取列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listUpmonitor(array $body = array())
+    {
+        $url = $this -> url;
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 子平台 - 刷新
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function refreshUpMonitor(array $body = array())
+    {
+        $url = $this -> url . '/operate';
+        $body['operate'] = 'refresh';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 子平台 - 状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listUpMonitorStatus(array $body = array())
+    {
+
+        $url = $this -> url . '/status';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 子平台 - 删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteUpMonitor(array $body = array())
+    {
+        $url = $this -> url;
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

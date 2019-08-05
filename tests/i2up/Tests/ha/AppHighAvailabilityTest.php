@@ -123,6 +123,18 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0, $res[0]['code']);
     }
 
+    public function testHaVerifyName()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'ha_name'=>'',
+        );
+        $res = $appHighAvailability -> haVerifyName($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
     public function testModifyHA()
     {
         $appHighAvailability = $this -> appHighAvailability;

@@ -88,4 +88,15 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+
+    public function testListBkNodeOverall()
+    {
+        $monitor = $this -> monitor;
+        $arr = array();
+        $res = $monitor -> listBkNodeOverall($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

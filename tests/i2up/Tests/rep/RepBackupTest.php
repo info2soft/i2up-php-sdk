@@ -16,6 +16,18 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $this -> repBackup = new RepBackup($auth);
     }
 
+    public function testListRepBackupCdpZfs()
+    {
+        $repBackup = $this -> repBackup;
+        $arr = array(
+            'bk_uuid'=>'',
+        );
+        $res = $repBackup -> listRepBackupCdpZfs($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
     public function testCreateRepBackup()
     {
         $repBackup = $this -> repBackup;

@@ -72,4 +72,20 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testListStatisticsChart()
+    {
+        $generalInterface = $this -> generalInterface;
+        $arr = array(
+            'start'=>1,
+            'src_type'=>'0',
+            'end'=>2,
+            'type'=>'I2BAK_BK',
+        );
+        $res = $generalInterface -> listStatisticsChart($arr);
+        var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

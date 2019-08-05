@@ -97,6 +97,18 @@ class AppHighAvailability {
     }
 
     /**
+     * 新建高可用 - 检查HA名称是否重复
+     * @param array $body
+     * $body['ha_name'] Array  String HA名称
+     * @return array
+     */
+    public function haVerifyName(array $body = array()){
+        $url = $this -> url . '/verify_name';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
      * HA脚本目录
      * @param array $body
      * $body['master_uuid'] String  节点UUID

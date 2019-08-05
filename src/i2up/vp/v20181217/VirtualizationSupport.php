@@ -83,6 +83,20 @@ class VirtualizationSupport {
     }
 
     /**
+     * 虚拟平台（vp）- 更新数据代理
+     * @param array $body  更新数据代理版本
+     * $body['operate'] String
+     * $body['vp_uuids'] Array  平台uuid数组
+     * @return array
+     */
+    public function updateDataAgentVp(array $body = array())
+    {
+        $url = $this -> url . '/platform/operate';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
      * 虚拟平台（vp）- 删除
      * @param array $body
      * $body['vp_uuids'] Array  要删的平台uuid数组
@@ -755,6 +769,98 @@ class VirtualizationSupport {
         if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/' . $body['uuid'] . '/point_list';
         $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 1 获取恢复虚机ip
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function describeVpFileRecoveryVmIp(array $body = array())
+    {
+        $url = $this -> url . '/file_recovery/vm_ip';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 2 livecd磁盘分区
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function vpFileRecoveryLivecdPartition(array $body = array())
+    {
+        $url = $this -> url . '/file_recovery/livecd_partition';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 新建
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function createVpFileRecovery(array $body = array())
+    {
+        $url = $this -> url . '/file_recovery';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 获取单个
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function describeVpFileRecovery(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/file_recovery/' . $body['uuid'];
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 获取获取列表
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function listVpFileRecovery(array $body = array())
+    {
+        $url = $this -> url . '/file_recovery';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 状态
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function listVpFileRecoveryStatus(array $body = array())
+    {
+        $url = $this -> url . '/file_recovery/status';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 虚机恢复（vp_file_recovery）- 文件恢复 - 删除
+     *
+     * @param array $body 参数详见 API 手册
+     * @return array
+     */
+    public function deleteVpFileRecovery(array $body = array())
+    {
+        $url = $this -> url . '/file_recovery';
+        $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
 
