@@ -8,10 +8,17 @@ use i2up\Http\Error;
 class Permission {
     private $url;
     private $token;
+    private $accessKey;
+    private $secretKey;
     public function __construct($auth)
     {
         $this -> url = $auth -> ip . 'permission';
-        $this -> token = $auth -> token();
+        if ($auth -> tokenAuthType) {
+            $this -> token = $auth -> token();
+        } else {
+            $this -> accessKey = $auth -> accessKey();
+            $this -> secretKey = $auth -> secretKey();
+        }
     }
 
     /**
@@ -40,6 +47,11 @@ class Permission {
     {
         if (isset($this -> token)) {
             $header = array('Authorization' => $this -> token);
+        } else if (isset($this -> accessKey)) {
+            $header = array(
+                'ACCESS-KEY' => $this -> accessKey,
+                'SECRET-KEY' => $this -> secretKey
+            );
         } else {
             $header = array();
         }

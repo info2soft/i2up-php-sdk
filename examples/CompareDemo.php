@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use i2up\common\Auth;
-use i2up\tools\v20181217\Compare;
+use i2up\tools\v20190805\Compare;
 use i2up\Config;
 
 /**

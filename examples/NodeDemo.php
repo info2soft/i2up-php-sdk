@@ -7,7 +7,7 @@
 require_once __DIR__ . '/../autoload.php';
 
 use i2up\common\Auth;
-use i2up\resource\v20181217\Node;
+use i2up\resource\v20190805\Node;
 use i2up\Config;
 
 /**

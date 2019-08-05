@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\ha;
 
-use i2up\ha\v20181217\AppHighAvailability;
+use i2up\ha\v20190805\AppHighAvailability;
 use i2up\common\Auth;
 use i2up\Config;
 

@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\vp;
 
-use i2up\vp\v20181217\VirtualizationSupport;
+use i2up\vp\v20190805\VirtualizationSupport;
 use i2up\common\Auth;
 use i2up\Config;
 

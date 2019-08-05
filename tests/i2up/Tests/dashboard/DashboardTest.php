@@ -2,7 +2,7 @@
 
 namespace i2up\Test\dashboard;
 
-use i2up\dashboard\v20181217\Dashboard;
+use i2up\dashboard\v20190805\Dashboard;
 use i2up\common\Auth;
 use i2up\Config;
 

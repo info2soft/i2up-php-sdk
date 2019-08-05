@@ -2,7 +2,7 @@
 
 namespace i2up\Tests\system;
 
-use i2up\system\v20181217\Settings;
+use i2up\system\v20190805\Settings;
 use i2up\common\Auth;
 use i2up\Config;
 

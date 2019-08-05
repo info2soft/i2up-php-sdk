@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\nas;
 
-use i2up\nas\v20181217\NAS;
+use i2up\nas\v20190805\NAS;
 use i2up\common\Auth;
 use i2up\Config;
 

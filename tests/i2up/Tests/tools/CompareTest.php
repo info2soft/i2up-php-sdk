@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\tools;
 
-use i2up\tools\v20181217\Compare;
+use i2up\tools\v20190805\Compare;
 use i2up\common\Auth;
 use i2up\Config;
 

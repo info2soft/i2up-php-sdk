@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\fsp;
 
-use i2up\fsp\v20181217\FspMove;
+use i2up\fsp\v20190805\FspMove;
 use i2up\common\Auth;
 use i2up\Config;
 

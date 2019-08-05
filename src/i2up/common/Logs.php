@@ -9,11 +9,18 @@ class Logs {
     private $logsUrl;
     private $opLogs;
     private $token;
+    private $accessKey;
+    private $secretKey;
     public function __construct($auth)
     {
         $this -> logsUrl = $auth -> ip . 'logs';
         $this -> opLogs = $auth -> ip . 'op_log';
-        $this -> token = $auth -> token();
+        if ($auth -> tokenAuthType) {
+            $this -> token = $auth -> token();
+        } else {
+            $this -> accessKey = $auth -> accessKey();
+            $this -> secretKey = $auth -> secretKey();
+        }
     }
     /**
      * 规则/任务日志
@@ -144,6 +151,11 @@ class Logs {
     {
         if (isset($this -> token)) {
             $header = array('Authorization' => $this -> token);
+        } else if (isset($this -> accessKey)) {
+            $header = array(
+                'ACCESS-KEY' => $this -> accessKey,
+                'SECRET-KEY' => $this -> secretKey
+            );
         } else {
             $header = array();
         }

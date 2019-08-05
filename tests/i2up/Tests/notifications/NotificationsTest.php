@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\notifications;
 
-use i2up\notifications\v20181217\Notifications;
+use i2up\notifications\v20190805\Notifications;
 use i2up\common\Auth;
 use i2up\Config;
 

@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\resource;
 
-use i2up\resource\v20181217\Cluster;
+use i2up\resource\v20190805\Cluster;
 use i2up\common\Auth;
 use i2up\Config;
 

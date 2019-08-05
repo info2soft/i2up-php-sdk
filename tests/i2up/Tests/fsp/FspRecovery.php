@@ -2,7 +2,7 @@
 
 namespace i2up\Tests\fsp;
 
-use i2up\fsp\v20181217\FspRecovery;
+use i2up\fsp\v20190805\FspRecovery;
 use i2up\common\Auth;
 use i2up\Config;
 

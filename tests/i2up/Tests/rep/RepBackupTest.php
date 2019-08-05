@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\rep;
 
-use i2up\rep\v20181217\RepBackup;
+use i2up\rep\v20190805\RepBackup;
 use i2up\common\Auth;
 use i2up\Config;
 

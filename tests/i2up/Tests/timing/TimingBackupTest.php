@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\timing;
 
-use i2up\timing\v20181217\TimingBackup;
+use i2up\timing\v20190805\TimingBackup;
 use i2up\common\Auth;
 use i2up\Config;
 

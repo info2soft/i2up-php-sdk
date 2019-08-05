@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\system;
 
-use i2up\system\v20181217\Lic;
+use i2up\system\v20190805\Lic;
 use i2up\common\Auth;
 use i2up\Config;
 
