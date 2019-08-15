@@ -12,7 +12,12 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'access_key' => 'oishvmn5YPHJcEDaIjtwd0R9Ug7BN1fk',
+            'secret_key' => 'fkLiyqsG3P1AzB5jWtYbZa7TU8RN9wSVhe6EldOo',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> storage = new Storage($auth);
     }
 

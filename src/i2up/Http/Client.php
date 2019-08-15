@@ -94,9 +94,10 @@ final class Client
             if (isset($request -> headers['ACCESS-KEY'])) {
                 $request -> headers['Signature'] = hash_hmac('sha256', $signature, $request -> headers['SECRET-KEY']);
                 unset($request -> headers['SECRET-KEY']);
-                var_dump($request);
             } else {
-                $request -> headers['Signature'] =  hash_hmac('sha256', $signature, $request -> headers['Authorization']);
+                if (!empty($request -> headers['Authorization'])) {
+                    $request -> headers['Signature'] =  hash_hmac('sha256', $signature, $request -> headers['Authorization']);
+                }
             }
             foreach ($request->headers as $key => $val) {
                 array_push($headers, "$key: $val");
@@ -107,11 +108,11 @@ final class Client
 
         echo 'request_method:'.$request->method . "\n";
         if ($request->method === 'POST' || $request->method === 'PUT' || $request->method === 'DELETE') {
-            $body = json_decode($request->body);
-            $body -> _ = $randomStr;
-            $request->body = json_encode($body);
             if (!empty($request->body)) {
                 echo 'body:'.$request -> body . "\n";
+                $body = json_decode($request->body);
+                $body -> _ = $randomStr;
+                $request->body = json_encode($body);
                 $options[CURLOPT_POSTFIELDS] = $request->body;
             }
         } else if ($request->method === 'GET') {

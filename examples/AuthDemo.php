@@ -6,8 +6,8 @@ use i2up\common\Auth;
 use i2up\Config;
 
 $params = array(
-    'access_key' => 'pytDWihn3NscXewH8UYLIZq2gE7ufGoQ',
-    'secret_key' => 'u9wQma8pvyXFlZ7CtzTgORsjiBNY4KVL5xDIqGW1',
+    'access_key' => 'oishvmn5YPHJcEDaIjtwd0R9Ug7BN1fk',
+    'secret_key' => 'fkLiyqsG3P1AzB5jWtYbZa7TU8RN9wSVhe6EldOo',
     'ip' => Config::baseUrl
 );
 $auth = new Auth($params);

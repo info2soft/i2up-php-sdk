@@ -13,7 +13,13 @@ use i2up\Config;
 /**
  *  获取token
  */
-$auth = new Auth(Config::baseUrl, 'admin','Info1234', __DIR__);
+$params = array(
+    'username' => 'admin',
+    'pwd' => 'Info1234',
+    'cache_path' => __DIR__ . '/../',
+    'ip' => Config::baseUrl
+);
+$auth = new Auth($params);
 $RepBackup = new RepBackup($auth);
 
 /**
