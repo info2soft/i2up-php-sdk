@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\notifications;
 
-use i2up\notifications\v20181217\Notifications;
+use i2up\notifications\v20190805\Notifications;
 use i2up\common\Auth;
 use i2up\Config;
 
@@ -12,8 +12,31 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'username' => 'admin',
+            'pwd' => 'Info1234',
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> notifications = new Notifications($auth);
+    }
+
+    public function testAddNotifications()
+    {
+        $notifications = $this -> notifications;
+        $arr = array(
+            'type'=>'timing',
+            'uuid'=>'82275AFD-97D0-15B4-D477-011E397113D6',
+            'msg'=>'规则/任务执行失败/成功/超时/策略取消',
+            'name'=>'timing_test',
+            'table'=>'',
+            'module'=>'',
+        );
+        $res = $notifications -> addNotifications($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
     }
 
     public function testListNotifications()
@@ -177,6 +200,19 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         );
         $res = $notifications -> testNotificationsEmail($arr);
         var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testTestNotificationsSms()
+    {
+        $notifications = $this -> notifications;
+        $arr = array(
+            'temp_id'=>'',
+            'mobile'=>'',
+        );
+        $res = $notifications -> testNotificationsSms($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

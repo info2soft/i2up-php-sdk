@@ -4,6 +4,7 @@ namespace i2up\Http;
 use i2up\Config;
 use i2up\Http\Request;
 use i2up\Http\Response;
+use i2up\util\common;
 
 final class Client
 {
@@ -65,6 +66,7 @@ final class Client
     {
         $t1 = microtime(true);
         $ch = curl_init();
+        $randomStr = lcg_value();
         $options = array(
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYPEER => false,
@@ -74,7 +76,6 @@ final class Client
             CURLOPT_CUSTOMREQUEST => $request->method,
             CURLOPT_URL => $request->url,
         );
-
         // Handle open_basedir & safe mode
         if (!ini_get('safe_mode') && !ini_get('open_basedir')) {
             $options[CURLOPT_FOLLOWLOCATION] = true;
@@ -82,6 +83,22 @@ final class Client
 
         if (!empty($request->headers)) {
             $headers = array();
+            $url = $request -> url;
+            $uri = parse_url($url);
+            $common = new Common();
+            $time = time();
+            $nonce = $common -> uuid();
+            $request -> headers['timestamp'] = $time;
+            $request -> headers['nonce'] = $nonce;
+            $signature = strtoupper($request -> method) . "\n" . $uri['path'] . "\n" . $randomStr . "\n" . $time . "\n" . $nonce;
+            if (isset($request -> headers['ACCESS-KEY'])) {
+                $request -> headers['Signature'] = hash_hmac('sha256', $signature, $request -> headers['SECRET-KEY']);
+                unset($request -> headers['SECRET-KEY']);
+            } else {
+                if (!empty($request -> headers['Authorization'])) {
+                    $request -> headers['Signature'] =  hash_hmac('sha256', $signature, $request -> headers['Authorization']);
+                }
+            }
             foreach ($request->headers as $key => $val) {
                 array_push($headers, "$key: $val");
             }
@@ -93,11 +110,14 @@ final class Client
         if ($request->method === 'POST' || $request->method === 'PUT' || $request->method === 'DELETE') {
             if (!empty($request->body)) {
                 echo 'body:'.$request -> body . "\n";
+                $body = json_decode($request->body);
+                $body -> _ = $randomStr;
+                $request->body = json_encode($body);
                 $options[CURLOPT_POSTFIELDS] = $request->body;
             }
         } else if ($request->method === 'GET') {
             if (!empty($request->body)) {
-                $options[CURLOPT_URL] = $request->url . '?' . $request->body . '_=' . lcg_value();
+                $options[CURLOPT_URL] = $request->url . '?' . $request->body . '_=' . $randomStr;
             }
         }
         echo 'url:'.$options[CURLOPT_URL] . "\n";

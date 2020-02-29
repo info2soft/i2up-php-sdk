@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\timing;
 
-use i2up\timing\v20181217\TimingBackup;
+use i2up\timing\v20190805\TimingBackup;
 use i2up\common\Auth;
 use i2up\Config;
 
@@ -12,7 +12,13 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'username' => 'admin',
+            'pwd' => 'Info1234',
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> timingBackup = new TimingBackup($auth);
     }
 

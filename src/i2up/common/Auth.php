@@ -19,28 +19,38 @@ final class Auth
     private $baseUrl;
     private $authToken;
     private $authSsoToken;
+    private $accessKey;
+    private $secretKey;
+    public $tokenAuthType;
     public $ip;
-    public function __construct($ip, $username, $pwd, $cachePath)
+    public function __construct(array $params = array())
     {
-        $this -> username = $username;
-        $this -> password = $pwd;
-        $this -> ip = $ip;
-        $this -> baseUrl = $ip . 'auth/';
-        $cache = $this -> getCacheToken($cachePath);
-        if (empty($cache)) {
-            $this -> saveCacheToken($cachePath);
+        $this -> ip = $params['ip'];
+        $this -> baseUrl = $params['ip'] . 'auth/';
+        if (isset($params['access_key'])) {
+            $this -> tokenAuthType = false;
+            $this -> accessKey = $params['access_key'];
+            $this -> secretKey = $params['secret_key'];
         } else {
-            $cacheTime = isset($cache[2]) ? (int) $cache[2] : 0;
-            $time = time();
-            $ip = isset($cache[3]) ? (string) $cache[3] : '';
-            if ($time - $cacheTime >= 7200 || $ip !== $this->ip) {
-                $this -> saveCacheToken($cachePath);
+            $this -> tokenAuthType = true;
+            $this -> username = $params['username'];
+            $this -> password = $params['pwd'];
+            $cache = $this -> getCacheToken($params['cache_path']);
+            if (empty($cache)) {
+                $this -> saveCacheToken($params['cache_path']);
             } else {
-                $this -> authToken = $cache[0];
-                $this -> authSsoToken = $cache[1];
-            }
-        }
+                $cacheTime = isset($cache[2]) ? (int) $cache[2] : 0;
+                $time = time();
+                $ip = isset($cache[3]) ? (string) $cache[3] : '';
+                if ($time - $cacheTime >= 7200 || $ip !== $this->ip) {
+                    $this -> saveCacheToken($params['cache_path']);
+                } else {
+                    $this -> authToken = $cache[0];
+                    $this -> authSsoToken = $cache[1];
+                }
 
+            }
+      }
     }
     private function getToken()
     {
@@ -65,6 +75,12 @@ final class Auth
     }
     public function token() {
         return $this -> authToken;
+    }
+    public function accessKey () {
+        return $this -> accessKey;
+    }
+    public function secretKey () {
+        return $this -> secretKey;
     }
     private function getCacheToken($cachePath)
     {
@@ -137,11 +153,7 @@ final class Auth
 
     private function httpRequest($method, $url, $body = null)
     {
-        if (isset($this -> token)) {
-            $header = array('Authorization' => $this -> token);
-        } else {
-            $header = array();
-        }
+        $header = array();
         $ret = null;
         if ($method === 'get') {
             $ret = Client::get($url, $body, $header);

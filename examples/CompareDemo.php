@@ -3,13 +3,18 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use i2up\common\Auth;
-use i2up\tools\v20181217\Compare;
+use i2up\tools\v20190805\Compare;
 use i2up\Config;
 
 /**
  *  获取token
  */
-$auth = new Auth(Config::baseUrl, 'admin','Info1234', __DIR__);
+$params = array(
+    'access_key' => 'oishvmn5YPHJcEDaIjtwd0R9Ug7BN1fk',
+    'secret_key' => 'fkLiyqsG3P1AzB5jWtYbZa7TU8RN9wSVhe6EldOo',
+    'ip' => Config::baseUrl
+);
+$auth = new Auth($params);
 $Compare = new Compare($auth);
 
 /**

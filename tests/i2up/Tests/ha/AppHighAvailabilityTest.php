@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\ha;
 
-use i2up\ha\v20181217\AppHighAvailability;
+use i2up\ha\v20190805\AppHighAvailability;
 use i2up\common\Auth;
 use i2up\Config;
 
@@ -12,7 +12,13 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'username' => 'admin',
+            'pwd' => 'Info1234',
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> appHighAvailability = new AppHighAvailability($auth);
     }
 
@@ -118,6 +124,18 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
         );
         $res = $appHighAvailability -> describeHAScriptPath($arr);
         var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testHaVerifyName()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'ha_name'=>'',
+        );
+        $res = $appHighAvailability -> haVerifyName($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

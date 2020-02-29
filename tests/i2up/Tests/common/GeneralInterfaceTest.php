@@ -12,7 +12,13 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'username' => 'admin',
+            'pwd' => 'Info1234',
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> generalInterface = new GeneralInterface($auth);
     }
 
@@ -67,6 +73,22 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
             'type'=>'I2VP_BK',
         );
         $res = $generalInterface -> readStatistics($arr);
+        var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testListStatisticsChart()
+    {
+        $generalInterface = $this -> generalInterface;
+        $arr = array(
+            'start'=>1,
+            'src_type'=>'0',
+            'end'=>2,
+            'type'=>'I2BAK_BK',
+        );
+        $res = $generalInterface -> listStatisticsChart($arr);
         var_export($res);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);

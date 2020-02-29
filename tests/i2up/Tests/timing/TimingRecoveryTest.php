@@ -1,7 +1,7 @@
 <?php
 namespace i2up\Test\timing;
 
-use i2up\timing\v20181217\TimingRecovery;
+use i2up\timing\v20190805\TimingRecovery;
 use i2up\common\Auth;
 use i2up\Config;
 
@@ -12,7 +12,13 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'username' => 'admin',
+            'pwd' => 'Info1234',
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> timingRecovery = new TimingRecovery($auth);
     }
 
@@ -261,6 +267,19 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+
+    public function testListTimingRecoveryDb2Time()
+    {
+        $timingRecovery = $this -> timingRecovery;
+        $arr = array();
+        $res = $timingRecovery -> listTimingRecoveryDb2Time($arr);
+        var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
 
     public function testListTimingRecoveryStatus()
     {

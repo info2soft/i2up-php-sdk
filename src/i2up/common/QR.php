@@ -8,10 +8,17 @@ use i2up\Http\Error;
 class QR {
     private $url;
     private $token;
+    private $accessKey;
+    private $secretKey;
     public function __construct($auth)
     {
         $this -> url = $auth -> ip . 'qr';
-        $this -> token = $auth -> token();
+        if ($auth -> tokenAuthType) {
+            $this -> token = $auth -> token();
+        } else {
+            $this -> accessKey = $auth -> accessKey();
+            $this -> secretKey = $auth -> secretKey();
+        }
     }
 
     /**
@@ -113,6 +120,11 @@ class QR {
     {
         if (isset($this -> token)) {
             $header = array('Authorization' => $this -> token);
+        } else if (isset($this -> accessKey)) {
+            $header = array(
+                'ACCESS-KEY' => $this -> accessKey,
+                'SECRET-KEY' => $this -> secretKey
+            );
         } else {
             $header = array();
         }

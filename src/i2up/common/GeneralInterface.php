@@ -8,10 +8,17 @@ use i2up\Http\Error;
 class GeneralInterface {
     private $url;
     private $token;
+    private $accessKey;
+    private $secretKey;
     public function __construct($auth)
     {
         $this -> url = $auth -> ip;
-        $this -> token = $auth -> token();
+        if ($auth -> tokenAuthType) {
+            $this -> token = $auth -> token();
+        } else {
+            $this -> accessKey = $auth -> accessKey();
+            $this -> secretKey = $auth -> secretKey();
+        }
     }
 
     /**
@@ -73,10 +80,28 @@ class GeneralInterface {
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
+
+    /**
+     * 统计报表 - 整体统计
+     * @param array $body
+     * @return array
+     */
+    public function listStatisticsChart(array $body = array())
+    {
+        $url = $this -> url . 'statistics/chart';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {
             $header = array('Authorization' => $this -> token);
+        } else if (isset($this -> accessKey)) {
+            $header = array(
+                'ACCESS-KEY' => $this -> accessKey,
+                'SECRET-KEY' => $this -> secretKey
+            );
         } else {
             $header = array();
         }

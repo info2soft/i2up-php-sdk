@@ -8,10 +8,17 @@ use i2up\Http\Error;
 class Monitor {
     private $url;
     private $token;
+    private $accessKey;
+    private $secretKey;
     public function __construct($auth)
     {
         $this -> url = $auth -> ip . 'monitor';
-        $this -> token = $auth -> token();
+        if ($auth -> tokenAuthType) {
+            $this -> token = $auth -> token();
+        } else {
+            $this -> accessKey = $auth -> accessKey();
+            $this -> secretKey = $auth -> secretKey();
+        }
     }
 
     /**
@@ -79,6 +86,17 @@ class Monitor {
     }
 
     /**
+     * 获取备端系统状态（用于平台监控）
+     * @return array
+     */
+    public function listBkNodeOverall()
+    {
+        $url = $this -> url . '/bk_node_overall';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
      * 图表数据
      * @param array $body
      * body['uuid'] String
@@ -98,6 +116,11 @@ class Monitor {
     {
         if (isset($this -> token)) {
             $header = array('Authorization' => $this -> token);
+        } else if (isset($this -> accessKey)) {
+            $header = array(
+                'ACCESS-KEY' => $this -> accessKey,
+                'SECRET-KEY' => $this -> secretKey
+            );
         } else {
             $header = array();
         }

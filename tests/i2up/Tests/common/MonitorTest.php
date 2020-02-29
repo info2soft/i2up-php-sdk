@@ -12,7 +12,13 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $auth = new Auth(Config::baseUrl, 'admin', 'Info1234', __DIR__ . '/../');
+        $params = array(
+            'username' => 'admin',
+            'pwd' => 'Info1234',
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl
+        );
+        $auth = new Auth($params);
         $this -> monitor = new Monitor($auth);
     }
 
@@ -84,6 +90,17 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
         );
         $res = $monitor -> listChartData($arr);
         var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+
+    public function testListBkNodeOverall()
+    {
+        $monitor = $this -> monitor;
+        $arr = array();
+        $res = $monitor -> listBkNodeOverall($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
