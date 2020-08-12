@@ -1,18 +1,24 @@
 <?php
+/**
+ * Create by PhpStorm
+ * User: Lis
+ * Date: 2020/8/5
+ * Time: 9:57
+ */
 
-namespace i2up\notifications\v20190805;
+namespace i2up\active\v20200721;
 
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Notifications {
+class Db {
     private $url;
     private $token;
     private $accessKey;
     private $secretKey;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = $auth -> ip . 'notifications';
+        $this -> url = $auth -> ip;
         if ($auth -> tokenAuthType) {
             $this -> token = $auth -> token();
         } else {
@@ -20,163 +26,153 @@ class Notifications {
             $this -> secretKey = $auth -> secretKey();
         }
     }
-
     /**
-     * 消息 添加
+     * 数据库列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function addNotifications(array $body = array())
+    public function listDbs(array $body = array())
     {
-        $url = $this -> url;
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 消息 列表
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function listNotifications(array $body = array())
-    {
-        $url = $this -> url;
+        $url = $this -> url . 'active/db';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 消息 单个
+     * 修改数据库节点
      *
-     * @param array $body
-     * $body['uuid'] String  必填 uuid
+     * @body['uuid'] String  必填 节点uuid
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function describeNotifications(array $body = array())
+    public function modifyDb(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url;
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 数量
-     *
-     * @return array
-     */
-    public function describeNotificationsCount()
-    {
-        $url = $this -> url . '/count';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 操作  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'delete';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     * 消息 操作  标记已读
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function readNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'read';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 配置 获取
-     *
-     * @return array
-     */
-    public function describeNotificationsConfig()
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 配置 更新
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function updateNotificationsConfig(array $body = array())
-    {
-        $url = $this -> url . '/config';
+        $url = $this -> url . 'active/db/' . $body['uuid'];
+        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 
     /**
-     * 邮件测试
+     * 测试数据库连接
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function testNotificationsEmail(array $body = array())
+    public function checkDbLink(array $body = array())
     {
-        $url = $this -> url . '/email_test';
+        $url = $this -> url . 'active/db/db_check';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 新建数据库节点
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createDb(array $body = array())
+    {
+        $url = $this -> url . 'active/db';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 删除数据库
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteDb(array $body = array())
+    {
+        $url = $this -> url . 'active/db';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 数据库状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listDbStatus(array $body = array())
+    {
+        $url = $this -> url . 'active/db/status';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 数据库健康信息
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeDbHealthInfo(array $body = array())
+    {
+        $url = $this -> url . 'active/db/health_info';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 短信测试
+     * 表空间查询接口
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function testNotificationsSms(array $body = array())
+    public function describeDbSpace(array $body = array())
     {
-        $url = $this -> url . '/sms_test';
+        $url = $this -> url . 'active/db/space_query';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 重置通知次数
+     * 获取单个数据库节点信息
      *
+     * @param array $body  参数详见 API 手册
+     * @body['uuid'] String  必填 节点uuid
      * @return array
      */
-    public function resetNotificationsTimes()
+    public function describeDb(array $body = array())
     {
-        $url = $this -> url . '/reset_notify_times';
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . 'active/db/' . $body['uuid'];
+        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     * 重置通知次数
+     * 批量导入下载模板
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function activeNotify(array $body = array())
+    public function importTemplate(array $body = array())
     {
-        $url = $this -> url . '/active_notify';
-        $res = $this -> httpRequest('post', $url, $body);
+        $url = $this -> url . 'dl';
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
+    /**
+     * 批量导入
+     *
+     * @return array
+     */
+    public function batchCreateDbs()
+    {
+        $url = $this -> url . 'active/db/batch';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
 
     private function httpRequest($method, $url, $body = null)
     {

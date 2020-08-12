@@ -93,6 +93,30 @@ class GeneralInterface {
         return $res;
     }
 
+    /**
+     * 获取版本提交记录
+     *
+     * @return array
+     */
+    public function listVersionHistory()
+    {
+        $url = $this -> url . 'version_history';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 获取版本提交记录
+     *
+     * @return array
+     */
+    public function listRpcTask()
+    {
+        $url = $this -> url . 'rpc_task';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

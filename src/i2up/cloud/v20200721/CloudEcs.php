@@ -1,18 +1,25 @@
 <?php
+/**
+ * Create by PhpStorm
+ * User: Lis
+ * Date: 2020/7/21
+ * Time: 15:05
+ */
 
-namespace i2up\notifications\v20190805;
+namespace i2up\cloud\v20200721;
 
+use i2up\Config;
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Notifications {
+class CloudEcs {
     private $url;
     private $token;
     private $accessKey;
     private $secretKey;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = $auth -> ip . 'notifications';
+        $this -> url = $auth -> ip . 'cloud/ecs';
         if ($auth -> tokenAuthType) {
             $this -> token = $auth -> token();
         } else {
@@ -20,14 +27,13 @@ class Notifications {
             $this -> secretKey = $auth -> secretKey();
         }
     }
-
     /**
-     * 消息 添加
+     *  新建
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function addNotifications(array $body = array())
+    public function createEcs(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('post', $url, $body);
@@ -35,12 +41,12 @@ class Notifications {
     }
 
     /**
-     * 消息 列表
+     *  列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNotifications(array $body = array())
+    public function listEcs(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('get', $url, $body);
@@ -48,135 +54,140 @@ class Notifications {
     }
 
     /**
-     * 消息 单个
+     *  列表 - 远程登录
      *
-     * @param array $body
-     * $body['uuid'] String  必填 uuid
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function describeNotifications(array $body = array())
+    public function listVncConsole(array $body = array())
+    {
+        $url = $this -> url . '/vnc_console';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listEcsStatus(array $body = array())
+    {
+        $url = $this -> url . '/status';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  获取空闲挂载点
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function attachPoint(array $body = array())
+    {
+        $url = $this -> url . '/attach_point';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  节点操作 - 绑定
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function bindNode(array $body = array())
+    {
+        $url = $this -> url . '/node_operate';
+        $body['operate'] = 'bind';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  节点操作 - 解绑
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function untieNode(array $body = array())
+    {
+        $url = $this -> url . '/node_operate';
+        $body['operate'] = 'untie';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+
+    /**
+     *  配置演练
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function configRehearse(array $body = array())
+    {
+        $url = $this -> url . '/rehearse_conf';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  演练组 - 列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listRehearseGroup(array $body = array())
+    {
+        $url = $this -> url . '/rehearse_group';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  演练组 - 新建/更新
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createRehearseGroup(array $body = array())
+    {
+        $url = $this -> url . '/rehearse_group';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  演练组 - 删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteRehearseGroup(array $body = array())
+    {
+        $url = $this -> url . '/rehearse_group';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  演练组 - 单个
+     *
+     * @body['uuid'] String  必填 节点uuid
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeRehearseGroup(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url;
+        $url = $this -> url . '/rehearse_group/' . $body['uuid'];
+        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
-
-    /**
-     * 消息 数量
-     *
-     * @return array
-     */
-    public function describeNotificationsCount()
-    {
-        $url = $this -> url . '/count';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 操作  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'delete';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     * 消息 操作  标记已读
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function readNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'read';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 配置 获取
-     *
-     * @return array
-     */
-    public function describeNotificationsConfig()
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 配置 更新
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function updateNotificationsConfig(array $body = array())
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('put', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 邮件测试
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function testNotificationsEmail(array $body = array())
-    {
-        $url = $this -> url . '/email_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 短信测试
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function testNotificationsSms(array $body = array())
-    {
-        $url = $this -> url . '/sms_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @return array
-     */
-    public function resetNotificationsTimes()
-    {
-        $url = $this -> url . '/reset_notify_times';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function activeNotify(array $body = array())
-    {
-        $url = $this -> url . '/active_notify';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
 
     private function httpRequest($method, $url, $body = null)
     {

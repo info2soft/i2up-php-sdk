@@ -1,18 +1,24 @@
 <?php
+/**
+ * Create by PhpStorm
+ * User: Lis
+ * Date: 2020/7/21
+ * Time: 10:48
+ */
 
-namespace i2up\notifications\v20190805;
+namespace i2up\cdm\v20200721;
 
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Notifications {
+class Cdm {
     private $url;
     private $token;
     private $accessKey;
     private $secretKey;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = $auth -> ip . 'notifications';
+        $this -> url = $auth -> ip;
         if ($auth -> tokenAuthType) {
             $this -> token = $auth -> token();
         } else {
@@ -22,161 +28,152 @@ class Notifications {
     }
 
     /**
-     * 消息 添加
+     * 备份点列表
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function addNotifications(array $body = array())
+    public function getPointList(array $body = array())
     {
-        $url = $this -> url;
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 消息 列表
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function listNotifications(array $body = array())
-    {
-        $url = $this -> url;
+        $url = $this -> url . 'cdm/point_full_info_list';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 消息 单个
+     * 获取资源列表
      *
-     * @param array $body
-     * $body['uuid'] String  必填 uuid
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function describeNotifications(array $body = array())
+    public function getResourceList(array $body = array())
+    {
+        $url = $this -> url . 'cdm/drp_list';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 获取主机存储资源
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function getHostStorageList(array $body = array())
+    {
+        $url = $this -> url . 'cdm/host_storage_list';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * -- 列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function takeOverDrillList(array $body = array())
+    {
+        $url = $this -> url . 'cdm_rule';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * -- 新建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createTakeOverDrill(array $body = array())
+    {
+        $url = $this -> url . 'cdm_rule';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * -- 删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteTakeOverDrill(array $body = array())
+    {
+
+        $url = $this -> url . 'cdm_rule';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * -- 获取单个
+     *
+     * @body['uuid'] String  必填 节点uuid
+     * @return array
+     */
+    public function describeTakeOverDrill(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url;
+        $url = $this -> url . 'cdm_rule/' . $body['uuid'];
+        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     * 消息 数量
-     *
-     * @return array
-     */
-    public function describeNotificationsCount()
-    {
-        $url = $this -> url . '/count';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 操作  删除
+     * -- 获取虚机状态
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function deleteNotifications(array $body = array())
+    public function getVmStatus(array $body = array())
     {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'delete';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     * 消息 操作  标记已读
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function readNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'read';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 配置 获取
-     *
-     * @return array
-     */
-    public function describeNotificationsConfig()
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 配置 更新
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function updateNotificationsConfig(array $body = array())
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('put', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 邮件测试
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function testNotificationsEmail(array $body = array())
-    {
-        $url = $this -> url . '/email_test';
+        $url = $this -> url . 'cdm_rule/vm_status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 
     /**
-     * 短信测试
+     * -- 操作 - 启动
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function testNotificationsSms(array $body = array())
+    public function startTakeOverDrill(array $body = array())
     {
-        $url = $this -> url . '/sms_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @return array
-     */
-    public function resetNotificationsTimes()
-    {
-        $url = $this -> url . '/reset_notify_times';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function activeNotify(array $body = array())
-    {
-        $url = $this -> url . '/active_notify';
+        $url = $this -> url . 'cdm_rule/operate';
+        $body['operate'] = 'start';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
 
+    /**
+     * -- 操作 - 停止
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function stopTakeOverDrill(array $body = array())
+    {
+        $url = $this -> url . 'cdm_rule/operate';
+        $body['operate'] = 'stop';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+    /**
+     * -- 操作 - 打开控制台
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function openConsoleTakeOverDrill(array $body = array())
+    {
+        $url = $this -> url . 'cdm_rule/operate';
+        $body['operate'] = 'open_console';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
 
     private function httpRequest($method, $url, $body = null)
     {

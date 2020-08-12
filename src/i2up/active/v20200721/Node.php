@@ -1,18 +1,24 @@
 <?php
+/**
+ * Create by PhpStorm
+ * User: Lis
+ * Date: 2020/8/3
+ * Time: 15:24
+ */
 
-namespace i2up\notifications\v20190805;
+namespace i2up\active\v20200721;
 
 use i2up\Http\Client;
 use i2up\Http\Error;
 
-class Notifications {
+class Node {
     private $url;
     private $token;
     private $accessKey;
     private $secretKey;
-    public function __construct($auth)
+    public function __constructor($auth)
     {
-        $this -> url = $auth -> ip . 'notifications';
+        $this -> url = $auth -> ip . 'active/node';
         if ($auth -> tokenAuthType) {
             $this -> token = $auth -> token();
         } else {
@@ -22,25 +28,24 @@ class Notifications {
     }
 
     /**
-     * 消息 添加
+     * 未激活节点列表
      *
-     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function addNotifications(array $body = array())
+    public function listInactiveNodes()
     {
-        $url = $this -> url;
-        $res = $this -> httpRequest('post', $url, $body);
+        $url = $this -> url . '/inactive_list';
+        $res = $this -> httpRequest('get', $url);
         return $res;
     }
 
     /**
-     * 消息 列表
+     * 节点列表(搜索)
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listNotifications(array $body = array())
+    public function listNodes(array $body = array())
     {
         $url = $this -> url;
         $res = $this -> httpRequest('get', $url, $body);
@@ -48,135 +53,100 @@ class Notifications {
     }
 
     /**
-     * 消息 单个
+     * 节点状态
      *
-     * @param array $body
-     * $body['uuid'] String  必填 uuid
+     * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function describeNotifications(array $body = array())
+    public function listNodeStatus(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'];
+        unset($body['uuid']);
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 配置详情
+     *
+     * @body['uuid'] String  必填 节点uuid
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function descriptNode(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/' . $body['uuid'];
+        unset($body['uuid']);
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 激活
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function activeNode(array $body = array())
+    {
         $url = $this -> url;
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 数量
-     *
-     * @return array
-     */
-    public function describeNotificationsCount()
-    {
-        $url = $this -> url . '/count';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 消息 操作  删除
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function deleteNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'delete';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-    /**
-     * 消息 操作  标记已读
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function readNotifications(array $body = array())
-    {
-        $url = $this -> url . '/operate';
-        $body['operate'] = 'read';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
 
     /**
-     * 配置 获取
-     *
-     * @return array
-     */
-    public function describeNotificationsConfig()
-    {
-        $url = $this -> url . '/config';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 配置 更新
+     * 删除节点
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function updateNotificationsConfig(array $body = array())
+    public function deleteNode(array $body = array())
     {
-        $url = $this -> url . '/config';
+        $url = $this -> url;
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 节点升级
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function upgradeNode(array $body = array())
+    {
+        $url = $this -> url . '/upgrade';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 节点调试信息
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function descriptNodeDebugInfo(array $body = array())
+    {
+        $url = $this -> url . '/debug_info';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 修改节点
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function modifyNode(array $body = array())
+    {
+        $url = $this -> url;
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
-
-    /**
-     * 邮件测试
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function testNotificationsEmail(array $body = array())
-    {
-        $url = $this -> url . '/email_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 短信测试
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function testNotificationsSms(array $body = array())
-    {
-        $url = $this -> url . '/sms_test';
-        $res = $this -> httpRequest('get', $url, $body);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @return array
-     */
-    public function resetNotificationsTimes()
-    {
-        $url = $this -> url . '/reset_notify_times';
-        $res = $this -> httpRequest('get', $url);
-        return $res;
-    }
-
-    /**
-     * 重置通知次数
-     *
-     * @param array $body  参数详见 API 手册
-     * @return array
-     */
-    public function activeNotify(array $body = array())
-    {
-        $url = $this -> url . '/active_notify';
-        $res = $this -> httpRequest('post', $url, $body);
-        return $res;
-    }
-
 
     private function httpRequest($method, $url, $body = null)
     {
