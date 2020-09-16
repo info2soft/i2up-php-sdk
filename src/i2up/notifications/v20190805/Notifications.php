@@ -177,7 +177,6 @@ class Notifications {
         return $res;
     }
 
-
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

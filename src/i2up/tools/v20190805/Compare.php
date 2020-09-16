@@ -130,6 +130,21 @@ class Compare {
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
+
+    /**
+     * 接收任务执行结果
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function collectCompareResult(array $body = array())
+    {
+        $url = $this -> url . '/collect_result';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

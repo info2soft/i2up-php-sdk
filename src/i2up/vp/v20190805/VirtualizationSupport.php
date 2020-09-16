@@ -871,6 +871,115 @@ class VirtualizationSupport {
         return $res;
     }
 
+    /**
+     *  演练规则 - 新建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createVpDrill(array $body = array())
+    {
+        $url = $this -> url . '/drill';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  演练规则 - 获取单个（组）
+     *
+     * @body['uuid'] String  必填 节点uuid
+     * @return array
+     */
+    public function describeVpDrill(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/drill/group/' . $body['uuid'];
+        unset($body['uuid']);
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     *  演练规则 - 列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listVpDrill(array $body = array())
+    {
+        $url = $this -> url . '/drill';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 演练规则 - 状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listVpDrillStatus(array $body = array())
+    {
+        $url = $this -> url . '/drill/status';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 演练规则 - 操作 stop
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function stopVpDrill(array $body = array())
+    {
+        $url = $this -> url . '/drill/operate';
+        $body['operate'] = 'stop';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 演练规则 - 操作 start
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function startVpDrill(array $body = array())
+    {
+        $url = $this -> url . '/drill/operate';
+        $body['operate'] = 'start';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 演练规则 - 操作 set_status
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function setStatusVpDrill(array $body = array())
+    {
+        $url = $this -> url . '/drill/operate';
+        $body['operate'] = 'set_status';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 演练规则 - 删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteVpDrill(array $body = array())
+    {
+        $url = $this -> url . '/drill';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

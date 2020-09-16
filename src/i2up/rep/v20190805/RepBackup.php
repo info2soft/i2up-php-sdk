@@ -257,6 +257,20 @@ class RepBackup {
     }
 
     /**
+     * 复制规则 - 批量新建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function batchCreateRepBackup(array $body = array())
+    {
+        $url = $this -> url . '/batch';
+        $res = $this -> httpRequest('post', $url);
+        return $res;
+    }
+
+
+    /**
      * 快照 列表 删除
      *
      * @param array $body  参数详见 API 手册
