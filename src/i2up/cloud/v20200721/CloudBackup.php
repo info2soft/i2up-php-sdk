@@ -111,7 +111,7 @@ class CloudBackup {
     }
 
     /**
-     *  操作 - 启动
+     *  操作 - 停止
      *
      * @param array $body  参数详见 API 手册
      * @return array

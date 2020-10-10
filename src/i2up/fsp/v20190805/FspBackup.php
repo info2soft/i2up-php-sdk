@@ -221,6 +221,19 @@ class FspBackup {
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
+
+    /**
+     *  批量创建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function batchCreateFspBackup(array $body = array())
+    {
+        $url = $this -> url . '/batch';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

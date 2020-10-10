@@ -42,6 +42,36 @@ class Mask {
     }
 
     /**
+     * 修改敏感类型
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function modifySensType(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/sens_type/' . $body['uuid'];
+        unset($body['uuid']);
+        $res = $this -> httpRequest('put', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 获取单个类型
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function descriptSensType(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/sens_type/' . $body['uuid'];
+        unset($body['uuid']);
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
      * 新建脱敏算法
      *
      * @param array $body  参数详见 API 手册
@@ -66,6 +96,21 @@ class Mask {
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
+
+    /**
+     * 获取单个算法
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function descriptAlgo(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/algo/' . $body['uuid'];
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
 
     /**
      * 脱敏规则列表
@@ -99,7 +144,7 @@ class Mask {
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function tempFuncName(array $body = array())
+    public function OperateMaskRule(array $body = array())
     {
         $url = $this -> url . '/rule/operate';
         $res = $this -> httpRequest('post', $url, $body);
@@ -314,10 +359,38 @@ class Mask {
      */
     public function descriptSensCheck(array $body = array())
     {
-       if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/mask/sens_check/' . $body['uuid'];
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/sens_check/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 算法测试
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function algoTest(array $body = array())
+    {
+        $url = $this -> url . '/algo/test';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 算法测试
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function modifyMaskRules(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/rule/' . $body['uuid'];
+        unset($body['uuid']);
+        $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
 

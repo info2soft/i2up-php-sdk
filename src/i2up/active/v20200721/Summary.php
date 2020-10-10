@@ -33,12 +33,13 @@ class Summary {
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function listLogWarning(array $body = array())
+    public function listSummaryView(array $body = array())
     {
         $url = $this -> url . 'active/summary/list_view';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
+
 
     /**
      * 操作 - stop
@@ -69,7 +70,7 @@ class Summary {
     }
 
     /**
-     * 操作 - resume
+     * 总览页面
      *
      * @return array
      */

@@ -887,6 +887,7 @@ class VirtualizationSupport {
     /**
      *  演练规则 - 获取单个（组）
      *
+     * @param array $body  参数详见 API 手册
      * @body['uuid'] String  必填 节点uuid
      * @return array
      */

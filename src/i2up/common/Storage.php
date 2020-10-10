@@ -946,6 +946,20 @@ class Storage {
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
+
+    /**
+     * Server是否注册
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function registerServer(array $body = array())
+    {
+        $url = $this -> url . '/server_register';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

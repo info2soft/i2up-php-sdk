@@ -138,6 +138,21 @@ class Cluster {
     }
 
     /**
+     *  名称查重
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function checkDupName(array $body = array())
+    {
+
+        $url = $this -> url . 'a/cls_pool/duplicate_name';
+
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
      *  集群服务器池 删除主机
      *
      * @param array $body  参数详见 API 手册
@@ -149,7 +164,6 @@ class Cluster {
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
-
 
     /**
      *  集群服务器池 虚IP查重
@@ -171,7 +185,6 @@ class Cluster {
      */
     public function listHaClusterID()
     {
-
         $url = $this -> url . 'ha/cls_pool/cluster_uuid';
         $res = $this -> httpRequest('get', $url);
         return $res;

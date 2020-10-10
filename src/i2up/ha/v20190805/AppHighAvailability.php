@@ -104,6 +104,19 @@ class AppHighAvailability {
     }
 
     /**
+     *  磁盘信息
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeVolumeInfo(array $body = array())
+    {
+        $url = $this -> url . '/volume_info';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
      * 新建高可用 - 检查HA名称是否重复
      * @param array $body
      * $body['ha_name'] Array  String HA名称
@@ -179,6 +192,136 @@ class AppHighAvailability {
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
+
+    /**
+     *  阶段选项
+     *
+     * @return array
+     */
+    public function listStageOptions()
+    {
+        $url = $this -> url . '/group/stage_options';
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 新建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createHAGroup(array $body = array())
+    {
+        $url = $this -> url . '/group';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listHAGroup(array $body = array())
+    {
+        $url = $this -> url . '/group';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteHAGroup(array $body = array())
+    {
+        $url = $this -> url . '/group';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  修改
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function modifyHAGroup(array $body = array())
+    {
+        $url = $this -> url . '/group/' . $body['uuid'];
+        $res = $this -> httpRequest('put', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  单个详细信息
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeHAGroup(array $body = array())
+    {
+        $url = $this -> url . 'ha/group/' . $body['uuid'];
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     *  组强制切换
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function forceSwitchHAGroup(array $body = array())
+    {
+        $url = $this -> url . '/group/' . $body['uuid'] . '/task';
+        $res = $this -> httpRequest('put', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  切换状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listHASwitchTaskStatus(array $body = array())
+    {
+        $url = $this -> url . '/group/' . $body['uuid'] . '/task/status';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  操作强制切换任务 - 继续
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function resumeHAGroupSwitch(array $body = array())
+    {
+        $url = $this -> url . '/group/' . $body['uuid'] . '/task';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  操作强制切换任务 - 暂停
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function pauseHAGroupSwitch(array $body = array())
+    {
+        $url = $this -> url . '/group/' . $body['uuid'] . '/task';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {

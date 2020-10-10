@@ -1028,4 +1028,17 @@ class StorageTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testRegisterServer()
+    {
+        $storage = $this -> storage;
+        $arr = array(
+            'node_uuid'=>'',
+            'config_addr'=>'',
+        );
+        $res = $storage -> registerServer($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

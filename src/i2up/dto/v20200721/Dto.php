@@ -6,7 +6,7 @@
  * Time: 14:17
  */
 
-namespace i2up\dto;
+namespace i2up\dto\v20200721;
 
 use i2up\Config;
 use i2up\Http\Client;

@@ -6,7 +6,7 @@
  * Time: 9:24
  */
 
-namespace i2up\cdm\v20200721;
+namespace i2up\bigdata\v20200721;
 
 use i2up\Http\Client;
 use i2up\Http\Error;

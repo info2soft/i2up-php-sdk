@@ -298,4 +298,39 @@ class NodeTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testNodeGetOracleInfo()
+    {
+        $node = $this -> node;
+        $arr = array(
+            'username'=>'',
+            'password'=>'',
+            'sqlplus_path'=>'',
+            'sid'=>'',
+            'timeout'=>'',
+            'port'=>'',
+            'bk_uuid'=>'',
+        );
+        $res = $node -> nodeGetOracleInfo($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testNodeGetMysqlInfo()
+    {
+        $node = $this -> node;
+        $arr = array(
+            'username'=>'',
+            'password'=>'',
+            'mysql_path'=>'',
+            'timeout'=>'',
+            'port'=>'',
+            'bk_uuid'=>'',
+        );
+        $res = $node -> nodeGetMysqlInfo($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

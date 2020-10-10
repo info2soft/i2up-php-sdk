@@ -131,12 +131,25 @@ class DistributorSystem {
     }
 
     /**
-     *  告警日志 - 操作
+     *  告警日志 - 操作 - 删除
      *
      * @param array $body  参数详见 API 手册
      * @return array
      */
-    public function tempFuncName(array $body = array())
+    public function deleteAlarmLog(array $body = array())
+    {
+        $url = $this -> url . 'distribution/sys/alarm_log_operate';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  告警日志 - 操作 - 已读
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function readAlarmLog(array $body = array())
     {
         $url = $this -> url . 'distribution/sys/alarm_log_operate';
         $res = $this -> httpRequest('post', $url, $body);

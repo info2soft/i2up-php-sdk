@@ -416,6 +416,20 @@ class Mysql {
     }
 
     /**
+     * 比较任务结果
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeTbCmpResult(array $body = array())
+    {
+        $url = $this -> url . '/tb_cmp/result';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+
+    /**
      * 表比较-单条错误信息
      *
      * @param array $body  参数详见 API 手册
@@ -498,6 +512,19 @@ class Mysql {
     }
 
     /**
+     *  新建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createObjCmp(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
      * 备机接管 - 删除
      *
      * @param array $body  参数详见 API 手册
@@ -545,6 +572,206 @@ class Mysql {
     {
         $url = $this -> url . '/bk_takeover';
         $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 对象修复-新建
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function createObjFix(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  获取单个
+     *
+     * @body['uuid'] String  必填 节点uuid
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeObjFix(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix/' . $body['uuid'] . '';
+        unset($body['uuid']);
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 对象修复 -删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteObjFix(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 对象修复 - 列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listObjFix(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 操作
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function tempFuncName(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix/operate';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  修复结果
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeObjFixResult(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix/result';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * -获取状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listObjFixStatus(array $body = array())
+    {
+        $url = $this -> url . '/obj_fix/status';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listObjCmp(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 比较结果的删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeObjCmpResultTimeList(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp/result_time_list';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  获取单个
+     *
+     * @param array $body  参数详见 API 手册
+     * @body['uuid'] String  必填 节点uuid
+     * @return array
+     */
+    public function describeObjCmp(array $body = array())
+    {
+        if (empty($body) || !isset($body['uuid'])) return $body;
+        $url = $this -> url . '/obj_cmp/' . $body['uuid'] . '';
+        unset($body['uuid']);
+        $res = $this -> httpRequest('get', $url);
+        return $res;
+    }
+
+    /**
+     * 比较结果时间列表
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listObjCmpResultTimeList(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp/result_time_list';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  删除
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function deleteObjCmp(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp';
+        $res = $this -> httpRequest('delete', $url, $body);
+        return $res;
+    }
+
+    /**
+     * mysql获取对象比较状态
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listObjCmpStatus(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp/status';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 比较结果详细信息
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function listObjCmpCmpInfo(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp/cmp_info';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     * 比较任务结果
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeObjCmpResult(array $body = array())
+    {
+        $url = $this -> url . '/obj_cmp/result';
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
 

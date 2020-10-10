@@ -496,4 +496,187 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testListStageOptions()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+        );
+        $res = $appHighAvailability -> listStageOptions($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testCreateHAGroup()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'group_name'=>'111',
+            'error_confirm'=>1,
+            'switch_confirm'=>1,
+            'ha_rules'=>array(
+                '0'=>'B95DB026-AEDF-737A-0442-B5134660D204',
+                '1'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',
+                '2'=>'214E0B0C-6BFA-B1D7-1AFC-C11E3B5874C0',
+                '3'=>'2FD74EEE-CFDB-FB01-8E11-B6560B6D20F8',),
+            'stage'=>array(
+                'step_1'=>array(
+                    'ha_rule'=>array(
+                        '0'=>'B95DB026-AEDF-737A-0442-B5134660D204',
+                        '1'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',),
+                    'failover_serial'=>1,
+                    'failback_serial'=>-1,
+                    'haList'=>array(
+                        '0'=>array(
+                            'ha_name'=>'tst',
+                            'ha_uuid'=>'B95DB026-AEDF-737A-0442-B5134660D204',),
+                        '1'=>array(
+                            'ha_name'=>'test4',
+                            'ha_uuid'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',),),),
+                'step_2'=>array(
+                    'ha_rule'=>array(
+                        '0'=>'214E0B0C-6BFA-B1D7-1AFC-C11E3B5874C0',
+                        '1'=>'2FD74EEE-CFDB-FB01-8E11-B6560B6D20F8',),
+                    'failover_serial'=>2,
+                    'failback_serial'=>-2,
+                    'haList'=>array(
+                        '0'=>array(
+                            'ha_name'=>'test3',
+                            'ha_uuid'=>'214E0B0C-6BFA-B1D7-1AFC-C11E3B5874C0',
+                            'disabled'=>1,),
+                        '1'=>array(
+                            'ha_name'=>'test2',
+                            'ha_uuid'=>'2FD74EEE-CFDB-FB01-8E11-B6560B6D20F8',
+                            'disabled'=>1,),),),),
+        );
+        $res = $appHighAvailability -> createHAGroup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testListHAGroup()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'page'=>1,
+            'limit'=>1,
+            'search_field'=>'group_name',
+            'search_value'=>'',
+        );
+        $res = $appHighAvailability -> listHAGroup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDeleteHAGroup()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'uuids'=>array(
+                '0'=>'CFCEDC75-F48E-22B0-8A67-DE1FCA51C4C7',),
+        );
+        $res = $appHighAvailability -> deleteHAGroup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testModifyHAGroup()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'group_uuid'=>'CFCEDC75-F48E-22B0-8A67-DE1FCA51C4C7',
+            'group_name'=>'111',
+            'error_confirm'=>1,
+            'switch_confirm'=>1,
+            'ha_rules'=>array(
+                '0'=>'B95DB026-AEDF-737A-0442-B5134660D204',
+                '1'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',),
+            'stage'=>array(
+                'step_1'=>array(
+                    'ha_rule'=>array(
+                        '0'=>'B95DB026-AEDF-737A-0442-B5134660D204',
+                        '1'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',),
+                    'failover_serial'=>1,
+                    'failback_serial'=>-1,
+                    'haList'=>array(
+                        '0'=>array(
+                            'ha_name'=>'tst',
+                            'ha_uuid'=>'B95DB026-AEDF-737A-0442-B5134660D204',),
+                        '1'=>array(
+                            'ha_name'=>'test4',
+                            'ha_uuid'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',),),),),
+        );
+        $res = $appHighAvailability -> modifyHAGroup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testDescribeHAGroup()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+        );
+        $res = $appHighAvailability -> describeHAGroup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testForceSwitchHAGroup()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'ha_uuids'=>array(
+                '0'=>'B95DB026-AEDF-737A-0442-B5134660D204',
+                '1'=>'128C2F7D-0795-41F3-1274-3FBAA2449BAD',),
+        );
+        $res = $appHighAvailability -> forceSwitchHAGroup($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testListHASwitchTaskStatus()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'task_uuid'=>'F696DC12-6727-B799-93D4-8B2213086F5A',
+        );
+        $res = $appHighAvailability -> listHASwitchTaskStatus($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testResumeHAGroupSwitch()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'operate'=>'resume',
+            'task_uuid'=>'F696DC12-6727-B799-93D4-8B2213086F5A',
+        );
+        $res = $appHighAvailability -> resumeHAGroupSwitch($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testPauseHAGroupSwitch()
+    {
+        $appHighAvailability = $this -> appHighAvailability;
+        $arr = array(
+            'operate'=>'pause',
+            'task_uuid'=>'F696DC12-6727-B799-93D4-8B2213086F5A',
+        );
+        $res = $appHighAvailability -> pauseHAGroupSwitch($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
 }

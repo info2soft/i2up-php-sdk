@@ -124,7 +124,7 @@ class FspBackupTest extends \PHPUnit_Framework_TestCase
                 'mirr_open_type'=>'0',
                 'service_uuid'=>'',
                 'mirr_sync_flag'=>'0',
-                'excl_path'=>["/cgroup/","/dev/","/etc/X11/xorg.conf/","/etc/init.d/i2node/","/etc/rc.d/init.d/i2node/","/etc/sdata/","/lost+found/","/media/","/mnt/","/proc/","/run/","/selinux/","/sys/","/tmp/","/usr/local/sdata/","/var/i2/","/var/i2data/","/var/lock/","/var/run/vmblock-fuse/"],
+                'excl_path'=>array(),
                 'bkup_one_time'=>0,
                 'encrypt_switch'=>'0',
                 'mirr_sync_attr'=>'1',
@@ -169,7 +169,7 @@ class FspBackupTest extends \PHPUnit_Framework_TestCase
                 'mirr_open_type'=>'0',
                 'service_uuid'=>'',
                 'mirr_sync_flag'=>'0',
-                'excl_path'=>["/cgroup/","/dev/","/etc/X11/xorg.conf/","/etc/init.d/i2node/","/etc/rc.d/init.d/i2node/","/etc/sdata/","/lost+found/","/media/","/mnt/","/proc/","/run/","/selinux/","/sys/","/tmp/","/usr/local/sdata/","/var/i2/","/var/i2data/","/var/lock/","/var/run/vmblock-fuse/"],
+                'excl_path'=> array(),
                 'bkup_one_time'=>0,
                 'encrypt_switch'=>'0',
                 'mirr_sync_attr'=>'1',
@@ -299,6 +299,89 @@ class FspBackupTest extends \PHPUnit_Framework_TestCase
         );
         $res = $fspBackup -> listFspBackupStatus($arr);
         var_export($res);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
+
+    public function testBatchCreateFspBackup()
+    {
+        $fspBackup = $this -> fspBackup;
+        $arr = array(
+            'base_info_list'=>array(
+                'secret_key'=>'',
+                'band_width'=>'',
+                'mirr_open_type'=>'0',
+                'service_uuid'=>'',
+                'mirr_sync_flag'=>'0',
+                'bkup_one_time'=>0,
+                'encrypt_switch'=>'0',
+                'mirr_sync_attr'=>'1',
+                'wk_data_type'=>1,
+                'sync_item'=>'/',
+                'bkup_policy'=>2,
+                'mirr_file_check'=>'0',
+                'compress'=>'0',
+                'monitor_type'=>0,
+                'failover'=>'0',
+                'fsp_wk_shut_flag'=>'2',
+                'bk_data_type'=>1,
+                'bkup_schedule'=>array(
+                    '0'=>array(
+                        'sched_day'=>8,
+                        'sched_time'=>'04:54',
+                        'sched_every'=>2,
+                        'limit'=>22,
+                        'backup_type'=>0,
+                        'policys'=>'"每天22:00自动执行"',
+                        'backup_type_show'=>'"全备"',
+                        'running_time'=>'"22:00"',),),
+                'fsp_type'=>3,
+                'del_policy'=>1,
+                'timeout'=>1,
+                'cbt_switch'=>1,
+                'threshold_vaild_byte'=>'',
+                'advanced_policy'=>array(
+                    'bk_cdp'=>1,
+                    'execute_interval'=>1,
+                    'cdp_detail'=>1,
+                    'cdp_daily'=>1,
+                    'cdp_param'=>'',
+                    'cdp_switch'=>1,),
+                'tgt_uuid'=>'',
+                'new_dc'=>'',
+                'new_dc_mor'=>'',
+                'new_host'=>'',
+                'new_ds'=>'',
+                'network_name'=>'',
+                'network_id'=>'',),
+            'common_params'=>array(
+                'batch_name'=>'',
+                'rep_prefix'=>'',
+                'rep_sufix'=>'',
+                'variable_type'=>1,),
+            'node_list'=>array(
+                '0'=>array(
+                    'bk_uuid'=>'',
+                    'excl_path'=>array(),
+                    'bk_path'=>array(),
+                    'wk_uuid'=>'',
+                    'wk_path'=>array(),
+                    'vm_name'=>'',
+                    'new_vm_name'=>'',
+                    'custom_config'=>1,
+                    'cpu'=>'',
+                    'core_per_sock'=>'',
+                    'mem_mb'=>'',
+                    'dynamic_mem'=>'',
+                    'add_drill'=>1,
+                    'auto'=>1,
+                    'orch_vm_name'=>'',
+                    'scripts_type'=>'',
+                    'scripts'=>'',
+                    'os_type'=>1,),),
+        );
+        $res = $fspBackup -> batchCreateFspBackup($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

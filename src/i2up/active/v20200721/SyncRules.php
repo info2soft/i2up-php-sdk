@@ -268,6 +268,19 @@ class SyncRules {
     }
 
     /**
+     * 获取数据库表字段
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function describeRuleZStructure(array $body = array())
+    {
+        $url = $this -> url . '/rule/z_structure';
+        $res = $this -> httpRequest('post', $url, $body);
+        return $res;
+    }
+
+    /**
      * 流量图
      *
      * @param array $body  参数详见 API 手册

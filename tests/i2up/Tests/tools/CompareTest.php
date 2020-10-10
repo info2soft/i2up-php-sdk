@@ -163,4 +163,24 @@ class CompareTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);
     }
+
+    public function testCollectCompareResult()
+    {
+        $compare = $this -> compare;
+        $arr = array(
+            'code'=>'',
+            'time'=>'',
+            'files'=>'',
+            'bytes'=>'',
+            'missing'=>'',
+            'diff'=>'',
+            'erro'=>'',
+            'equal'=>'',
+            'task_uuid'=>'',
+        );
+        $res = $compare -> collectCompareResult($arr);
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('code',$res[0]);
+        $this->assertEquals(0, $res[0]['code']);
+    }
 }

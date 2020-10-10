@@ -210,6 +210,33 @@ class Node {
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
+
+    /**
+     *  表空间
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function nodeGetOracleInfo(array $body = array())
+    {
+        $url = $this -> url . '/oracle_info';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
+    /**
+     *  数据库名
+     *
+     * @param array $body  参数详见 API 手册
+     * @return array
+     */
+    public function nodeGetMysqlInfo(array $body = array())
+    {
+        $url = $this -> url . '/mysql_info';
+        $res = $this -> httpRequest('get', $url, $body);
+        return $res;
+    }
+
     private function httpRequest($method, $url, $body = null)
     {
         if (isset($this -> token)) {
