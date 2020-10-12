@@ -117,7 +117,7 @@ final class Client
             }
         } else if ($request->method === 'GET') {
             if (!empty($request->body)) {
-                $options[CURLOPT_URL] = $request->url . '?' . $request->body . '_=' . $randomStr;
+                $options[CURLOPT_URL] = Config::baseUrl . $request->url . '?' . $request->body . '_=' . $randomStr;
             }
         }
         echo 'url:'.$options[CURLOPT_URL] . "\n";
