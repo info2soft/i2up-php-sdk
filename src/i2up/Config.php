@@ -13,9 +13,9 @@ final class Config
 {
     const username = 'admin';
 
-    const password = 'Info@123';
+    const password = 'info1234';
 
-    const baseUrl = 'https://192.168.63.80:58086/api/';
+    const baseUrl = 'https://172.20.2.205:58086/api/';
     public function __construct()
     {
     }
