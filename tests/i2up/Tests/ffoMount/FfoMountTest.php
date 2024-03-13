@@ -3,7 +3,6 @@ namespace i2up\Test\ffoMount;
 
 use i2up\ffoMount\v20201009\FfoMount;
 use i2up\common\Auth;
-use i2up\Config;
 
 class FfoMountTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class FfoMountTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> ffoMount = new FfoMount($auth);
+        $this -> ffoMount = new FfoMount(new Auth());
     }
 
     public function testCreateFfoMount()

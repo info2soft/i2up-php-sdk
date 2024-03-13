@@ -2,7 +2,6 @@
 namespace i2up\Test\common;
 
 use i2up\common\Auth;
-use i2up\Config;
 
 class AuthTest extends \PHPUnit_Framework_TestCase
  {
@@ -11,14 +10,7 @@ class AuthTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> auth = $auth;
+        $this -> auth = new Auth();
     }
 
     public function testDescribePhoneCode()

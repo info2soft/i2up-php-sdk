@@ -3,7 +3,6 @@ namespace i2up\Test\mountTask;
 
 use i2up\mountTask\v20201009\MountTask;
 use i2up\common\Auth;
-use i2up\Config;
 
 class MountTaskTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> mountTask = new MountTask($auth);
+        $this -> mountTask = new MountTask(new Auth());
     }
 
     public function testCreateMountTask()

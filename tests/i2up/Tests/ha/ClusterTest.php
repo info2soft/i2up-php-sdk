@@ -3,7 +3,6 @@ namespace i2up\Test\ha;
 
 use i2up\ha\v20190805\Cluster;
 use i2up\common\Auth;
-use i2up\Config;
 
 class ClusterTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> cluster = new Cluster($auth);
+        $this -> cluster = new Cluster(new Auth());
     }
 
     public function testCreateHaCluster()

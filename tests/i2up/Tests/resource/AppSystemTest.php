@@ -3,7 +3,6 @@ namespace i2up\Test\resource;
 
 use i2up\resource\v20190805\AppSystem;
 use i2up\common\Auth;
-use i2up\Config;
 
 class AppSystemTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class AppSystemTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> appSystem = new AppSystem($auth);
+        $this -> appSystem = new AppSystem(new Auth());
     }
 
     public function testSecDirList()

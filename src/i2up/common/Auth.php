@@ -25,6 +25,13 @@ final class Auth
     public $ip;
     public function __construct(array $params = array())
     {
+        $params = $params ?: array(
+            'username' => Config::username,
+            'pwd' => Config::password,
+            'cache_path' => __DIR__ . '/../',
+            'ip' => Config::baseUrl,
+        );
+
         $this -> ip = $params['ip'];
         $this -> baseUrl = $params['ip'] . 'auth/';
         if (isset($params['access_key'])) {
@@ -66,10 +73,10 @@ final class Auth
         $arr = array();
         if ($code === 0) {
             $arr['token'] = $r['token'];
-            $arr['sso_token'] = $r['sso_token'];
+//            $arr['sso_token'] = $r['sso_token'];
         } else {
             $arr['token'] = '';
-            $arr['sso_token'] = '';
+//            $arr['sso_token'] = '';
         }
         return $arr;
     }
@@ -99,7 +106,7 @@ final class Auth
     {
         $token = $this -> getToken();
         $this -> authToken = $token['token'];
-        $this -> authSsoToken = $token['sso_token'];
+//        $this -> authSsoToken = $token['sso_token'];
         $time = time();
         $ip = $this -> ip;
         $str = $this -> authToken . "\r". $this -> authSsoToken . "\r" . $time . "\r" . $ip . "\r";

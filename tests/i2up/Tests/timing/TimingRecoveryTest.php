@@ -3,7 +3,6 @@ namespace i2up\Test\timing;
 
 use i2up\timing\v20190805\TimingRecovery;
 use i2up\common\Auth;
-use i2up\Config;
 
 class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> timingRecovery = new TimingRecovery($auth);
+        $this -> timingRecovery = new TimingRecovery(new Auth());
     }
 
     public function testListTimingRecoveryMssqlTime()

@@ -11,7 +11,11 @@ namespace i2up;
 
 final class Config
 {
-    const baseUrl = 'https://172.20.79.69:58086/api/';
+    const username = 'admin';
+
+    const password = 'Info@123';
+
+    const baseUrl = 'https://192.168.63.80:58086/api/';
     public function __construct()
     {
     }

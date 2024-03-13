@@ -1,9 +1,6 @@
 <?php
 namespace i2up\Http;
 
-use i2up\Config;
-use i2up\Http\Request;
-use i2up\Http\Response;
 use i2up\util\common;
 
 final class Client
@@ -117,7 +114,7 @@ final class Client
             }
         } else if ($request->method === 'GET') {
             if (!empty($request->body)) {
-                $options[CURLOPT_URL] = Config::baseUrl . $request->url . '?' . $request->body . '_=' . $randomStr;
+                $options[CURLOPT_URL] = $request->url . '?' . $request->body . '_=' . $randomStr;
             }
         }
         echo 'url:'.$options[CURLOPT_URL] . "\n";

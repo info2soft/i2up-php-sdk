@@ -10,7 +10,6 @@ namespace i2up\Test\authorization;
 
 use i2up\authorization\v20201009\Authorization;
 use i2up\common\Auth;
-use i2up\Config;
 
 class AuthorizationTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,14 +18,7 @@ class AuthorizationTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> authorization = new Authorization($auth);
+        $this -> authorization = new Authorization(new Auth());
     }
 
     public function testListAuthorizationUser()

@@ -4,7 +4,6 @@ namespace i2up\Test\dashboard;
 
 use i2up\dashboard\v20190805\Dashboard;
 use i2up\common\Auth;
-use i2up\Config;
 
 class DashboardTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> dashboard = new Dashboard($auth);
+        $this -> dashboard = new Dashboard(new Auth());
     }
     public function testOverall()
     {

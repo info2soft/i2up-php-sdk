@@ -3,7 +3,6 @@ namespace i2up\Test\active;
 
 use i2up\active\v20200721\SyncRules;
 use i2up\common\Auth;
-use i2up\Config;
 
 class SyncRulesTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class SyncRulesTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> syncRules = new SyncRules($auth);
+        $this -> syncRules = new SyncRules(new Auth());
     }
 
     public function testDescribeSyncRulesObjInfo()
