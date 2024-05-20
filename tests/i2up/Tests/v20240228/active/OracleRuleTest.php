@@ -624,7 +624,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
             'db_user_map'=>array(
             'CTT'=>'CTT',),
             'rule_uuid'=>'F530FB0E-0208-9071-66D3-E595AE7D5A4C',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'batch_basic_settings'=>0,
             'batch_full_sync_settings'=>0,
             'batch_incre_sync_settings'=>0,
@@ -688,7 +688,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oracleRule -> listSyncRulesStatus($arr);
         $this->do_assert($res);
@@ -971,7 +971,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oracleRule -> status($arr);
         $this->do_assert($res);
@@ -1039,7 +1039,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
         $oracleRule = $this -> oracleRule;
         $arr = array(
             'operate'=>'',
-            'obj_cmp_uuids'=>array(),
+            'obj_cmp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oracleRule -> stopObjCmp($arr);
         $this->do_assert($res);
@@ -1074,7 +1074,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oracleRule -> listObjCmpStatus($arr);
         $this->do_assert($res);
@@ -1171,7 +1171,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'obj_fix_uuids'=>array(),
+            'obj_fix_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'',
         );
         $res = $oracleRule -> restartObjFix($arr);
@@ -1192,7 +1192,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oracleRule -> listObjFixStatus($arr);
         $this->do_assert($res);
@@ -1275,7 +1275,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oracleRule -> listBkTakeoverStatus($arr);
         $this->do_assert($res);
@@ -1284,7 +1284,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     public function testListBkTakeover()
     {
         $oracleRule = $this -> oracleRule;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $oracleRule -> listBkTakeover($arr);
         $this->do_assert($res);
     }
@@ -1307,7 +1307,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     {
         $oracleRule = $this -> oracleRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>false,
         );
         $res = $oracleRule -> deleteReverse($arr);
@@ -1626,7 +1626,7 @@ class OracleRuleTest extends \PHPUnit_Framework_TestCase
     public function testDescribeRuleGetFalseRule()
     {
         $oracleRule = $this -> oracleRule;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $oracleRule -> describeRuleGetFalseRule($arr);
         $this->do_assert($res);
     }

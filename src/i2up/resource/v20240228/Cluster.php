@@ -84,9 +84,7 @@ class Cluster {
      */
     public function describeCls(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'cls/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -101,7 +99,6 @@ class Cluster {
     {
         
         $url = $this -> url . 'cls/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

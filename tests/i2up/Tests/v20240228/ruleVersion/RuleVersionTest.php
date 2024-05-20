@@ -44,7 +44,7 @@ class RuleVersionTest extends \PHPUnit_Framework_TestCase
         $ruleVersion = $this -> ruleVersion;
         $arr = array(
             'operate'=>'',
-            'ids'=>array(),
+            'ids'=>array('1'),
         );
         $res = $ruleVersion -> setMainRuleVersion($arr);
         $this->do_assert($res);

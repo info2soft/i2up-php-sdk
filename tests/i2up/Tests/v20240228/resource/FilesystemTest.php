@@ -61,7 +61,7 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
     {
         $filesystem = $this -> filesystem;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>'',
         );
         $res = $filesystem -> listFilesystemStatus($arr);
@@ -72,7 +72,7 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
     {
         $filesystem = $this -> filesystem;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $filesystem -> deleteFilesystem($arr);
@@ -82,7 +82,7 @@ class FilesystemTest extends \PHPUnit_Framework_TestCase
     public function testListFilesystem()
     {
         $filesystem = $this -> filesystem;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $filesystem -> listFilesystem($arr);
         $this->do_assert($res);
     }

@@ -477,7 +477,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'vp_uuid'=>'',
-            'vm_ids'=>array(),
+            'vm_ids'=>array('1'),
             'region_id'=>'',
             'project_id'=>'',
         );
@@ -523,7 +523,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> tgtVmStatusInfo($arr);
         $this->do_assert($res);
@@ -534,7 +534,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'vp_uuid'=>'',
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> listVmStatus($arr);
         $this->do_assert($res);
@@ -620,7 +620,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'group_uuid'=>'',
             'rule_type'=>'',
         );

@@ -272,7 +272,7 @@ class FspBackupTest extends \PHPUnit_Framework_TestCase
     {
         $fspBackup = $this -> fspBackup;
         $arr = array(
-            'fsp_uuids'=>array()
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111')
         );
         $res = $fspBackup -> finishFspBackup($arr);
         var_export($res);

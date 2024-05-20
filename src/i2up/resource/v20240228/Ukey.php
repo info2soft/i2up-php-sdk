@@ -45,7 +45,6 @@ class Ukey {
     {
         
         $url = $this -> url . 'ukey/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -57,9 +56,7 @@ class Ukey {
      */
     public function discribeUkey(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'ukey/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

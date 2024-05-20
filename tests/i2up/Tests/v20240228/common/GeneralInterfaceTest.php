@@ -17,7 +17,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testDescribeVersion()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> describeVersion($arr);
         $this->do_assert($res);
     }
@@ -35,7 +35,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testListVersionHistory()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listVersionHistory($arr);
         $this->do_assert($res);
     }
@@ -47,7 +47,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
             'ip'=>'',
             'port'=>'',
             'type'=>'node',
-            'node_uuids'=>array(),
+            'node_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $generalInterface -> nodeConnectTest($arr);
         $this->do_assert($res);
@@ -56,7 +56,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testOverall()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> overall($arr);
         $this->do_assert($res);
     }
@@ -64,7 +64,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testUpMonitorOverall()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> upMonitorOverall($arr);
         $this->do_assert($res);
     }
@@ -72,7 +72,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testSysadmin()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> sysadmin($arr);
         $this->do_assert($res);
     }
@@ -80,7 +80,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testStatusOverall()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> statusOverall($arr);
         $this->do_assert($res);
     }
@@ -100,7 +100,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testListOverallResourceSta()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listOverallResourceSta($arr);
         $this->do_assert($res);
     }
@@ -108,7 +108,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testListOverallRealTimeCopy()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listOverallRealTimeCopy($arr);
         $this->do_assert($res);
     }
@@ -116,7 +116,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testListOverallHa()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listOverallHa($arr);
         $this->do_assert($res);
     }
@@ -124,7 +124,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testListOverallCdm()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listOverallCdm($arr);
         $this->do_assert($res);
     }
@@ -132,7 +132,7 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     public function testListOverallFspMv()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listOverallFspMv($arr);
         $this->do_assert($res);
     }
@@ -235,7 +235,6 @@ class GeneralInterfaceTest extends \PHPUnit_Framework_TestCase
     {
         $generalInterface = $this -> generalInterface;
         $arr = array(
-            '_'=>'f7d34d2ebc8e6',
             'csr_file'=>'-----BEGIN CERTIFICATE REQUEST-----
 MIID7jCCAlYCAQAwgagxCzAJBgNVBAYTAkNOMREwDwYDVQQIDAhTaGFuZ2hhaTEU
 MBIGA1UEBwwLR2xhc3RvbmJ1cnkxHjAcBgNVBAoMFUluZm9ybWF0aW9uMiBTb2Z0
@@ -269,7 +268,7 @@ K+M=
     public function testlistCerts()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listCerts($arr);
         $this->do_assert($res);
     }
@@ -277,7 +276,7 @@ K+M=
     public function testDownloadCa()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> downloadCa($arr);
         $this->do_assert($res);
     }
@@ -285,7 +284,7 @@ K+M=
     public function testGetDashboardPlate()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> getDashboardPlate($arr);
         $this->do_assert($res);
     }
@@ -318,7 +317,7 @@ K+M=
     public function testListRpcTask()
     {
         $generalInterface = $this -> generalInterface;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $generalInterface -> listRpcTask($arr);
         $this->do_assert($res);
     }

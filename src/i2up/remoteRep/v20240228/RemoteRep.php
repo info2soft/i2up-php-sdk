@@ -42,7 +42,6 @@ class RemoteRep {
     public function modifyRemoteRep(array $body = array())
     {
         $url = $this -> url . '/remote_rep/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -66,9 +65,7 @@ class RemoteRep {
      */
     public function describeRemoteRep(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/remote_rep/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

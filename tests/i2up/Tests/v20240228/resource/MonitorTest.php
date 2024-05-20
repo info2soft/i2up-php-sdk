@@ -75,7 +75,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     public function testListBkNodeOverall()
     {
         $monitor = $this -> monitor;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $monitor -> listBkNodeOverall($arr);
         $this->do_assert($res);
     }

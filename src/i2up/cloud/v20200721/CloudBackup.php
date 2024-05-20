@@ -63,9 +63,7 @@ class CloudBackup {
      */
     public function modifyBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url);
         return $res;
     }
@@ -147,9 +145,7 @@ class CloudBackup {
      */
     public function describeBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

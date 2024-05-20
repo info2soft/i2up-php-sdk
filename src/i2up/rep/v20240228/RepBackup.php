@@ -84,9 +84,7 @@ class RepBackup {
      */
     public function describeRepBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -101,7 +99,6 @@ class RepBackup {
     {
         
         $url = $this -> url . '/rep/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -242,7 +239,6 @@ class RepBackup {
     {
         
         $url = $this -> url . '/rep/backup/' . $body['uuid'] . '/cdp_bl_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -257,7 +253,6 @@ class RepBackup {
     {
         
         $url = $this -> url . '/rep/backup/' . $body['uuid'] . '/orphan_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -272,7 +267,6 @@ class RepBackup {
     {
         
         $url = $this -> url . '/rep/backup/' . $body['uuid'] . '/orphan_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -287,7 +281,6 @@ class RepBackup {
     {
         
         $url = $this -> url . '/rep/backup/' . $body['uuid'] . '/orphan_download';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -316,7 +309,6 @@ class RepBackup {
     {
         
         $url = $this -> url . '/rep/backup/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -328,9 +320,7 @@ class RepBackup {
      */
     public function createRepBackupSnapshot(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/backup/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url);
         return $res;
     }

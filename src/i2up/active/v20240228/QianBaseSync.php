@@ -114,7 +114,6 @@ class QianBaseSync {
     public function describeQianbaseRules(array $body = array())
     {
         $url = $this -> url . '/qianbase/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -152,7 +151,6 @@ class QianBaseSync {
     public function describeQbTbCmp(array $body = array())
     {
         $url = $this -> url . '/qianbase/tb_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

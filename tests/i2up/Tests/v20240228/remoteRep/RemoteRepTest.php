@@ -119,7 +119,7 @@ class RemoteRepTest extends \PHPUnit_Framework_TestCase
     {
         $remoteRep = $this -> remoteRep;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
         );
         $res = $remoteRep -> startRemoteRep($arr);
@@ -130,7 +130,7 @@ class RemoteRepTest extends \PHPUnit_Framework_TestCase
     {
         $remoteRep = $this -> remoteRep;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
         );
         $res = $remoteRep -> stopRemoteRep($arr);
@@ -141,7 +141,7 @@ class RemoteRepTest extends \PHPUnit_Framework_TestCase
     {
         $remoteRep = $this -> remoteRep;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start_immediately',
         );
         $res = $remoteRep -> startImmediatelyRemoteRep($arr);
@@ -152,7 +152,7 @@ class RemoteRepTest extends \PHPUnit_Framework_TestCase
     {
         $remoteRep = $this -> remoteRep;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
             'del_policy'=>1,
         );
@@ -164,7 +164,7 @@ class RemoteRepTest extends \PHPUnit_Framework_TestCase
     {
         $remoteRep = $this -> remoteRep;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $remoteRep -> listRemoteRepStatus($arr);

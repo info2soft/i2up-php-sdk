@@ -67,7 +67,7 @@ class BigScreenTest extends \PHPUnit_Framework_TestCase
     {
         $bigScreen = $this -> bigScreen;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $bigScreen -> deleteBigScreen($arr);
         $this->do_assert($res);
@@ -97,7 +97,7 @@ class BigScreenTest extends \PHPUnit_Framework_TestCase
     public function testListBigScreenLogo()
     {
         $bigScreen = $this -> bigScreen;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $bigScreen -> listBigScreenLogo($arr);
         $this->do_assert($res);
     }
@@ -115,15 +115,15 @@ class BigScreenTest extends \PHPUnit_Framework_TestCase
             'location'=>1,
             'graph_num'=>4,
             'scroll_limit'=>20,
-            'rule_uuids'=>array(),
-            'node_uuids'=>array(),
-            'db_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
+            'node_uuids'=>array('11111111-1111-1111-1111-111111111111'),
+            'db_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'warn_limit'=>1,
-            'node_group_uuids'=>array(),
+            'node_group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'warn_modules'=>array(),
             'stat_days'=>1,
             'stat_modules'=>array(),
-            'vp_uuids'=>array(),
+            'vp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'display'=>'',),
             '1'=>array(
             'mod_type'=>'data_stat',
@@ -131,15 +131,15 @@ class BigScreenTest extends \PHPUnit_Framework_TestCase
             'location'=>1,
             'graph_num'=>4,
             'scroll_limit'=>20,
-            'rule_uuids'=>array(),
-            'node_uuids'=>array(),
-            'db_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
+            'node_uuids'=>array('11111111-1111-1111-1111-111111111111'),
+            'db_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'warn_limit'=>1,
-            'node_group_uuids'=>array(),
+            'node_group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'warn_modules'=>array(),
             'stat_days'=>1,
             'stat_modules'=>array(),
-            'vp_uuids'=>array(),
+            'vp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'display'=>'',),),
         );
         $res = $bigScreen -> configBigScreen($arr);
@@ -196,7 +196,7 @@ class BigScreenTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'mod_type'=>'',
             'rule_uuid'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $bigScreen -> listBigScreenGraph($arr);
         $this->do_assert($res);

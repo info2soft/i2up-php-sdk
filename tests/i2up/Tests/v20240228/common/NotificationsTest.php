@@ -141,7 +141,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     public function testDescribeNotificationsCount()
     {
         $notifications = $this -> notifications;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $notifications -> describeNotificationsCount($arr);
         $this->do_assert($res);
     }
@@ -151,7 +151,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         $notifications = $this -> notifications;
         $arr = array(
             'operate'=>'read',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'type'=>1,
         );
         $res = $notifications -> readNotifications($arr);
@@ -163,7 +163,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
         $notifications = $this -> notifications;
         $arr = array(
             'operate'=>'play',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'type'=>1,
         );
         $res = $notifications -> playNotifications($arr);
@@ -174,7 +174,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     {
         $notifications = $this -> notifications;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $notifications -> deleteNotifications($arr);
         $this->do_assert($res);
@@ -183,7 +183,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     public function testDescribeNotificationsConfig()
     {
         $notifications = $this -> notifications;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $notifications -> describeNotificationsConfig($arr);
         $this->do_assert($res);
     }
@@ -362,7 +362,7 @@ class NotificationsTest extends \PHPUnit_Framework_TestCase
     public function testResetNotificationsTimes()
     {
         $notifications = $this -> notifications;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $notifications -> resetNotificationsTimes($arr);
         $this->do_assert($res);
     }

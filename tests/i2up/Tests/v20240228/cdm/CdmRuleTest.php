@@ -80,7 +80,7 @@ class CdmRuleTest extends \PHPUnit_Framework_TestCase
     {
         $cdmRule = $this -> cdmRule;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
             'del_policy'=>0,
         );
@@ -115,7 +115,7 @@ class CdmRuleTest extends \PHPUnit_Framework_TestCase
     {
         $cdmRule = $this -> cdmRule;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
             'type'=>'',
         );
@@ -127,7 +127,7 @@ class CdmRuleTest extends \PHPUnit_Framework_TestCase
     {
         $cdmRule = $this -> cdmRule;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
             'type'=>'',
         );
@@ -139,7 +139,7 @@ class CdmRuleTest extends \PHPUnit_Framework_TestCase
     {
         $cdmRule = $this -> cdmRule;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'open_console',
             'type'=>'',
         );

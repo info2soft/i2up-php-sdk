@@ -37,7 +37,6 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
                 'sync_mode'=>1,
                 'dump_thd'=>1,
                 'drop_old_tab'=>1,),
-            '_'=>'95f4e88ab554',
         );
         $res = $sqlserver -> createRule($arr);
         $this->assertNotNull($res[0]);
@@ -94,7 +93,6 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
             'sync_mode'=>1,
             'dump_thd'=>1,
             'drop_old_tab'=>1,
-            '_'=>'95f4e88ab554',
             'uuid'=>'',
         );
         $res = $sqlserver -> modifyRule($arr);
@@ -107,7 +105,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
     {
         $sqlserver = $this -> sqlserver;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $sqlserver -> deleteRule($arr);
         $this->assertNotNull($res[0]);

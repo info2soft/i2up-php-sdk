@@ -45,7 +45,6 @@ class Filesystem {
     {
         
         $url = $this -> url . 'filesystem/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -57,9 +56,7 @@ class Filesystem {
      */
     public function describeFilesystem(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'filesystem/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

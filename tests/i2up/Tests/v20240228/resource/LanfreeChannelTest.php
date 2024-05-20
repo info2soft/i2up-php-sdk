@@ -35,7 +35,7 @@ class LanfreeChannelTest extends \PHPUnit_Framework_TestCase
     public function testListLanfreeChannel()
     {
         $lanfreeChannel = $this -> lanfreeChannel;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $lanfreeChannel -> listLanfreeChannel($arr);
         $this->do_assert($res);
     }
@@ -73,7 +73,7 @@ class LanfreeChannelTest extends \PHPUnit_Framework_TestCase
     {
         $lanfreeChannel = $this -> lanfreeChannel;
         $arr = array(
-            'channel_uuids'=>array(),
+            'channel_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $lanfreeChannel -> deleteLanfreeChannel($arr);
@@ -84,7 +84,7 @@ class LanfreeChannelTest extends \PHPUnit_Framework_TestCase
     {
         $lanfreeChannel = $this -> lanfreeChannel;
         $arr = array(
-            'channel_uuids'=>array(),
+            'channel_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $lanfreeChannel -> listLanfreeChannelStatus($arr);
@@ -95,11 +95,11 @@ class LanfreeChannelTest extends \PHPUnit_Framework_TestCase
     {
         $lanfreeChannel = $this -> lanfreeChannel;
         $arr = array(
-            'wk_uuids'=>array(),
+            'wk_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'unit_uuid'=>'',
             'bk_set_uuid'=>'',
-            'bk_uuids'=>array(),
-            'unit_uuids'=>array(),
+            'bk_uuids'=>array('11111111-1111-1111-1111-111111111111'),
+            'unit_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $lanfreeChannel -> listLanfreeChannelByWkBk($arr);
         $this->do_assert($res);

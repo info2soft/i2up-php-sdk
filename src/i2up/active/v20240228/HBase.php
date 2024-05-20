@@ -54,7 +54,6 @@ class HBase {
     public function describeHbaseRule(array $body = array())
     {
         $url = $this -> url . '/hbase/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

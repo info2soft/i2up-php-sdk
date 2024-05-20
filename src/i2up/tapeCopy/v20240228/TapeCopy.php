@@ -52,10 +52,8 @@ class TapeCopy {
      */
     public function describeTapeCopy(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/tape_copy/' . $body['uuid'];
-        unset($body['uuid']);
-        $res = $this -> httpRequest('get', $url);
+        $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
     /**

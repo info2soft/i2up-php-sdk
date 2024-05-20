@@ -165,7 +165,7 @@ class DtrackTest extends \PHPUnit_Framework_TestCase
     {
         $dtrack = $this -> dtrack;
         $arr = array(
-            'policy_uuids'=>array(),
+            'policy_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dtrack -> listDtrackBackupStatus($arr);
         $this->assertNotNull($res[0]);
@@ -178,7 +178,7 @@ class DtrackTest extends \PHPUnit_Framework_TestCase
         $dtrack = $this -> dtrack;
         $arr = array(
             'delete_mirror'=>1,
-            'policy_uuids'=>array(),
+            'policy_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $dtrack -> deleteDtrackBackup($arr);

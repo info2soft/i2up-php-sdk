@@ -53,7 +53,6 @@ class AppSystem {
     public function modifySecDir(array $body = array())
     {
         $url = $this -> url . '/sec_dir/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -101,9 +100,7 @@ class AppSystem {
      */
     public function describeAppSystem(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/app_sys/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -129,7 +126,6 @@ class AppSystem {
     public function modifyAppSystem(array $body = array())
     {
         $url = $this -> url . '/app_sys/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

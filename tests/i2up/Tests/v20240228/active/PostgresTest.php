@@ -132,7 +132,7 @@ class PostgresTest extends \PHPUnit_Framework_TestCase
     {
         $postgres = $this -> postgres;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>'true',
         );
         $res = $postgres -> deletePgsqlRule($arr);

@@ -17,7 +17,7 @@ class PermissionTest extends \PHPUnit_Framework_TestCase
     public function testListPermission()
     {
         $permission = $this -> permission;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $permission -> listPermission($arr);
         $this->do_assert($res);
     }
@@ -25,7 +25,7 @@ class PermissionTest extends \PHPUnit_Framework_TestCase
     public function testListCategory()
     {
         $permission = $this -> permission;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $permission -> listCategory($arr);
         $this->do_assert($res);
     }

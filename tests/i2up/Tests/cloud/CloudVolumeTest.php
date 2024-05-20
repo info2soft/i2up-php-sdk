@@ -66,7 +66,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'ecs_id'=>'',
             'attach_point'=>'',
         );
@@ -80,7 +80,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cloudBackup -> detachVolume($arr);
         $this->assertNotNull($res[0]);

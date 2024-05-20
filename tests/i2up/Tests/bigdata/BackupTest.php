@@ -73,7 +73,7 @@ class BackupTest extends \PHPUnit_Framework_TestCase
     {
         $backup = $this -> backup;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $backup -> listBigdataBackupStatus($arr);
         $this->assertNotNull($res[0]);

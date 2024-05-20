@@ -105,7 +105,7 @@ class PostgresTest extends \PHPUnit_Framework_TestCase
     {
         $postgres = $this -> postgres;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $postgres -> deletePgsqlRule($arr);
         $this->assertNotNull($res[0]);
@@ -118,7 +118,7 @@ class PostgresTest extends \PHPUnit_Framework_TestCase
     {
         $postgres = $this -> postgres;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $postgres -> listPgsqlStatus($arr);
         $this->assertNotNull($res[0]);

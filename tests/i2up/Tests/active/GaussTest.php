@@ -207,7 +207,7 @@ class GaussTest extends \PHPUnit_Framework_TestCase
     {
         $gauss = $this -> gauss;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $gauss -> listGaussStatus($arr);
         $this->assertNotNull($res[0]);

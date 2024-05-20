@@ -202,7 +202,7 @@ class TidbTest extends \PHPUnit_Framework_TestCase
         $tidb = $this -> tidb;
         $arr = array(
             'force'=>true,
-            'mysql_uuids'=>array(),
+            'mysql_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tidb -> deleteTidbRule($arr);
         $this->do_assert($res);

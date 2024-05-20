@@ -73,7 +73,6 @@ class GuardData {
     {
         
         $url = $this -> url . 'guard_data/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

@@ -101,7 +101,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'mysql_uuids'=>array(),
+            'mysql_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> deleteStreamRule($arr);
         $this->assertNotNull($res[0]);
@@ -130,7 +130,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listStreamStatus($arr);
         $this->assertNotNull($res[0]);
@@ -345,7 +345,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listStreamCmpStatus($arr);
         $this->assertNotNull($res[0]);
@@ -512,7 +512,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> deleteBkTakeover($arr);
         $this->assertNotNull($res[0]);
@@ -536,7 +536,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listTakeoverStatus($arr);
         $this->assertNotNull($res[0]);
@@ -640,7 +640,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listObjFixStatus($arr);
         $this->assertNotNull($res[0]);
@@ -717,7 +717,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listObjCmpStatus($arr);
         $this->assertNotNull($res[0]);

@@ -100,9 +100,7 @@ class Node {
      */
     public function modifyNode(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
-        unset($body['uuid']);
         if (isset($body['os_pwd'])) {
             $RSA = new RSA();
             $body['os_pwd'] = $RSA ->encrypt_with_public_key($body['os_pwd']);
@@ -120,7 +118,6 @@ class Node {
      */
     public function describeNode(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -152,9 +149,7 @@ class Node {
      */
     public function describeDeviceInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/device_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

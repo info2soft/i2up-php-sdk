@@ -41,7 +41,7 @@ class LabelTest extends \PHPUnit_Framework_TestCase
     {
         $label = $this -> label;
         $arr = array(
-            'label_uuids'=>array(),
+            'label_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $label -> deleteLabel($arr);
         $this->do_assert($res);

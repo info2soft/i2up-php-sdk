@@ -54,7 +54,6 @@ class Mask {
     public function modifySensType(array $body = array())
     {
         $url = $this -> url . '/mask/sens_type/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -66,9 +65,7 @@ class Mask {
      */
     public function descriptSensType(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mask/sens_type/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -164,9 +161,7 @@ class Mask {
      */
     public function describeMaskRule(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mask/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -190,9 +185,7 @@ class Mask {
      */
     public function descriptMap(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mask/sens_db_map/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -230,7 +223,6 @@ class Mask {
     public function modifyMap(array $body = array())
     {
         $url = $this -> url . '/mask/sens_map/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -290,9 +282,7 @@ class Mask {
      */
     public function modifyDbMap(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mask/sens_db_map/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url);
         return $res;
     }
@@ -318,7 +308,6 @@ class Mask {
     public function modifySensCheck(array $body = array())
     {
         $url = $this -> url . '/mask/sens_check/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -354,9 +343,7 @@ class Mask {
      */
     public function descriptSensCheck(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mask/sens_check/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -382,7 +369,6 @@ class Mask {
     public function listSensCheckResult(array $body = array())
     {
         $url = $this -> url . '/mask/sens_check/result/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -431,7 +417,6 @@ class Mask {
     public function modifyMaskRules(array $body = array())
     {
         $url = $this -> url . '/mask/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

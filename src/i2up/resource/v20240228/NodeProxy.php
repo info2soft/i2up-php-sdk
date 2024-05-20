@@ -56,9 +56,7 @@ class NodeProxy {
      */
     public function describeNodeProxy(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'node_proxy/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -73,7 +71,6 @@ class NodeProxy {
     {
         
         $url = $this -> url . 'node_proxy/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

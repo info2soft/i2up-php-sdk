@@ -682,7 +682,7 @@ class TimingBackupTest extends \PHPUnit_Framework_TestCase
     public function testListCustomTypes()
     {
         $timingBackup = $this -> timingBackup;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $timingBackup -> listCustomTypes($arr);
         $this->do_assert($res);
     }

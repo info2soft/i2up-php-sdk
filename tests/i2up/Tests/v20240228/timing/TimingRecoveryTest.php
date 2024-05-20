@@ -510,7 +510,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $timingRecovery = $this -> timingRecovery;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
             'force'=>1,
         );
@@ -521,7 +521,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $timingRecovery = $this -> timingRecovery;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
             'force'=>1,
         );
@@ -532,7 +532,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $timingRecovery = $this -> timingRecovery;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'unmount',
             'force'=>1,
         );
@@ -543,7 +543,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $timingRecovery = $this -> timingRecovery;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'mount_logon',
             'force'=>1,
         );
@@ -554,7 +554,7 @@ class TimingRecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $timingRecovery = $this -> timingRecovery;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'unmount_logout',
             'force'=>1,
         );

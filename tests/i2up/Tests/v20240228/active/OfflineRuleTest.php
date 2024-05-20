@@ -232,7 +232,7 @@ class OfflineRuleTest extends \PHPUnit_Framework_TestCase
     {
         $offlineRule = $this -> offlineRule;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $offlineRule -> listOfflineRuleStatus($arr);
         $this->do_assert($res);
@@ -242,7 +242,7 @@ class OfflineRuleTest extends \PHPUnit_Framework_TestCase
     {
         $offlineRule = $this -> offlineRule;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $offlineRule -> deleteOfflineRule($arr);
         $this->do_assert($res);
@@ -252,7 +252,7 @@ class OfflineRuleTest extends \PHPUnit_Framework_TestCase
     {
         $offlineRule = $this -> offlineRule;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'',
         );
         $res = $offlineRule -> operateOfflineRule($arr);
@@ -262,7 +262,7 @@ class OfflineRuleTest extends \PHPUnit_Framework_TestCase
     public function testGetOfflineRuleCharset()
     {
         $offlineRule = $this -> offlineRule;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $offlineRule -> getOfflineRuleCharset($arr);
         $this->do_assert($res);
     }

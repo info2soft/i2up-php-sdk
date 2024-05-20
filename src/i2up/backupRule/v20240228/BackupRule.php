@@ -43,7 +43,6 @@ class BackupRule {
     public function modifyBackupRule(array $body = array())
     {
         $url = $this -> url . 'backup_rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -56,7 +55,6 @@ class BackupRule {
     public function describeBackupRule(array $body = array())
     {
         $url = $this -> url . 'backup_rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

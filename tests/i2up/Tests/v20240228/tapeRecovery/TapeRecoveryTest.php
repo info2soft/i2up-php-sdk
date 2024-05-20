@@ -69,7 +69,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     {
         $tapeRecovery = $this -> tapeRecovery;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tapeRecovery -> deleteTapeRecovery($arr);
         $this->do_assert($res);
@@ -79,7 +79,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     {
         $tapeRecovery = $this -> tapeRecovery;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $tapeRecovery -> listTapeRecoveryStatus($arr);

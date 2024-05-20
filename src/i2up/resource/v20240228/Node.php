@@ -157,7 +157,6 @@ class Node {
     {
         
         $url = $this -> url . 'node/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -169,9 +168,7 @@ class Node {
      */
     public function describeNode(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'node/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -197,9 +194,7 @@ class Node {
      */
     public function describeDeviceInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'node/' . $body['uuid'] . '/device_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -211,9 +206,7 @@ class Node {
      */
     public function describeDriverLetter(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'node/' . $body['uuid'] . '/driver_letter';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -256,7 +249,6 @@ class Node {
     {
         
         $url = $this -> url . 'node/' . $body['uuid'] . '/info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

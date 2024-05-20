@@ -43,7 +43,6 @@ class BackupSetRulePolicy {
     public function modifyReplicaTask(array $body = array())
     {
         $url = $this -> url . 'replica_task/' . $body['uuid'];
-        unset($body['uuid']);
         
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
@@ -70,7 +69,6 @@ class BackupSetRulePolicy {
     public function describeReplicaTask(array $body = array())
     {
         $url = $this -> url . 'replica_task/' . $body['uuid'];
-        unset($body['uuid']);
         
         $res = $this -> httpRequest('get', $url);
         return $res;

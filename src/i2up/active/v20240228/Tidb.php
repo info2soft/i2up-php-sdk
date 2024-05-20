@@ -66,7 +66,6 @@ class Tidb {
     public function describeTidbRule(array $body = array())
     {
         $url = $this -> url . '/tidb/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

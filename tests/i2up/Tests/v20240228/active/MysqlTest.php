@@ -517,7 +517,7 @@ CREATE TABLE
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'mysql_uuids'=>array(),
+            'mysql_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>true,
         );
         $res = $mysql -> deleteMysqlRule($arr);
@@ -552,7 +552,7 @@ CREATE TABLE
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listStreamStatus($arr);
         $this->do_assert($res);

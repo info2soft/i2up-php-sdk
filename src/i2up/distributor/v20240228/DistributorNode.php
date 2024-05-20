@@ -54,7 +54,6 @@ class DistributorNode {
     public function updateStatus(array $body = array())
     {
         $url = $this -> url . '/distribution/node/' . $body['uuid'] . '/status';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -92,7 +91,6 @@ class DistributorNode {
     public function describeNode(array $body = array())
     {
         $url = $this -> url . '/distribution/node/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -106,7 +104,6 @@ class DistributorNode {
     public function fileConfig(array $body = array())
     {
         $url = $this -> url . '/distribution/node/' . $body['uuid'] . '/file_config';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -120,7 +117,6 @@ class DistributorNode {
     public function warnConfig(array $body = array())
     {
         $url = $this -> url . '/distribution/node/' . $body['uuid'] . '/warn_config';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -134,7 +130,6 @@ class DistributorNode {
     public function upgrade(array $body = array())
     {
         $url = $this -> url . '/distribution/node/' . $body['uuid'] . '/upgrade';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -148,7 +143,6 @@ class DistributorNode {
     public function delete(array $body = array())
     {
         $url = $this -> url . '/distribution/node/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }

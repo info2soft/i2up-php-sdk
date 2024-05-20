@@ -103,7 +103,7 @@ class HdfsTest extends \PHPUnit_Framework_TestCase
     {
         $hdfs = $this -> hdfs;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>0,
         );
         $res = $hdfs -> deleteHdfs($arr);
@@ -114,7 +114,7 @@ class HdfsTest extends \PHPUnit_Framework_TestCase
     {
         $hdfs = $this -> hdfs;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
         );
         $res = $hdfs -> StartHdfs($arr);
@@ -125,7 +125,7 @@ class HdfsTest extends \PHPUnit_Framework_TestCase
     {
         $hdfs = $this -> hdfs;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
         );
         $res = $hdfs -> StopHdfs($arr);
@@ -136,7 +136,7 @@ class HdfsTest extends \PHPUnit_Framework_TestCase
     {
         $hdfs = $this -> hdfs;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $hdfs -> listHdfsStatus($arr);

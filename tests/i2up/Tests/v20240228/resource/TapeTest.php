@@ -18,7 +18,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     {
         $tape = $this -> tape;
         $arr = array(
-            'bk_uuids'=>array(),
+            'bk_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tape -> sanTapeLibraries($arr);
         $this->do_assert($res);
@@ -88,7 +88,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     public function testListTapeLibrary()
     {
         $tape = $this -> tape;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $tape -> listTapeLibrary($arr);
         $this->do_assert($res);
     }
@@ -154,7 +154,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     {
         $tape = $this -> tape;
         $arr = array(
-            'library_uuids'=>array(),
+            'library_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $tape -> deleteTapeLibrary($arr);
@@ -258,7 +258,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     public function testListTapePools()
     {
         $tape = $this -> tape;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $tape -> listTapePools($arr);
         $this->do_assert($res);
     }
@@ -291,7 +291,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     {
         $tape = $this -> tape;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tape -> deleteTapePool($arr);
         $this->do_assert($res);
@@ -540,7 +540,7 @@ class TapeTest extends \PHPUnit_Framework_TestCase
     {
         $tape = $this -> tape;
         $arr = array(
-            'bk_uuids'=>array(),
+            'bk_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tape -> refreshTapeLibrary($arr);
         $this->do_assert($res);

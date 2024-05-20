@@ -143,7 +143,6 @@ class FspRecovery {
     {
 
         $url = $this -> url . '/fsp/recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -155,9 +154,7 @@ class FspRecovery {
      */
     public function desribeFspRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/fsp/recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

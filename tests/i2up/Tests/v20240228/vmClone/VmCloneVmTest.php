@@ -59,7 +59,7 @@ class VmCloneVmTest extends \PHPUnit_Framework_TestCase
     {
         $vmCloneVm = $this -> vmCloneVm;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $vmCloneVm -> deleteVmCloneVm($arr);

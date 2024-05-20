@@ -53,7 +53,6 @@ class CloudPlatform {
     public function modifyCloudPlatform(array $body = array())
     {
         $url = $this -> url . '/cloud/platform/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -65,9 +64,7 @@ class CloudPlatform {
      */
     public function describeCloudPlatform(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/platform/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

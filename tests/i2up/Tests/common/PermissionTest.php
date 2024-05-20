@@ -27,8 +27,7 @@ class PermissionTest extends \PHPUnit_Framework_TestCase
     public function testListCatPerms()
     {
         $permission = $this -> permission;
-        $arr = array();
-        $res = $permission -> listCatPerms($arr);
+        $res = $permission -> listCatPerms();
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);
         $this->assertEquals(0, $res[0]['code']);

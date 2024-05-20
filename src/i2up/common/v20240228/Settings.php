@@ -178,9 +178,7 @@ class Settings {
      */
     public function clearLoginAttempt(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'user/' . $body['uuid'] . '/clear_login_attempt';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url);
         return $res;
     }

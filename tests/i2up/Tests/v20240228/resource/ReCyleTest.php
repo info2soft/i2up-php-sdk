@@ -31,7 +31,7 @@ class ReCyleTest extends \PHPUnit_Framework_TestCase
     {
         $reCyle = $this -> reCyle;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'clean',
         );
         $res = $reCyle -> cleanRecycle($arr);
@@ -42,7 +42,7 @@ class ReCyleTest extends \PHPUnit_Framework_TestCase
     {
         $reCyle = $this -> reCyle;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $reCyle -> deleteRecycle($arr);
         $this->do_assert($res);

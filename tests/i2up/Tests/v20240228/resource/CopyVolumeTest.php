@@ -87,7 +87,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $copyVolume = $this -> copyVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $copyVolume -> deleteCopyVolume($arr);
@@ -99,7 +99,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
         $copyVolume = $this -> copyVolume;
         $arr = array(
             'operate'=>'mount',
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $copyVolume -> mountCopyVolume($arr);
         $this->do_assert($res);
@@ -110,7 +110,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
         $copyVolume = $this -> copyVolume;
         $arr = array(
             'operate'=>'unmount',
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $copyVolume -> unMountCopyVolume($arr);
         $this->do_assert($res);
@@ -120,7 +120,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $copyVolume = $this -> copyVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $copyVolume -> listCopyVolumeStatus($arr);

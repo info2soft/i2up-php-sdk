@@ -31,7 +31,7 @@ class BatchTaskTest extends \PHPUnit_Framework_TestCase
     {
         $batchTask = $this -> batchTask;
         $arr = array(
-            'batch_uuids'=>array(),
+            'batch_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $batchTask -> batchTaskStatus($arr);
         $this->do_assert($res);

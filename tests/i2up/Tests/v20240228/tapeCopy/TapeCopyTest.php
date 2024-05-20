@@ -59,7 +59,7 @@ class TapeCopyTest extends \PHPUnit_Framework_TestCase
     {
         $tapeCopy = $this -> tapeCopy;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tapeCopy -> listTapeCopyStatus($arr);
         $this->do_assert($res);
@@ -69,7 +69,7 @@ class TapeCopyTest extends \PHPUnit_Framework_TestCase
     {
         $tapeCopy = $this -> tapeCopy;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $tapeCopy -> deleteTapeCopy($arr);
         $this->do_assert($res);

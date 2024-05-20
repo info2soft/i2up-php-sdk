@@ -71,7 +71,7 @@ class RedisTest extends \PHPUnit_Framework_TestCase
     {
         $redis = $this -> redis;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>'true',
         );
         $res = $redis -> deleteRedisRule($arr);

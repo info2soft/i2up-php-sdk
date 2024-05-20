@@ -35,7 +35,7 @@ class RecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $recovery = $this -> recovery;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $recovery -> recoveryStatus($arr);
         $this->do_assert($res);

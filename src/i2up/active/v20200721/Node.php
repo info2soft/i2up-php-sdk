@@ -60,9 +60,7 @@ class Node {
      */
     public function listNodeStatus(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -76,9 +74,7 @@ class Node {
      */
     public function descriptNode(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

@@ -215,7 +215,7 @@ class FirstReplicaTest extends \PHPUnit_Framework_TestCase
         $firstReplica = $this -> firstReplica;
         $arr = array(
             'operate'=>'start_vm',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $firstReplica -> startVmFirstReplica($arr);
         $this->do_assert($res);
@@ -226,7 +226,7 @@ class FirstReplicaTest extends \PHPUnit_Framework_TestCase
         $firstReplica = $this -> firstReplica;
         $arr = array(
             'operate'=>'stop_vm',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $firstReplica -> stopVmFirstReplica($arr);
         $this->do_assert($res);

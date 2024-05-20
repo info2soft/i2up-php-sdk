@@ -40,7 +40,7 @@ class GtsTest extends \PHPUnit_Framework_TestCase
     public function testCloseService()
     {
         $gts = $this -> gts;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $gts -> closeService($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);

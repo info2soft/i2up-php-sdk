@@ -30,7 +30,7 @@ class BackupMigrateTest extends \PHPUnit_Framework_TestCase
     public function testDecribeCcMoveModules()
     {
         $backupMigrate = $this -> backupMigrate;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $backupMigrate -> decribeCcMoveModules($arr);
         $this->do_assert($res);
     }
@@ -59,7 +59,7 @@ class BackupMigrateTest extends \PHPUnit_Framework_TestCase
     {
         $backupMigrate = $this -> backupMigrate;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $backupMigrate -> decribeCcMoveStatus($arr);
         $this->do_assert($res);
@@ -80,7 +80,7 @@ class BackupMigrateTest extends \PHPUnit_Framework_TestCase
     {
         $backupMigrate = $this -> backupMigrate;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $backupMigrate -> deleteCcMove($arr);
         $this->do_assert($res);

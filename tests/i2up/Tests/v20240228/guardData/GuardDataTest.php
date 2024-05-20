@@ -72,7 +72,7 @@ class GuardDataTest extends \PHPUnit_Framework_TestCase
     {
         $guardData = $this -> guardData;
         $arr = array(
-            'policy_uuids'=>array(),
+            'policy_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $guardData -> deleteGuardData($arr);
         $this->do_assert($res);
@@ -82,7 +82,7 @@ class GuardDataTest extends \PHPUnit_Framework_TestCase
     {
         $guardData = $this -> guardData;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $guardData -> listNodeStatus($arr);
         $this->do_assert($res);

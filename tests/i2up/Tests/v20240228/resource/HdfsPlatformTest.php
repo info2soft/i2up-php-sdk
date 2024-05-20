@@ -105,7 +105,7 @@ class HdfsPlatformTest extends \PHPUnit_Framework_TestCase
     {
         $hdfsPlatform = $this -> hdfsPlatform;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>0,
         );
         $res = $hdfsPlatform -> deleteHdfsPlatform($arr);

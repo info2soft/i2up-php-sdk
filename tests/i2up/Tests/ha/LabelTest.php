@@ -51,7 +51,7 @@ class LabelTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'label_uuids'=>array(),
+            'label_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cluster -> deleteLabel($arr);
         $this->assertNotNull($res[0]);

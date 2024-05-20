@@ -42,9 +42,7 @@ class RepRecovery {
      */
     public function describeRepRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -59,7 +57,6 @@ class RepRecovery {
     {
         
         $url = $this -> url . '/rep/recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -214,7 +211,6 @@ class RepRecovery {
     {
         
         $url = $this -> url . '/rep/recovery/' . $body['uuid'] . '/orphan_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

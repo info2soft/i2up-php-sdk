@@ -31,7 +31,6 @@ class CompareResult {
     {
         
         $url = $this -> url . 'compare_result/' . $body['uuid'] . '/list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -71,9 +70,7 @@ class CompareResult {
      */
     public function viewConfig(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'compare_result/' . $body['uuid'] . '/view_config';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

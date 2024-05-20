@@ -71,7 +71,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $copyVolume = $this -> copyVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $copyVolume -> deleteCopyVolume($arr);
         $this->assertNotNull($res[0]);
@@ -83,7 +83,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $copyVolume = $this -> copyVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $copyVolume -> tempFuncName($arr);
         $this->assertNotNull($res[0]);

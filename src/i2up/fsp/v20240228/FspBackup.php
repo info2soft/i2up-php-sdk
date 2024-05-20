@@ -143,7 +143,6 @@ class FspBackup {
     {
         
         $url = $this -> url . '/fsp/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -155,9 +154,7 @@ class FspBackup {
      */
     public function describeFspBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/fsp/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

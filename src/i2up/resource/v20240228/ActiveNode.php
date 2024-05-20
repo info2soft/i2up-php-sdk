@@ -86,7 +86,6 @@ class ActiveNode {
     {
         
         $url = $this -> url . 'active/node/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -282,7 +281,6 @@ class ActiveNode {
     {
         
         $url = $this -> url . 'active/db/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -335,9 +333,7 @@ class ActiveNode {
      */
     public function describeDb(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'active/db/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

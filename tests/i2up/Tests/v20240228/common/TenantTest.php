@@ -65,7 +65,7 @@ class TenantTest extends \PHPUnit_Framework_TestCase
     {
         $tenant = $this -> tenant;
         $arr = array(
-            'ids'=>array(),
+            'ids'=>array('1'),
         );
         $res = $tenant -> deleteTenant($arr);
         $this->do_assert($res);

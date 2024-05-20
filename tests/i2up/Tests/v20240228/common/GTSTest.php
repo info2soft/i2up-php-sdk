@@ -67,7 +67,7 @@ class GTSTest extends \PHPUnit_Framework_TestCase
     public function testDescribeQuota()
     {
         $gTS = $this -> gTS;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $gTS -> describeQuota($arr);
         $this->do_assert($res);
     }
@@ -75,7 +75,7 @@ class GTSTest extends \PHPUnit_Framework_TestCase
     public function testDescribeSummary()
     {
         $gTS = $this -> gTS;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $gTS -> describeSummary($arr);
         $this->do_assert($res);
     }

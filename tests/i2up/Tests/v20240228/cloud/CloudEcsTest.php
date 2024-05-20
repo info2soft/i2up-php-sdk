@@ -23,7 +23,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
             'flavorid'=>'',
             'volume_sys_id'=>'',
             'server_zone'=>'',
-            'volume_data_ids'=>array(),
+            'volume_data_ids'=>array('1'),
             'wk_uuid'=>'',
             'rc_point'=>array(
             'time'=>'',
@@ -82,7 +82,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
     {
         $cloudEcs = $this -> cloudEcs;
         $arr = array(
-            'ecs_ids'=>array(),
+            'ecs_ids'=>array('1'),
             'force_refresh'=>1,
         );
         $res = $cloudEcs -> listEcsStatus($arr);
@@ -246,7 +246,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
     {
         $cloudEcs = $this -> cloudEcs;
         $arr = array(
-            'ecs_ids'=>array(),
+            'ecs_ids'=>array('1'),
             'complete_delete'=>1,
         );
         $res = $cloudEcs -> deleteEcs($arr);
@@ -257,7 +257,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
     {
         $cloudEcs = $this -> cloudEcs;
         $arr = array(
-            'ecs_ids'=>array(),
+            'ecs_ids'=>array('1'),
             'operate'=>'',
         );
         $res = $cloudEcs -> start($arr);
@@ -314,7 +314,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
                     'flavorid'=>'',
                     'volume_sys_id'=>'',
                     'server_zone'=>'',
-                    'volume_data_ids'=>array(),
+                    'volume_data_ids'=>array('1'),
                     'wk_uuid'=>'',
                     'rc_point'=>array(
                         'time'=>'',

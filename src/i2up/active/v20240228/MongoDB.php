@@ -42,7 +42,6 @@ class MongoDB {
     public function modifyMongoRule(array $body = array())
     {
         $url = $this -> url . '/mongo/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -90,9 +89,7 @@ class MongoDB {
      */
     public function describeListRule(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mongo/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

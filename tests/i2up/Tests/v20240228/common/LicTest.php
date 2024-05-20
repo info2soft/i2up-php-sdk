@@ -37,7 +37,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     public function testDescribeLicCcHwCode()
     {
         $lic = $this -> lic;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $lic -> describeLicCcHwCode($arr);
         $this->do_assert($res);
     }
@@ -56,7 +56,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     public function testActivateLicAll()
     {
         $lic = $this -> lic;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $lic -> activateLicAll($arr);
         $this->do_assert($res);
     }
@@ -165,7 +165,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     public function testUpdateLicBind()
     {
         $lic = $this -> lic;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $lic -> updateLicBind($arr);
         $this->do_assert($res);
     }
@@ -231,7 +231,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     public function testHdfsCapacity()
     {
         $lic = $this -> lic;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $lic -> hdfsCapacity($arr);
         $this->do_assert($res);
     }
@@ -239,7 +239,7 @@ class LicTest extends \PHPUnit_Framework_TestCase
     public function testListNearExpirationLicenses()
     {
         $lic = $this -> lic;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $lic -> listNearExpirationLicenses($arr);
         $this->do_assert($res);
     }

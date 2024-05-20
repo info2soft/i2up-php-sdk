@@ -122,7 +122,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdm -> deleteTakeOverDrill($arr);
         $this->assertNotNull($res[0]);
@@ -145,7 +145,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdm -> getVmStatus($arr);
         $this->assertNotNull($res[0]);
@@ -157,7 +157,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
             'type'=>'',
         );
@@ -171,7 +171,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
             'type'=>'',
         );
@@ -185,7 +185,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'open_console',
             'type'=>'',
         );

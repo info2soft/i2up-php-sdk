@@ -65,7 +65,7 @@ class LogsTest extends \PHPUnit_Framework_TestCase
     public function testListNpsvrLog()
     {
         $logs = $this -> logs;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $logs -> listNpsvrLog($arr);
         $this->do_assert($res);
     }

@@ -66,7 +66,6 @@ class UpMonitor {
     public function modifyUpMonitor(array $body = array())
     {
         $url = $this -> url . '/up_monitor/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -78,9 +77,7 @@ class UpMonitor {
      */
     public function describeUpMonitor(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/up_monitor/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

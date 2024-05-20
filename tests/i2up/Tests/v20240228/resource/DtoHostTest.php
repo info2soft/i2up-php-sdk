@@ -108,7 +108,7 @@ class DtoHostTest extends \PHPUnit_Framework_TestCase
     {
         $dtoHost = $this -> dtoHost;
         $arr = array(
-            'host_uuids'=>array(),
+            'host_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $dtoHost -> listDtoHostStatus($arr);
@@ -120,7 +120,7 @@ class DtoHostTest extends \PHPUnit_Framework_TestCase
         $dtoHost = $this -> dtoHost;
         $arr = array(
             'force'=>1,
-            'host_uuids'=>array(),
+            'host_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dtoHost -> deleteDtoHost($arr);
         $this->do_assert($res);
@@ -218,7 +218,7 @@ class DtoHostTest extends \PHPUnit_Framework_TestCase
     {
         $dtoHost = $this -> dtoHost;
         $arr = array(
-            'host_uuids'=>array(),
+            'host_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'upgrade',
             'switch'=>0,
         );
@@ -230,7 +230,7 @@ class DtoHostTest extends \PHPUnit_Framework_TestCase
     {
         $dtoHost = $this -> dtoHost;
         $arr = array(
-            'host_uuids'=>array(),
+            'host_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'maintain',
             'switch'=>0,
         );
@@ -243,7 +243,7 @@ class DtoHostTest extends \PHPUnit_Framework_TestCase
     {
         $dtoHost = $this -> dtoHost;
         $arr = array(
-            'host_uuids'=>array(),
+            'host_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'renew_key',
             'switch'=>0,
         );

@@ -41,9 +41,7 @@ class RecycleBin {
      */
     public function describeRecycleBin(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/recycle_bin/' . $body['uuid'] . '/info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

@@ -84,7 +84,7 @@ class DrillTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rule_uuids'=>array(
                 '0'=>'11111111-1111-1111-1111-111111111111',),
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'delete_tgtvm'=>0,
         );
         $res = $drill -> deleteCdmDrill($arr);
@@ -98,7 +98,7 @@ class DrillTest extends \PHPUnit_Framework_TestCase
             'msg'=>'',
             'operate'=>'start',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'status'=>'',
         );
         $res = $drill -> startCdmDrill($arr);
@@ -111,7 +111,7 @@ class DrillTest extends \PHPUnit_Framework_TestCase
             'msg'=>'',
             'operate'=>'stop',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'status'=>'',
         );
         $res = $drill -> stopCdmDrill($arr);
@@ -124,7 +124,7 @@ class DrillTest extends \PHPUnit_Framework_TestCase
             'msg'=>'',
             'operate'=>'set_status',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'status'=>'',
         );
         $res = $drill -> setStatusCdmDrill($arr);

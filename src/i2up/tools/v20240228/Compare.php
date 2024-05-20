@@ -45,7 +45,6 @@ class Compare {
     {
         
         $url = $this -> url . '/compare/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -57,9 +56,7 @@ class Compare {
      */
     public function describeCompare(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/compare/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -101,7 +98,6 @@ class Compare {
     {
         
         $url = $this -> url . '/compare/' . $body['uuid'] . '/result_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

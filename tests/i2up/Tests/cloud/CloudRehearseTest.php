@@ -296,7 +296,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
             'is_group'=>1,
         );
         $res = $cloudBackup -> evacuateBatchRehearse($arr);
@@ -333,7 +333,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> deleteRehearse($arr);
         $this->assertNotNull($res[0]);
@@ -462,7 +462,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> deleteGroup($arr);
         $this->assertNotNull($res[0]);
@@ -486,7 +486,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> listGroupStatus($arr);
         $this->assertNotNull($res[0]);
@@ -509,7 +509,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> listBatchRehearse($arr);
         $this->assertNotNull($res[0]);

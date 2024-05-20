@@ -98,7 +98,7 @@ class HBaseTest extends \PHPUnit_Framework_TestCase
         $hBase = $this -> hBase;
         $arr = array(
             'force'=>true,
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $hBase -> deleteHbaseRule($arr);
         $this->do_assert($res);

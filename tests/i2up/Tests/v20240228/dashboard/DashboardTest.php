@@ -17,7 +17,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     public function testHa()
     {
         $dashboard = $this -> dashboard;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dashboard -> ha($arr);
         $this->do_assert($res);
     }
@@ -25,7 +25,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     public function testResourceView()
     {
         $dashboard = $this -> dashboard;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dashboard -> resourceView($arr);
         $this->do_assert($res);
     }
@@ -46,14 +46,14 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     public function testTaskView()
     {
         $dashboard = $this -> dashboard;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dashboard -> taskView($arr);
         $this->do_assert($res);
     }
     public function testListBackupCenter()
     {
         $dashboard = $this -> dashboard;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dashboard -> listBackupCenter($arr);
         $this->do_assert($res);
     }
@@ -71,7 +71,7 @@ class DashboardTest extends \PHPUnit_Framework_TestCase
     public function testListHosts()
     {
         $dashboard = $this -> dashboard;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dashboard -> listHosts($arr);
         $this->do_assert($res);
     }

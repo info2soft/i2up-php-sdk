@@ -44,7 +44,6 @@ class FfoMount {
     public function modifyFfoMount(array $body = array())
     {
         $url = $this -> url . '/ffo_mount/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -56,9 +55,7 @@ class FfoMount {
      */
     public function describeFfomount(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/ffo_mount/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

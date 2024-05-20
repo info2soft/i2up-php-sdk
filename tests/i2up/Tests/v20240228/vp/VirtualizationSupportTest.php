@@ -343,7 +343,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'start',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'bkup_type'=>'',
             'force'=>0,
         );
@@ -357,7 +357,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'stop',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'bkup_type'=>'',
             'force'=>0,
         );
@@ -371,7 +371,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'start_immediately',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'bkup_type'=>'',
             'force'=>0,
         );
@@ -385,7 +385,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'auto_discovery',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'bkup_type'=>'',
             'force'=>0,
         );
@@ -399,7 +399,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rule_uuids'=>array(
             '0'=>'11111111-1111-1111-1111-111111111111',),
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
             'delete_bk_data'=>0,
             'recycle'=>0,
@@ -580,7 +580,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'operate'=>'start',
             'rule_uuids'=>'641A27BB-B4D1-F482-1FB8-E856898626DA',
             'rule_type'=>0,
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> startVpRecovery($arr);
         $this->do_assert($res);
@@ -593,7 +593,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'operate'=>'stop',
             'rule_uuids'=>'641A27BB-B4D1-F482-1FB8-E856898626DA',
             'rule_type'=>0,
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> stopVpRecovery($arr);
         $this->do_assert($res);
@@ -606,7 +606,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'operate'=>'clear_finish',
             'rule_uuids'=>'641A27BB-B4D1-F482-1FB8-E856898626DA',
             'rule_type'=>0,
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> clearFinishVpRecovery($arr);
         $this->do_assert($res);
@@ -618,7 +618,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rule_uuids'=>array(
             '0'=>'11111111-1111-1111-1111-111111111111',),
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'delete_tgtvm'=>1,
         );
         $res = $virtualizationSupport -> deleteVpRecovery($arr);
@@ -1250,7 +1250,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1267,7 +1267,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1284,7 +1284,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1301,7 +1301,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1318,7 +1318,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1336,7 +1336,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1353,7 +1353,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
             'rule_uuids'=>'1C89A121-6B03-24B2-9273-D4B93C0687AD',
             'snap_point'=>'',
             'op_code'=>'',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'power_on'=>1,
             'power_off'=>1,
             'bkup_type'=>'',
@@ -1368,7 +1368,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rule_uuids'=>array(
             '0'=>'11111111-1111-1111-1111-111111111111',),
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'delete_tgtvm'=>1,
         );
         $res = $virtualizationSupport -> deleteVpMove($arr);
@@ -1380,7 +1380,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rule_uuids'=>array(
             '0'=>'11111111-1111-1111-1111-111111111111',),
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'delete_tgtvm'=>1,
         );
         $res = $virtualizationSupport -> deleteVpRep($arr);
@@ -1503,7 +1503,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'rule_uuids'=>array(
             '0'=>'11111111-1111-1111-1111-111111111111',),
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'delete_tgtvm'=>0,
         );
         $res = $virtualizationSupport -> deleteVpDrill($arr);
@@ -1538,7 +1538,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'start',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'status'=>'',
             'msg'=>'',
         );
@@ -1552,7 +1552,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'stop',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'status'=>'',
             'msg'=>'',
         );
@@ -1566,7 +1566,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'operate'=>'set_status',
             'rule_uuids'=>'[C6335F62-2565-1957-4BB9-587F2FF46B00]',
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'status'=>'',
             'msg'=>'',
         );
@@ -1652,7 +1652,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
             'operate'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> attachVpFileRecovery($arr);
         $this->do_assert($res);
@@ -1662,7 +1662,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $virtualizationSupport -> listVpFileRecoveryStatus($arr);
@@ -1673,7 +1673,7 @@ class VirtualizationSupportTest extends \PHPUnit_Framework_TestCase
     {
         $virtualizationSupport = $this -> virtualizationSupport;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $virtualizationSupport -> deleteVpFileRecovery($arr);
         $this->do_assert($res);

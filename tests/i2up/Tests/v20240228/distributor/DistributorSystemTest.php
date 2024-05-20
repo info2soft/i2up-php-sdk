@@ -17,7 +17,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     public function testListSysSetting()
     {
         $distributorSystem = $this -> distributorSystem;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $distributorSystem -> listSysSetting($arr);
         $this->do_assert($res);
     }
@@ -109,7 +109,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'limit'=>1,
             'page'=>1,
-            'user_uuids'=>array(),
+            'user_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> queueList($arr);
         $this->do_assert($res);
@@ -119,7 +119,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     {
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> queueDelete($arr);
         $this->do_assert($res);
@@ -128,7 +128,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     public function testUpgradeVersion()
     {
         $distributorSystem = $this -> distributorSystem;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $distributorSystem -> upgradeVersion($arr);
         $this->do_assert($res);
     }
@@ -137,7 +137,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     {
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> update($arr);
         $this->do_assert($res);
@@ -147,7 +147,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     {
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
-            'user_uuids'=>array(),
+            'user_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> alarmStat($arr);
         $this->do_assert($res);
@@ -160,7 +160,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
             'limit'=>1,
             'log_level'=>1,
-            'user_uuids'=>array(),
+            'user_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'where_args'=>array(),
         );
         $res = $distributorSystem -> alarmLog($arr);
@@ -172,7 +172,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
             'operate'=>'delete',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> deleteAlarmLog($arr);
         $this->do_assert($res);
@@ -183,7 +183,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
             'operate'=>'read',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> readAlarmLog($arr);
         $this->do_assert($res);

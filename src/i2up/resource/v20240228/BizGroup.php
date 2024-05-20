@@ -45,7 +45,6 @@ class BizGroup {
     {
         
         $url = $this -> url . 'biz_grp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -58,7 +57,6 @@ class BizGroup {
     public function describeBizGroup(array $body = array())
     {
         $url = $this -> url . 'biz_grp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -101,7 +99,6 @@ class BizGroup {
     {
         
         $url = $this -> url . 'biz_grp/' . $body['uuid'] . '/bind';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -114,7 +111,6 @@ class BizGroup {
     public function listBizGroupBind(array $body = array())
     {
         $url = $this -> url . 'biz_grp/' . $body['uuid'] . '/bind';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

@@ -207,7 +207,7 @@ class StatisticsTest extends \PHPUnit_Framework_TestCase
     public function testListStatisticsConfig()
     {
         $statistics = $this -> statistics;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $statistics -> listStatisticsConfig($arr);
         $this->do_assert($res);
     }

@@ -143,8 +143,7 @@ class CompareTest extends \PHPUnit_Framework_TestCase
     public function testListCompareLogs()
     {
         $compare = $this -> compare;
-        $arr = array();
-        $res = $compare -> listCompareLogs($arr);
+        $res = $compare -> listCompareLogs();
         $this->do_assert($res);
     }
 

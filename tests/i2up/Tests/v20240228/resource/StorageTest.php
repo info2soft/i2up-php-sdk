@@ -137,7 +137,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     {
         $storage = $this -> storage;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'delete_quota'=>1,
             'force'=>1,
         );
@@ -215,7 +215,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     public function testListAvailableNode()
     {
         $storage = $this -> storage;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $storage -> listAvailableNode($arr);
         $this->do_assert($res);
     }
@@ -281,7 +281,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
         $storage = $this -> storage;
         $arr = array(
             'uuid' => '11111111-1111-1111-1111-111111111111',
-            'quota_uuids'=>array(),
+            'quota_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>0,
         );
         $res = $storage -> deleteStorageQuota($arr);
@@ -619,7 +619,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     public function testCreate()
     {
         $storage = $this -> storage;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $storage -> create($arr);
         $this->do_assert($res);
     }
@@ -627,7 +627,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     public function testDelete()
     {
         $storage = $this -> storage;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $storage -> delete($arr);
         $this->do_assert($res);
     }
@@ -1211,7 +1211,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     {
         $storage = $this -> storage;
         $arr = array(
-            'tape_uuids'=>array(),
+            'tape_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storage -> deleteTape($arr);
         $this->do_assert($res);

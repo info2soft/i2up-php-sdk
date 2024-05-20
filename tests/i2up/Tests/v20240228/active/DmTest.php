@@ -17,7 +17,7 @@ class DmTest extends \PHPUnit_Framework_TestCase
     public function testListDmRule()
     {
         $dm = $this -> dm;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dm -> listDmRule($arr);
         $this->do_assert($res);
     }
@@ -99,7 +99,6 @@ class DmTest extends \PHPUnit_Framework_TestCase
             'exclude_table'=>'[]',),
             'etl_settings'=>array(
             'etl_table'=>array(),),
-            '_'=>'489d781db90cb',
             'encrypt'=>'',
             'encrypt_switch'=>1,
             'compress'=>1,
@@ -115,7 +114,7 @@ class DmTest extends \PHPUnit_Framework_TestCase
     public function testModifyDmRule()
     {
         $dm = $this -> dm;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dm -> modifyDmRule($arr);
         $this->do_assert($res);
     }
@@ -134,7 +133,7 @@ class DmTest extends \PHPUnit_Framework_TestCase
     {
         $dm = $this -> dm;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'type'=>'',
             'force'=>0,
         );
@@ -147,7 +146,7 @@ class DmTest extends \PHPUnit_Framework_TestCase
         $dm = $this -> dm;
         $arr = array(
             'operate'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'scn'=>'',
         );
         $res = $dm -> resumeDmRule($arr);

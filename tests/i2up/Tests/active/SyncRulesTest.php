@@ -630,7 +630,7 @@ class SyncRulesTest extends \PHPUnit_Framework_TestCase
     {
         $syncRules = $this -> syncRules;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $syncRules -> listObjCmpStatus($arr);
         $this->assertNotNull($res[0]);
@@ -768,7 +768,7 @@ class SyncRulesTest extends \PHPUnit_Framework_TestCase
     {
         $syncRules = $this -> syncRules;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $syncRules -> listObjFixStatus($arr);
         $this->assertNotNull($res[0]);
@@ -1041,7 +1041,7 @@ class SyncRulesTest extends \PHPUnit_Framework_TestCase
     {
         $syncRules = $this -> syncRules;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $syncRules -> listBkTakeoverStatus($arr);
         $this->assertNotNull($res[0]);
@@ -1077,7 +1077,7 @@ class SyncRulesTest extends \PHPUnit_Framework_TestCase
     {
         $syncRules = $this -> syncRules;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $syncRules -> deleteReverse($arr);
         $this->assertNotNull($res[0]);

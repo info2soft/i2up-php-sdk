@@ -27,7 +27,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     public function testExportConfig()
     {
         $dataBaseBackup = $this -> dataBaseBackup;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dataBaseBackup -> exportConfig($arr);
         $this->do_assert($res);
     }
@@ -35,7 +35,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     public function testListBackupHistory()
     {
         $dataBaseBackup = $this -> dataBaseBackup;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dataBaseBackup -> listBackupHistory($arr);
         $this->do_assert($res);
     }
@@ -43,7 +43,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     public function testBackupConfig()
     {
         $dataBaseBackup = $this -> dataBaseBackup;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dataBaseBackup -> backupConfig($arr);
         $this->do_assert($res);
     }
@@ -51,7 +51,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     public function testDescribeBackupConfig()
     {
         $dataBaseBackup = $this -> dataBaseBackup;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dataBaseBackup -> describeBackupConfig($arr);
         $this->do_assert($res);
     }

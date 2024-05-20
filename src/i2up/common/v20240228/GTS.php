@@ -41,9 +41,7 @@ class GTS {
      */
     public function closeService(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'gts/service/' . $body['uuid'];
-        unset($body['uuid']);
         
         $res = $this -> httpRequest('post', $url);
         return $res;
@@ -56,9 +54,7 @@ class GTS {
      */
     public function listService(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'gts/service/' . $body['uuid'];
-        unset($body['uuid']);
         
         $res = $this -> httpRequest('get', $url, $body);
         return $res;

@@ -42,7 +42,6 @@ class ScriptMask {
     public function modifyScript(array $body = array())
     {
         $url = $this -> url . '/mask/script/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -164,9 +163,7 @@ class ScriptMask {
      */
     public function getScriptRuleResultDetail(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/mask/script_rule/status_detail/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

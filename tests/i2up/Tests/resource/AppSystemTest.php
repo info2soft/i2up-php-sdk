@@ -54,7 +54,7 @@ class AppSystemTest extends \PHPUnit_Framework_TestCase
     {
         $appSystem = $this -> appSystem;
         $arr = array(
-            'dir_uuids'=>array(),
+            'dir_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $appSystem -> deleteSecDir($arr);
         $this->assertNotNull($res[0]);
@@ -137,7 +137,7 @@ class AppSystemTest extends \PHPUnit_Framework_TestCase
             'node_uuids'=>array(
                 '0'=>'EA52A961-9883-66FE-188B-D7266AD9594B',
                 '1'=>'09EEA553-C3B8-0D7A-4797-F7A7E2D4FAE1',),
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $appSystem -> createAppSystem($arr);
         $this->assertNotNull($res[0]);
@@ -182,7 +182,7 @@ class AppSystemTest extends \PHPUnit_Framework_TestCase
     {
         $appSystem = $this -> appSystem;
         $arr = array(
-            'sys_uuids'=>array(),
+            'sys_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $appSystem -> deleteAppSystem($arr);
         $this->assertNotNull($res[0]);

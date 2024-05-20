@@ -42,9 +42,7 @@ class Nas {
      */
     public function describe(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/nas/sync/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -57,9 +55,7 @@ class Nas {
      */
     public function modify(array $body = array())
     {
-        
         $url = $this -> url . '/nas/sync/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

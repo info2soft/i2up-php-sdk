@@ -59,7 +59,6 @@ class DtoHost {
     {
         
         $url = $this -> url . 'dto/host/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -71,9 +70,7 @@ class DtoHost {
      */
     public function describeDtoHost(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dto/host/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -158,7 +155,6 @@ class DtoHost {
     {
         
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/archive_date';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -170,9 +166,7 @@ class DtoHost {
      */
     public function listRcTimePoint(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/rc_time_point';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -187,7 +181,6 @@ class DtoHost {
     {
         
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/archive_file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -199,9 +192,7 @@ class DtoHost {
      */
     public function listLoadRules(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/load_rules';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -216,7 +207,6 @@ class DtoHost {
     {
         
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/backup_record';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -273,7 +263,6 @@ class DtoHost {
     {
         
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/revert_file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -288,7 +277,6 @@ class DtoHost {
     {
         
         $url = $this -> url . 'dto/host/' . $body['uuid'] . '/revert_record';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

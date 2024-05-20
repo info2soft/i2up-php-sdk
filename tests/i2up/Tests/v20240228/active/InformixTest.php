@@ -71,7 +71,6 @@ class InformixTest extends \PHPUnit_Framework_TestCase
             'exclude_table'=>'[]',),
             'etl_settings'=>array(
             'etl_table'=>array(),),
-            '_'=>'489d781db90cb',
             'bw_settings'=>array(
             'bw_limit'=>'',),
             'table_space_map'=>array(
@@ -108,7 +107,7 @@ class InformixTest extends \PHPUnit_Framework_TestCase
     {
         $informix = $this -> informix;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'type'=>'',
             'force'=>0,
         );
@@ -141,7 +140,7 @@ class InformixTest extends \PHPUnit_Framework_TestCase
     public function testListinformixRule()
     {
         $informix = $this -> informix;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $informix -> listinformixRule($arr);
         $this->do_assert($res);
     }

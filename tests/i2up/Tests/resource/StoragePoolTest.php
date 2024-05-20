@@ -83,7 +83,7 @@ class StoragePoolTest extends \PHPUnit_Framework_TestCase
     {
         $storagePool = $this -> storagePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storagePool -> deleteStoragePool($arr);
         $this->assertNotNull($res[0]);
@@ -95,7 +95,7 @@ class StoragePoolTest extends \PHPUnit_Framework_TestCase
     {
         $storagePool = $this -> storagePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storagePool -> listStoragePoolStatus($arr);
         $this->assertNotNull($res[0]);

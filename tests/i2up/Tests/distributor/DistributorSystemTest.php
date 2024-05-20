@@ -114,7 +114,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'limit'=>1,
             'page'=>1,
-            'user_uuids'=>array(),
+            'user_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> queueList($arr);
         $this->assertNotNull($res[0]);
@@ -126,7 +126,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     {
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> queueDelete($arr);
         $this->assertNotNull($res[0]);
@@ -149,7 +149,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     {
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> update($arr);
         $this->assertNotNull($res[0]);
@@ -161,7 +161,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
     {
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
-            'user_uuids'=>array(),
+            'user_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> alarmStat($arr);
         $this->assertNotNull($res[0]);
@@ -176,7 +176,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
             'page'=>1,
             'limit'=>1,
             'log_level'=>1,
-            'user_uuids'=>array(),
+            'user_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'where_args'=>array(),
         );
         $res = $distributorSystem -> alarmLog($arr);
@@ -190,7 +190,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
             'operate'=>'delete',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> deleteAlarmLog($arr);
         $this->assertNotNull($res[0]);
@@ -203,7 +203,7 @@ class DistributorSystemTest extends \PHPUnit_Framework_TestCase
         $distributorSystem = $this -> distributorSystem;
         $arr = array(
             'operate'=>'delete',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $distributorSystem -> readAlarmLog($arr);
         $this->assertNotNull($res[0]);

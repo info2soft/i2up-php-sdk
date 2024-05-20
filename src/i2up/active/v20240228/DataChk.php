@@ -64,9 +64,7 @@ class DataChk {
      */
     public function describeDatacheckObjCmp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/datacheck/obj_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -164,7 +162,6 @@ class DataChk {
     public function describeTbCmp(array $body = array())
     {
         $url = $this -> url . '/datacheck/tb_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -262,7 +259,6 @@ class DataChk {
     public function describeTbCmpCmpResult(array $body = array())
     {
         $url = $this -> url . '/datacheck/tb_cmp/cmp_result/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -276,7 +272,6 @@ class DataChk {
     public function describeTbCmpCmpDesc(array $body = array())
     {
         $url = $this -> url . '/datacheck/tb_cmp/' . $body['uuid'] . '/describe';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -288,9 +283,7 @@ class DataChk {
      */
     public function describeTbCmpStart(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/datacheck/tb_cmp/' . $body['uuid'] . '/start';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

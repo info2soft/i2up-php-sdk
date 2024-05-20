@@ -17,7 +17,7 @@ class CcMonitorTest extends \PHPUnit_Framework_TestCase
     public function testListCcMonitor()
     {
         $ccMonitor = $this -> ccMonitor;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $ccMonitor -> listCcMonitor($arr);
         $this->do_assert($res);
     }
@@ -50,7 +50,6 @@ class CcMonitorTest extends \PHPUnit_Framework_TestCase
         $ccMonitor = $this -> ccMonitor;
         $arr = array(
             'id'=>4,
-            '_'=>'f7d34d2ebc8e6',
         );
         $res = $ccMonitor -> resetCronTask($arr);
         $this->do_assert($res);

@@ -89,7 +89,6 @@ class Dtrack {
     public function modifyDtrackBackup(array $body = array())
     {
         $url = $this -> url . 'dtrack/backup/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -103,9 +102,7 @@ class Dtrack {
      */
     public function describeDtrackBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dtrack/backup/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -289,7 +286,6 @@ class Dtrack {
     public function addDtrackBackupHistory(array $body = array())
     {
         $url = $this -> url . 'dtrack/backup/' . $body['uuid'] . '/history';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -304,7 +300,6 @@ class Dtrack {
     public function listDtrackBackupHistory(array $body = array())
     {
         $url = $this -> url . 'dtrack/backup/' . $body['uuid'] . '/history';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -317,9 +312,7 @@ class Dtrack {
      */
     public function listDtrackBackupSnap(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dtrack/backup/' . $body['uuid'] . '/snap';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -441,9 +434,7 @@ class Dtrack {
      */
     public function listDtrackGroupSnap(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dtrack/group/' . $body['uuid'] . '/snap';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

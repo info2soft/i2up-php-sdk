@@ -76,7 +76,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'value'=>'*',
             'setted'=>3,
             'type'=>'string',),),
-            '_'=>'704098f4051d7',
         );
         $res = $mask -> modifySensType($arr);
         $this->do_assert($res);
@@ -201,7 +200,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'db_map_uuid'=>'71D59BCE-17F3-ED0D-BC76-132833F72498',
             'strate'=>'',
             'modify'=>false,
-            '_'=>'a39e1c5b7e511',
             'bw_settings'=>array(
             'bw_limit'=>'',),
         );
@@ -244,7 +242,7 @@ class MaskTest extends \PHPUnit_Framework_TestCase
     {
         $mask = $this -> mask;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mask -> listMaskRuleStatus($arr);
         $this->do_assert($res);
@@ -312,7 +310,7 @@ class MaskTest extends \PHPUnit_Framework_TestCase
     {
         $mask = $this -> mask;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mask -> deleteMap($arr);
         $this->do_assert($res);
@@ -376,7 +374,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'map_type'=>'db',
             'mix'=>0,
             'white'=>1,
-            '_'=>'25bc5f36e5175',
             'src_type'=>'',
             'src_path'=>'',
         );
@@ -483,8 +480,7 @@ class MaskTest extends \PHPUnit_Framework_TestCase
     public function testListSummary()
     {
         $mask = $this -> mask;
-        $arr = array();
-        $res = $mask -> listSummary($arr);
+        $res = $mask -> listSummary();
         $this->do_assert($res);
     }
 
@@ -500,7 +496,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'type_arg'=>'',
             'id'=>308,
             'params'=>array(),
-            '_'=>'713d0acaa3283',
         );
         $res = $mask -> algoTest($arr);
         $this->do_assert($res);
@@ -648,7 +643,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'biz_grp_list'=>array(),
             'biz_grp_name'=>array(),
             'modify'=>true,
-            '_'=>'4d058aa7a4ce1',
         );
         $res = $mask -> modifyMaskRules($arr);
         $this->do_assert($res);

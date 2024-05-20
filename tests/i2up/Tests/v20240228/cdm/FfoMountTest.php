@@ -100,7 +100,7 @@ class FfoMountTest extends \PHPUnit_Framework_TestCase
     {
         $ffoMount = $this -> ffoMount;
         $arr = array(
-            'mount_uuids'=>array(),
+            'mount_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $ffoMount -> listFfoMountStatus($arr);
@@ -111,7 +111,7 @@ class FfoMountTest extends \PHPUnit_Framework_TestCase
     {
         $ffoMount = $this -> ffoMount;
         $arr = array(
-            'mount_uuids'=>array(),
+            'mount_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $ffoMount -> deleteFfoMount($arr);
         $this->do_assert($res);

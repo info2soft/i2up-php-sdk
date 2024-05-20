@@ -42,9 +42,7 @@ class Lic {
      */
     public function downloadLicInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'lic/' . $body['uuid'] . '/download_lic_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -152,9 +150,7 @@ class Lic {
      */
     public function describeLic(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'lic/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -289,7 +285,6 @@ class Lic {
      */
     public function updateLic(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'lic/' . $body['uuid'];
         
         $res = $this -> httpRequest('put', $url, $body);

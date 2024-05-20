@@ -114,7 +114,6 @@ class OracleRule {
     public function describeSyncRules(array $body = array())
     {
         $url = $this -> url . '/active/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -236,7 +235,6 @@ class OracleRule {
     public function describeTbCmp(array $body = array())
     {
         $url = $this -> url . '/active/tb_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -358,7 +356,6 @@ class OracleRule {
     public function describeTbCmpCmpResult(array $body = array())
     {
         $url = $this -> url . '/active/tb_cmp/' . $body['uuid'] . '/cmp_result/';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -372,7 +369,6 @@ class OracleRule {
     public function describeTbCmpStart(array $body = array())
     {
         $url = $this -> url . '/active/tb_cmp/' . $body['uuid'] . '/start/';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -444,9 +440,7 @@ class OracleRule {
      */
     public function describeObjCmp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/active/obj_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -556,7 +550,6 @@ class OracleRule {
     public function describeObjFix(array $body = array())
     {
         $url = $this -> url . '/active/obj_fix/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -652,9 +645,7 @@ class OracleRule {
      */
     public function describeBkTakeover(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/active/bk_takeover/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

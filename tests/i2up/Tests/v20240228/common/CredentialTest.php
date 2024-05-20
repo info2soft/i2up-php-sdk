@@ -70,7 +70,7 @@ class CredentialTest extends \PHPUnit_Framework_TestCase
     {
         $credential = $this -> credential;
         $arr = array(
-            'cred_uuids'=>array(),
+            'cred_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $credential -> deleteCredential($arr);
@@ -90,7 +90,7 @@ class CredentialTest extends \PHPUnit_Framework_TestCase
     public function testBatchImportCredential()
     {
         $credential = $this -> credential;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $credential -> batchImportCredential($arr);
         $this->do_assert($res);
     }

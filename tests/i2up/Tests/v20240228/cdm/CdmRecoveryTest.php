@@ -104,7 +104,7 @@ class CdmRecoveryTest extends \PHPUnit_Framework_TestCase
         $cdmRecovery = $this -> cdmRecovery;
         $arr = array(
             'operate' => 'start',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdmRecovery -> startCdmRecovery($arr);
         $this->do_assert($res);
@@ -115,7 +115,7 @@ class CdmRecoveryTest extends \PHPUnit_Framework_TestCase
         $cdmRecovery = $this -> cdmRecovery;
         $arr = array(
             'operate' => 'stop',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdmRecovery -> stopCdmRecovery($arr);
         $this->do_assert($res);
@@ -126,7 +126,7 @@ class CdmRecoveryTest extends \PHPUnit_Framework_TestCase
         $cdmRecovery = $this -> cdmRecovery;
         $arr = array(
             'operate' => 'recovery',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdmRecovery -> recoveryCdmRecovery($arr);
         $this->do_assert($res);
@@ -137,7 +137,7 @@ class CdmRecoveryTest extends \PHPUnit_Framework_TestCase
         $cdmRecovery = $this -> cdmRecovery;
         $arr = array(
             'operate' => 'reboot',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdmRecovery -> rebootCdmRecovery($arr);
         $this->do_assert($res);

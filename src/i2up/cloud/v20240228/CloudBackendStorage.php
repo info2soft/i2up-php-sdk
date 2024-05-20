@@ -40,9 +40,7 @@ class CloudBackendStorage {
      */
     public function describeBackendStorage(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/backend_storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -68,7 +66,6 @@ class CloudBackendStorage {
     public function modifyBackendStorage(array $body = array())
     {
         $url = $this -> url . '/cloud/backend_storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

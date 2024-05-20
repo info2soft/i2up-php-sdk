@@ -28,9 +28,7 @@ class Monitor {
      */
     public function listDriversInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'monitor/drivers_info/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -42,9 +40,7 @@ class Monitor {
      */
     public function listPhyInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'monitor/phy_info/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -59,7 +55,6 @@ class Monitor {
     {
         
         $url = $this -> url . 'monitor/chart_data/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -71,9 +66,7 @@ class Monitor {
      */
     public function listChartConfig(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'monitor/chart_config/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -88,7 +81,6 @@ class Monitor {
     {
         
         $url = $this -> url . 'monitor/chart_config/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }

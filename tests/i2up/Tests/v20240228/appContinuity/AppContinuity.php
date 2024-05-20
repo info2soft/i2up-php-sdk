@@ -206,7 +206,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $appContinuity -> deleteAppContinuity($arr);
@@ -238,7 +238,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -253,7 +253,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -268,7 +268,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'snapshot_immediately',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -283,7 +283,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'snapshot_delete',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -298,7 +298,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'modify_script',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -313,7 +313,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'failover',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -328,7 +328,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'failback',
             'snap_name'=>'',
             'snap_point'=>'',
@@ -343,7 +343,7 @@ class AppContinuityTest extends \PHPUnit_Framework_TestCase
     {
         $appContinuity = $this -> appContinuity;
         $arr = array(
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>0,
         );
         $res = $appContinuity -> listAppContinuityStatus($arr);

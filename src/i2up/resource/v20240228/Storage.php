@@ -45,7 +45,6 @@ class Storage {
     {
         
         $url = $this -> url . 'storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -57,9 +56,7 @@ class Storage {
      */
     public function describeStorageConfig(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -144,7 +141,6 @@ class Storage {
     {
         
         $url = $this -> url . 'storage/' . $body['uuid'] . '/chart';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -186,7 +182,6 @@ class Storage {
     {
         
         $url = $this -> url . 'storage/' . $body['uuid'] . '/switch';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -201,7 +196,6 @@ class Storage {
     {
         
         $url = $this -> url . 'storage/' . $body['uuid'] . '/quota';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -216,7 +210,6 @@ class Storage {
     {
         
         $url = $this -> url . 'storage/' . $body['uuid'] . '/quota/' . $body['quota_uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -228,9 +221,7 @@ class Storage {
      */
     public function listStorageQuota(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'storage/' . $body['uuid'] . '/quota';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -245,7 +236,6 @@ class Storage {
     {
         
         $url = $this -> url . 'storage/' . $body['uuid'] . '/quota';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -1263,9 +1253,7 @@ class Storage {
      */
     public function describeTape(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'tape/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -1280,7 +1268,6 @@ class Storage {
     {
         
         $url = $this -> url . 'tape/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

@@ -168,9 +168,7 @@ class FspMove {
      */
     public function describeFspMove(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/fsp/move/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -185,7 +183,6 @@ class FspMove {
     {
 
         $url = $this -> url . '/fsp/move/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

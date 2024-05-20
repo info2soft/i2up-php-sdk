@@ -128,7 +128,6 @@ class BackupWork {
     public function describeBackupWorkFilter(array $body = array())
     {
         $url = $this -> url . 'backup_work_filter/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -141,7 +140,6 @@ class BackupWork {
     public function modifyBackupWorkFilter(array $body = array())
     {
         $url = $this -> url . 'backup_work_filter/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

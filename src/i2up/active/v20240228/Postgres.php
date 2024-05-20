@@ -90,7 +90,6 @@ class Postgres {
     public function describePgsqlRules(array $body = array())
     {
         $url = $this -> url . '/pgsql/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

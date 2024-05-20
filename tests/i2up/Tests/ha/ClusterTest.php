@@ -90,7 +90,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'cluster_uuids'=>array(),
+            'cluster_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $cluster -> deleteHaCluster($arr);
@@ -193,7 +193,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
         $cluster = $this -> cluster;
         $arr = array(
             'cluster_uuid'=>'',
-            'label_uuids'=>array(),
+            'label_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cluster -> listHaClusterMonitor($arr);
         $this->assertNotNull($res[0]);
@@ -214,7 +214,7 @@ class ClusterTest extends \PHPUnit_Framework_TestCase
     {
         $cluster = $this -> cluster;
         $arr = array(
-            'cluster_uuids'=>array(),
+            'cluster_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cluster -> listHaClusterStatus($arr);
         $this->assertNotNull($res[0]);

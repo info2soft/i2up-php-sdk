@@ -45,7 +45,6 @@ class Webhook {
     {
         
         $url = $this -> url . 'webhook/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -71,9 +70,7 @@ class Webhook {
      */
     public function describeWebhook(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'webhook/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -116,7 +113,6 @@ class Webhook {
     {
         
         $url = $this -> url . 'webhook/content_template/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

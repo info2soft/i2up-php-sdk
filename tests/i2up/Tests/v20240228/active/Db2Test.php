@@ -17,7 +17,7 @@ class Db2Test extends \PHPUnit_Framework_TestCase
     public function testListDb2Rule()
     {
         $db2 = $this -> db2;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $db2 -> listDb2Rule($arr);
         $this->do_assert($res);
     }
@@ -120,8 +120,7 @@ class Db2Test extends \PHPUnit_Framework_TestCase
     public function testModifyDb2Rule()
     {
         $db2 = $this -> db2;
-        $arr = array();
-        $res = $db2 -> modifyDb2Rule($arr);
+        $res = $db2 -> modifyDb2Rule();
         $this->do_assert($res);
     }
 
@@ -129,7 +128,7 @@ class Db2Test extends \PHPUnit_Framework_TestCase
     {
         $db2 = $this -> db2;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $db2 -> listSyncRulesStatus($arr);
         $this->do_assert($res);
@@ -149,7 +148,7 @@ class Db2Test extends \PHPUnit_Framework_TestCase
     {
         $db2 = $this -> db2;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'type'=>'',
             'force'=>0,
         );

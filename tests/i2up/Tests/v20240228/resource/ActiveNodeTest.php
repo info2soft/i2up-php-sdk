@@ -17,7 +17,7 @@ class ActiveNodeTest extends \PHPUnit_Framework_TestCase
     public function testListInactiveNodes()
     {
         $activeNode = $this -> activeNode;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $activeNode -> listInactiveNodes($arr);
         $this->do_assert($res);
     }
@@ -184,7 +184,7 @@ class ActiveNodeTest extends \PHPUnit_Framework_TestCase
     public function testGetCharset()
     {
         $activeNode = $this -> activeNode;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $activeNode -> getCharset($arr);
         $this->do_assert($res);
     }
@@ -554,7 +554,7 @@ class ActiveNodeTest extends \PHPUnit_Framework_TestCase
     public function testBatchCreateDbs()
     {
         $activeNode = $this -> activeNode;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $activeNode -> batchCreateDbs($arr);
         $this->do_assert($res);
     }

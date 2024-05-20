@@ -45,7 +45,6 @@ class DtoStorage {
     {
         
         $url = $this -> url . 'dto/storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -57,9 +56,7 @@ class DtoStorage {
      */
     public function describeDtoStorage(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'dto/storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

@@ -113,7 +113,7 @@ class StorageUnitTest extends \PHPUnit_Framework_TestCase
     {
         $storageUnit = $this -> storageUnit;
         $arr = array(
-            'unit_uuids'=>array(),
+            'unit_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $storageUnit -> deleteStorageUnit($arr);
@@ -124,7 +124,7 @@ class StorageUnitTest extends \PHPUnit_Framework_TestCase
     {
         $storageUnit = $this -> storageUnit;
         $arr = array(
-            'unit_uuids'=>array(),
+            'unit_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $storageUnit -> listStorageUnitStatus($arr);
@@ -185,7 +185,7 @@ class StorageUnitTest extends \PHPUnit_Framework_TestCase
     {
         $storageUnit = $this -> storageUnit;
         $arr = array(
-            'group_uuids'=>array(),
+            'group_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $storageUnit -> deleteStorageUnitGroup($arr);

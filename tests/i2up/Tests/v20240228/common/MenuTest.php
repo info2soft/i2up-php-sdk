@@ -17,7 +17,7 @@ class MenuTest extends \PHPUnit_Framework_TestCase
     public function testListMenu()
     {
         $menu = $this -> menu;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $menu -> listMenu($arr);
         $this->do_assert($res);
     }

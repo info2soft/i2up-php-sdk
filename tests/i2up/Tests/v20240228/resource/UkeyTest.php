@@ -57,7 +57,7 @@ class UkeyTest extends \PHPUnit_Framework_TestCase
     public function testListUkey()
     {
         $ukey = $this -> ukey;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $ukey -> listUkey($arr);
         $this->do_assert($res);
     }
@@ -153,7 +153,7 @@ class UkeyTest extends \PHPUnit_Framework_TestCase
     {
         $ukey = $this -> ukey;
         $arr = array(
-            'ukey_uuids'=>array(),
+            'ukey_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $ukey -> listUkeyStatus($arr);
         $this->do_assert($res);
@@ -185,7 +185,7 @@ class UkeyTest extends \PHPUnit_Framework_TestCase
         $ukey = $this -> ukey;
         $arr = array(
             'export_pwd'=>'',
-            'ukey_uuids'=>array(),
+            'ukey_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $ukey -> exportUkeyInfo($arr);
         $this->do_assert($res);

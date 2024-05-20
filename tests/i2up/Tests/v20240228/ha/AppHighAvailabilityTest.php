@@ -352,7 +352,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
+            'ha_uuid'=>array('11111111-1111-1111-1111-111111111111'),
             'node_uuid'=>'',
             'type'=>'start',
             'ha_name'=>'',
@@ -366,7 +366,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
+            'ha_uuid'=>array('11111111-1111-1111-1111-111111111111'),
             'node_uuid'=>'',
             'type'=>'stop',
             'ha_name'=>'',
@@ -380,7 +380,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     {
         $appHighAvailability = $this -> appHighAvailability;
         $arr = array(
-            'ha_uuid'=>array(),
+            'ha_uuid'=>array('11111111-1111-1111-1111-111111111111'),
             'node_uuid'=>'',
             'type'=>'force_switch',
             'ha_name'=>'',
@@ -405,7 +405,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     public function testListStageOptions()
     {
         $appHighAvailability = $this -> appHighAvailability;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $appHighAvailability -> listStageOptions($arr);
         $this->do_assert($res);
     }

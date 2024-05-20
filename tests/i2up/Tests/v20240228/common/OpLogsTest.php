@@ -37,7 +37,7 @@ class OpLogsTest extends \PHPUnit_Framework_TestCase
     {
         $opLogs = $this -> opLogs;
         $arr = array(
-            'ids'=>array(),
+            'ids'=>array('1'),
         );
         $res = $opLogs -> deleteOpLog($arr);
         $this->do_assert($res);

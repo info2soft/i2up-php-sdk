@@ -133,7 +133,7 @@ class CloudBackupTest extends \PHPUnit_Framework_TestCase
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
             'force'=>1,
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cloudBackup -> deleteCloudBackup($arr);
         $this->do_assert($res);

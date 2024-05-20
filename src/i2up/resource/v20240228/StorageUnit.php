@@ -73,7 +73,6 @@ class StorageUnit {
     {
         
         $url = $this -> url . 'storage_unit/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -85,9 +84,7 @@ class StorageUnit {
      */
     public function describeStorageUnit(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'storage_unit/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -158,7 +155,6 @@ class StorageUnit {
     {
         
         $url = $this -> url . 'storage_unit_group/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -170,9 +166,7 @@ class StorageUnit {
      */
     public function describeStorageUnitGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'storage_unit_group/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

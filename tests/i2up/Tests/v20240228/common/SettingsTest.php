@@ -136,7 +136,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListPublicSettings()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> listPublicSettings($arr);
         $this->do_assert($res);
     }
@@ -144,7 +144,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testDescribe()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> describe($arr);
         $this->do_assert($res);
     }
@@ -152,7 +152,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListNodeConf()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> listNodeConf($arr);
         $this->do_assert($res);
     }
@@ -316,7 +316,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListProfile()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> listProfile($arr);
         $this->do_assert($res);
     }
@@ -541,7 +541,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     {
         $settings = $this -> settings;
         $arr = array(
-            'obj_uuids'=>array(),
+            'obj_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $settings -> listBakConfigStatus($arr);
         $this->do_assert($res);
@@ -582,7 +582,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testDescribeCtrlBakSetting()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> describeCtrlBakSetting($arr);
         $this->do_assert($res);
     }
@@ -617,7 +617,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListDownloadCustomAudio()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> listDownloadCustomAudio($arr);
         $this->do_assert($res);
     }
@@ -645,7 +645,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testDownloadCustomAudio()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> downloadCustomAudio($arr);
         $this->do_assert($res);
     }
@@ -686,7 +686,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListScheduleSvr()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> listScheduleSvr($arr);
         $this->do_assert($res);
     }
@@ -695,7 +695,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     {
         $settings = $this -> settings;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $settings -> deleteScheduleSvr($arr);
         $this->do_assert($res);
@@ -740,7 +740,7 @@ class SettingsTest extends \PHPUnit_Framework_TestCase
     public function testListEtcd()
     {
         $settings = $this -> settings;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $settings -> listEtcd($arr);
         $this->do_assert($res);
     }

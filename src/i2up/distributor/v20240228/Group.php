@@ -54,7 +54,6 @@ class Group {
     public function describeNodeGroup(array $body = array())
     {
         $url = $this -> url . '/distribution/node_group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -68,7 +67,6 @@ class Group {
     public function modifyNodeGroup(array $body = array())
     {
         $url = $this -> url . '/distribution/node_group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

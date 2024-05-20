@@ -146,7 +146,7 @@ class FullMachineCopyTest extends \PHPUnit_Framework_TestCase
     {
         $fullMachineCopy = $this -> fullMachineCopy;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
             'del_policy'=>'',
         );
@@ -181,7 +181,7 @@ class FullMachineCopyTest extends \PHPUnit_Framework_TestCase
     {
         $fullMachineCopy = $this -> fullMachineCopy;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>0,
         );
         $res = $fullMachineCopy -> listFullMachineCopyStatus($arr);
@@ -192,7 +192,7 @@ class FullMachineCopyTest extends \PHPUnit_Framework_TestCase
     {
         $fullMachineCopy = $this -> fullMachineCopy;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
         );
         $res = $fullMachineCopy -> startFullMachineCopy($arr);
@@ -203,7 +203,7 @@ class FullMachineCopyTest extends \PHPUnit_Framework_TestCase
     {
         $fullMachineCopy = $this -> fullMachineCopy;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
         );
         $res = $fullMachineCopy -> stopFullMachineCopy($arr);

@@ -43,7 +43,6 @@ class RecoveryRule {
     public function modifyRecoveryRule(array $body = array())
     {
         $url = $this -> url . 'recovery_rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -84,7 +83,6 @@ class RecoveryRule {
     public function describeRecoveryRule(array $body = array())
     {
         $url = $this -> url . 'recovery_rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

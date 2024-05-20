@@ -80,7 +80,7 @@ class SnapshotTaskTest extends \PHPUnit_Framework_TestCase
     {
         $snapshotTask = $this -> snapshotTask;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $snapshotTask -> listSnapshotTaskStatus($arr);

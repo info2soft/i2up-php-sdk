@@ -53,7 +53,6 @@ class MountTask {
     public function describeMountTask(array $body = array())
     {
         $url = $this -> url . '/mount_task/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

@@ -77,7 +77,7 @@ class DataChkTest extends \PHPUnit_Framework_TestCase
         $dataChk = $this -> dataChk;
         $arr = array(
             'operate'=>'',
-            'obj_cmp_uuids'=>array(),
+            'obj_cmp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dataChk -> stopObjCmp($arr);
         $this->do_assert($res);
@@ -112,7 +112,7 @@ class DataChkTest extends \PHPUnit_Framework_TestCase
     {
         $dataChk = $this -> dataChk;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dataChk -> listDatacheckObjCmpStatus($arr);
         $this->do_assert($res);

@@ -18,7 +18,7 @@ class RemoteCoopyTest extends \PHPUnit_Framework_TestCase
     {
         $remoteCoopy = $this -> remoteCoopy;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $remoteCoopy -> verifyDuplicateCdmCoopyRule($arr);
         $this->do_assert($res);
@@ -31,7 +31,7 @@ class RemoteCoopyTest extends \PHPUnit_Framework_TestCase
             'old_bk_uuid'=>'',
             'old_platform_uuid'=>'',
             'old_storage_uuid'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'proxy_uuid'=>'',
             'new_bk_uuid'=>'',
             'new_platform_uuid'=>'',
@@ -137,7 +137,7 @@ class RemoteCoopyTest extends \PHPUnit_Framework_TestCase
         $remoteCoopy = $this -> remoteCoopy;
         $arr = array(
             'del_policy'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $remoteCoopy -> deleteCdmRemoteCoopy($arr);
         $this->do_assert($res);
@@ -183,7 +183,7 @@ class RemoteCoopyTest extends \PHPUnit_Framework_TestCase
         $arr = array(
             'vp_uuid'=>'',
             'storage_uuid'=>'',
-            'wk_uuids'=>array(),
+            'wk_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'bk_uuid'=>'',
         );
         $res = $remoteCoopy -> verifyCdmDirExist($arr);

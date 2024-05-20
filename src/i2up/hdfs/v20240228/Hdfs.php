@@ -45,7 +45,6 @@ class Hdfs {
     {
         
         $url = $this -> url . '/hdfs/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -71,9 +70,7 @@ class Hdfs {
      */
     public function describeHdfs(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/hdfs/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

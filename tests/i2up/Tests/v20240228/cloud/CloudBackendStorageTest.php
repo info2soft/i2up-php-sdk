@@ -73,7 +73,7 @@ class CloudBackendStorageTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackendStorage = $this -> cloudBackendStorage;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $cloudBackendStorage -> deleteBackendStorage($arr);

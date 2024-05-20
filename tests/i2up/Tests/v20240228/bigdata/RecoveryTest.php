@@ -103,7 +103,7 @@ class RecoveryTest extends \PHPUnit_Framework_TestCase
     {
         $recovery = $this -> recovery;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $recovery -> listBigdataRecoveryStatus($arr);

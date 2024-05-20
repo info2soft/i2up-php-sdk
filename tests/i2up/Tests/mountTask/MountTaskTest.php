@@ -80,7 +80,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
     {
         $mountTask = $this -> mountTask;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mountTask -> deleteMountTask($arr);
         $this->assertNotNull($res[0]);
@@ -92,7 +92,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
     {
         $mountTask = $this -> mountTask;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mountTask -> listMountTaskStatus($arr);
         $this->assertNotNull($res[0]);
@@ -105,7 +105,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
         $mountTask = $this -> mountTask;
         $arr = array(
             'operate'=>'',
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mountTask -> tempFuncName($arr);
         $this->assertNotNull($res[0]);

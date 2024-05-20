@@ -109,7 +109,7 @@ class CloudPlatformTest extends \PHPUnit_Framework_TestCase
     {
         $cloudPlatform = $this -> cloudPlatform;
         $arr = array(
-            'vp_uuids'=>array(),
+            'vp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $cloudPlatform -> listCloudPlatformStatus($arr);

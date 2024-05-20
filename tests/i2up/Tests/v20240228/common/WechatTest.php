@@ -28,7 +28,7 @@ class WechatTest extends \PHPUnit_Framework_TestCase
     public function testUnbindUser()
     {
         $wechat = $this -> wechat;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $wechat -> unbindUser($arr);
         $this->do_assert($res);
     }
@@ -36,7 +36,7 @@ class WechatTest extends \PHPUnit_Framework_TestCase
     public function testBindStatus()
     {
         $wechat = $this -> wechat;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $wechat -> bindStatus($arr);
         $this->do_assert($res);
     }

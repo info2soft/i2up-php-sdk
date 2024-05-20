@@ -165,7 +165,7 @@ class SecondReplicaTest extends \PHPUnit_Framework_TestCase
         $secondReplica = $this -> secondReplica;
         $arr = array(
             'operate'=>'start',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $secondReplica -> startSecondReplica($arr);
         $this->do_assert($res);
@@ -176,7 +176,7 @@ class SecondReplicaTest extends \PHPUnit_Framework_TestCase
         $secondReplica = $this -> secondReplica;
         $arr = array(
             'operate'=>'stop',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $secondReplica -> stopSecondReplica($arr);
         $this->do_assert($res);
@@ -187,7 +187,7 @@ class SecondReplicaTest extends \PHPUnit_Framework_TestCase
         $secondReplica = $this -> secondReplica;
         $arr = array(
             'operate'=>'start_vm',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $secondReplica -> startVmSecondReplica($arr);
         $this->do_assert($res);
@@ -198,7 +198,7 @@ class SecondReplicaTest extends \PHPUnit_Framework_TestCase
         $secondReplica = $this -> secondReplica;
         $arr = array(
             'operate'=>'stop_vm',
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $secondReplica -> stopVmSecondReplica($arr);
         $this->do_assert($res);
@@ -208,7 +208,7 @@ class SecondReplicaTest extends \PHPUnit_Framework_TestCase
     {
         $secondReplica = $this -> secondReplica;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'del_policy'=>1,
             'force'=>1,
         );
@@ -220,7 +220,7 @@ class SecondReplicaTest extends \PHPUnit_Framework_TestCase
     {
         $secondReplica = $this -> secondReplica;
         $arr = array(
-            'fsp_uuids'=>array(),
+            'fsp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $secondReplica -> listSecondReplicaStatus($arr);

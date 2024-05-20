@@ -42,7 +42,6 @@ class Dto {
     public function modifyDtoRule(array $body = array())
     {
         $url = $this -> url . '/dto/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -54,9 +53,7 @@ class Dto {
      */
     public function describeDtoRule(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/dto/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -178,7 +175,6 @@ class Dto {
     public function listDtoRuleFile(array $body = array())
     {
         $url = $this -> url . '/dto/rule/' . $body['uuid'] . '/file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -190,9 +186,7 @@ class Dto {
      */
     public function deleteDtoRuleFile(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/dto/rule/' . $body['uuid'] . '/file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url);
         return $res;
     }
@@ -204,9 +198,7 @@ class Dto {
      */
     public function listDtoRuleCmpResult(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/dto/rule/' . $body['uuid'] . '/cmp_result';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

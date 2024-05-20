@@ -102,7 +102,6 @@ class Mysql {
     public function describeMysqlRule(array $body = array())
     {
         $url = $this -> url . '/stream/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

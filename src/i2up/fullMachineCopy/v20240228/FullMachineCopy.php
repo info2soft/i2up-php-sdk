@@ -43,7 +43,6 @@ class FullMachineCopy {
     public function modifyFullMachineCopy(array $body = array())
     {
         $url = $this -> url . '/full_machine_copy/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -67,9 +66,7 @@ class FullMachineCopy {
      */
     public function describeFullMachineCopy(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/full_machine_copy/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

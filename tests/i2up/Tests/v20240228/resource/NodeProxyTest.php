@@ -62,7 +62,7 @@ class NodeProxyTest extends \PHPUnit_Framework_TestCase
     {
         $nodeProxy = $this -> nodeProxy;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $nodeProxy -> deleteNodeProxy($arr);
         $this->do_assert($res);

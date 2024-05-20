@@ -84,9 +84,7 @@ class Notifications {
      */
     public function describeNotifications(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'notifications/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -238,7 +236,6 @@ class Notifications {
     {
         
         $url = $this -> url . 'notifications/template/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

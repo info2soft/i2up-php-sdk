@@ -55,9 +55,7 @@ class LanfreeChannel {
      */
     public function describeLanfreeChannel(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'lanfree_channel//' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -72,7 +70,6 @@ class LanfreeChannel {
     {
         
         $url = $this -> url . 'lanfree_channel//' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

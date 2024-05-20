@@ -17,7 +17,7 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
     public function testListOceanRule()
     {
         $oceanbase = $this -> oceanbase;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $oceanbase -> listOceanRule($arr);
         $this->do_assert($res);
     }
@@ -107,7 +107,6 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
             'exclude_table'=>'[]',),
             'etl_settings'=>array(
             'etl_table'=>array(),),
-            '_'=>'489d781db90cb',
         );
         $res = $oceanbase -> createOceanRule($arr);
         $this->do_assert($res);
@@ -197,7 +196,6 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
             'exclude_table'=>'[]',),
             'etl_settings'=>array(
             'etl_table'=>array(),),
-            '_'=>'489d781db90cb',
             'tgt_type'=>'',
         );
         $res = $oceanbase -> createBatchOceanRule($arr);
@@ -207,7 +205,7 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
     public function testModifyOceanRule()
     {
         $oceanbase = $this -> oceanbase;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $oceanbase -> modifyOceanRule($arr);
         $this->do_assert($res);
     }
@@ -227,7 +225,7 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
     {
         $oceanbase = $this -> oceanbase;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'type'=>'',
             'force'=>0,
         );
@@ -240,7 +238,7 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
         $oceanbase = $this -> oceanbase;
         $arr = array(
             'operate'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'scn'=>'',
         );
         $res = $oceanbase -> resumeOceanRule($arr);
@@ -251,7 +249,7 @@ class OceanbaseTest extends \PHPUnit_Framework_TestCase
     {
         $oceanbase = $this -> oceanbase;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $oceanbase -> listSyncRulesStatus($arr);
         $this->do_assert($res);

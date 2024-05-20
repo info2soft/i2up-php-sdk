@@ -160,9 +160,7 @@ class CloudEcs {
      */
     public function describeRehearseGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/ecs/rehearse_group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

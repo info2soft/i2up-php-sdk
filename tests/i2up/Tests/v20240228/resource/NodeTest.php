@@ -751,7 +751,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     public function testListWaitingActiveNode()
     {
         $node = $this -> node;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $node -> listWaitingActiveNode($arr);
         $this->do_assert($res);
     }
@@ -792,7 +792,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $node -> deleteInactiveNode($arr);
         $this->do_assert($res);
@@ -811,7 +811,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     public function testListPlatform()
     {
         $node = $this -> node;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $node -> listPlatform($arr);
         $this->do_assert($res);
     }
@@ -890,7 +890,7 @@ class NodeTest extends \PHPUnit_Framework_TestCase
     {
         $node = $this -> node;
         $arr = array(
-            'node_uuids'=>array(),
+            'node_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'os_user'=>'',
             'os_pwd'=>'',
         );

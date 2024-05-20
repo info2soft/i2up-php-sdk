@@ -56,7 +56,6 @@ class Notifications {
      */
     public function describeNotifications(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url;
         $res = $this -> httpRequest('get', $url);
         return $res;

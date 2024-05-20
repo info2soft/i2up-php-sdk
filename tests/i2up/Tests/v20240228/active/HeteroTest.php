@@ -186,7 +186,7 @@ class HeteroTest extends \PHPUnit_Framework_TestCase
     {
         $hetero = $this -> hetero;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $hetero -> listConsumerStatus($arr);
         $this->do_assert($res);

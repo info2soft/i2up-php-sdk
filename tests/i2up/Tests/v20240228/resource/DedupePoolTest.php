@@ -64,7 +64,7 @@ class DedupePoolTest extends \PHPUnit_Framework_TestCase
     public function testDedupePoolList()
     {
         $dedupePool = $this -> dedupePool;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dedupePool -> dedupePoolList($arr);
         $this->do_assert($res);
     }
@@ -73,7 +73,7 @@ class DedupePoolTest extends \PHPUnit_Framework_TestCase
     {
         $dedupePool = $this -> dedupePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
             'del_data'=>1,
         );
@@ -85,7 +85,7 @@ class DedupePoolTest extends \PHPUnit_Framework_TestCase
     {
         $dedupePool = $this -> dedupePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $dedupePool -> listDedupePoolStatus($arr);
@@ -96,7 +96,7 @@ class DedupePoolTest extends \PHPUnit_Framework_TestCase
     {
         $dedupePool = $this -> dedupePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
         );
         $res = $dedupePool -> startDedupePool($arr);
@@ -107,7 +107,7 @@ class DedupePoolTest extends \PHPUnit_Framework_TestCase
     {
         $dedupePool = $this -> dedupePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
         );
         $res = $dedupePool -> stopDedupePool($arr);

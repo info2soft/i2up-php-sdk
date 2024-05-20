@@ -232,9 +232,7 @@ class CloudRehearse {
      */
     public function describeRehearse(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/rehearse/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -269,9 +267,7 @@ class CloudRehearse {
      */
     public function listNpsvrRehearseStatus(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/rehearse/' . $body['uuid'] . '/status';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url);
         return $res;
     }
@@ -282,9 +278,7 @@ class CloudRehearse {
      */
     public function listNpsvrRehearseProgress(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/rehearse/' . $body['uuid'] . '/progress';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url);
         return $res;
     }
@@ -355,9 +349,7 @@ class CloudRehearse {
      */
     public function describeGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cloud/rehearse/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

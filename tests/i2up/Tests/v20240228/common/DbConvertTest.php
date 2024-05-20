@@ -17,7 +17,7 @@ class DbConvertTest extends \PHPUnit_Framework_TestCase
     public function testDbConvertImport()
     {
         $dbConvert = $this -> dbConvert;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $dbConvert -> dbConvertImport($arr);
         $this->do_assert($res);
     }

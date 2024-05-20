@@ -43,7 +43,6 @@ class AppContinuity {
     public function modifyAppContinuity(array $body = array())
     {
         $url = $this -> url . '/app_continuity/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -67,9 +66,7 @@ class AppContinuity {
      */
     public function describeAppContinuity(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/app_continuity/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

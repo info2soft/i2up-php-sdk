@@ -45,7 +45,6 @@ class CommonTemplate {
     {
         
         $url = $this -> url . 'common_template/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -60,7 +59,6 @@ class CommonTemplate {
     {
         
         $url = $this -> url . 'common_template/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

@@ -80,7 +80,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     {
         $storage = $this -> storage;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storage -> deleteStorageConfig($arr);
         $this->assertNotNull($res[0]);

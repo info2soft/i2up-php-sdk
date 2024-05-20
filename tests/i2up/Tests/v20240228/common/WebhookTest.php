@@ -73,7 +73,7 @@ class WebhookTest extends \PHPUnit_Framework_TestCase
     {
         $webhook = $this -> webhook;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $webhook -> deleteWebhook($arr);
         $this->do_assert($res);
@@ -135,7 +135,7 @@ class WebhookTest extends \PHPUnit_Framework_TestCase
     {
         $webhook = $this -> webhook;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $webhook -> delteWebhookContentTemplate($arr);
         $this->do_assert($res);

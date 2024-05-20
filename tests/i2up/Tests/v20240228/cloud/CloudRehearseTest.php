@@ -29,8 +29,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     public function testListHost()
     {
         $cloudRehearse = $this -> cloudRehearse;
-        $arr = array();
-        $res = $cloudRehearse -> listHost($arr);
+        $res = $cloudRehearse -> listHost();
         $this->do_assert($res);
     }
 
@@ -285,7 +284,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudRehearse = $this -> cloudRehearse;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
             'is_group'=>1,
         );
         $res = $cloudRehearse -> evacuateBatchRehearse($arr);
@@ -317,7 +316,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudRehearse = $this -> cloudRehearse;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudRehearse -> deleteRehearse($arr);
         $this->do_assert($res);
@@ -411,8 +410,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     public function testListGroup()
     {
         $cloudRehearse = $this -> cloudRehearse;
-        $arr = array();
-        $res = $cloudRehearse -> listGroup($arr);
+        $res = $cloudRehearse -> listGroup();
         $this->do_assert($res);
     }
 
@@ -430,7 +428,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudRehearse = $this -> cloudRehearse;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudRehearse -> deleteGroup($arr);
         $this->do_assert($res);
@@ -450,7 +448,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudRehearse = $this -> cloudRehearse;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudRehearse -> listGroupStatus($arr);
         $this->do_assert($res);
@@ -459,8 +457,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     public function testListEvacuatedGroup()
     {
         $cloudRehearse = $this -> cloudRehearse;
-        $arr = array();
-        $res = $cloudRehearse -> listEvacuatedGroup($arr);
+        $res = $cloudRehearse -> listEvacuatedGroup();
         $this->do_assert($res);
     }
 
@@ -468,7 +465,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudRehearse = $this -> cloudRehearse;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudRehearse -> listBatchRehearse($arr);
         $this->do_assert($res);

@@ -41,7 +41,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
     public function testListMountTask()
     {
         $mountTask = $this -> mountTask;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $mountTask -> listMountTask($arr);
         $this->do_assert($res);
     }
@@ -60,7 +60,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
     {
         $mountTask = $this -> mountTask;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>'',
         );
         $res = $mountTask -> deleteMountTask($arr);
@@ -71,7 +71,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
     {
         $mountTask = $this -> mountTask;
         $arr = array(
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $mountTask -> listMountTaskStatus($arr);
@@ -83,7 +83,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
         $mountTask = $this -> mountTask;
         $arr = array(
             'operate'=>'mount',
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mountTask -> mountTask($arr);
         $this->do_assert($res);
@@ -94,7 +94,7 @@ class MountTaskTest extends \PHPUnit_Framework_TestCase
         $mountTask = $this -> mountTask;
         $arr = array(
             'operate'=>'unmount',
-            'task_uuids'=>array(),
+            'task_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mountTask -> unmountTask($arr);
         $this->do_assert($res);

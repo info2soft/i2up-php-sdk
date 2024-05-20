@@ -197,7 +197,7 @@ class ScriptMaskTest extends \PHPUnit_Framework_TestCase
     {
         $scriptMask = $this -> scriptMask;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $scriptMask -> listRuleStatus($arr);
         $this->assertNotNull($res[0]);
@@ -210,7 +210,7 @@ class ScriptMaskTest extends \PHPUnit_Framework_TestCase
         $scriptMask = $this -> scriptMask;
         $arr = array(
             'operate'=>'stop',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $scriptMask -> operateRule($arr);
         $this->assertNotNull($res[0]);

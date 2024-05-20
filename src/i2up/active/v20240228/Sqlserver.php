@@ -173,7 +173,6 @@ class Sqlserver {
     public function describeListRule(array $body = array())
     {
         $url = $this -> url . '/sqlserver/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -187,7 +186,6 @@ class Sqlserver {
     public function describeTbCmp(array $body = array())
     {
         $url = $this -> url . '/sqlserver/tb_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

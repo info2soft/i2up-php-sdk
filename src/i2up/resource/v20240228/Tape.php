@@ -83,9 +83,7 @@ class Tape {
      */
     public function describeTapeLibrary(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'tape_library/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -100,7 +98,6 @@ class Tape {
     {
         
         $url = $this -> url . 'tape_library/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -254,7 +251,6 @@ class Tape {
     {
         
         $url = $this -> url . 'tape_media/tape_pool/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

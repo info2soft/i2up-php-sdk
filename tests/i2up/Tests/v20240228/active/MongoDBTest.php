@@ -69,7 +69,7 @@ class MongoDBTest extends \PHPUnit_Framework_TestCase
     {
         $mongoDB = $this -> mongoDB;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>'true',
         );
         $res = $mongoDB -> deleteMongoRule($arr);

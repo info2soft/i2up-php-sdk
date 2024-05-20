@@ -107,7 +107,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     {
         $upMonitor = $this -> upMonitor;
         $arr = array(
-            'up_uuids'=>array(),
+            'up_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'',
         );
         $res = $upMonitor -> refreshUpMonitor($arr);
@@ -120,7 +120,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     {
         $upMonitor = $this -> upMonitor;
         $arr = array(
-            'up_uuids'=>array(),
+            'up_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $upMonitor -> listUpMonitorStatus($arr);
         $this->assertNotNull($res[0]);
@@ -132,7 +132,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     {
         $upMonitor = $this -> upMonitor;
         $arr = array(
-            'up_uuids'=>array(),
+            'up_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $upMonitor -> deleteUpMonitor($arr);
         $this->assertNotNull($res[0]);

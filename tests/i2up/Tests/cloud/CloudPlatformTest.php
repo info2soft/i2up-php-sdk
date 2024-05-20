@@ -104,7 +104,7 @@ class CloudPlatformTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'vp_uuids'=>array(),
+            'vp_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cloudBackup -> tempFuncName($arr);
         $this->assertNotNull($res[0]);

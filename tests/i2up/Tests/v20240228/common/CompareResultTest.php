@@ -30,7 +30,7 @@ class CompareResultTest extends \PHPUnit_Framework_TestCase
     {
         $compareResult = $this -> compareResult;
         $arr = array(
-            'result_uuids'=>array(),
+            'result_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'download',
         );
         $res = $compareResult -> downloadCompareResult($arr);
@@ -41,7 +41,7 @@ class CompareResultTest extends \PHPUnit_Framework_TestCase
     {
         $compareResult = $this -> compareResult;
         $arr = array(
-            'result_uuids'=>array(),
+            'result_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $compareResult -> deleteCompareResult($arr);
         $this->do_assert($res);

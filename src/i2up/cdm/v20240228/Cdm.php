@@ -40,9 +40,7 @@ class Cdm {
      */
     public function describeCdm(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cdm/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -56,7 +54,6 @@ class Cdm {
     public function modifyCdm(array $body = array())
     {
         $url = $this -> url . '/cdm/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

@@ -52,9 +52,7 @@ class Recovery {
      */
     public function describeBigdataRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/bigdata/recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

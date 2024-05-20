@@ -42,9 +42,7 @@ class VirtualizationSupport {
      */
     public function describeVp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'vp/platform/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -59,7 +57,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -158,7 +155,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/vm';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -173,7 +169,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/vm_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -199,9 +194,7 @@ class VirtualizationSupport {
      */
     public function describeVpAttribute(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -216,7 +209,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/bak_ver';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -231,7 +223,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/bak_ver_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -246,7 +237,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datastore_file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -258,9 +248,7 @@ class VirtualizationSupport {
      */
     public function listDatacenter(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datacenter';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -275,7 +263,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datacenter_host';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -290,7 +277,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/resource_pool';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -305,7 +291,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datastore';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -320,7 +305,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datastore_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -335,7 +319,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datastore';
-        unset($body['uuid']);
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -349,7 +332,6 @@ class VirtualizationSupport {
     {
 
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/datastore_dir';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -364,7 +346,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/vm_disk';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -379,7 +360,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/network';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -644,7 +624,6 @@ class VirtualizationSupport {
     {
 
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/pool_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -657,7 +636,6 @@ class VirtualizationSupport {
     public function listPoolHosts(array $body = array())
     {
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/pool_host_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -670,7 +648,6 @@ class VirtualizationSupport {
     public function listAioClusters(array $body = array())
     {
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/aio_cluster_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -683,7 +660,6 @@ class VirtualizationSupport {
     public function listAioHosts(array $body = array())
     {
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/aio_host_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -696,7 +672,6 @@ class VirtualizationSupport {
     public function listAioPools(array $body = array())
     {
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/aio_pool_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -709,7 +684,6 @@ class VirtualizationSupport {
     public function describeAioHostCapability(array $body = array())
     {
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/aio_host_capability';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -722,7 +696,6 @@ class VirtualizationSupport {
     public function listScpHosts(array $body = array())
     {
         $url = $this -> url . 'vp/platform/' . $body['uuid'] . '/scp_host_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

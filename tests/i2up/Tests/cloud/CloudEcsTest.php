@@ -30,7 +30,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
             'flavorid'=>'',
             'volume_sys_id'=>'',
             'server_zone'=>'',
-            'volume_data_ids'=>array(),
+            'volume_data_ids'=>array('1'),
             'wk_uuid'=>'',
             'rc_point'=>array(
                 'time'=>'',

@@ -187,7 +187,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
     {
         $sqlserver = $this -> sqlserver;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>'true',
         );
         $res = $sqlserver -> deleteRule($arr);
@@ -199,7 +199,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
         $sqlserver = $this -> sqlserver;
         $arr = array(
             'operate'=>'',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $sqlserver -> resumeSqlserverRule($arr);
         $this->do_assert($res);
@@ -209,7 +209,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
     {
         $sqlserver = $this -> sqlserver;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $sqlserver -> listRuleStatus($arr);
         $this->do_assert($res);
@@ -218,8 +218,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
     public function testCheckName()
     {
         $sqlserver = $this -> sqlserver;
-        $arr = array();
-        $res = $sqlserver -> checkName($arr);
+        $res = $sqlserver -> checkName();
         $this->do_assert($res);
     }
 

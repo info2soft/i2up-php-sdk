@@ -82,7 +82,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
     {
         $boxVm = $this -> boxVm;
         $arr = array(
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $boxVm -> deleteBoxVm($arr);
@@ -93,7 +93,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
     {
         $boxVm = $this -> boxVm;
         $arr = array(
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $boxVm -> listBoxVmStatus($arr);
         $this->do_assert($res);
@@ -104,7 +104,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
         $boxVm = $this -> boxVm;
         $arr = array(
             'operate'=>'register',
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $boxVm -> registerBoxVm($arr);
         $this->do_assert($res);

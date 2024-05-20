@@ -131,7 +131,7 @@ class QianBaseSyncTest extends \PHPUnit_Framework_TestCase
     {
         $qianBaseSync = $this -> qianBaseSync;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>'true',
         );
         $res = $qianBaseSync -> deleteQianbaseRule($arr);
@@ -142,7 +142,7 @@ class QianBaseSyncTest extends \PHPUnit_Framework_TestCase
     {
         $qianBaseSync = $this -> qianBaseSync;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $qianBaseSync -> listQianbaseStatus($arr);
         $this->do_assert($res);
@@ -153,7 +153,7 @@ class QianBaseSyncTest extends \PHPUnit_Framework_TestCase
         $qianBaseSync = $this -> qianBaseSync;
         $arr = array(
             'operate'=>'',
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'scn'=>'',
         );
         $res = $qianBaseSync -> resumeQianbaseRule($arr);

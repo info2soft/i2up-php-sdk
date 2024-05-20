@@ -40,9 +40,7 @@ class Drill {
      */
     public function describeCdmDrill(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cdm_drill/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -54,9 +52,7 @@ class Drill {
      */
     public function describeCdmDrillGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/cdm_drill/' . $body['uuid'] . '/group';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

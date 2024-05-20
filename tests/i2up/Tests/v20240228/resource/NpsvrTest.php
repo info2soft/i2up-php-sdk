@@ -80,7 +80,7 @@ class NpsvrTest extends \PHPUnit_Framework_TestCase
     {
         $npsvr = $this -> npsvr;
         $arr = array(
-            'npsvr_uuids'=>array(),
+            'npsvr_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $npsvr -> deleteNpsvr($arr);
@@ -91,7 +91,7 @@ class NpsvrTest extends \PHPUnit_Framework_TestCase
     {
         $npsvr = $this -> npsvr;
         $arr = array(
-            'npsvr_uuids'=>array(),
+            'npsvr_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $npsvr -> getNpsvrStatus($arr);
         $this->do_assert($res);
@@ -102,7 +102,7 @@ class NpsvrTest extends \PHPUnit_Framework_TestCase
         $npsvr = $this -> npsvr;
         $arr = array(
             'operate'=>'maintain',
-            'npsvr_uuids'=>array(),
+            'npsvr_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'switch'=>0,
         );
         $res = $npsvr -> maintainNpsvr($arr);
@@ -114,7 +114,7 @@ class NpsvrTest extends \PHPUnit_Framework_TestCase
         $npsvr = $this -> npsvr;
         $arr = array(
             'operate'=>'renew_key',
-            'npsvr_uuids'=>array(),
+            'npsvr_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'switch'=>0,
         );
         $res = $npsvr -> renewKeyNpsvr($arr);

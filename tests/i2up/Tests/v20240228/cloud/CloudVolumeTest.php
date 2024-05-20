@@ -55,7 +55,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $cloudVolume = $this -> cloudVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'ecs_id'=>'',
             'attach_point'=>'',
         );
@@ -67,7 +67,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $cloudVolume = $this -> cloudVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cloudVolume -> detachVolume($arr);
         $this->do_assert($res);
@@ -88,8 +88,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     public function testListVolumeStatus()
     {
         $cloudVolume = $this -> cloudVolume;
-        $arr = array();
-        $res = $cloudVolume -> listVolumeStatus($arr);
+        $res = $cloudVolume -> listVolumeStatus();
         $this->do_assert($res);
     }
 

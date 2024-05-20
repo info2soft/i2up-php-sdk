@@ -73,7 +73,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . '/vp/backup/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -85,9 +84,7 @@ class VirtualizationSupport {
      */
     public function describeVpBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -99,9 +96,7 @@ class VirtualizationSupport {
      */
     public function describeVpBackupGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/backup/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -253,9 +248,7 @@ class VirtualizationSupport {
      */
     public function describeVpRecoveryGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/recovery/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -396,7 +389,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . '/vp/rep/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -411,7 +403,6 @@ class VirtualizationSupport {
     {
 
         $url = $this -> url . '/vp/rep/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -423,9 +414,7 @@ class VirtualizationSupport {
      */
     public function describeVpMove(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/move/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -437,9 +426,7 @@ class VirtualizationSupport {
      */
     public function describeVpRep(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/rep/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -454,7 +441,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . '/vp/move/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -469,7 +455,6 @@ class VirtualizationSupport {
     {
 
         $url = $this -> url . '/vp/rep/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -666,7 +651,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . '/vp/rep/' . $body['uuid'] . '/point_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -706,9 +690,7 @@ class VirtualizationSupport {
      */
     public function describeVpDrill(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/drill/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -821,7 +803,6 @@ class VirtualizationSupport {
     {
         
         $url = $this -> url . '/vp/file_recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -847,9 +828,7 @@ class VirtualizationSupport {
      */
     public function describeVpFileRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/vp/file_recovery/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

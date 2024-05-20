@@ -53,9 +53,7 @@ class FirstReplica {
      */
     public function describeFirstReplica(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/replica/first/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -69,7 +67,6 @@ class FirstReplica {
     public function modifyFirstReplica(array $body = array())
     {
         $url = $this -> url . '/replica/first/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

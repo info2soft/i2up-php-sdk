@@ -40,9 +40,7 @@ class SnapshotTask {
      */
     public function modifySnapshotTask(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/snapshot_task/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url);
         return $res;
     }
@@ -90,9 +88,7 @@ class SnapshotTask {
      */
     public function describeSnapshotTask(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/snapshot_task/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -142,7 +138,6 @@ class SnapshotTask {
     public function listSnapshotList(array $body = array())
     {
         $url = $this -> url . '/snapshot_task/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -156,7 +151,6 @@ class SnapshotTask {
     public function deleteSnapshotList(array $body = array())
     {
         $url = $this -> url . '/snapshot_task/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }

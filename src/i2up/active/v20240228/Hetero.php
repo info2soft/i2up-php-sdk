@@ -102,7 +102,6 @@ class Hetero {
     public function describeConsumerRules(array $body = array())
     {
         $url = $this -> url . '/hetero/consumer/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }

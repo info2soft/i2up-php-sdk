@@ -73,7 +73,6 @@ class Npsvr {
     {
         
         $url = $this -> url . 'vp/npsvr/' . $body['uuid'] ;
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -141,9 +140,7 @@ class Npsvr {
      */
     public function listConfigItems(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'vp/npsvr/' . $body['uuid'] . '/list_config_items';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -158,7 +155,6 @@ class Npsvr {
     {
         
         $url = $this -> url . 'vp/npsvr/' . $body['uuid'] . '/update_config_items';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

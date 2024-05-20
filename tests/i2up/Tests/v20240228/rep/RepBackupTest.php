@@ -254,7 +254,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'operate'=>'start',
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $repBackup -> startRepBackup($arr);
         $this->do_assert($res);
@@ -265,7 +265,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'operate'=>'stop',
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $repBackup -> stopRepBackup($arr);
         $this->do_assert($res);
@@ -276,7 +276,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'operate'=>'start_sync',
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $repBackup -> startSyncRepBackup($arr);
         $this->do_assert($res);
@@ -287,7 +287,7 @@ class RepBackupTest extends \PHPUnit_Framework_TestCase
         $repBackup = $this -> repBackup;
         $arr = array(
             'operate'=>'stop_sync',
-            'rep_uuids'=>array(),
+            'rep_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $repBackup -> stopSyncRepBackup($arr);
         $this->do_assert($res);

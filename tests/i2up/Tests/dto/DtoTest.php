@@ -133,7 +133,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     {
         $dto = $this -> dto;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dto -> listDtoRuleStatus($arr);
         $this->assertNotNull($res[0]);
@@ -145,7 +145,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     {
         $dto = $this -> dto;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dto -> deleteDtoRule($arr);
         $this->assertNotNull($res[0]);
@@ -158,7 +158,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
         $dto = $this -> dto;
         $arr = array(
             'operate'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dto -> tempFuncName($arr);
         $this->assertNotNull($res[0]);

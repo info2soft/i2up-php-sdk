@@ -155,7 +155,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     {
         $dto = $this -> dto;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force_refresh'=>1,
         );
         $res = $dto -> listDtoRuleStatus($arr);
@@ -166,7 +166,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     {
         $dto = $this -> dto;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $dto -> deleteDtoRule($arr);
