@@ -3,7 +3,6 @@ namespace i2up\Test\active;
 
 use i2up\active\v20200721\Hetero;
 use i2up\common\Auth;
-use i2up\Config;
 
 class HeteroTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class HeteroTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> hetero = new Hetero($auth);
+        $this -> hetero = new Hetero(new Auth());
     }
 
     public function testCreateHeteroRule()
@@ -47,7 +39,7 @@ class HeteroTest extends \PHPUnit_Framework_TestCase
     {
         $hetero = $this -> hetero;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $hetero -> deleteHeteroRule($arr);
         $this->assertNotNull($res[0]);
@@ -189,7 +181,7 @@ class HeteroTest extends \PHPUnit_Framework_TestCase
     {
         $hetero = $this -> hetero;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $hetero -> listConsumerStatus($arr);
         $this->assertNotNull($res[0]);

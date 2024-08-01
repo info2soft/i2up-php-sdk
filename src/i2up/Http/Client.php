@@ -1,9 +1,6 @@
 <?php
 namespace i2up\Http;
 
-use i2up\Config;
-use i2up\Http\Request;
-use i2up\Http\Response;
 use i2up\util\common;
 
 final class Client
@@ -34,8 +31,8 @@ final class Client
     }
     public static function delete($url, $body, array $headers = array())
     {
+        $headers['Content-Type'] = 'application/json';
         if ($body !== null) {
-            $headers['Content-Type'] = 'application/json';
             $body = json_encode($body);
         }
         $request = new Request('DELETE', $url, $headers, $body);
@@ -44,8 +41,8 @@ final class Client
 
     public static function post($url, $body, array $headers = array())
     {
+        $headers['Content-Type'] = 'application/json';
         if ($body !== null) {
-            $headers['Content-Type'] = 'application/json';
             $body = json_encode($body);
         }
         $request = new Request('POST', $url, $headers, $body);
@@ -53,8 +50,8 @@ final class Client
     }
     public static function put($url, $body, array $headers = array())
     {
+        $headers['Content-Type'] = 'application/json';
         if ($body !== null) {
-            $headers['Content-Type'] = 'application/json';
             $body = json_encode($body);
         }
         $request = new Request('PUT', $url, $headers, $body);
@@ -66,7 +63,7 @@ final class Client
     {
         $t1 = microtime(true);
         $ch = curl_init();
-        $randomStr = lcg_value();
+        $randomStr = mt_rand(0, 9999999999);
         $options = array(
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_SSL_VERIFYPEER => false,
@@ -91,12 +88,36 @@ final class Client
             $request -> headers['timestamp'] = $time;
             $request -> headers['nonce'] = $nonce;
             $signature = strtoupper($request -> method) . "\n" . $uri['path'] . "\n" . $randomStr . "\n" . $time . "\n" . $nonce;
+
+            $body_arr = array();
+            if ($request->body) {
+                $request->method == 'GET'
+                    ? parse_str($request->body, $body_arr)
+                    : $body_arr = json_decode($request->body, true);
+            }
+            $sign_args = array_merge(array('_' => $randomStr), $body_arr);
+            ksort($sign_args);
+            $sign_fields = array();
+            foreach ($sign_args as $arg => $value) {
+                if ($value === null || $value === '') { // value为空不参与签名
+                    continue;
+                }
+                if (!is_string($value)) {
+                    $value = json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+                }
+                array_push($sign_fields, "{$arg}={$value}");
+            }
+            unset($sign_args);
+            $enhance_str = str_replace('"', '', implode('&', $sign_fields));
+
             if (isset($request -> headers['ACCESS-KEY'])) {
                 $request -> headers['Signature'] = hash_hmac('sha256', $signature, $request -> headers['SECRET-KEY']);
                 unset($request -> headers['SECRET-KEY']);
+                $request -> headers['enhanceStr'] = hash_hmac('sha256', $enhance_str, $request -> headers['ACCESS-KEY']);
             } else {
                 if (!empty($request -> headers['Authorization'])) {
                     $request -> headers['Signature'] =  hash_hmac('sha256', $signature, $request -> headers['Authorization']);
+                    $request -> headers['enhanceStr'] = hash_hmac('sha256', $enhance_str, $request -> headers['Authorization']);
                 }
             }
             foreach ($request->headers as $key => $val) {
@@ -109,16 +130,16 @@ final class Client
         echo 'request_method:'.$request->method . "\n";
         if ($request->method === 'POST' || $request->method === 'PUT' || $request->method === 'DELETE') {
             if (!empty($request->body)) {
-                echo 'body:'.$request -> body . "\n";
                 $body = json_decode($request->body);
                 $body -> _ = $randomStr;
-                $request->body = json_encode($body);
-                $options[CURLOPT_POSTFIELDS] = $request->body;
+            } else {
+                $body = array('_' => $randomStr);
             }
+            $request->body = json_encode($body);
+            echo 'body:'.$request -> body . "\n";
+            $options[CURLOPT_POSTFIELDS] = $request->body;
         } else if ($request->method === 'GET') {
-            if (!empty($request->body)) {
-                $options[CURLOPT_URL] = Config::baseUrl . $request->url . '?' . $request->body . '_=' . $randomStr;
-            }
+            $options[CURLOPT_URL] = $request->url . '?' . ($request->body ?: ''). '_=' . $randomStr;
         }
         echo 'url:'.$options[CURLOPT_URL] . "\n";
         curl_setopt_array($ch, $options);

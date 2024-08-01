@@ -3,7 +3,6 @@ namespace i2up\Test\cdm;
 
 use i2up\cdm\v20200721\Cdm;
 use i2up\common\Auth;
-use i2up\Config;
 
 class CdmTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> cdm = new Cdm($auth);
+        $this -> cdm = new Cdm(new Auth());
     }
 
     public function testGetPointList()
@@ -130,7 +122,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdm -> deleteTakeOverDrill($arr);
         $this->assertNotNull($res[0]);
@@ -153,7 +145,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cdm -> getVmStatus($arr);
         $this->assertNotNull($res[0]);
@@ -165,7 +157,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'start',
             'type'=>'',
         );
@@ -179,7 +171,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'stop',
             'type'=>'',
         );
@@ -193,7 +185,7 @@ class CdmTest extends \PHPUnit_Framework_TestCase
     {
         $cdm = $this -> cdm;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'open_console',
             'type'=>'',
         );

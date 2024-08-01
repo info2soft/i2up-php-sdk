@@ -3,7 +3,6 @@ namespace i2up\Test\common;
 
 use i2up\common\DataBaseBackup;
 use i2up\common\Auth;
-use i2up\Config;
                 
 class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
  {
@@ -12,14 +11,7 @@ class DataBaseBackupTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> dataBaseBackup = new DataBaseBackup($auth);
+        $this -> dataBaseBackup = new DataBaseBackup(new Auth());
     }
 
     public function testImportConfig()

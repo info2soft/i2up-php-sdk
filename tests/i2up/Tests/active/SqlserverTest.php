@@ -3,7 +3,6 @@ namespace i2up\Test\active;
 
 use i2up\active\v20200721\Sqlserver;
 use i2up\common\Auth;
-use i2up\Config;
 
 class SqlserverTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> sqlserver = new Sqlserver($auth);
+        $this -> sqlserver = new Sqlserver(new Auth());
     }
 
     public function testCreateRule()
@@ -45,7 +37,6 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
                 'sync_mode'=>1,
                 'dump_thd'=>1,
                 'drop_old_tab'=>1,),
-            '_'=>'95f4e88ab554',
         );
         $res = $sqlserver -> createRule($arr);
         $this->assertNotNull($res[0]);
@@ -102,7 +93,6 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
             'sync_mode'=>1,
             'dump_thd'=>1,
             'drop_old_tab'=>1,
-            '_'=>'95f4e88ab554',
             'uuid'=>'',
         );
         $res = $sqlserver -> modifyRule($arr);
@@ -115,7 +105,7 @@ class SqlserverTest extends \PHPUnit_Framework_TestCase
     {
         $sqlserver = $this -> sqlserver;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $sqlserver -> deleteRule($arr);
         $this->assertNotNull($res[0]);

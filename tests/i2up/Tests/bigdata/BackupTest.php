@@ -4,7 +4,6 @@ namespace i2up\Test\bigdata;
 
 use i2up\bigdata\v20200721\Backup;
 use i2up\common\Auth;
-use i2up\Config;
 
 class BackupTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,14 +12,7 @@ class BackupTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> backup = new Backup($auth);
+        $this -> backup = new Backup(new Auth());
     }
 
     public function testCreateBigdataBackup()
@@ -81,7 +73,7 @@ class BackupTest extends \PHPUnit_Framework_TestCase
     {
         $backup = $this -> backup;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $backup -> listBigdataBackupStatus($arr);
         $this->assertNotNull($res[0]);

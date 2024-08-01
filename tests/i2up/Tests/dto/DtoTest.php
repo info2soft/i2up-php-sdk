@@ -3,7 +3,6 @@ namespace i2up\Test\dto;
 
 use i2up\dto\v20200721\Dto;
 use i2up\common\Auth;
-use i2up\Config;
 
 class DtoTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> dto = new Dto($auth);
+        $this -> dto = new Dto(new Auth());
     }
 
     public function testCreateDtoRule()
@@ -141,7 +133,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     {
         $dto = $this -> dto;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dto -> listDtoRuleStatus($arr);
         $this->assertNotNull($res[0]);
@@ -153,7 +145,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
     {
         $dto = $this -> dto;
         $arr = array(
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dto -> deleteDtoRule($arr);
         $this->assertNotNull($res[0]);
@@ -166,7 +158,7 @@ class DtoTest extends \PHPUnit_Framework_TestCase
         $dto = $this -> dto;
         $arr = array(
             'operate'=>'',
-            'rule_uuids'=>array(),
+            'rule_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dto -> tempFuncName($arr);
         $this->assertNotNull($res[0]);

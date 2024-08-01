@@ -3,7 +3,6 @@ namespace i2up\Test\active;
 
 use i2up\active\v20200721\Mysql;
 use i2up\common\Auth;
-use i2up\Config;
 
 class MysqlTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> mysql = new Mysql($auth);
+        $this -> mysql = new Mysql(new Auth());
     }
 
     public function testCreateStreamRule()
@@ -109,7 +101,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'mysql_uuids'=>array(),
+            'mysql_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> deleteStreamRule($arr);
         $this->assertNotNull($res[0]);
@@ -138,7 +130,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listStreamStatus($arr);
         $this->assertNotNull($res[0]);
@@ -353,7 +345,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listStreamCmpStatus($arr);
         $this->assertNotNull($res[0]);
@@ -520,7 +512,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> deleteBkTakeover($arr);
         $this->assertNotNull($res[0]);
@@ -544,7 +536,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listTakeoverStatus($arr);
         $this->assertNotNull($res[0]);
@@ -648,7 +640,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listObjFixStatus($arr);
         $this->assertNotNull($res[0]);
@@ -725,7 +717,7 @@ class MysqlTest extends \PHPUnit_Framework_TestCase
     {
         $mysql = $this -> mysql;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mysql -> listObjCmpStatus($arr);
         $this->assertNotNull($res[0]);

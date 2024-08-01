@@ -3,7 +3,6 @@ namespace i2up\Test\active;
 
 use i2up\active\v20200721\Mask;
 use i2up\common\Auth;
-use i2up\Config;
 
 class MaskTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class MaskTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> mask = new Mask($auth);
+        $this -> mask = new Mask(new Auth());
     }
 
     public function testTempFuncName()
@@ -100,7 +92,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
                     'value'=>'*',
                     'setted'=>3,
                     'type'=>'string',),),
-            '_'=>'704098f4051d7',
         );
         $res = $mask -> modifySensType($arr);
         $this->assertNotNull($res[0]);
@@ -227,7 +218,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'db_map_uuid'=>'71D59BCE-17F3-ED0D-BC76-132833F72498',
             'strate'=>'',
             'modify'=> '',
-            '_'=>'a39e1c5b7e511',
         );
         $res = $mask -> createMaskRules($arr);
         $this->assertNotNull($res[0]);
@@ -264,7 +254,7 @@ class MaskTest extends \PHPUnit_Framework_TestCase
     {
         $mask = $this -> mask;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mask -> listMaskRuleStatus($arr);
         $this->assertNotNull($res[0]);
@@ -336,7 +326,7 @@ class MaskTest extends \PHPUnit_Framework_TestCase
     {
         $mask = $this -> mask;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $mask -> deleteMap($arr);
         $this->assertNotNull($res[0]);
@@ -409,7 +399,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'map_type'=>'db',
             'mix'=>0,
             'white'=>1,
-            '_'=>'25bc5f36e5175',
         );
         $res = $mask -> createSensCheck($arr);
         $this->assertNotNull($res[0]);
@@ -450,7 +439,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'can_del'=>1,
             'can_op'=>1,
             'can_up'=>1,
-            '_'=>'2bbafa2a992d7',
         );
         $res = $mask -> modifySensCheck($arr);
         $this->assertNotNull($res[0]);
@@ -506,7 +494,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'type_arg'=>'',
             'id'=>308,
             'params'=>array(),
-            '_'=>'713d0acaa3283',
         );
         $res = $mask -> algoTest($arr);
         $this->assertNotNull($res[0]);
@@ -655,7 +642,6 @@ class MaskTest extends \PHPUnit_Framework_TestCase
             'biz_grp_list'=>array(),
             'biz_grp_name'=>array(),
             'modify'=>1,
-            '_'=>'4d058aa7a4ce1',
         );
         $res = $mask -> modifyMaskRules($arr);
         $this->assertNotNull($res[0]);

@@ -56,7 +56,6 @@ class RepBackup {
      */
     public function describeRepBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -71,9 +70,7 @@ class RepBackup {
      */
     public function modifyRepBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -154,9 +151,7 @@ class RepBackup {
      */
     public function listRepBackupBaseLine(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/cdp_bl_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -170,9 +165,7 @@ class RepBackup {
      */
     public function deleteRepBackupBaseline(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/cdp_bl_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -186,9 +179,7 @@ class RepBackup {
      */
     public function listRepBackupOrphan(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/orphan_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -202,9 +193,7 @@ class RepBackup {
      */
     public function deleteRepBackupOrphan(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/orphan_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -218,9 +207,7 @@ class RepBackup {
      */
     public function downloadRepBackupOrphan(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/orphan_download';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -234,9 +221,7 @@ class RepBackup {
      */
     public function listRepBackupSnapshot(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -250,7 +235,6 @@ class RepBackup {
      */
     public function createRepBackupSnapshot(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/snapshot_list';
         $res = $this -> httpRequest('post', $url);
         return $res;
@@ -279,9 +263,7 @@ class RepBackup {
      */
     public function deleteRepBackupSnapshot(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }

@@ -73,9 +73,7 @@ class SnapshotTask {
      */
     public function listSnapshotList(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'snapshot_task/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -91,7 +89,6 @@ class SnapshotTask {
     {
 
         $url = $this -> url . 'snapshot_task/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }

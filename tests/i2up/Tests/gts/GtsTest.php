@@ -11,14 +11,7 @@ class GtsTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> gts = new Gts($auth);
+        $this -> gts = new Gts(new Auth());
     }
 
 
@@ -47,7 +40,7 @@ class GtsTest extends \PHPUnit_Framework_TestCase
     public function testCloseService()
     {
         $gts = $this -> gts;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $gts -> closeService($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);

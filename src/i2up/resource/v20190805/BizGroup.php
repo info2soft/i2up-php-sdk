@@ -42,9 +42,7 @@ class BizGroup {
      */
     public function modifyBizGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -58,7 +56,6 @@ class BizGroup {
      */
     public function describeBizGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -99,9 +96,7 @@ class BizGroup {
      */
     public function updateBizGroupBind(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/bind';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -115,7 +110,6 @@ class BizGroup {
      */
     public function listBizGroupBind(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/bind';
         $res = $this -> httpRequest('get', $url);
         return $res;

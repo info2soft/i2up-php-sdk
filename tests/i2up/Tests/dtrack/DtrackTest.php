@@ -3,7 +3,6 @@ namespace i2up\Test\dtrack;
 
 use i2up\dtrack\v20201009\Dtrack;
 use i2up\common\Auth;
-use i2up\Config;
 
 class DtrackTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class DtrackTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> dtrack = new Dtrack($auth);
+        $this -> dtrack = new Dtrack(new Auth());
     }
 
     public function testListDtrackBackupDev()
@@ -173,7 +165,7 @@ class DtrackTest extends \PHPUnit_Framework_TestCase
     {
         $dtrack = $this -> dtrack;
         $arr = array(
-            'policy_uuids'=>array(),
+            'policy_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $dtrack -> listDtrackBackupStatus($arr);
         $this->assertNotNull($res[0]);
@@ -186,7 +178,7 @@ class DtrackTest extends \PHPUnit_Framework_TestCase
         $dtrack = $this -> dtrack;
         $arr = array(
             'delete_mirror'=>1,
-            'policy_uuids'=>array(),
+            'policy_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'force'=>1,
         );
         $res = $dtrack -> deleteDtrackBackup($arr);

@@ -11,14 +11,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> upMonitor = new UpMonitor($auth);
+        $this -> upMonitor = new UpMonitor(new Auth());
     }
 
     public function testAuthUpMonitor()
@@ -114,7 +107,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     {
         $upMonitor = $this -> upMonitor;
         $arr = array(
-            'up_uuids'=>array(),
+            'up_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'operate'=>'',
         );
         $res = $upMonitor -> refreshUpMonitor($arr);
@@ -127,7 +120,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     {
         $upMonitor = $this -> upMonitor;
         $arr = array(
-            'up_uuids'=>array(),
+            'up_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $upMonitor -> listUpMonitorStatus($arr);
         $this->assertNotNull($res[0]);
@@ -139,7 +132,7 @@ class UpMonitorTest extends \PHPUnit_Framework_TestCase
     {
         $upMonitor = $this -> upMonitor;
         $arr = array(
-            'up_uuids'=>array(),
+            'up_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $upMonitor -> deleteUpMonitor($arr);
         $this->assertNotNull($res[0]);

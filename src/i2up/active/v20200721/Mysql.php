@@ -285,9 +285,7 @@ class Mysql {
      */
     public function describeStreamRules(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -315,9 +313,7 @@ class Mysql {
      */
     public function describeStreamCmp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/tb_cmp/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -504,9 +500,7 @@ class Mysql {
      */
     public function describeBkTakeover(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/bk_takeover/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -598,7 +592,6 @@ class Mysql {
     public function describeObjFix(array $body = array())
     {
         $url = $this -> url . '/obj_fix/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -703,9 +696,7 @@ class Mysql {
      */
     public function describeObjCmp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/obj_cmp/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

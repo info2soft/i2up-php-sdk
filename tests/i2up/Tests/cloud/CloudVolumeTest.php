@@ -9,7 +9,6 @@
 namespace i2up\Test\cloud;
 
 use i2up\common\Auth;
-use i2up\Config;
 use i2up\cloud\v20200721\CloudVolume;
 
 class CloudVolumeTest extends \PHPUnit_Framework_TestCase
@@ -18,14 +17,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> cloudBackup = new CloudVolume($auth);
+        $this -> cloudBackup = new CloudVolume(new Auth());
     }
 
     public function testListZone()
@@ -74,7 +66,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
             'ecs_id'=>'',
             'attach_point'=>'',
         );
@@ -88,7 +80,7 @@ class CloudVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $cloudBackup -> detachVolume($arr);
         $this->assertNotNull($res[0]);

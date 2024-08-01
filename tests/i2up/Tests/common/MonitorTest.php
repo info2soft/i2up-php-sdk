@@ -3,7 +3,6 @@ namespace i2up\Test\common;
 
 use i2up\common\Monitor;
 use i2up\common\Auth;
-use i2up\Config;
                 
 class MonitorTest extends \PHPUnit_Framework_TestCase
  {
@@ -12,14 +11,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> monitor = new Monitor($auth);
+        $this -> monitor = new Monitor(new Auth());
     }
 
     public function testListDriversInfo()
@@ -99,7 +91,7 @@ class MonitorTest extends \PHPUnit_Framework_TestCase
     public function testListBkNodeOverall()
     {
         $monitor = $this -> monitor;
-        $arr = array();
+        $arr = array('11111111-1111-1111-1111-111111111111');
         $res = $monitor -> listBkNodeOverall($arr);
         $this->assertNotNull($res[0]);
         $this->assertArrayHasKey('code',$res[0]);

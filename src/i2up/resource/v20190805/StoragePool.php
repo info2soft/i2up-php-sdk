@@ -50,7 +50,6 @@ class StoragePool {
     public function modifyStoragePool(array $body = array())
     {
         $url = $this -> url . 'storage_pool/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -76,9 +75,7 @@ class StoragePool {
      */
     public function describeStoragePool(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'storage_pool/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

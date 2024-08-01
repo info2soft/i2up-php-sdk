@@ -41,7 +41,6 @@ class NAS {
      */
     public function describeNASGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/group';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -55,9 +54,7 @@ class NAS {
      */
     public function modifyNAS(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/' . $body['uuid'] . '/group';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }

@@ -3,7 +3,6 @@ namespace i2up\Test\ha;
 
 use i2up\ha\v20190805\AppHighAvailability;
 use i2up\common\Auth;
-use i2up\Config;
 
 class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class AppHighAvailabilityTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> appHighAvailability = new AppHighAvailability($auth);
+        $this -> appHighAvailability = new AppHighAvailability(new Auth());
     }
 
     public function testListHA()

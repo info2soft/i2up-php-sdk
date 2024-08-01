@@ -10,7 +10,6 @@ namespace i2up\Test\resource;
 
 use i2up\resource\v20190805\BoxVm;
 use i2up\common\Auth;
-use i2up\Config;
 
 class BoxVmTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,14 +18,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> boxVm = new BoxVm($auth);
+        $this -> boxVm = new BoxVm(new Auth());
     }
 
     public function testTemplateList()
@@ -99,7 +91,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
     {
         $boxVm = $this -> boxVm;
         $arr = array(
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $boxVm -> deleteBoxVm($arr);
         $this->assertNotNull($res[0]);
@@ -111,7 +103,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
     {
         $boxVm = $this -> boxVm;
         $arr = array(
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $boxVm -> listBoxVmStatus($arr);
         $this->assertNotNull($res[0]);
@@ -124,7 +116,7 @@ class BoxVmTest extends \PHPUnit_Framework_TestCase
         $boxVm = $this -> boxVm;
         $arr = array(
             'operate'=>'register',
-            'vm_uuids'=>array(),
+            'vm_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $boxVm -> registerBoxVm($arr);
         $this->assertNotNull($res[0]);

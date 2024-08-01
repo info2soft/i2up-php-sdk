@@ -3,7 +3,6 @@ namespace i2up\Test\active;
 
 use i2up\active\v20200721\summary;
 use i2up\common\Auth;
-use i2up\Config;
 
 class summaryTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class summaryTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> summary = new summary($auth);
+        $this -> summary = new summary(new Auth());
     }
 
     public function testListSummaryView()

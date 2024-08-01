@@ -10,7 +10,6 @@ namespace i2up\Test\cloud;
 
 use i2up\cloud\v20200721\CloudEcs;
 use i2up\common\Auth;
-use i2up\Config;
 
 class CloudEcsTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,14 +18,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this->cloudBackup = new CloudEcs($auth);
+        $this->cloudBackup = new CloudEcs(new Auth());
     }
 
     public function testCreateEcs()
@@ -38,7 +30,7 @@ class CloudEcsTest extends \PHPUnit_Framework_TestCase
             'flavorid'=>'',
             'volume_sys_id'=>'',
             'server_zone'=>'',
-            'volume_data_ids'=>array(),
+            'volume_data_ids'=>array('1'),
             'wk_uuid'=>'',
             'rc_point'=>array(
                 'time'=>'',

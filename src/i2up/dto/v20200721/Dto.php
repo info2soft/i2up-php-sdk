@@ -49,9 +49,7 @@ class Dto {
      */
     public function modifyDtoStorage(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -64,9 +62,7 @@ class Dto {
      */
     public function describeDtoStorage(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/storage/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -133,9 +129,7 @@ class Dto {
      */
     public function modifyDtoHost(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/host/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -148,9 +142,7 @@ class Dto {
      */
     public function describeDtoHost(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/host/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -203,9 +195,7 @@ class Dto {
      */
     public function listArchiveDate(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/host/' . $body['uuid']. '/archive_date';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -218,9 +208,7 @@ class Dto {
      */
     public function tempFuncName(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/host/' . $body['uuid']. '/rc_time_point';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -234,9 +222,7 @@ class Dto {
      */
     public function listArchiveFile(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/host/' . $body['uuid']. '/archive_file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -250,9 +236,7 @@ class Dto {
      */
     public function host(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/host/' . $body['uuid']. '/load_rules';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -279,9 +263,7 @@ class Dto {
      */
     public function modifyDtoRule(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -294,9 +276,7 @@ class Dto {
      */
     public function describeDtoRule(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rule/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -391,9 +371,7 @@ class Dto {
      */
     public function listDtoRuleFile(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rule/' . $body['uuid'] . '/file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -407,9 +385,7 @@ class Dto {
      */
     public function deleteDtoRuleFile(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rule/' . $body['uuid'] . '/file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('delete', $url);
         return $res;
     }
@@ -422,9 +398,7 @@ class Dto {
      */
     public function listDtoRuleCmpResult(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rule/' . $body['uuid'] . '/cmp_result';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

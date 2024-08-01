@@ -97,9 +97,7 @@ class TimingRecovery
      */
     public function modifyTimingRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> recoveryUrl . '/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -113,7 +111,6 @@ class TimingRecovery
      */
     public function describeTimingRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> recoveryUrl . '/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;

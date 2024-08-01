@@ -3,7 +3,6 @@ namespace i2up\Test\common;
 
 use i2up\common\Storage;
 use i2up\common\Auth;
-use i2up\Config;
 
 class StorageTest extends \PHPUnit_Framework_TestCase
  {
@@ -12,13 +11,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'access_key' => 'oishvmn5YPHJcEDaIjtwd0R9Ug7BN1fk',
-            'secret_key' => 'fkLiyqsG3P1AzB5jWtYbZa7TU8RN9wSVhe6EldOo',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> storage = new Storage($auth);
+        $this -> storage = new Storage(new Auth());
     }
 
     public function testCreateStorageConfig()
@@ -87,7 +80,7 @@ class StorageTest extends \PHPUnit_Framework_TestCase
     {
         $storage = $this -> storage;
         $arr = array(
-            'uuids'=>array(),
+            'uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storage -> deleteStorageConfig($arr);
         $this->assertNotNull($res[0]);

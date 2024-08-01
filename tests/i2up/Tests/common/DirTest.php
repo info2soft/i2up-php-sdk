@@ -3,7 +3,6 @@ namespace i2up\Test\common;
 
 use i2up\common\Dir;
 use i2up\common\Auth;
-use i2up\Config;
                 
 class DirTest extends \PHPUnit_Framework_TestCase
  {
@@ -12,14 +11,7 @@ class DirTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> dir = new Dir($auth);
+        $this -> dir = new Dir(new Auth());
     }
 
     public function testListDir()

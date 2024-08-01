@@ -3,7 +3,6 @@ namespace i2up\Test\resource;
 
 use i2up\resource\v20190805\StoragePool;
 use i2up\common\Auth;
-use i2up\Config;
 
 class StoragePoolTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class StoragePoolTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> storagePool = new StoragePool($auth);
+        $this -> storagePool = new StoragePool(new Auth());
     }
 
     public function testCreateStoragePool()
@@ -91,7 +83,7 @@ class StoragePoolTest extends \PHPUnit_Framework_TestCase
     {
         $storagePool = $this -> storagePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storagePool -> deleteStoragePool($arr);
         $this->assertNotNull($res[0]);
@@ -103,7 +95,7 @@ class StoragePoolTest extends \PHPUnit_Framework_TestCase
     {
         $storagePool = $this -> storagePool;
         $arr = array(
-            'pool_uuids'=>array(),
+            'pool_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $storagePool -> listStoragePoolStatus($arr);
         $this->assertNotNull($res[0]);

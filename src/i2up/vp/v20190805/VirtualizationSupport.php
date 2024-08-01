@@ -42,7 +42,6 @@ class VirtualizationSupport {
      */
     public function describeVp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -55,9 +54,7 @@ class VirtualizationSupport {
      */
     public function modifyVp(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -126,9 +123,7 @@ class VirtualizationSupport {
      */
     public function listVM(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/'. $body['uuid'] .'/vm';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -141,7 +136,6 @@ class VirtualizationSupport {
      */
     public function describeVpAttribute(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/info';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -157,9 +151,7 @@ class VirtualizationSupport {
      */
     public function listBakVer(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/bak_ver';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -177,9 +169,7 @@ class VirtualizationSupport {
      */
     public function listBakVerInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/bak_ver_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -195,9 +185,7 @@ class VirtualizationSupport {
      */
     public function listDatastoreFile(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/datastore_file';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -210,7 +198,6 @@ class VirtualizationSupport {
      */
     public function listDatacenter(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/datacenter';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -225,9 +212,7 @@ class VirtualizationSupport {
      */
     public function listDatacenterHost(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/datacenter_host';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -241,9 +226,7 @@ class VirtualizationSupport {
      */
     public function listDatastore(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/datastore';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -257,9 +240,7 @@ class VirtualizationSupport {
      */
     public function listDatastoreInfo(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/platform/' . $body['uuid'] . '/datastore_info';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -286,9 +267,7 @@ class VirtualizationSupport {
      */
     public function modifyVpBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/backup/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -301,7 +280,6 @@ class VirtualizationSupport {
      */
     public function describeVpBackup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/backup/';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -315,7 +293,6 @@ class VirtualizationSupport {
      */
     public function describeVpBackupGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/backup/' . $body['uuid'] . '/group';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -421,7 +398,6 @@ class VirtualizationSupport {
      */
     public function describeVpRecoveryGroup(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/recovery/' . $body['uuid'] . '/group';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -543,7 +519,6 @@ class VirtualizationSupport {
      */
     public function describeVpMove(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/move/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -557,7 +532,6 @@ class VirtualizationSupport {
      */
     public function describeVpRep(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -572,9 +546,7 @@ class VirtualizationSupport {
      */
     public function modifyVpMove(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/move/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -587,9 +559,7 @@ class VirtualizationSupport {
      */
     public function modifyVpRep(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
     }
@@ -773,7 +743,6 @@ class VirtualizationSupport {
      */
     public function listVpRepPointList(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/rep/' . $body['uuid'] . '/point_list';
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -826,7 +795,6 @@ class VirtualizationSupport {
      */
     public function describeVpFileRecovery(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/file_recovery/' . $body['uuid'];
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -893,9 +861,7 @@ class VirtualizationSupport {
      */
     public function describeVpDrill(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . '/drill/group/' . $body['uuid'];
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

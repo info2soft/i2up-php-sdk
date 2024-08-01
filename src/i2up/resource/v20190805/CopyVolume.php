@@ -48,9 +48,7 @@ class CopyVolume {
      */
     public function modifyCopyVolume(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'copy_volume/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('put', $url);
         return $res;
     }
@@ -63,9 +61,7 @@ class CopyVolume {
      */
     public function describeCopyVolume(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'copy_volume/' . $body['uuid'] . '';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -120,9 +116,7 @@ class CopyVolume {
      */
     public function listSnapshotList(array $body = array())
     {
-        if (empty($body) || !isset($body['uuid'])) return $body;
         $url = $this -> url . 'copy_volume/' . $body['uuid'] . '/snapshot_list';
-        unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
     }

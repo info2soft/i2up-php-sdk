@@ -10,7 +10,6 @@ namespace i2up\Test\cloud;
 
 use i2up\cloud\v20200721\CloudRehearse;
 use i2up\common\Auth;
-use i2up\Config;
 
 class CloudRehearseTest extends \PHPUnit_Framework_TestCase
 {
@@ -19,14 +18,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this->cloudBackup = new CloudRehearse($auth);
+        $this->cloudBackup = new CloudRehearse(new Auth());
     }
 
 
@@ -304,7 +296,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
             'is_group'=>1,
         );
         $res = $cloudBackup -> evacuateBatchRehearse($arr);
@@ -341,7 +333,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> deleteRehearse($arr);
         $this->assertNotNull($res[0]);
@@ -470,7 +462,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> deleteGroup($arr);
         $this->assertNotNull($res[0]);
@@ -494,7 +486,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> listGroupStatus($arr);
         $this->assertNotNull($res[0]);
@@ -517,7 +509,7 @@ class CloudRehearseTest extends \PHPUnit_Framework_TestCase
     {
         $cloudBackup = $this -> cloudBackup;
         $arr = array(
-            'job_ids'=>array(),
+            'job_ids'=>array('1'),
         );
         $res = $cloudBackup -> listBatchRehearse($arr);
         $this->assertNotNull($res[0]);

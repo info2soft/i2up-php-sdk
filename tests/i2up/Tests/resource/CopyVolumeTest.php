@@ -3,7 +3,6 @@ namespace i2up\Test\resource;
 
 use i2up\resource\v20190805\CopyVolume;
 use i2up\common\Auth;
-use i2up\Config;
 
 class CopyVolumeTest extends \PHPUnit_Framework_TestCase
 {
@@ -12,14 +11,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     public function __construct($name = null, array $data = array(), $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        $params = array(
-            'username' => 'admin',
-            'pwd' => 'Info1234',
-            'cache_path' => __DIR__ . '/../',
-            'ip' => Config::baseUrl
-        );
-        $auth = new Auth($params);
-        $this -> copyVolume = new CopyVolume($auth);
+        $this -> copyVolume = new CopyVolume(new Auth());
     }
 
     public function testCreateCopyVolume()
@@ -79,7 +71,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $copyVolume = $this -> copyVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $copyVolume -> deleteCopyVolume($arr);
         $this->assertNotNull($res[0]);
@@ -91,7 +83,7 @@ class CopyVolumeTest extends \PHPUnit_Framework_TestCase
     {
         $copyVolume = $this -> copyVolume;
         $arr = array(
-            'volume_uuids'=>array(),
+            'volume_uuids'=>array('11111111-1111-1111-1111-111111111111'),
         );
         $res = $copyVolume -> tempFuncName($arr);
         $this->assertNotNull($res[0]);
