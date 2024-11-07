@@ -12,9 +12,7 @@ final class Client
                 $bodyStr = '';
                 foreach ($body as $key => $value){
                     if (is_array($value)) {
-                        foreach ($value as $k => $v) {
-                            $bodyStr .= urlencode($key) . '[]=' . urlencode($v) . '&';
-                        }
+                        $bodyStr .= urlencode($key) . '=' . json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '&';
                     } else {
                         $bodyStr .= urlencode($key) . '=' . urlencode($value) . '&';
                     }
@@ -95,7 +93,8 @@ final class Client
                     ? parse_str($request->body, $body_arr)
                     : $body_arr = json_decode($request->body, true);
             }
-            $sign_args = array_merge(array('_' => $randomStr), $body_arr);
+            $body_arr['_'] = $randomStr;
+            $sign_args = $body_arr;
             ksort($sign_args);
             $sign_fields = array();
             foreach ($sign_args as $arg => $value) {
@@ -131,7 +130,11 @@ final class Client
         if ($request->method === 'POST' || $request->method === 'PUT' || $request->method === 'DELETE') {
             if (!empty($request->body)) {
                 $body = json_decode($request->body);
-                $body -> _ = $randomStr;
+                if ($body != null) {
+                    $body -> _ = $randomStr;
+                } else {
+                    $body = array('_' => $randomStr);
+                }
             } else {
                 $body = array('_' => $randomStr);
             }
