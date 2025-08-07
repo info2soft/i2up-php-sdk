@@ -42,7 +42,7 @@ class ExamineApproveTest extends \PHPUnit_Framework_TestCase
             'where_args'=>array(
             '0'=>array(
             'status'=>'',
-            'rule_type[]'=>1,),),
+            'rule_type'=>1,),),
         );
         
         
