@@ -7,22 +7,8 @@ final class Client
 {
     public static function get($url, $body, array $headers = array())
     {
-        if(isset($body) && is_array($body)) {
-            if (!empty($body)) {
-                $bodyStr = '';
-                foreach ($body as $key => $value){
-                    if (is_array($value)) {
-                        $bodyStr .= urlencode($key) . '=' . json_encode($value, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '&';
-                    } else {
-                        $bodyStr .= urlencode($key) . '=' . urlencode($value) . '&';
-                    }
-                }
-                $body = $bodyStr;
-            } else {
-                $body = null;
-            }
-        } else {
-            $body = null;
+        if ($body !== null) {
+            $body = http_build_query($body);
         }
         $request = new Request('GET', $url, $headers, $body);
         return self::sendRequest($request);
@@ -111,8 +97,8 @@ final class Client
 
             if (isset($request -> headers['ACCESS-KEY'])) {
                 $request -> headers['Signature'] = hash_hmac('sha256', $signature, $request -> headers['SECRET-KEY']);
+                $request -> headers['enhanceStr'] = hash_hmac('sha256', $enhance_str, $request -> headers['SECRET-KEY']);
                 unset($request -> headers['SECRET-KEY']);
-                $request -> headers['enhanceStr'] = hash_hmac('sha256', $enhance_str, $request -> headers['ACCESS-KEY']);
             } else {
                 if (!empty($request -> headers['Authorization'])) {
                     $request -> headers['Signature'] =  hash_hmac('sha256', $signature, $request -> headers['Authorization']);
@@ -138,11 +124,11 @@ final class Client
             } else {
                 $body = array('_' => $randomStr);
             }
-            $request->body = json_encode($body);
-            echo 'body:'.$request -> body . "\n";
-            $options[CURLOPT_POSTFIELDS] = $request->body;
+            $body_string = json_encode($body);
+            echo 'body: ' . $body_string . "\n";
+            $options[CURLOPT_POSTFIELDS] = $body_string;
         } else if ($request->method === 'GET') {
-            $options[CURLOPT_URL] = $request->url . '?' . ($request->body ?: ''). '_=' . $randomStr;
+            $options[CURLOPT_URL] = $request->url . '?' . ($request->body ? ($request->body . '&') : ''). '_=' . $randomStr;
         }
         echo 'url:'.$options[CURLOPT_URL] . "\n";
         curl_setopt_array($ch, $options);
