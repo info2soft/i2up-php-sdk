@@ -97,7 +97,7 @@ class ContainerCluster {
      */
     public function listBackupDestinationStatus(array $body = array())
     {
-        $url = $this -> url . '/v3/backup_destination/status';
+        $url = $this -> url . '/vers/v3/backup_destination/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -110,7 +110,7 @@ class ContainerCluster {
      */
     public function listContainerClusterInfo(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster/cls_info';
+        $url = $this -> url . '/vers/v3/container_cluster/cls_info';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -123,7 +123,7 @@ class ContainerCluster {
      */
     public function syncContainerClusterInfo(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster/sync_info';
+        $url = $this -> url . '/vers/v3/container_cluster/sync_info';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -162,7 +162,7 @@ class ContainerCluster {
      */
     public function containerClusterMonitoringOverview(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster/monitoring/overview';
+        $url = $this -> url . '/vers/v3/container_cluster/monitoring/overview';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -174,7 +174,7 @@ class ContainerCluster {
      */
     public function containerClusterMonitoringNode()
     {
-        $url = $this -> url . '/v3/container_cluster/monitoring/node';
+        $url = $this -> url . '/vers/v3/container_cluster/monitoring/node';
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -187,7 +187,7 @@ class ContainerCluster {
      */
     public function createContainerCluster(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster';
+        $url = $this -> url . '/vers/v3/container_cluster';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -199,7 +199,7 @@ class ContainerCluster {
      */
     public function listContainerCluster()
     {
-        $url = $this -> url . '/v3/container_cluster';
+        $url = $this -> url . '/vers/v3/container_cluster';
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -213,7 +213,7 @@ class ContainerCluster {
     public function describeContainerCluster(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/v3/container_cluster/' . $body['uuid'];
+        $url = $this -> url . '/vers/v3/container_cluster/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -228,7 +228,7 @@ class ContainerCluster {
      */
     public function modifyContainerCluster(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster/' . $body['uuid'];
+        $url = $this -> url . '/vers/v3/container_cluster/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
@@ -242,7 +242,7 @@ class ContainerCluster {
      */
     public function deleteContainerCluster(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster';
+        $url = $this -> url . '/vers/v3/container_cluster';
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -323,7 +323,7 @@ class ContainerCluster {
      */
     public function cloneCallbackSettings(array $body = array())
     {
-        $url = $this -> url . '/v3/callback_settings/operate';
+        $url = $this -> url . '/vers/v3/callback_settings/operate';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -336,7 +336,7 @@ class ContainerCluster {
      */
     public function verifyCallbackSettingsPod(array $body = array())
     {
-        $url = $this -> url . '/v3/callback_settings/pod_verify';
+        $url = $this -> url . '/vers/v3/callback_settings/pod_verify';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
