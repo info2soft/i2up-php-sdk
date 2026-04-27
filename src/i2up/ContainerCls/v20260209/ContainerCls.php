@@ -29,7 +29,7 @@ class ContainerCls {
      */
     public function createContinerClusterBackup(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -42,7 +42,7 @@ class ContainerCls {
      */
     public function listContainerClusterBackup(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -56,7 +56,7 @@ class ContainerCls {
      */
     public function describeContainerClusterBackup(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup/' . $body['uuid'];
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
@@ -71,7 +71,7 @@ class ContainerCls {
      */
     public function modifyContainerClusterBackup(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup/' . $body['uuid'];
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
@@ -85,7 +85,7 @@ class ContainerCls {
      */
     public function deleteContainerClusterBackup(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup';
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -98,7 +98,7 @@ class ContainerCls {
      */
     public function listContainerClusterBackupStatus(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup/status';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -111,7 +111,7 @@ class ContainerCls {
      */
     public function backupImmediateContainerClusterBackup(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup/operate';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup/operate';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -124,7 +124,7 @@ class ContainerCls {
      */
     public function listContainerClusterBackupSubTask(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup/sub_task';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup/sub_task';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -137,7 +137,7 @@ class ContainerCls {
      */
     public function getContainerClusterBackupInfo(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/backup/info';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/backup/info';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -150,7 +150,7 @@ class ContainerCls {
      */
     public function createContainerClusterRecovery(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -162,7 +162,7 @@ class ContainerCls {
      */
     public function listContainerClusterRecovery()
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery';
         $res = $this -> httpRequest('get', $url);
         return $res;
     }
@@ -176,7 +176,7 @@ class ContainerCls {
     public function describeContainerClusterRecovery(array $body = array())
     {
         if (empty($body) || !isset($body['uuid'])) return $body;
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/' . $body['uuid'];
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('get', $url);
         return $res;
@@ -191,7 +191,7 @@ class ContainerCls {
      */
     public function modifyContainerClusterRecovery(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/' . $body['uuid'];
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/' . $body['uuid'];
         unset($body['uuid']);
         $res = $this -> httpRequest('put', $url, $body);
         return $res;
@@ -205,7 +205,7 @@ class ContainerCls {
      */
     public function deleteContainerClusterRecovery(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery';
         $res = $this -> httpRequest('delete', $url, $body);
         return $res;
     }
@@ -218,7 +218,7 @@ class ContainerCls {
      */
     public function listContainerClusterRecoveryStatus(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/status';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/status';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -231,7 +231,7 @@ class ContainerCls {
      */
     public function listContainerClusterRecoveryPoint(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/rc_point';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/rc_point';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
@@ -244,7 +244,7 @@ class ContainerCls {
      */
     public function startContainerClusterRecovery(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/operate';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/operate';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -257,7 +257,7 @@ class ContainerCls {
      */
     public function stopContainerClusterRecovery(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/operate';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/operate';
         $res = $this -> httpRequest('post', $url, $body);
         return $res;
     }
@@ -270,7 +270,7 @@ class ContainerCls {
      */
     public function getContainerClusterRecoveryInfo(array $body = array())
     {
-        $url = $this -> url . '/v3/container_cluster_protect/recovery/info';
+        $url = $this -> url . '/vers/v3/container_cluster_protect/recovery/info';
         $res = $this -> httpRequest('get', $url, $body);
         return $res;
     }
