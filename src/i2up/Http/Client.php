@@ -71,7 +71,12 @@ final class Client
             $nonce = $common -> uuid();
             $request -> headers['timestamp'] = $time;
             $request -> headers['nonce'] = $nonce;
-            $signature = strtoupper($request -> method) . "\n" . $uri['path'] . "\n" . $randomStr . "\n" . $time . "\n" . $nonce;
+            $path = $uri['path'];
+            $apiPos = strpos($uri['path'], '/api');
+            if ($apiPos !== false) {
+                $path = substr($uri['path'], $apiPos);
+            }
+            $signature = strtoupper($request -> method) . "\n" . $path . "\n" . $randomStr . "\n" . $time . "\n" . $nonce;
 
             $body_arr = array();
             if ($request->body) {
