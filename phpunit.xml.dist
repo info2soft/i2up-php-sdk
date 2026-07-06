@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit backupGlobals="false"
-         backupStaticAttributes="false"
-         bootstrap="./tests/bootstrap.php"
-         colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
-         syntaxCheck="true"
+
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+        bootstrap="./tests/bootstrap.php"
+        cacheDirectory=".phpunit.cache"
+        colors="true"
 >
     <testsuites>
-        <testsuite name="Qiniu SDK Tests">
+        <testsuite name="i2UP SDK Tests">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
-
 </phpunit>
