@@ -1,0 +1,203 @@
+<?php
+namespace i2up\Test\v20260626\resource;
+
+use i2up\resource\v20260626\ServiceCluster;
+use i2up\common\Auth;
+use PHPUnit\Framework\TestCase;
+                
+class ServiceClusterTest extends TestCase
+ {
+    private $serviceCluster;
+    
+    public function setUp():void
+    {
+        parent::setup();
+        $this -> serviceCluster = new ServiceCluster(new Auth());
+    }
+
+    public function testCreateServiceCls()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'service_cls'=>array(
+            'cls_name'=>'',
+            'label_list'=>array(),
+            'cls_node'=>array(
+            '0'=>array(
+            'hostname'=>'',
+            'ip'=>'',
+            'port'=>'',
+            'version'=>'',
+            'data_addr'=>'',
+            'os_user'=>'',),),
+            'service_type'=>array(),
+            'bind_lic_list'=>array(),
+            'cc_ip_uuid'=>'',
+            'cc_ip'=>'',
+            'os_type'=>1,
+            'etcd_url_uuid'=>'',
+            'etcd_url'=>array(
+            '0'=>array(
+            'ip'=>'',
+            'port'=>'',),),),
+        );
+        
+        
+        $res = $serviceCluster -> createServiceCls($arr);
+        $this->do_assert($res);
+    }
+
+    public function testModifyServiceCls()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'service_cls'=>array(
+            'cls_name'=>'svc1',
+            'cls_uuid'=>'AB790C28-62D6-7236-612F-65D73C80036F',
+            'label_list'=>array(),
+            'random_str'=>'AB790B28-62D6-7236-612F-65D73C80036F',
+            'cls_node'=>array(
+            '0'=>array(
+            'hostname'=>'',
+            'ip'=>'',
+            'port'=>'',),),
+            'service_type'=>array(),
+            'bind_lic_list'=>array(),),
+        );
+        
+        
+        $res = $serviceCluster -> modifyServiceCls($arr);
+        $this->do_assert($res);
+    }
+
+    public function testDeleteServiceCls()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'cls_uuids'=>array(),
+            'force'=>1,
+        );
+        
+        
+        $res = $serviceCluster -> deleteServiceCls($arr);
+        $this->do_assert($res);
+    }
+
+    public function testDescribeServiceCls()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array();
+        $arr['uuid'] = "22D03E06-94D0-5E2C-336E-4BEEC2D28EC4";
+        
+        $res = $serviceCluster -> describeServiceCls($arr);
+        $this->do_assert($res);
+    }
+
+    public function testListServiceCls()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'limit'=>1,
+            'search_value'=>'',
+            'search_field'=>'',
+            'page'=>1,
+        );
+        
+        
+        $res = $serviceCluster -> listServiceCls($arr);
+        $this->do_assert($res);
+    }
+
+    public function testListServiceClsStatus()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'cls_uuids'=>array(),
+            'force_refresh'=>1,
+        );
+        
+        
+        $res = $serviceCluster -> listServiceClsStatus($arr);
+        $this->do_assert($res);
+    }
+
+    public function testChkServiceClsNode()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'cls_uuid'=>'',
+            'node_uuid'=>'',
+        );
+        
+        
+        $res = $serviceCluster -> chkServiceClsNode($arr);
+        $this->do_assert($res);
+    }
+
+    public function testConfigServiceCls()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'config'=>array(
+            'cc_ip_uuid'=>'',
+            'log_path'=>'',
+            'keep_log_days'=>1,
+            'mem_limit'=>1,
+            'disk_limit'=>1,
+            'disk_free_space_limit'=>1,
+            'security_check'=>1,
+            'comment'=>'',
+            'monitor_switch'=>1,
+            'mon_send_interval'=>1,
+            'mon_data_path'=>'',
+            'db_save_day'=>1,
+            'mon_save_day'=>1,
+            'renew_public_key'=>1,),
+            'cls_uuid'=>'',
+        );
+        
+        
+        $res = $serviceCluster -> configServiceCls($arr);
+        $this->do_assert($res);
+    }
+
+    public function testDescribeServiceClsConfig()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'cls_uuid'=>'',
+        );
+        
+        
+        $res = $serviceCluster -> describeServiceClsConfig($arr);
+        $this->do_assert($res);
+    }
+
+    public function testListServiceClsValidNode()
+    {
+        $serviceCluster = $this -> serviceCluster;
+        $arr = array(
+            'cls_uuid'=>'',
+        );
+        
+        
+        $res = $serviceCluster -> listServiceClsValidNode($arr);
+        $this->do_assert($res);
+    }
+
+    private function do_assert($res)
+    {
+        if ($res == null) {
+            print "Invalid parameter: body is null or empty, or uuid/id is empty.\n";
+        }
+
+        if (isset($res[1])){
+            print("Response.statusCode = " . ($res[1])->getResponse()->statusCode);
+            print("\nResponse.body = " . ($res[1])->getResponse()->body);
+        }
+        
+        $this->assertNotNull($res[0]);
+        $this->assertArrayHasKey('ret',$res[0]);
+        $this->assertEquals(200, $res[0]['ret']);
+    }
+}
